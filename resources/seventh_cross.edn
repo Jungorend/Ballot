@@ -1,0 +1,611 @@
+[{:character/name "Renea"
+  :character/exceed-name "The Spook"
+  :character/innate-ability "You may play Continuous Boosts face-down. Before you set cards for a Strike, reveal your face-down Boosts and resolve any Now effects on them."
+  :character/exceed-ability "When you Exceed, flip any face-down Continuous Boosts put into play by Renea's ability. When you Exceed, put the top 3 cards of the opponent's discard pile with Boosts into your Briefcase. Your attacks have \"Hit: Put the bottom card of the opponent's discard pile with a boost into your Briefcase.\""
+  :character/gauge-cost 5
+  :character/description "\"I'll get to the bottom of this conspiracy!\""
+  :character/exceed-description "\"I'm from the government, and I'm here to help...\""
+  :character/seasons {:season/name "Seventh Cross"}}
+
+ {:character/name "Remiliss"
+  :character/exceed-name "The Yellow Death"
+  :character/innate-ability "When you set your attack, you may spend 3 Force. If you do, it is considered an EX attack."
+  :character/description "\"I feel power overflowing through me...\""
+  :character/exceed-ability "When you would resolve a printed trigger on an EX attack (Before, Hit, or After), resolve that trigger three times instead."
+  :character/exceed-description "\"LET ME OUT!\""
+  :character/gauge-cost 6
+  :character/seasons {:season/name "Seventh Cross"}}
+
+ {:character/name "Iaquis"
+  :character/exceed-name "The Dragon-Slayer"
+  :character/description "\"I've waited ages to settle the score.\""
+  :character/exceed-description "\"KRAAAAAAAAAA!!!!\""
+  :character/innate-ability "When you initiate a Strike, you may set your attack face-up. If you do, +2 Power."
+  :character/exceed-ability "When you set your attack, you may discard a card from your hand. If you do, add any Before, Hit, and After effects printed on that card to your attack."
+  :character/gauge-cost 5
+  :character/seasons {:season/name "Seventh Cross"}}
+
+ {:character/name "Eugenia"
+  :character/exceed-name "The Cheshire Cat"
+  :character/exceed-description "\"You're merely a puppet on my strings, dearie.\""
+  :character/exceed-ability "When you Exceed, put your Wonderland in play. When you cause the opponent to discard 1 or more cards, you may put one of them in your Wonderland."
+  :character/innate-ability "Once per turn, when you cause the opponent to discard 1 or more cards, you may reveal a card from your hand with the same printed Speed as a discarded card to do 2 non-lethal damage."
+  :character/description "\"How curious...\""
+  :character/gauge-cost 6
+  :character/seasons {:season/name "Seventh Cross"}}
+
+ {:character/name "Celinka"
+  :character/description "\"This evil must be sealed away!\""
+  :character/innate-ability "When you Prepare, you may put up to 3 cards from your hand into play as face-down Continuous Boosts that read \"+1 Power. When this card would be discarded, seal it instead.\""
+  :character/exceed-name "The Gaki"
+  :character/exceed-description "\"I need more...I have to make it stop...\""
+  :character/exceed-ability "When you Exceed, seal your discard pile. Your attacks have +1 Power for every 5 of your cards that are sealed, to a maximum of +3. When a card would be put into your discard pile, seal it instead."
+  :character/gauge-cost 5
+  :character/seasons {:season/name "Seventh Cross"}}
+
+ {:character/name "Geoffrey"
+  :character/description "\"Your evil ends here and now.\""
+  :character/innate-ability "Your attacks have \"If the opponent's attack has higher printed Speed than this attack, this attack has +1 Armor and +1 Guard.\""
+  :character/gauge-cost 5
+  :character/exceed-name "The Faceless Judge"
+  :character/exceed-description "\"I'll cleanse them all-every vile impurity, every unclean speck!\""
+  :character/exceed-ability "The first time each Strike you are hit, draw a card. Then, you may spend 1 Force. If you do, +2 Power."
+  :character/seasons {:season/name "Seventh Cross"}}
+
+ {:character/name "Minato"
+  :character/innate-ability "You may generate Force or Gauge by sealing the top card of your discard pile for 1 Force or the top 3 cards for 1 Gauge."
+  :character/description "\"Who'll be left standing once the world burns?\""
+  :character/gauge-cost 5
+  :character/exceed-name "The Oboroguruma"
+  :character/exceed-description "\"How about one final ride?\""
+  :character/exceed-ability "At the start of each of your turns, seal all cards in your discard pile. For each card sealed this way, your next attack has +1 Power."
+  :character/seasons {:season/name "Seventh Cross"}}
+
+ {:character/name "Syrus"
+  :character/description "\"Adventure, fame, and fortune await!\""
+  :character/innate-ability "After resolving an Instant Boost, put it into play as a face-down Continuous Boost that reads \"Hit: Add this card to your gauge.\""
+  :character/gauge-cost 6
+  :character/exceed-name "Lord of the Deep"
+  :character/exceed-description "\"All treasures return in time to the sea...\""
+  :character/exceed-ability "When you Exceed, add your Continuous Boosts to your gauge. After resolving an Instant Boost, put it into play as a face-down Continuous Boost that reads \"+1 Power. Now: Move up to 1.\""
+  :character/seasons {:season/name "Seventh Cross"}}
+
+ {:character/name "Seijun"
+  :character/description "\"The foundation of our world rests in my hands.\""
+  :character/innate-ability "Your maximum hand size is 9. Draw 2 additional cards in your starting hand. Your attacks have +1 Guard for every 2 cards in your hand."
+  :character/gauge-cost 5
+  :character/seasons {:season/name "Seventh Cross"}
+  :character/exceed-name "Kyubi No Kitsune"
+  :character/exceed-description "\"This world is mine, to reshape as I please.\""
+  :character/exceed-ability "When you Exceed, draw 3 cards. Your maximum hand size is unlimited. At the start of each of your turns, draw a card."}
+
+ {:character/name "Galdred"
+  :character/description "\"My plans are falling into place...\""
+  :character/innate-ability "Instead of drawing at the end of your turn (if you did not Strike), draw or discard cards until you have 3 in hand."
+  :character/gauge-cost 6
+  :character/exceed-name "The Beast Within"
+  :character/exceed-description "\"Incredible...this is indeed the power I've been seeking...\""
+  :character/exceed-ability "When you Exceed, Strike. When Striking, you may use the attack printed on this card.
+                             Range 1 ~ 2
+                             Power 6
+                             Speed 6
+                             -1 Power and -1 Speed for each card in your hand. Hit: Add the bottom card of your discard pile to your gauge."
+  :character/seasons {:season/name "Seventh Cross"}}
+
+ {:character/name "Luciya"
+  :character/description "\"Fear not citizens! The Lightning Bug is here!\""
+  :character/gauge-cost 5
+  :character/innate-ability "When you move past the opponent, do 1 non-lethal damage and you may add the top card of your discard pile to your gauge."
+  :character/exceed-name "The Thunderbird"
+  :character/exceed-description "\"Who dares to stand against the raging storm?\""
+  :character/exceed-ability "When you Exceed, add your hand to your gauge and draw 5 cards. When you spend a card from your gauge, put it into play as a face-down Continuous Boost that reads +1 Power."
+  :character/seasons {:season/name "Seventh Cross"}}
+
+ {:character/name "Zsolt"
+  :character/description "\"I can't rest...not until every last one is dead.\""
+  :character/innate-ability "Your Normal Attacks have \"Hit: Move up to 1.\""
+  :character/gauge-cost 5
+  :character/exceed-name "The Hunter of Men"
+  :character/exceed-description "\"They're all monsters, can't you see it?\""
+  :character/exceed-ability "Up to twice per turn, after executing an attack that hit the opponent, you may spend 1 Force to execute an additional attack from your hand. It can deal a maximum of 1 damage."
+  :character/seasons {:season/name "Seventh Cross"}}
+
+ {:character/name "Tournelouse"
+  :character/description "\"My power has neither match nor limit!\""
+  :character/innate-ability "Your Normal Attacks have a Transformation that reads \"Your Special and Ultra attacks have +1 Power.\""
+  :character/gauge-cost 0
+  :character/exceed-name "The Bargeist"
+  :character/exceed-description "\"The hour of your death is at hand!\""
+  :character/exceed-ability "Transformed Normal Attacks read \"Your Special and Ultra attacks have +1 Power.\" When you set your attack, you may seal one of your Transformations for +2 Power or +2 Armor."
+  :character/seasons {:season/name "Seventh Cross"}}
+
+ {:character/name "Taisei"
+  :character/description "\"Surrender your soul to me!\""
+  :character/innate-ability "Your life begins at half its maximum. When it would reach 0, you may Exceed instead (paying all costs as normal). When you set your attack, spend up to 2 life for +1 Power each."
+  :character/gauge-cost 5
+  :character/exceed-name "The Dullahan"
+  :character/exceed-description "\"Your life is forfeit!\""
+  :character/exceed-ability "When you Exceed, either gain 10 life or set your life to 10. You may generate Force of Gauge by spending 1 life for 1 Force or 2 life for 1 Gauge."
+  :character/seasons {:season/name "Seventh Cross"}}
+
+ {:character/name "Umina"
+  :character/description "\"When you stare into the deep darkness, what do you see?\""
+  :character/innate-ability "As an action, you may put a card from your hand into your Dreamlands."
+  :character/gauge-cost 4
+  :character/exceed-name "The Dreamer Awakened"
+  :character/exceed-description "\"I have awakened, and this dream shall soon end!\""
+  :character/exceed-ability "When you Exceed, flip your Dreamlands to its Exceed Side. At the start of each of your turns, look at the top card of your deck. Either put it into your Dreamlands or discard it."
+  :character/seasons {:season/name "Seventh Cross"}}
+
+ {:character/name "D'Janette"
+  :character/description "\"All this world is mine by birthright!\""
+  :character/innate-ability "As an action, place your Spell Circle on any space and a Special or Ultra Attack from your hand into it face-down, then draw a card. On your turn, if your Spell Circle is on a space, you must Strike."
+  :character/gauge-cost 5
+  :character/exceed-name "The Devil's Own"
+  :character/exceed-description "\"Let our pact be fulfilled, and drown this land in blood!\""
+  :character/exceed-ability "When you Exceed, flip your Spell Circle to Diabolic Aura and remove it from the board. As an action, you may put any card in your hand into your Diabolic Aura, then draw a card."
+  :character/seasons {:season/name "Seventh Cross"}}
+
+ ;; Cards
+
+ {:card/name "Called Shot"
+  :card/id :s2-called-shot
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 8
+  :card/power 0
+  :card/speed 3
+  :card/armor 0
+  :card/guard 0
+  :card/boost-name "Tactical Training"
+  :card/boost-cost 0
+  :card/boost-type :continuous
+  :card/abilities [{:ability/description "Hit: Name a card. The opponent must discard a copy of that card, or reveal a hand without any. If they discarded a copy, +6 Power."
+                    :ability/location :attack
+                    :ability/trigger :hit
+                    :ability/keywords "discard"}
+                   {:ability/description "+1 Power and +1 Speed"
+                    :ability/location :boost
+                    :ability/trigger :passive}]}
+
+ {:card/name "Neutralizer"
+  :card/id :s2-neutralizer
+  :card/type :ultra
+  :card/cost 2
+  :card/min-range 1
+  :card/max-range 2
+  :card/power 4
+  :card/speed 6
+  :card/description "\"Let's forget this ever happened...\""
+  :card/armor 0
+  :card/guard 0
+  :card/boost-name "Conspiracy Unearthed"
+  :card/boost-cost 0
+  :card/boost-type :continuous
+  :card/abilities [{:ability/description "Ignore Guard"
+                    :ability/location :attack
+                    :ability/trigger :passive
+                    :ability/keywords "Ignore Guard"}
+                   {:ability/description "Hit: If the opponent is in Exceed Mode, they must discard 2 cards from their gauge."
+                    :ability/location :attack
+                    :ability/trigger :hit
+                    :ability/keywords "discard"}
+                   {:ability/description "Now: The opponent reveals their hand, then adds a card of your choice from their hand to their Gauge."
+                    :ability/location :boost
+                    :ability/trigger :now}]}
+
+
+ {:card/name "Anticipation"
+  :card/id :s2-anticipation
+  :card/type :ultra
+  :card/cost 2
+  :card/min-range 1
+  :card/max-range 3
+  :card/power 3
+  :card/speed 3
+  :card/armor 0
+  :card/guard 0
+  :card/description "\"How predictable.\""
+  :card/boost-name "Jiujitsu"
+  :card/boost-cost 0
+  :card/boost-type :continuous
+  :card/abilities [{:ability/description "Attacks at range 1 do not hit you."
+                    :ability/trigger :passive
+                    :ability/keywords "attacks do not hit"
+                    :ability/location :attack}
+                   {:ability/description "Before: Advance 1."
+                    :ability/trigger :before
+                    :ability/location :attack}
+                   {:ability/description "+1 Power"
+                    :ability/location :boost
+                    :ability/trigger :passive}
+                   {:ability/description "Now: Move 1."
+                    :ability/location :boost
+                    :ability/trigger :now}]}
+
+ {:card/name "Strafe Fire"
+  :card/id :s2-strafe-fire
+  :card/type :special
+  :card/cost 0
+  :card/min-range 2
+  :card/max-range 4
+  :card/power 2
+  :card/speed 6
+  :card/guard 0
+  :card/armor 0
+  :card/boost-name "Double Down"
+  :card/boost-type :transform
+  :card/abilities [{:ability/description "After: Retreat 1"
+                    :ability/trigger :after
+                    :ability/location :attack}
+                   {:ability/description "Your attacks gain \"Hit: If you have 2 or more Continuous Boosts in play, +2 Power.\""
+                    :ability/trigger :passive
+                    :ability/location :boost}]}
+
+ {:card/name "Lethal Force"
+  :card/id :s2-lethal-force
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 2
+  :card/power 5
+  :card/speed 4
+  :card/guard 0
+  :card/armor 0
+  :card/boost-name "Following Leads"
+  :card/boost-type :transform
+  :card/abilities [{:ability/description "Ignore Armor"
+                    :ability/trigger :passive
+                    :ability/location :attack
+                    :ability/keywords "Ignore Armor"}
+                   {:ability/description "Hit: Push 2. If you have a Continuous Boost in play, Retreat 1."
+                    :ability/trigger :hit
+                    :ability/location :attack}
+                   {:ability/description "After resolving a Boost, you may spend 1 Force. If you do, Move 1. Ignore this when turning a Boost face-up."
+                    :ability/trigger :passive
+                    :ability/location :boost}]}
+
+ {:card/name "Flare"
+  :card/id :s2-flare
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 4
+  :card/power 3
+  :card/speed 5
+  :card/armor 0
+  :card/guard 0
+  :card/boost-name "Fakeout"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Hit: For the rest of the Strike, attacks at Range 1 do not hit you."
+                    :ability/trigger :hit
+                    :ability/location :attack
+                    :ability/keywords "attacks do not hit"}
+                   {:ability/description "After: Close 2."
+                    :ability/trigger :after
+                    :ability/location :attack}
+                   {:ability/description "Now: Return this card to your hand, then draw a card."
+                    :ability/location :boost
+                    :ability/trigger :now}]}
+
+ {:card/name "Paranormal Investigation"
+  :card/id :s2-paranormal-investigation
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 1
+  :card/power 2
+  :card/speed 7
+  :card/armor 0
+  :card/guard 0
+  :card/boost-name "Mimetism"
+  :card/boost-type :transform
+  :card/abilities [{:ability/description "Your attacks have \"After: You may spend 2 Force. If you do, choose one of your Continuous Boosts. Do not discard it from play after this Strike.\""
+                    :ability/trigger :passive
+                    :ability/location :boost}]}
+
+ {:card/name "Briefcase"
+  :card/id :s2-briefcase
+  :card/type :character
+  :card/description "Flip this when Renea activates Exceed mode. You may boost with a card in this area once per turn. If that Boost did not cause a Strike, take another action."}
+
+ {:card/name "Caustic Vent"
+  :card/id :s2-caustic-vent
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 1
+  :card/power 3
+  :card/speed 5
+  :card/armor 0
+  :card/guard 0
+  :card/boost-name "Reclamation"
+  :card/boost-type :instant
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Before: Close 2."
+                    :ability/trigger :before
+                    :ability/location :attack}
+                   {:ability/description "Hit: Draw 2 cards, then discard a card."
+                    :ability/location :attack
+                    :ability/trigger :hit}
+                   {:ability/description "Return a card from your discard pile to your hand."
+                    :ability/trigger :now}]}
+
+ {:card/name "Ground Zero"
+  :card/id :s2-ground-zero
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 3
+  :card/power 4
+  :card/speed 3
+  :card/armor 0
+  :card/guard 5
+  :card/boost-name "Power Cycle"
+  :card/boost-type :transform
+  :card/abilities [{:ability/description "Hit: If the opponent is at range 1, +3 Power. Otherwise, Pull 1."
+                    :ability/trigger :hit
+                    :ability/location :attack}
+                   {:ability/description "When using the \"Change Cards\" action, you may draw 1 additional card."
+                    :ability/trigger :passive
+                    :ability/location :boost}]}
+
+ {:card/name "Irradiate"
+  :card/id :s2-irradiate
+  :card/type :special
+  :card/cost 0
+  :card/min-range 2
+  :card/max-range 5
+  :card/power 3
+  :card/speed 3
+  :card/armor 0
+  :card/guard 3
+  :card/boost-name "Power Cycle"
+  :card/boost-type :transform
+  :card/abilities [{:ability/description "Before: If the opponent is at range 4 or greater, +2 Power"
+                    :ability/trigger :before
+                    :ability/location :attack}
+                   {:ability/description "When you reveal your attack, if a copy of your attack is in your gauge or transformation area, it is considered an EX attack."
+                    :ability/trigger :passive
+                    :ability/location :boost}]}
+
+ {:card/name "Napalm Stream"
+  :card/id :s2-napalm-stream
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 2
+  :card/power 3
+  :card/speed 1
+  :card/armor 0
+  :card/guard 4
+  :card/boost-name "Engineered Destruction"
+  :card/boost-type :instant
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "You cannot take more than 5 damage from the opponent's attack."
+                    :ability/location :attack
+                    :ability/trigger :passive}
+                   {:ability/description "Hit: Look at the top card of your deck, then you may draw it. If you do not, +2 Power and discard it."
+                    :ability/location :attack
+                    :ability/trigger :hit}
+                   {:ability/description "Reveal the top 4 cards of your deck. Discard any number of them, then put the rest in your hand."
+                    :ability/location :boost
+                    :ability/trigger :now}]}
+
+ {:card/name "Toxic Tendrils"
+  :card/id :s2-toxic-tendrils
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 2
+  :card/power 4
+  :card/speed 4
+  :card/armor 0
+  :card/guard 0
+  :card/boost-name "Radiation"
+  :card/boost-type :transform
+  :card/abilities [{:ability/description "Before: Advance 2. If you moved past the opponent, their attacks do not hit you."
+                    :ability/location :attack
+                    :ability/trigger :before}
+                   {:ability/description "Your EX attacks have +0~1 Range"
+                    :ability/location :boost
+                    :ability/trigger :passive}]}
+
+ {:card/name "Consumption"
+  :card/id :s2-consumption
+  :card/description "\"FREEDOM!\""
+  :card/type :ultra
+  :card/cost 4
+  :card/min-range 1
+  :card/max-range 2
+  :card/power 4
+  :card/speed 6
+  :card/armor 0
+  :card/guard 0
+  :card/boost-name "Aftershock"
+  :card/boost-type :instant
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Hit: Search your deck for up to 3 cards and add them to your hand."
+                    :ability/trigger :hit
+                    :ability/location :attack}
+                   {:ability/description "Return a card from your gauge to your hand. If you did, retrun all copies of that card from your discard pile to your hand."
+                    :ability/location :boost
+                    :ability/trigger :now}]}
+
+ {:card/name "Nuclear Option"
+  :card/id :s2-nuclear-option
+  :card/description "\"Limit bypass authorized. Systems clear!\""
+  :card/type :ultra
+  :card/cost 1
+  :card/min-range 1
+  :card/max-range 4
+  :card/power 4
+  :card/speed 2
+  :card/armor 0
+  :card/guard 4
+  :card/boost-name "Initiate Launch"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "If this is an EX attack, this card's gauge cost is reduced to 0."
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "Hit: Add the top 2 cards of your discard pile to your gauge."
+                    :ability/trigger :hit
+                    :ability/location :attack}
+                   {:ability/description "Your next attack is considered an EX attack."
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "After: You may spend 1 Gauge. If you do, return this card to your hand."
+                    :ability/location :boost
+                    :ability/trigger :after}]}
+
+ {:card/name "Dragon's Fire"
+  :card/id :s2-dragons-fire
+  :card/type :special
+  :card/cost 0
+  :card/min-range 2
+  :card/max-range 5
+  :card/power 3
+  :card/speed 4
+  :card/armor 0
+  :card/guard 0
+  :card/boost-name "Martial Challenge"
+  :card/boost-type :instant
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Hit: You may dd a random card from your hand to your gauge. If you do, return this card to your hand."
+                    :ability/location :attack
+                    :ability/trigger :hit}
+                   {:ability/description "Add a card from your hand to your gauge. The opponent may copy this effect (this continues until either player declines to do so)."
+                    :ability/trigger :now
+                    :ability/location :boost}]}
+
+{:card/name "Dragon's Flight"
+ :card/id :s2-dragons-flight
+ :card/type :special
+ :card/cost 0
+ :card/min-range 1
+ :card/max-range 2
+ :card/power 3
+ :card/speed 4
+ :card/armor 0
+ :card/guard 5
+ :card/boost-name "Dragon Force"
+ :card/boost-type :transform
+ :card/abilities [{:ability/description "Before: Advance 3. If you did not move past the opponent, +2 Power."
+                   :ability/trigger :before
+                   :ability/location :attack}
+                  {:ability/description "Your attacks have \"After: You may add this card to your gauge at the end of the Strike."
+                   :ability/trigger :passive
+                   :ability/location :boost}]}
+
+{:card/name "Dragon's Spine"
+ :card/id :s2-dragons-spine
+ :card/type :special
+ :card/cost 0
+ :card/min-range 2
+ :card/max-range 6
+ :card/power 5
+ :card/speed 2
+ :card/armor 0
+ :card/guard 6
+ :card/boost-name "Growing Hatred"
+ :card/boost-type :transform
+ :card/abilities [{:ability/description "After: Gain an Advantage (you take the next turn, regardless of who initiated the Strike)."
+                   :ability/location :attack
+                   :ability/trigger :after}
+                  {:ability/description "At the end of each Strike, if your attack did not hit the opponent, you may draw a card."
+                   :ability/trigger :passive
+                   :ability/location :boost}]}
+
+
+
+
+ {:card/name "Dragon's Heart"
+  :card/description "\"Vengeance will be mine!\""}
+
+ {:card/name "Dragon's Design"
+  :card/description "\"I'll slay every last one!\""}
+
+ {:card/name "Wonderland"
+  :card/description "Flip to this when Eugenia activates Exceed Mode. Discard any cards here before adding a new card. You may strike with the card here. When you do, you have +1 Power and +1 Speed."
+  :card/type :character}
+
+ {:card/name "Cat's Cradle"
+  :card/description "\"It's all in your head, I'm sure.\""}
+
+ {:card/name "Queen of Hearts"
+  :card/description "\"For me? You shouldn't have...\""}
+
+ {:card/name "Purifying Roar"
+  :card/description "\"Arooooooooo!!!\""}
+
+ {:card/name "Moon Ritual Dance"
+  :card/description "\"I remember something...from long ago...\""}
+
+ {:card/name "Crusader's Oath"
+  :card/description "\"Your evil will be rooted out!\""}
+
+ {:card/name "Inviolable Judgement"
+  :card/description "\"I will cleanse this world of all your kind!\""}
+
+ {:card/name "A Streetcar Named Disaster"
+  :card/description "\"Now what could possibly go wrong?\""}
+
+ {:card/name "Hellward Bound"
+  :card/description "\"You've got a train to catch, my friend!\""}
+
+ {:card/name "Symphony of the Deep"
+  :card/description "\"What secrets lie buried in these depths...?\""}
+
+ {:card/name "Dredge Fury"
+  :card/description "\"You will disappear beneath the tide!\""}
+
+ {:card/name "Tale of Seven Trials"
+  :card/description "\"You cannot escape the trials ahead.\""}
+
+ {:card/name "Tale of Nine Sorrows"
+  :card/description "\"All things are a part of the great cycle-a story eternally retold.\""}
+
+ {:card/name "Hydra Helix"
+  :card/description "\"I'll tear you apart with my bare hands!\""}
+
+ {:card/name "Metamorphosis"
+  :card/description "\"Embrace your true nature!\""}
+
+ {:card/name "Skies Aflame"
+  :card/description "\"Looks like a lightning rod to me!\""}
+
+ {:card/name "Ride The Lightning"
+  :card/description "\"In a flash, I appear to defend the innocent!\""}
+
+ {:card/name "Fanatical Purification"
+  :card/description "\"Dead so soon? I expected a challenge...\""}
+
+ {:card/name "Wild Hunt"
+  :card/description "\"HAHAHAHAHAHA!!!!!"}
+
+ {:card/name "Netherstorm"
+  :card/description "\"I'll show you what true power looks like!\""}
+
+ {:card/name "Bargeist Fang"
+  :card/description "\"Another soul for my collection!\""}
+
+ {:card/name "Nightmare Tares"
+  :card/description "\"No mercy, and no escape...\""}
+
+ {:card/name "Chaos Scissors"
+  :card/description "\"I'll destroy you...at any cost!\""}
+
+ {:card/name "Call of the Dreamlands"
+  :card/description "\"We're the same, you and I, wandering forever through this timeless dream.\""}
+
+ {:card/name "Unknown Khadath"
+  :card/description "\"Let's open the way to a place beyond...\""}
+
+ {:card/name "Carmine Offering"
+  :card/description "\"I offer this sacrifice in your name...\""}
+
+ {:card/name "Death Knell"
+  :card/description "\"This bell tolls for you!\""}]
