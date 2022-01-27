@@ -106,7 +106,7 @@
            (str (:card/cost card) " Gauge.\n")
            (when (> (:card/cost card) 0)
              (str (:card/cost card) " Force.\n")))
-         "Power: " (:card/power card) " | Speed: " (:card/speed card) " | Range: " range
+         "Speed: " (:card/speed card) " | Range: " range " | Power: " (:card/power card)
          (when (> (:card/armor card) 0) (str " | Armor: " (:card/armor card)))
          (when (> (:card/guard card) 0) (str " | Guard: " (:card/guard card))) "\n"
          (reduce #(str %1 (:ability/description %2) "\n") "" attacks)
