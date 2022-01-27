@@ -77,12 +77,6 @@
     {:id :ability/notes :type :s :doc "For rules information and notes."}
     {:id :ability/location :type :k :doc ":attack :boost"}]))
 
-(def cfg {:store {:backend :file :path "db"}})
-
-(d/create-database cfg)
-(def conn (d/connect cfg))
-(d/transact conn schema)
-
 (def entries [{:season/number 1, :season/name "Red Horizon" :season/creator "Level99"}
               {:season/number 2, :season/name "Seventh Cross" :season/creator "Level99" :season/mechanics "In this season you have transforms. For every transform in your transformation area, your exceed cost is reduced by 2. During a Strike, if you hit, you may move your attack to your transformation area during cleanup. You may also discard one card to transform the same of the other card if both are in your hand."}
               {:season/number 3, :season/name "Street Fighter" :season/creator "Level99" :season/mechanics "You have the ability to use Criticals. When setting your attack, you may discard 1 Gauge. If you do, your attack is Critical."}
@@ -91,14 +85,9 @@
 
 (def seventh-cross (edn/read-string (slurp "resources/seventh_cross.edn")))
 
-(defn display-card
-  "Returns a string in a clean format showing the important information of an Exceed attack card. 
-   Expects an id for the card."
-  [card-id]
-  (let [card (d/pull @conn '["*"] [:card/id card-id])
-        abilities (:card/abilities (d/pull @conn '[:ability/description :ability/location :ability/trigger :ability/notes {:card/abilities ...}]
-                                           [:card/id card-id]))
-        sorted-abilities (sort-by #(case (:ability/trigger %)
+(defn describe-attack-card
+  [card abilities]
+  (let [sorted-abilities (sort-by #(case (:ability/trigger %)
                                      :passive 1
                                      :now 2
                                      :before 3
@@ -130,39 +119,61 @@
          "\n"
          (reduce #(str %1 (:ability/description %2) "\n") "" boosts))))
 
+(defn describe-character-card
+ [card]
+ (str (:card/name card) "\n"
+      (:card/description card)))
+
+(defn display-card
+  "Returns a string in a clean format showing the information of an Exceed card.
+   Expects an id for the card."
+  [card-id]
+  (let [card (d/pull @conn '["*"] [:card/id card-id])]
+    (if (= :character (:card/type card))
+      (describe-character-card card)
+      (describe-attack-card card (:card/abilities (d/pull @conn '[:ability/description :ability/location :ability/trigger :ability/notes {:card/abilities ...}]
+                                                          [:card/id card-id]))))))
+
+(defn remove-unsupported-characters
+  [string]
+  (apply str (remove #(#{\. \' \:} %) string)))
+
+(defn lookup-card
+  [card-name conn]
+  (let [c (clojure.string/split card-name #" ")
+        card-keyword (-> (clojure.string/join "-" c)
+                         (clojure.string/lower-case)
+                         (remove-unsupported-characters)
+                         (keyword))
+        card (d/q `[:find ?id
+                    :where [?id :card/id ~card-keyword]]
+                  @conn)]
+    (if (empty? card)
+      (let [names (d/q `[:find ?card-id :where [?id :card/id ?card-id]
+                         [?id :card/name ~card-name]]
+                       @conn)]
+        (cond (empty? names) "No cards could be found with that name."
+              (= (count names) 1) (display-card (first (first names)))
+              :else (str "Multiple potential cards. Is it possible it's one of the following?\n"
+                         (reduce #(str %1 (let [s (clojure.string/split (name (first %2)) #"-")]
+                                            (-> (clojure.string/join " " s)
+                                                (remove-unsupported-characters))) "\n")
+                                 "" names))))
+      (display-card card-keyword))))
+
+(def cfg {:store {:backend :file :path "db"}})
+
+(d/create-database cfg)
+(def conn (d/connect cfg))
+(d/transact conn schema)
 (d/transact conn entries)
 (d/transact conn seventh-cross)
 
-(d/q '[:find ?name
-       :where
-       [?card :card/name ?name]
-       [?card :card/speed ?speed]
-       [(> ?speed 4)]]
-     @conn)
-
-(d/q '[:find ?name ?desc
-       :where
-       [?card :card/name ?name]
-       [?card :card/abilities ?ability]
-       [?ability :ability/trigger :passive]
-       [?ability :ability/description ?desc]]
-     @conn)
-
-(d/q '[:find ?name ?season
-       :where
-       [?character :character/name ?name]
-       [?character :character/seasons ?sid]
-       [?sid :season/name ?season]]
-     @conn)
 
 (def state (atom nil))
 (def bot-id (atom nil))
 
 (def config (edn/read-string (slurp "config.edn")))
-
-
-#_(def dictionary {:cards (edn/read-string (slurp "cards.edn"))
-                   :characters (edn/read-string (slurp "characters.edn"))})
 
 (defmulti handle-event (fn [type _data] type))
 
@@ -199,21 +210,12 @@
   (when (some #{@bot-id} (map :id mentions))
     (discord-rest/create-message! (:rest @state) channel-id :content "x")))
 
-(defn remove-period
-  [string]
-  (apply str (remove #(#{\. \' \:} %) string)))
-
-(defn exceed-lookup
-  [cardname item]
-  (let [card-keyword (-> (clojure.string/join "-" cardname)
-                         (clojure.string/lower-case)
-                         (remove-period)
-                         (keyword))]
-    (get-in dictionary [item card-keyword])))
-
 (defn update-lfg-queue []
   (swap! state update :lfg-queue (fn [time] (filter #(not= 1 (.compareTo (java.time.LocalDateTime/now)
                                                                          (second %))) time))))
+(defn exceed-lookup
+  [_ _]
+  "")
 
 (defmethod handle-event :message-create
   [_ {:keys [channel-id content mentions author] :as _data}]
@@ -224,7 +226,7 @@
       (= "!help" first-word) (discord-rest/create-message! (:rest @state) channel-id :content (:help config))
       (= "!character" first-word) (let [description (exceed-lookup args :characters)]
                                     (when description (discord-rest/create-message! (:rest @state) channel-id :content (str "```" description "```"))))
-      (= "!card" first-word) (let [description (exceed-lookup args :cards)]
+      (= "!card" first-word) (let [description (lookup-card (clojure.string/join " " args) conn)]
                                (when description (discord-rest/create-message! (:rest @state) channel-id :content (str "```" description "```"))))
       (= "!lfg" first-word) (do (update-lfg-queue)
                                 (cond (empty? (:lfg-queue @state)) (let [time (if (empty? args)
