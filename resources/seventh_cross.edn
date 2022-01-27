@@ -481,51 +481,106 @@
                     :ability/trigger :now
                     :ability/location :boost}]}
 
-{:card/name "Dragon's Flight"
- :card/id :s2-dragons-flight
- :card/type :special
+ {:card/name "Dragon's Flight"
+  :card/id :s2-dragons-flight
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 2
+  :card/power 3
+  :card/speed 4
+  :card/armor 0
+  :card/guard 5
+  :card/boost-name "Dragon Force"
+  :card/boost-type :transform
+  :card/abilities [{:ability/description "Before: Advance 3. If you did not move past the opponent, +2 Power."
+                    :ability/trigger :before
+                    :ability/location :attack}
+                   {:ability/description "Your attacks have \"After: You may add this card to your gauge at the end of the Strike."
+                    :ability/trigger :passive
+                    :ability/location :boost}]}
+
+ {:card/name "Dragon's Spine"
+  :card/id :s2-dragons-spine
+  :card/type :special
+  :card/cost 0
+  :card/min-range 2
+  :card/max-range 6
+  :card/power 5
+  :card/speed 2
+  :card/armor 0
+  :card/guard 6
+  :card/boost-name "Growing Hatred"
+  :card/boost-type :transform
+  :card/abilities [{:ability/description "After: Gain an Advantage (you take the next turn, regardless of who initiated the Strike)."
+                    :ability/location :attack
+                    :ability/trigger :after}
+                   {:ability/description "At the end of each Strike, if your attack did not hit the opponent, you may draw a card."
+                    :ability/trigger :passive
+                    :ability/location :boost}]}
+
+ {:card/name "Dragon's Tail"
+  :card/id :s2-dragons-tail
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 2
+  :card/power 4
+  :card/speed 3
+  :card/armor 0
+  :card/guard 5
+  :card/boost-name "Single-Minded"
+  :card/boost-type :transform
+  :card/abilities [{:ability/description "Before: +2 Power"
+                    :ability/location :attack
+                    :ability/trigger :before}
+                   {:ability/description "After: Retreat 1"
+                    :ability/trigger :after
+                    :ability/location :attack}
+                   {:ability/description "Your attacks have \"If this attack has the same printed Speed as the opponent's attack, it has Stun Immunity and +2 Power.\""
+                    :ability/trigger :passive
+                    :ability/location :boost}]}
+
+{:card/name "Dragon's Tongue"
+ :card/id :s2-dragons-tongue
  :card/cost 0
  :card/min-range 1
- :card/max-range 2
+ :card/max-range 3
  :card/power 3
- :card/speed 4
+ :card/speed 5
  :card/armor 0
- :card/guard 5
- :card/boost-name "Dragon Force"
- :card/boost-type :transform
- :card/abilities [{:ability/description "Before: Advance 3. If you did not move past the opponent, +2 Power."
-                   :ability/trigger :before
+ :card/guard 0
+ :card/boost-name "Dragon's Scorn"
+ :card/boost-type :instant
+ :card/boost-cost 0
+ :card/abilities [{:ability/description "Hit: +1 Power and draw a card."
+                   :ability/trigger :hit
                    :ability/location :attack}
-                  {:ability/description "Your attacks have \"After: You may add this card to your gauge at the end of the Strike."
-                   :ability/trigger :passive
+                  {:ability/description "If the opponent is at range 1, Push 2. You may spend 1 Force. If you do, take another action."
+                   :ability/trigger :now
                    :ability/location :boost}]}
-
-{:card/name "Dragon's Spine"
- :card/id :s2-dragons-spine
- :card/type :special
- :card/cost 0
- :card/min-range 2
- :card/max-range 6
- :card/power 5
- :card/speed 2
- :card/armor 0
- :card/guard 6
- :card/boost-name "Growing Hatred"
- :card/boost-type :transform
- :card/abilities [{:ability/description "After: Gain an Advantage (you take the next turn, regardless of who initiated the Strike)."
-                   :ability/location :attack
-                   :ability/trigger :after}
-                  {:ability/description "At the end of each Strike, if your attack did not hit the opponent, you may draw a card."
-                   :ability/trigger :passive
-                   :ability/location :boost}]}
-
-
-
 
  {:card/name "Dragon's Heart"
-  :card/description "\"Vengeance will be mine!\""}
+  :card/description "\"Vengeance will be mine!\""
+  :card/id :s2-dragons-heart
+  :card/min-range 1
+  :card/max-range 1
+  :card/cost 2
+  :card/type :ultra
+  :card/power 7
+  :card/speed 6
+  :card/armor 0
+  :card/guard 0
+  :card/boost-name "Swift Destruction"
+  :card/boost-type :continuous
+  :card/boost-cost 1
+  :card/abilities [{:ability/description "Hit: Push 3."
+                    :ability/trigger :hit
+                    :ability/location :attack}
+                   {:ability/description "+4 Speed"
+                    :ability/trigger :passive
+                    :ability/location :boost}]}
 
- {:card/name "Dragon's Design"
+ {:card/name "Dragon's Descent"
   :card/description "\"I'll slay every last one!\""}
 
  {:card/name "Wonderland"
