@@ -1,6 +1,12 @@
-(ns exceed-db.core
+(ns ballot.core
+  (:gen-class)
   (:require [datahike.api :as d]
-            [clojure.edn :as edn]))
+            [clojure.edn :as edn]
+            [clojure.core.async :refer [chan close!]]
+            [discljord.messaging :as discord-rest]
+            [discljord.formatting :refer [mention-user]]
+            [discljord.events :refer [message-pump!]]))
+
 
 (defn create-idents
   "Returns a vector of hashmaps each containing a schema entity.
@@ -148,3 +154,115 @@
        [?character :character/seasons ?sid]
        [?sid :season/name ?season]]
      @conn)
+
+(def state (atom nil))
+(def bot-id (atom nil))
+
+(def config (edn/read-string (slurp "config.edn")))
+
+
+#_(def dictionary {:cards (edn/read-string (slurp "cards.edn"))
+                   :characters (edn/read-string (slurp "characters.edn"))})
+
+(defmulti handle-event (fn [type _data] type))
+
+(defn toggle-role!
+  [user-id new-role]
+  (let [role-id (get-in config [:roles new-role])
+        user-roles (:roles @(discord-rest/get-guild-member! (:rest @state) (:server-id config) user-id))]
+    (if (some #(= role-id %) user-roles)
+      (discord-rest/remove-guild-member-role! (:rest @state) (:server-id config) user-id role-id)
+      (discord-rest/add-guild-member-role! (:rest @state) (:server-id config) user-id role-id))))
+
+(defn update-role!
+  "Sets a user to a role based on the emoji they react with"
+  [user-id emoji]
+  (let [e (:emoji config)]
+    (condp = emoji
+      (:heart e)        (toggle-role! user-id :tester)
+      (:black-heart e)  (toggle-role! user-id :designer)
+      (:yellow-heart e) (toggle-role! user-id :east-coast)
+      (:purple-heart e) (toggle-role! user-id :west-coast)
+      (:blue-heart e)   (toggle-role! user-id :oceania)
+      (:europe e)       (toggle-role! user-id :europe)
+      nil)))
+
+(defmethod handle-event :message-reaction-add
+  [_ {:keys [message-id channel-id user-id emoji] :as _data}]
+  (when (and (= channel-id (:role-channel config))
+             (= message-id (:role-message config)))
+    (update-role! user-id (:name emoji))
+    (discord-rest/delete-user-reaction! (:rest @state) channel-id message-id (:name emoji) user-id)))
+
+(defmethod handle-event :message-create
+  [_ {:keys [channel-id author mentions] :as _data}]
+  (when (some #{@bot-id} (map :id mentions))
+    (discord-rest/create-message! (:rest @state) channel-id :content "x")))
+
+(defn remove-period
+  [string]
+  (apply str (remove #(#{\. \' \:} %) string)))
+
+(defn exceed-lookup
+  [cardname item]
+  (let [card-keyword (-> (clojure.string/join "-" cardname)
+                         (clojure.string/lower-case)
+                         (remove-period)
+                         (keyword))]
+    (get-in dictionary [item card-keyword])))
+
+(defn update-lfg-queue []
+  (swap! state update :lfg-queue (fn [time] (filter #(not= 1 (.compareTo (java.time.LocalDateTime/now)
+                                                                         (second %))) time))))
+
+(defmethod handle-event :message-create
+  [_ {:keys [channel-id content mentions author] :as _data}]
+  (let [first-word (first (clojure.string/split content #" "))
+        args (rest (clojure.string/split content #" "))]
+    (cond
+      (some #{@bot-id} (map :id mentions)) (discord-rest/create-message! (:rest @state) channel-id :content (:help config))
+      (= "!help" first-word) (discord-rest/create-message! (:rest @state) channel-id :content (:help config))
+      (= "!character" first-word) (let [description (exceed-lookup args :characters)]
+                                    (when description (discord-rest/create-message! (:rest @state) channel-id :content (str "```" description "```"))))
+      (= "!card" first-word) (let [description (exceed-lookup args :cards)]
+                               (when description (discord-rest/create-message! (:rest @state) channel-id :content (str "```" description "```"))))
+      (= "!lfg" first-word) (do (update-lfg-queue)
+                                (cond (empty? (:lfg-queue @state)) (let [time (if (empty? args)
+                                                                                60
+                                                                                (Integer/parseInt (first args)))]
+                                                                     (discord-rest/create-message! (:rest @state) channel-id :content (str "You have been added to the queue for " time " minutes."))
+                                                                     (swap! state assoc :lfg-queue [[author (.plusMinutes (java.time.LocalDateTime/now) time)]]))
+                                      (some #(= (:id author) %) (mapv #(:id (first %)) (:lfg-queue @state))) (do (swap! state update :lfg-queue
+                                                                                                                        (fn [queue] (filter #(not= (:id author) (:id (first %))) queue)))
+                                                                                                                 (discord-rest/create-message! (:rest @state) channel-id :content "You have been removed from the queue."))
+                                      :else (do (discord-rest/create-message! (:rest @state) channel-id :content (str "Someone is available for a match! Please reach out to "
+                                                                                                                      (:username (first (first (:lfg-queue @state))))
+                                                                                                                      "."))
+                                                (swap! state update :lfg-queue #(drop 1 %)))))
+      :else nil)))
+
+(defmethod handle-event :ready
+  [_ _]
+  (discord-ws/status-update! (:gateway @state) :activity (discord-ws/create-activity :name (:playing config))))
+
+(defmethod handle-event :default [_ _])
+
+(defn start-bot! [token & intents]
+  (let [event-channel (chan 100)
+        gateway-connection (discord-ws/connect-bot! token event-channel :intents (set intents))
+        rest-connection (discord-rest/start-connection! token)]
+    {:events  event-channel
+     :gateway gateway-connection
+     :rest    rest-connection}))
+
+(defn stop-bot! [{:keys [rest gateway events] :as _state}]
+  (discord-rest/stop-connection! rest)
+  (discord-ws/disconnect-bot! gateway)
+  (close! events))
+
+(defn -main [& args]
+  (reset! state (start-bot! (:token config) :guilds :guild-messages :guild-message-reactions))
+  (reset! bot-id (:id @(discord-rest/get-current-user! (:rest @state))))
+  (try
+    (message-pump! (:events @state) handle-event)
+    (finally (stop-bot! @state))))
