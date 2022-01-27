@@ -127,7 +127,7 @@
 (defn display-card
   "Returns a string in a clean format showing the information of an Exceed card.
    Expects an id for the card."
-  [card-id]
+  [card-id conn]
   (let [card (d/pull @conn '["*"] [:card/id card-id])]
     (if (= :character (:card/type card))
       (describe-character-card card)
@@ -140,8 +140,7 @@
 
 (defn lookup-card
   [card-name conn]
-  (let [c (clojure.string/split card-name #" ")
-        card-keyword (-> (clojure.string/join "-" c)
+  (let [card-keyword (-> (clojure.string/join "-" card-name)
                          (clojure.string/lower-case)
                          (remove-unsupported-characters)
                          (keyword))
@@ -150,16 +149,16 @@
                   @conn)]
     (if (empty? card)
       (let [names (d/q `[:find ?card-id :where [?id :card/id ?card-id]
-                         [?id :card/name ~card-name]]
+                         [?id :card/name ~(clojure.string/join " " card-name)]]
                        @conn)]
         (cond (empty? names) "No cards could be found with that name."
-              (= (count names) 1) (display-card (first (first names)))
-              :else (str "Multiple potential cards. Is it possible it's one of the following?\n"
-                         (reduce #(str %1 (let [s (clojure.string/split (name (first %2)) #"-")]
+              (= (count names) 1) (display-card (first (first names)) conn)
+              :else (str "Multiple potential cards. Try one of the following:\n"
+                         (reduce #(str %1 "!card " (let [s (clojure.string/split (name (first %2)) #"-")]
                                             (-> (clojure.string/join " " s)
                                                 (remove-unsupported-characters))) "\n")
                                  "" names))))
-      (display-card card-keyword))))
+      (display-card card-keyword conn))))
 
 (def cfg {:store {:backend :file :path "db"}})
 
