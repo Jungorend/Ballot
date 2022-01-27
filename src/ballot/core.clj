@@ -4,6 +4,7 @@
             [clojure.edn :as edn]
             [clojure.core.async :refer [chan close!]]
             [discljord.messaging :as discord-rest]
+            [discljord.connections :as discord-ws]
             [discljord.formatting :refer [mention-user]]
             [discljord.events :refer [message-pump!]]))
 
@@ -162,12 +163,12 @@
 
 (def cfg {:store {:backend :file :path "db"}})
 
+(d/delete-database cfg)
 (d/create-database cfg)
 (def conn (d/connect cfg))
 (d/transact conn schema)
 (d/transact conn entries)
 (d/transact conn seventh-cross)
-
 
 (def state (atom nil))
 (def bot-id (atom nil))
@@ -216,6 +217,7 @@
   [_ _]
   "")
 
+
 (defmethod handle-event :message-create
   [_ {:keys [channel-id content mentions author] :as _data}]
   (let [first-word (first (clojure.string/split content #" "))
@@ -224,9 +226,9 @@
       (some #{@bot-id} (map :id mentions)) (discord-rest/create-message! (:rest @state) channel-id :content (:help config))
       (= "!help" first-word) (discord-rest/create-message! (:rest @state) channel-id :content (:help config))
       (= "!character" first-word) (let [description (exceed-lookup args :characters)]
-                                    (when description (discord-rest/create-message! (:rest @state) channel-id :content (str "```" description "```"))))
-      (= "!card" first-word) (let [description (lookup-card (clojure.string/join " " args) conn)]
-                               (when description (discord-rest/create-message! (:rest @state) channel-id :content (str "```" description "```"))))
+                                    (when description (discord-rest/create-message! (:rest @state) channel-id :content (str "```\n" description "```"))))
+      (= "!card" first-word) (let [description (lookup-card args conn)]
+                               (when description (discord-rest/create-message! (:rest @state) channel-id :content (str "```\n" description "```"))))
       (= "!lfg" first-word) (do (update-lfg-queue)
                                 (cond (empty? (:lfg-queue @state)) (let [time (if (empty? args)
                                                                                 60
