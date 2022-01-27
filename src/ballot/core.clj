@@ -85,6 +85,44 @@
 
 (def seventh-cross (edn/read-string (slurp "resources/seventh_cross.edn")))
 
+(defn display-card
+  "Returns a string in a clean format showing the important information of an Exceed attack card. 
+   Expects an id for the card."
+  [card-id]
+  (let [card (d/pull @conn '["*"] [:card/id card-id])
+        abilities (:card/abilities (d/pull @conn '[:ability/description :ability/location :ability/trigger :ability/notes {:card/abilities ...}]
+                                           [:card/id card-id]))
+        sorted-abilities (sort-by #(case (:ability/trigger %)
+                                     :passive 1
+                                     :now 2
+                                     :before 3
+                                     :hit 4
+                                     :after 5
+                                     :cleanup 6)
+                                  abilities)
+        attacks (filter #(= :attack (:ability/location %)) sorted-abilities)
+        boosts (filter #(= :boost (:ability/location %)) sorted-abilities)
+        range (if (= (:card/min-range card) (:card/max-range card))
+                (:card/min-range card)
+                (str (:card/min-range card) " ~ " (:card/max-range card)))]
+    (str (:card/name card) "\n"
+         (if (= (:card/type card) :ultra)
+           (str (:card/cost card) " Gauge.\n")
+           (when (> (:card/cost card) 0)
+             (str (:card/cost card) " Force.\n")))
+         "Power: " (:card/power card) " | Speed: " (:card/speed card) " | Range: " range
+         (when (> (:card/armor card) 0) (str " | Armor: " (:card/armor card)))
+         (when (> (:card/guard card) 0) (str " | Guard: " (:card/guard card))) "\n"
+         (reduce #(str %1 (:ability/description %2) "\n") "" attacks)
+         "\n" (:card/boost-name card)
+         (cond
+           (= (:card/boost-type card) :transform) " (T)"
+           (= (:card/boost-type card) :instant) (str " - " (:card/boost-cost card) " Force.")
+           (= (:card/boost-type card) :continuous) (str " - " (:card/boost-cost card) " Force. (+)")
+           (= (:card/boost-type card) :gauge-instant) (str " - " (:card/boost-cost card) " Gauge.")
+           :else (str " - " (:card/boost-cost card) " Gauge (+)"))
+         "\n"
+         (reduce #(str %1 (:ability/description %2) "\n") "" boosts))))
 
 (d/transact conn entries)
 (d/transact conn seventh-cross)
