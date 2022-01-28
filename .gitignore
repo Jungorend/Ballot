@@ -3,4 +3,5 @@
 .cpcache
 .lsp
 .nrepl-port
-config.edn
+Ballot.iml
+.idea

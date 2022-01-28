@@ -521,6 +521,7 @@
 
  {:card/name "Dragon's Tail"
   :card/id :s2-dragons-tail
+  :card/type :special
   :card/cost 0
   :card/min-range 1
   :card/max-range 2
@@ -542,6 +543,7 @@
 
 {:card/name "Dragon's Tongue"
  :card/id :s2-dragons-tongue
+ :card/type :special
  :card/cost 0
  :card/min-range 1
  :card/max-range 3
@@ -581,23 +583,329 @@
                     :ability/location :boost}]}
 
  {:card/name "Dragon's Descent"
-  :card/description "\"I'll slay every last one!\""}
+  :card/description "\"I'll slay every last one!\""
+  :card/type :ultra
+  :card/id :s2-dragons-descent
+  :card/min-range 2
+  :card/max-range 6
+  :card/cost 3
+  :card/power 7
+  :card/speed 4
+  :card/armor 0
+  :card/guard 4
+  :card/boost-name "Dragon's Roar"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Hit: If a copy of your attack is in your gauge, boost, or transform area, +4 Power."
+                    :ability/location :attack
+                    :ability/trigger :hit}
+                   {:ability/description "Do not draw or discard cards at the end of your turn."
+                    :ability/location :boost
+                    :ability/trigger :passive}
+                   {:ability/description "Now: Draw 5 card."
+                    :ability/trigger :now
+                    :ability/location :boost}]}
+
+ {:card/name       "Absinthin Arrow"
+  :card/id         :s2-absinthin-arrow
+  :card/type       :special
+  :card/cost 0
+  :card/min-range  3
+  :card/max-range  6
+  :card/power      2
+  :card/speed      5
+  :card/armor      0
+  :card/guard      0
+  :card/boost-name "We're All Mad Here"
+  :card/boost-type :instant
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Hit: The opponent draws a card, then discards 2 at random."
+                    :ability/location :attack
+                    :ability/trigger :hit}
+                   {:ability/description "Both players draw up to 4 cards, then discard a card at random."
+                    :ability/location :boost
+                    :ability/trigger :now}]}
+
+ {:card/name "Color Spray"
+  :card/type :special
+  :card/id :s2-color-spray
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 3
+  :card/power 6
+  :card/speed 2
+  :card/armor 0
+  :card/guard 0
+  :card/boost-name "Unhinged"
+  :card/boost-type :transform
+  :card/abilities [{:ability/description "If the opponent has 2 or fewer card in hand, Stun Immunity."
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "Hit: The opponent must draw or discard cards at random until they have 2 in hand."
+                    :ability/location :attack
+                    :ability/trigger :hit}
+                   {:ability/description "When you set a Wild Swing or EX Attack, your next valid attack gains: \"Hit: The opponent must discard a card at random.\""
+                    :ability/location :boost
+                    :ability/trigger :passive}]}
+
+ {:card/name "Plot Hook"
+  :card/id :s2-plot-hook
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 5
+  :card/power 3
+  :card/speed 4
+  :card/armor 0
+  :card/guard 3
+  :card/boost-name "Time For Tea"
+  :card/boost-type :transform
+  :card/abilities [{:ability/description "Hit: Pull 5 and gain Advantage (you take the next turn, regardless of who initiated the strike)."
+                    :ability/location :attack
+                    :ability/trigger :hit}
+                   {:ability/description "As an action, spend 1 Force to make the opponent discard a card at random. If you are in Exceed Mode, do not draw at the end of your turn."
+                    :ability/location :boost
+                    :ability/trigger :passive}]}
+
+ {:card/name "Shimmer of Madness"
+  :card/id :s2-shimmer-of-madness
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 2
+  :card/power 2
+  :card/speed 6
+  :card/armor 0
+  :card/guard 0
+  :card/boost-name "Hanging By A Thread"
+  :card/boost-type :transform
+  :card/abilities [{:ability/description "Hit: Your opponent reveals their hand, then discards a card of your choice."
+                    :ability/location :attack
+                    :ability/trigger :hit}
+                   {:ability/description "Your attacks have \"Hit: If the opponent has 2 or fewer cards in hand, +2 Power.\""
+                    :ability/trigger :passive
+                    :ability/location :boost}]}
+
+ {:card/name "Werelight"
+  :card/id :s2-werelight
+  :card/type :special
+  :card/cost 0
+  :card/min-range 2
+  :card/max-range 4
+  :card/power 4
+  :card/speed 3
+  :card/armor 0
+  :card/guard 5
+  :card/boost-name "Off With Her Head!"
+  :card/boost-type :instant
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Hit: The opponent chooses one: The opponent discards 2 cards at random, or the opponent reveals their hand, then discards a card of your choice."
+                    :ability/location :attack
+                    :ability/trigger :hit}
+                   {:ability/description "If the opponent is at range 1, they choose one: The opponent discards 2 cards at random, or Push 3."
+                    :ability/trigger :now
+                    :ability/location :boost}]}
 
  {:card/name "Wonderland"
+  :card/id :s2-wonderland
   :card/description "Flip to this when Eugenia activates Exceed Mode. Discard any cards here before adding a new card. You may strike with the card here. When you do, you have +1 Power and +1 Speed."
   :card/type :character}
 
  {:card/name "Cat's Cradle"
-  :card/description "\"It's all in your head, I'm sure.\""}
+  :card/id :s2-cats-cradle
+  :card/type :ultra
+  :card/cost 3
+  :card/description "\"It's all in your head, I'm sure.\""
+  :card/min-range 1
+  :card/max-range 3
+  :card/power 9
+  :card/speed 1
+  :card/armor 0
+  :card/guard 0
+  :card/boost-name "Edge of Insanity"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Stun Immunity"
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "Hit: The opponent draws a card, then discards 2 cards at random. -1 Power for each card in the opponent's hand."
+                    :ability/location :attack
+                    :ability/trigger :hit}
+                   {:ability/description "When the opponent uses the \"Prepare\" action, they draw 1 fewer card."
+                    :ability/location :boost
+                    :ability/trigger :passive}
+                   {:ability/description "Now: The opponent must discard a card at random."
+                    :ability/trigger :now
+                    :ability/location :boost}]}
 
- {:card/name "Queen of Hearts"
-  :card/description "\"For me? You shouldn't have...\""}
+ {:card/name        "Queen of Hearts"
+  :card/id          :s2-queen-of-hearts
+  :card/type        :ultra
+  :card/cost        3
+  :card/min-range   1
+  :card/max-range   1
+  :card/power       1
+  :card/speed       7
+  :card/armor       0
+  :card/guard       0
+  :card/description "\"For me? You shouldn't have...\""
+  :card/boost-name "Wanderlust"
+  :card/boost-type :instant
+  :card/boost-cost 1
+  :card/abilities [{:ability/description "Hit: The opponent discards their hand, then draws a card. +1 Power for each card discarded this way."
+                    :ability/location :attack
+                    :ability/trigger :hit}
+                   {:ability/description "You may search your deck for a card and Transform it. The opponent may search their deck for a card and add it to their hand."
+                    :ability/location :boost
+                    :ability/trigger :boost}]}
+
+ {:card/name "Dispelling Horn"
+  :card/id   :s2-dispelling-horn
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 2
+  :card/power 3
+  :card/speed 6
+  :card/armor 0
+  :card/guard 0
+  :card/boost-name "Feral Leap"
+  :card/boost-type :instant
+  :card/boost-cost 1
+  :card/abilities [{:ability/description "After: Seal your Continuous Boosts. For each card sealed this way, +2 Armor."
+                    :ability/trigger :after
+                    :ability/location :attack}
+                   {:ability/description "Advance 3, then Strike."
+                    :ability/location :boost
+                    :ability/trigger :now}]}
+
+ {:card/name "Moon Fall"
+  :card/id :s2-moon-fall
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 1
+  :card/power 3
+  :card/speed 5
+  :card/armor 0
+  :card/guard 0
+  :card/boost-name "Devour My Own Tail"
+  :card/boost-type :transform
+  :card/abilities [{:ability/description "Before: Advance 3."
+                    :ability/trigger :before
+                    :ability/location :attack}
+                   {:ability/description "Hit: You may seal a card from your hand. If you do, do not discard your Continuous Boost from play after this Strike."
+                    :ability/trigger :hit
+                    :ability/location :attack}
+                   {:ability/description "At the end of each Strike, if you hit with your attack, you may seal it. If you do, draw 2 cards, then discard a card."
+                    :ability/trigger :passive
+                    :ability/location :boost}]}
+
+ {:card/name "Moon Flare"
+  :card/id :s2-moon-flare
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 5
+  :card/power 4
+  :card/speed 3
+  :card/armor 0
+  :card/guard 3
+  :card/boost-name "A Familiar Taste"
+  :card/boost-type :transform
+  :card/abilities [{:ability/description "Hit: Draw a card."
+                    :ability/trigger :hit
+                    :ability/location :attack}
+                   {:ability/description "After: Draw a card."
+                    :ability/trigger :after
+                    :ability/location :attack}
+                   {:ability/description "Your attacks have \"If there is a copy of your opponent's attack in your sealed area, +3 Guard.\""
+                    :ability/location :boost
+                    :ability/trigger :passive}]}
+
+{:card/name "Swift Exorcism"
+ :card/id :s2-swift-exorcism
+ :card/type :special
+ :card/cost 0
+ :card/min-range 1
+ :card/max-range 5
+ :card/power 4
+ :card/speed 3
+ :card/armor 0
+ :card/guard 3
+ :card/boost-name "Good to the Last Bite"
+ :card/boost-type :transform
+ :card/abilities [{:ability/description "Hit: Push 2."
+                   :ability/location :attack
+                   :ability/trigger :hit}
+                  {:ability/description "After: If you have a Continuous Boost in play, move 1 and gain Advantage (you take the next turn, regardless of who initiated the Strike)."
+                   :ability/location :attack
+                   :ability/trigger :after}
+                  {:ability/description "Your attacks have \"If there is a copy of this attack in your sealed or transform area, +1 Power and +1 Armor.\""
+                   :ability/location :boost
+                   :ability/trigger :passive}]}
+
+ {:card/name "Wishing Ward"
+  :card/id :s2-wishing-ward
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 3
+  :card/power 5
+  :card/speed 2
+  :card/armor 0
+  :card/guard 6
+  :card/boost-name "Endless Hunger"
+  :card/boost-type :instant
+  :card/boost-cost 1
+  :card/abilities [{:ability/description "Hit: Seal up to 3 cards from your hand. For each card sealed this way, +1 Power and draw a card."
+                    :ability/trigger :hit
+                    :ability/location :attack}
+                   {:ability/description "Seal your hand. Draw 4 cards, then Strike."
+                    :ability/location :boost
+                    :ability/trigger :now}]}
 
  {:card/name "Purifying Roar"
-  :card/description "\"Arooooooooo!!!\""}
+  :card/id :s2-purifying-roar
+  :card/type :ultra
+  :card/cost 3
+  :card/min-range 2
+  :card/max-range 3
+  :card/power 3
+  :card/speed 2
+  :card/armor 0
+  :card/guard 0
+  :card/boost-name "Fortune's Roar"
+  :card/boost-type :instant
+  :card/boost-cost 0
+  :card/description "\"Arooooooooo!!!\""
+  :card/abilities [{:ability/description "+1 Speed for each differently-named Normal Attack in your sealed area."
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "Draw 4 cards."
+                    :ability/trigger :now
+                    :ability/location :boost}]}
 
  {:card/name "Moon Ritual Dance"
-  :card/description "\"I remember something...from long ago...\""}
+  :card/id :s2-moon-ritual-dance
+  :card/type :ultra
+  :card/cost 2
+  :card/min-range 1
+  :card/max-range 2
+  :card/power 2
+  :card/speed 7
+  :card/armor 0
+  :card/guard 0
+  :card/boost-name "Preta Memory"
+  :card/boost-type :instant
+  :card/boost-cost 0
+  :card/description "\"I remember something...from long ago...\""
+  :card/abilities [{:ability/description "Hit: You may return a Normal or Special Attack from your sealed area to your hand."
+                    :ability/location :attack
+                    :ability/trigger :hit}
+                   {:ability/description "You may seal this and 2 other cards from your hand. If you do, Transform a card from your hand."
+                    :ability/trigger :now
+                    :ability/location :boost}]}
 
  {:card/name "Crusader's Oath"
   :card/description "\"Your evil will be rooted out!\""}
