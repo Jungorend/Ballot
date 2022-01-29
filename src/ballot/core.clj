@@ -19,12 +19,12 @@
    Type values: :i (long) :s (string) :k (keyword) :r (ref)"
   [idents]
   (mapv (fn [{:keys [id type cardinality unique doc]}]
-          (let [i {:db/ident       id
-                   :db/valueType   (case type
-                                     :i :db.type/long
-                                     :s :db.type/string
-                                     :k :db.type/keyword
-                                     :r :db.type/ref)
+          (let [i {:db/ident id
+                   :db/valueType (case type
+                                   :i :db.type/long
+                                   :s :db.type/string
+                                   :k :db.type/keyword
+                                   :r :db.type/ref)
                    :db/cardinality (if (nil? cardinality)
                                      :db.cardinality/one
                                      cardinality)}]
@@ -35,48 +35,48 @@
 
 (def schema
   (create-idents
-    [;; Season
-     {:id :season/mechanics :type :s}
-     {:id :season/number :type :i}
-     {:id :season/name :type :s :unique :db.unique/identity}
-     {:id :season/creator :type :s}
-     ;; Character
-     {:id :character/name :type :s}
-     {:id :character/exceed-name :type :s}
-     {:id :character/innate-ability :type :s}
-     {:id :character/exceed-ability :type :s}
-     {:id :character/description :type :s}
-     {:id :character/exceed-description :type :s}
-     {:id :character/gauge-cost :type :i}
-     {:id :character/seasons :type :r :cardinality :db.cardinality/many}
-     ;; Card
-     {:id :card/id :type :k :unique :db.unique/identity}
-     {:id :card/name :type :s}
-     {:id :card/description :type :s}
-     {:id :card/type :type :k :doc "options: :special :ultra :normal :astral-heat :character-card"}
-     {:id :card/cost :type :i}
-     {:id :card/min-range :type :i}
-     {:id :card/max-range :type :i}
-     {:id :card/power :type :i}
-     {:id :card/speed :type :i}
-     {:id :card/armor :type :i}
-     {:id :card/guard :type :i}
-     {:id :card/owners-mark :type :r}
-     {:id :card/boost-name :type :s}
-     {:id :card/boost-description :type :s}
-     {:id :card/boost-cost :type :i}
-     {:id :card/boost-type :type :k :doc "options :transform :instant :continuous :gauge-instant :gauge-continuous"}
-     {:id :card/abilities :type :r :cardinality :db.cardinality/many}
-     ;; Deck
-     {:id :deck/name :type :s :unique :db.unique/identity}
-     {:id :deck/character :type :r}
-     {:id :deck/cards :type :r :cardinality :db.cardinality/many}
-     ;; Abilities
-     {:id :ability/description :type :s :doc "Full text for the ability."}
-     {:id :ability/trigger :type :k :doc ":passive, :hit, :before, :after, :cleanup..."}
-     {:id :ability/keywords :type :s :cardinality :db.cardinality/many :doc "Common keywords for lookup. Ex: Ignore Armor"}
-     {:id :ability/notes :type :s :doc "For rules information and notes."}
-     {:id :ability/location :type :k :doc ":attack :boost"}]))
+   [;; Season
+    {:id :season/mechanics :type :s}
+    {:id :season/number :type :i}
+    {:id :season/name :type :s :unique :db.unique/identity}
+    {:id :season/creator :type :s}
+    ;; Character
+    {:id :character/name :type :s}
+    {:id :character/exceed-name :type :s}
+    {:id :character/innate-ability :type :s}
+    {:id :character/exceed-ability :type :s}
+    {:id :character/description :type :s}
+    {:id :character/exceed-description :type :s}
+    {:id :character/gauge-cost :type :i}
+    {:id :character/seasons :type :r :cardinality :db.cardinality/many}
+    ;; Card
+    {:id :card/id :type :k :unique :db.unique/identity}
+    {:id :card/name :type :s}
+    {:id :card/description :type :s}
+    {:id :card/type :type :k :doc "options: :special :ultra :normal :astral-heat :character-card"}
+    {:id :card/cost :type :i}
+    {:id :card/min-range :type :i}
+    {:id :card/max-range :type :i}
+    {:id :card/power :type :i}
+    {:id :card/speed :type :i}
+    {:id :card/armor :type :i}
+    {:id :card/guard :type :i}
+    {:id :card/owners-mark :type :r}
+    {:id :card/boost-name :type :s}
+    {:id :card/boost-description :type :s}
+    {:id :card/boost-cost :type :i}
+    {:id :card/boost-type :type :k :doc "options :transform :instant :continuous :gauge-instant :gauge-continuous"}
+    {:id :card/abilities :type :r :cardinality :db.cardinality/many}
+    ;; Deck
+    {:id :deck/name :type :s :unique :db.unique/identity}
+    {:id :deck/character :type :r}
+    {:id :deck/cards :type :r :cardinality :db.cardinality/many}
+    ;; Abilities
+    {:id :ability/description :type :s :doc "Full text for the ability."}
+    {:id :ability/trigger :type :k :doc ":passive, :hit, :before, :after, :cleanup..."}
+    {:id :ability/keywords :type :s :cardinality :db.cardinality/many :doc "Common keywords for lookup. Ex: Ignore Armor"}
+    {:id :ability/notes :type :s :doc "For rules information and notes."}
+    {:id :ability/location :type :k :doc ":attack :boost"}]))
 
 (def entries [{:season/number 1, :season/name "Red Horizon" :season/creator "Level99"}
               {:season/number 2, :season/name "Seventh Cross" :season/creator "Level99" :season/mechanics "In this season you have transforms. For every transform in your transformation area, your exceed cost is reduced by 2. During a Strike, if you hit, you may move your attack to your transformation area during cleanup. You may also discard one card to transform the same of the other card if both are in your hand."}
@@ -106,9 +106,10 @@
            (str (:card/cost card) " Gauge.\n")
            (when (> (:card/cost card) 0)
              (str (:card/cost card) " Force.\n")))
-         "Speed: " (:card/speed card) " | Range: " range " | Power: " (:card/power card)
+         "Range: " range " | Power: " (:card/power card) " | Speed: " (:card/speed card)
          (when (> (:card/armor card) 0) (str " | Armor: " (:card/armor card)))
          (when (> (:card/guard card) 0) (str " | Guard: " (:card/guard card))) "\n"
+         (if (:card/description card) (:card/description card) "") "\n"
          (reduce #(str %1 (:ability/description %2) "\n") "" attacks)
          "\n" (:card/boost-name card)
          (cond
@@ -121,9 +122,9 @@
          (reduce #(str %1 (:ability/description %2) "\n") "" boosts))))
 
 (defn describe-character-card
-  [card]
-  (str (:card/name card) "\n"
-       (:card/description card)))
+ [card]
+ (str (:card/name card) "\n"
+      (:card/description card)))
 
 (defn display-card
   "Returns a string in a clean format showing the information of an Exceed card.
@@ -139,6 +140,11 @@
   [string]
   (apply str (remove #(#{\. \' \:} %) string)))
 
+(defn equal-strings?
+  "Returns true if both strings are equal regardless of capitalization"
+  [string1 string2]
+  (= (.toLowerCase string1) (.toLowerCase string2)))
+
 (defn lookup-card
   [card-name conn]
   (let [card-keyword (-> (clojure.string/join "-" card-name)
@@ -149,9 +155,13 @@
                     :where [?id :card/id ~card-keyword]]
                   @conn)]
     (if (empty? card)
-      (let [names (d/q `[:find ?card-id :where [?id :card/id ?card-id]
-                         [?id :card/name ~(clojure.string/join " " card-name)]]
-                       @conn)]
+      (let [names (d/q '[:find ?card-id 
+                         :in $ ?card-name
+                         :where
+                         [?id :card/id ?card-id]
+                         [?id :card/name ?name]
+                         [(ballot.core/equal-strings? ?name ?card-name)]]
+                 @conn (clojure.string/join " " card-name))]
         (cond (empty? names) "No cards could be found with that name."
               (= (count names) 1) (display-card (first (first names)) conn)
               :else (str "Multiple potential cards. Try one of the following:\n"
@@ -190,12 +200,12 @@
   [user-id emoji]
   (let [e (:emoji config)]
     (condp = emoji
-      (:heart e) (toggle-role! user-id :tester)
-      (:black-heart e) (toggle-role! user-id :designer)
+      (:heart e)        (toggle-role! user-id :tester)
+      (:black-heart e)  (toggle-role! user-id :designer)
       (:yellow-heart e) (toggle-role! user-id :east-coast)
       (:purple-heart e) (toggle-role! user-id :west-coast)
-      (:blue-heart e) (toggle-role! user-id :oceania)
-      (:diamonds e) (toggle-role! user-id :europe)
+      (:blue-heart e)   (toggle-role! user-id :oceania)
+      (:diamonds e)       (toggle-role! user-id :europe)
       nil)))
 
 (defmethod handle-event :message-reaction-add
