@@ -248,9 +248,8 @@
                                       (some #(= (:id author) %) (mapv #(:id (first %)) (:lfg-queue @state))) (do (swap! state update :lfg-queue
                                                                                                                         (fn [queue] (filter #(not= (:id author) (:id (first %))) queue)))
                                                                                                                  (discord-rest/create-message! (:rest @state) channel-id :content "You have been removed from the queue."))
-                                      :else (do (discord-rest/create-message! (:rest @state) channel-id :content (str "Someone is available for a match! Please reach out to @"
-                                                                                                                      (:username (first (first (:lfg-queue @state))))
-                                                                                                                      "."))
+                                      :else (do (discord-rest/create-message! (:rest @state) channel-id :content (str "Someone is available for a match! Please reach out to "
+                                                                                                                      (mention-user (:id (first (first (:lfg-queue @state))))) "."))
                                                 (swap! state update :lfg-queue #(drop 1 %)))))
       :else nil)))
 
