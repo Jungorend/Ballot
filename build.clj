@@ -19,5 +19,5 @@
                   :class-dir class-dir})
   (b/uber {:class-dir class-dir
            :uber-file uber-file
-           :basis basis
-           :main 'ballot.core}))
+           :basis     basis
+           :main      'ballot.core}))

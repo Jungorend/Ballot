@@ -88,6 +88,23 @@
 
 (def seventh-cross (edn/read-string (slurp "resources/seventh_cross.edn")))
 
+(defn describe-character-card
+  [card seasons]
+  (let [description (if (:character/description card)
+                      (str "_" (:character/description card) "_")
+                      "")
+        exceed-description (if (:character/exceed-description card)
+                             (str "_" (:character/exceed-description card) "_")
+                             "")]
+    (str (:character/name card) "\n"
+         description "\n\n"
+         (:character/innate-ability card) "\n"
+         (:character/gauge-cost card) " Gauge to Exceed.\n\n"
+         "Exceed Mode: " (or (:character/exceed-name card) "") "\n"
+         exceed-description "\n"
+         (:character/exceed-ability card) "\n"
+         (reduce #(str %1 (:season/mechanics %2) "\n") "" seasons)
+         "Cards:")))
 
 (defn describe-attack-card
   [card abilities]
@@ -123,11 +140,6 @@
            :else (str " - " (:card/boost-cost card) " Gauge (+)"))
          "\n"
          (reduce #(str %1 (:ability/description %2) "\n") "" boosts))))
-
-(defn describe-character-card
- [card]
- (str (:card/name card) "\n"
-      (:card/description card)))
 
 (defn display-card
   "Returns a string in a clean format showing the information of an Exceed card.

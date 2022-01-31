@@ -1,4 +1,4 @@
-{:paths ["src/ballot"]
+{:paths ["src"]
  :deps {io.replikativ/datahike {:mvn/version "0.4.1480"}
         com.github.discljord/discljord {:mvn/version "1.3.1"}}
  
