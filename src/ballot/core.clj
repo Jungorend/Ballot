@@ -6,7 +6,8 @@
             [discljord.messaging :as discord-rest]
             [discljord.connections :as discord-ws]
             [discljord.formatting :refer [mention-user]]
-            [discljord.events :refer [message-pump!]]))
+            [discljord.events :refer [message-pump!]]
+            [ballot.deck :as deck]))
 
 
 (defn create-idents
@@ -42,6 +43,7 @@
     {:id :season/creator :type :s}
     ;; Character
     {:id :character/name :type :s}
+    {:id :character/id :type :k :unique :db.unique/identity}
     {:id :character/exceed-name :type :s}
     {:id :character/innate-ability :type :s}
     {:id :character/exceed-ability :type :s}
@@ -85,6 +87,7 @@
               {:season/number 5, :season/name "Blazblue" :season/creator "Level99" :season/mechanics "You have an overdrive area. When you exceed, the cards spent to Exceed are moved to the Overdrive area. If you ever have 0 cards in your Overdrive area, you revert to your normal side. You also have an astral heat which starts outside your deck. If you reshuffle manually, instead of drawing one card at the end of your turn, draw your astral heat."}])
 
 (def seventh-cross (edn/read-string (slurp "resources/seventh_cross.edn")))
+
 
 (defn describe-attack-card
   [card abilities]
@@ -179,6 +182,7 @@
 (d/transact conn schema)
 (d/transact conn entries)
 (d/transact conn seventh-cross)
+(d/transact conn deck/s2-decks)
 
 (def state (atom nil))
 (def bot-id (atom nil))

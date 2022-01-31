@@ -1,4 +1,24 @@
-[{:character/name "Renea"
+[{:deck/name      "Renea"
+  :deck/character {:character/id :s2-renea}
+  :deck/cards     [{:card/id :s2-anticipation}
+                   {:card/id :s2-anticipation}
+                   {:card/id :s2-neutralizer}
+                   {:card/id :s2-neutralizer}
+                   {:card/id :s2-briefcase}
+                   {:card/id :s2-lethal-force}
+                   {:card/id :s2-lethal-force}
+                   {:card/id :s2-called-shot}
+                   {:card/id :s2-called-shot}
+                   {:card/id :s2-flare}
+                   {:card/id :s2-flare}
+                   {:card/id :s2-paranormal-investigation}
+                   {:card/id :s2-paranormal-investigation}
+                   {:card/id :s2-strafe-fire}
+                   {:card/id :s2-strafe-fire}]}
+
+
+ {:character/name "Renea"
+  :character/id :s2-renea
   :character/exceed-name "The Spook"
   :character/innate-ability "You may play Continuous Boosts face-down. Before you set cards for a Strike, reveal your face-down Boosts and resolve any Now effects on them."
   :character/exceed-ability "When you Exceed, flip any face-down Continuous Boosts put into play by Renea's ability. When you Exceed, put the top 3 cards of the opponent's discard pile with Boosts into your Briefcase. Your attacks have \"Hit: Put the bottom card of the opponent's discard pile with a boost into your Briefcase.\""
@@ -8,6 +28,7 @@
   :character/seasons {:season/name "Seventh Cross"}}
 
  {:character/name "Remiliss"
+  :character/id :s2-remiliss
   :character/exceed-name "The Yellow Death"
   :character/innate-ability "When you set your attack, you may spend 3 Force. If you do, it is considered an EX attack."
   :character/description "\"I feel power overflowing through me...\""
@@ -17,6 +38,7 @@
   :character/seasons {:season/name "Seventh Cross"}}
 
  {:character/name "Iaquis"
+  :character/id :s2-iaquis
   :character/exceed-name "The Dragon-Slayer"
   :character/description "\"I've waited ages to settle the score.\""
   :character/exceed-description "\"KRAAAAAAAAAA!!!!\""
@@ -26,6 +48,7 @@
   :character/seasons {:season/name "Seventh Cross"}}
 
  {:character/name "Eugenia"
+  :character/id :s2-eugenia
   :character/exceed-name "The Cheshire Cat"
   :character/exceed-description "\"You're merely a puppet on my strings, dearie.\""
   :character/exceed-ability "When you Exceed, put your Wonderland in play. When you cause the opponent to discard 1 or more cards, you may put one of them in your Wonderland."
@@ -35,6 +58,7 @@
   :character/seasons {:season/name "Seventh Cross"}}
 
  {:character/name "Celinka"
+  :character/id :s2-celinka
   :character/description "\"This evil must be sealed away!\""
   :character/innate-ability "When you Prepare, you may put up to 3 cards from your hand into play as face-down Continuous Boosts that read \"+1 Power. When this card would be discarded, seal it instead.\""
   :character/exceed-name "The Gaki"
@@ -44,6 +68,7 @@
   :character/seasons {:season/name "Seventh Cross"}}
 
  {:character/name "Geoffrey"
+  :character/id :s2-geoffrey
   :character/description "\"Your evil ends here and now.\""
   :character/innate-ability "Your attacks have \"If the opponent's attack has higher printed Speed than this attack, this attack has +1 Armor and +1 Guard.\""
   :character/gauge-cost 5
@@ -53,6 +78,7 @@
   :character/seasons {:season/name "Seventh Cross"}}
 
  {:character/name "Minato"
+  :character/id :s2-minato
   :character/innate-ability "You may generate Force or Gauge by sealing the top card of your discard pile for 1 Force or the top 3 cards for 1 Gauge."
   :character/description "\"Who'll be left standing once the world burns?\""
   :character/gauge-cost 5
@@ -62,6 +88,7 @@
   :character/seasons {:season/name "Seventh Cross"}}
 
  {:character/name "Syrus"
+  :character/id :s2-syrus
   :character/description "\"Adventure, fame, and fortune await!\""
   :character/innate-ability "After resolving an Instant Boost, put it into play as a face-down Continuous Boost that reads \"Hit: Add this card to your gauge.\""
   :character/gauge-cost 6
@@ -71,6 +98,7 @@
   :character/seasons {:season/name "Seventh Cross"}}
 
  {:character/name "Seijun"
+  :character/id :s2-seijun
   :character/description "\"The foundation of our world rests in my hands.\""
   :character/innate-ability "Your maximum hand size is 9. Draw 2 additional cards in your starting hand. Your attacks have +1 Guard for every 2 cards in your hand."
   :character/gauge-cost 5
@@ -80,6 +108,7 @@
   :character/exceed-ability "When you Exceed, draw 3 cards. Your maximum hand size is unlimited. At the start of each of your turns, draw a card."}
 
  {:character/name "Galdred"
+  :character/id :s2-galdred
   :character/description "\"My plans are falling into place...\""
   :character/innate-ability "Instead of drawing at the end of your turn (if you did not Strike), draw or discard cards until you have 3 in hand."
   :character/gauge-cost 6
@@ -93,6 +122,7 @@
   :character/seasons {:season/name "Seventh Cross"}}
 
  {:character/name "Luciya"
+  :character/id :s2-luciya
   :character/description "\"Fear not citizens! The Lightning Bug is here!\""
   :character/gauge-cost 5
   :character/innate-ability "When you move past the opponent, do 1 non-lethal damage and you may add the top card of your discard pile to your gauge."
@@ -102,6 +132,7 @@
   :character/seasons {:season/name "Seventh Cross"}}
 
  {:character/name "Zsolt"
+  :character/id :s2-zsolt
   :character/description "\"I can't rest...not until every last one is dead.\""
   :character/innate-ability "Your Normal Attacks have \"Hit: Move up to 1.\""
   :character/gauge-cost 5
@@ -111,6 +142,7 @@
   :character/seasons {:season/name "Seventh Cross"}}
 
  {:character/name "Tournelouse"
+  :character/id :s2-tournelouse
   :character/description "\"My power has neither match nor limit!\""
   :character/innate-ability "Your Normal Attacks have a Transformation that reads \"Your Special and Ultra attacks have +1 Power.\""
   :character/gauge-cost 0
@@ -120,6 +152,7 @@
   :character/seasons {:season/name "Seventh Cross"}}
 
  {:character/name "Taisei"
+  :character/id :s2-taisei
   :character/description "\"Surrender your soul to me!\""
   :character/innate-ability "Your life begins at half its maximum. When it would reach 0, you may Exceed instead (paying all costs as normal). When you set your attack, spend up to 2 life for +1 Power each."
   :character/gauge-cost 5
@@ -129,6 +162,7 @@
   :character/seasons {:season/name "Seventh Cross"}}
 
  {:character/name "Umina"
+  :character/id :s2-umina
   :character/description "\"When you stare into the deep darkness, what do you see?\""
   :character/innate-ability "As an action, you may put a card from your hand into your Dreamlands."
   :character/gauge-cost 4
@@ -138,6 +172,7 @@
   :character/seasons {:season/name "Seventh Cross"}}
 
  {:character/name "D'Janette"
+  :character/id :s2-djanette
   :character/description "\"All this world is mine by birthright!\""
   :character/innate-ability "As an action, place your Spell Circle on any space and a Special or Ultra Attack from your hand into it face-down, then draw a card. On your turn, if your Spell Circle is on a space, you must Strike."
   :character/gauge-cost 5
