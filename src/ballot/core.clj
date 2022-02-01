@@ -5,7 +5,7 @@
             [clojure.core.async :refer [chan close!]]
             [discljord.messaging :as discord-rest]
             [discljord.connections :as discord-ws]
-            [discljord.formatting :refer [mention-user italics]]
+            [discljord.formatting :refer [mention-user]]
             [discljord.events :refer [message-pump!]]
             [ballot.deck :as deck]))
 
@@ -84,19 +84,21 @@
 
 (def entries [{:season/number 1, :season/name "Red Horizon" :season/creator "Level99"}
               {:season/number 2, :season/name "Seventh Cross" :season/creator "Level99" :season/mechanics "In this season you have transforms. For every transform in your transformation area, your exceed cost is reduced by 2. During a Strike, if you hit, you may move your attack to your transformation area during cleanup. You may also discard one card to transform the same of the other card if both are in your hand."}
-              {:season/number 3, :season/name "Street Fighter" :season/creator "Level99" :season/mechanics "You have the ability to use Criticals. When setting your attack, you may discard 1 Gauge. If you do, your attack is Critical."}
+              {:season/number 3, :season/name "Street Fighter" :season/creator "Level99" :season/mechanics "When setting your attack, you may discard 1 Gauge. If you do, your attack is Critical."}
               {:season/number 4, :season/name "Shovel Knight" :season/creator "Level99"}
               {:season/number 5, :season/name "Blazblue" :season/creator "Level99" :season/mechanics "You have an overdrive area. When you exceed, the cards spent to Exceed are moved to the Overdrive area. If you ever have 0 cards in your Overdrive area, you revert to your normal side. You also have an astral heat which starts outside your deck. If you reshuffle manually, instead of drawing one card at the end of your turn, draw your astral heat."}])
+;; TODO: Have a mechanics: explanation
+;; TODO: Have characters display gauge cost amount
 
 (def seventh-cross (edn/read-string (slurp "resources/seventh_cross.edn")))
 
 (defn describe-character
   [card seasons deck-cards]
   (let [description (if (:character/description card)
-                      (italics (:character/description card))
+                      (:character/description card)
                       "")
         exceed-description (if (:character/exceed-description card)
-                             (italics (:character/exceed-description card))
+                             (:character/exceed-description card)
                              "")
         c (sort-by #(case (second (first %))
                       :normal 4
@@ -105,14 +107,14 @@
                       :character 1
                       0)
                    (into [] (frequencies (map #(take 2 %) deck-cards))))]
-    (str (:character/name card) " - " (:character/gauge-cost card) "G\n"
+    (str (:character/name card) " (" (:character/gauge-cost card) "G)\n"
          description "\n"
          (:character/innate-ability card) "\n\n"
          "Exceed Mode: " (or (:character/exceed-name card) "") "\n"
          exceed-description "\n"
-         (:character/exceed-ability card) "\n"
-         (reduce #(str %1 (second %2) "\n") "" seasons)
-         "\nCards:\n" (reduce #(str %1 (first (first %2)) " - " (second %2) "\n") "" c))))
+         (:character/exceed-ability card) "\n\n"
+         (reduce #(str %1 (first %2) "\n") "" seasons)
+         "\nCards:\n" (reduce #(str %1 (first (first %2)) " (" (clojure.string/upper-case (get (name (second (first %2)))0)) ") - " (second %2) "\n") "" c))))
 
 (defn describe-attack-card
   [card abilities]
@@ -253,6 +255,7 @@
   (swap! state update :lfg-queue (fn [time] (filter #(not= 1 (.compareTo (java.time.LocalDateTime/now)
                                                                          (second %))) time))))
 (defn character-lookup
+  ;; TODO: Make searching case insensitive and provide options, like cards does
   [args conn]
   (if
     (empty? (d/q '[:find ?c :in $ ?deck-name :where [?c :deck/name ?deck-name]] @conn (clojure.string/join " " args)))
