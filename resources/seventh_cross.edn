@@ -1,23 +1,4 @@
-[{:deck/name      "Renea"
-  :deck/character {:character/id :s2-renea}
-  :deck/cards     [{:card/id :s2-anticipation}
-                   {:card/id :s2-anticipation}
-                   {:card/id :s2-neutralizer}
-                   {:card/id :s2-neutralizer}
-                   {:card/id :s2-briefcase}
-                   {:card/id :s2-lethal-force}
-                   {:card/id :s2-lethal-force}
-                   {:card/id :s2-called-shot}
-                   {:card/id :s2-called-shot}
-                   {:card/id :s2-flare}
-                   {:card/id :s2-flare}
-                   {:card/id :s2-paranormal-investigation}
-                   {:card/id :s2-paranormal-investigation}
-                   {:card/id :s2-strafe-fire}
-                   {:card/id :s2-strafe-fire}]}
-
-
- {:character/name "Renea"
+[{:character/name "Renea"
   :character/id :s2-renea
   :character/exceed-name "The Spook"
   :character/innate-ability "You may play Continuous Boosts face-down. Before you set cards for a Strike, reveal your face-down Boosts and resolve any Now effects on them."

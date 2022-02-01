@@ -5,7 +5,7 @@
             [clojure.core.async :refer [chan close!]]
             [discljord.messaging :as discord-rest]
             [discljord.connections :as discord-ws]
-            [discljord.formatting :refer [mention-user]]
+            [discljord.formatting :refer [mention-user italics]]
             [discljord.events :refer [message-pump!]]
             [ballot.deck :as deck]))
 
@@ -91,12 +91,12 @@
 (def seventh-cross (edn/read-string (slurp "resources/seventh_cross.edn")))
 
 (defn describe-character
-  [card seasons cards]
+  [card seasons deck-cards]
   (let [description (if (:character/description card)
-                      (str "_" (:character/description card) "_")
+                      (italics (:character/description card))
                       "")
         exceed-description (if (:character/exceed-description card)
-                             (str "_" (:character/exceed-description card) "_")
+                             (italics (:character/exceed-description card))
                              "")
         c (sort-by #(case (second (first %))
                       :normal 4
@@ -104,27 +104,15 @@
                       :ultra 2
                       :character 1
                       0)
-                   (into [] (frequencies (map #(take 2 %) cards))))]
-    (str (:character/name card) "\n"
-         description "\n\n"
-         (:character/innate-ability card) "\n"
-         (:character/gauge-cost card) " Gauge to Exceed.\n\n"
+                   (into [] (frequencies (map #(take 2 %) deck-cards))))]
+    (str (:character/name card) " - " (:character/gauge-cost card) "G\n"
+         description "\n"
+         (:character/innate-ability card) "\n\n"
          "Exceed Mode: " (or (:character/exceed-name card) "") "\n"
          exceed-description "\n"
-         (:character/exceed-ability card) "\n\n"
-         (reduce #(str %1 (:season/mechanics %2) "\n") "" seasons)
+         (:character/exceed-ability card) "\n"
+         (reduce #(str %1 (second %2) "\n") "" seasons)
          "\nCards:\n" (reduce #(str %1 (first (first %2)) " - " (second %2) "\n") "" c))))
-
-#_(println (describe-character (d/pull @conn '[*] [:character/id :s2-renea])
-                                  [(d/pull @conn '[*] [:season/name "Seventh Cross"])]
-                                  (d/q
-                                    '[:find ?card-name ?type ?i :where
-                                      [?card :card/name ?card-name]
-                                      [?card :card/type ?type]
-                                      [?i :card-instance/card ?card]
-                                      [?deck :deck/cards ?i]
-                                      [?deck :deck/name "Renea"]]
-                                    @conn)))
 
 (defn describe-attack-card
   [card abilities]
@@ -160,6 +148,11 @@
            :else (str " - " (:card/boost-cost card) " Gauge (+)"))
          "\n"
          (reduce #(str %1 (:ability/description %2) "\n") "" boosts))))
+
+(defn describe-character-card
+  [card]
+  (str (:card/name card) "\n"
+       (:card/description card) "\n"))
 
 (defn display-card
   "Returns a string in a clean format showing the information of an Exceed card.
@@ -259,10 +252,34 @@
 (defn update-lfg-queue []
   (swap! state update :lfg-queue (fn [time] (filter #(not= 1 (.compareTo (java.time.LocalDateTime/now)
                                                                          (second %))) time))))
-(defn exceed-lookup
-  [_ _]
-  "")
-
+(defn character-lookup
+  [args conn]
+  (if
+    (empty? (d/q '[:find ?c :in $ ?deck-name :where [?c :deck/name ?deck-name]] @conn (clojure.string/join " " args)))
+    "No character found with that name."
+    (let [name (clojure.string/join " " args)
+          cards (d/q '[:find ?card-name ?type ?i
+                       :in $ ?deck-name :where
+                       [?card :card/name ?card-name]
+                       [?card :card/type ?type]
+                       [?i :card-instance/card ?card]
+                       [?deck :deck/cards ?i]
+                       [?deck :deck/name ?deck-name]]
+                     @conn name)
+          char (first (first (d/q '[:find ?char
+                                    :in $ ?deck-name :where
+                                    [?c :character/id ?char]
+                                    [?deck :deck/character ?c]
+                                    [?deck :deck/name ?deck-name]]
+                                  @conn name)))
+          char-full (d/pull @conn '[*] [:character/id char])
+          seasons (d/q '[:find ?name ?mechanics :in $ ?char :where
+                         [?c :character/id ?char]
+                         [?c :character/seasons ?sid]
+                         [?sid :season/name ?name]
+                         [?sid :season/mechanics ?mechanics]]
+                       @conn char)]
+      (describe-character char-full seasons cards))))
 
 (defmethod handle-event :message-create
   [_ {:keys [channel-id content mentions author] :as _data}]
@@ -271,7 +288,7 @@
     (cond
       (some #{@bot-id} (map :id mentions)) (discord-rest/create-message! (:rest @state) channel-id :content (:help config))
       (= "!help" first-word) (discord-rest/create-message! (:rest @state) channel-id :content (:help config))
-      (= "!character" first-word) (let [description (exceed-lookup args :characters)]
+      (= "!character" first-word) (let [description (character-lookup args conn)]
                                     (when description (discord-rest/create-message! (:rest @state) channel-id :content (str "```\n" description "```"))))
       (= "!card" first-word) (let [description (lookup-card args conn)]
                                (when description (discord-rest/create-message! (:rest @state) channel-id :content (str "```\n" description "```"))))
