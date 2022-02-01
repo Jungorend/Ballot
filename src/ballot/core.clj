@@ -69,6 +69,8 @@
     {:id :card/boost-cost :type :i}
     {:id :card/boost-type :type :k :doc "options :transform :instant :continuous :gauge-instant :gauge-continuous"}
     {:id :card/abilities :type :r :cardinality :db.cardinality/many}
+    ;; Card Instances
+    {:id :card-instance/card :type :r}
     ;; Deck
     {:id :deck/name :type :s :unique :db.unique/identity}
     {:id :deck/character :type :r}
@@ -88,23 +90,41 @@
 
 (def seventh-cross (edn/read-string (slurp "resources/seventh_cross.edn")))
 
-(defn describe-character-card
-  [card seasons]
+(defn describe-character
+  [card seasons cards]
   (let [description (if (:character/description card)
                       (str "_" (:character/description card) "_")
                       "")
         exceed-description (if (:character/exceed-description card)
                              (str "_" (:character/exceed-description card) "_")
-                             "")]
+                             "")
+        c (sort-by #(case (second (first %))
+                      :normal 4
+                      :special 3
+                      :ultra 2
+                      :character 1
+                      0)
+                   (into [] (frequencies (map #(take 2 %) cards))))]
     (str (:character/name card) "\n"
          description "\n\n"
          (:character/innate-ability card) "\n"
          (:character/gauge-cost card) " Gauge to Exceed.\n\n"
          "Exceed Mode: " (or (:character/exceed-name card) "") "\n"
          exceed-description "\n"
-         (:character/exceed-ability card) "\n"
+         (:character/exceed-ability card) "\n\n"
          (reduce #(str %1 (:season/mechanics %2) "\n") "" seasons)
-         "Cards:")))
+         "\nCards:\n" (reduce #(str %1 (first (first %2)) " - " (second %2) "\n") "" c))))
+
+#_(println (describe-character (d/pull @conn '[*] [:character/id :s2-renea])
+                                  [(d/pull @conn '[*] [:season/name "Seventh Cross"])]
+                                  (d/q
+                                    '[:find ?card-name ?type ?i :where
+                                      [?card :card/name ?card-name]
+                                      [?card :card/type ?type]
+                                      [?i :card-instance/card ?card]
+                                      [?deck :deck/cards ?i]
+                                      [?deck :deck/name "Renea"]]
+                                    @conn)))
 
 (defn describe-attack-card
   [card abilities]

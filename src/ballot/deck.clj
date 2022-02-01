@@ -7,7 +7,7 @@
                   []
                   (partition 2 cards))]
     (reduce (fn [x y]
-              (update x :deck/cards #(conj %1 {:card/id %2}) y))
+              (update x :deck/cards #(conj %1 {:card-instance/card {:card/id %2}}) y))
             {:deck/name deck-name
              :deck/character {:character/id character}
              :deck/cards []}
@@ -15,6 +15,7 @@
 
 (def s2-decks
   [(create-deck "Renea" :s2-renea
+                :s2-briefcase 1
                 :s2-lethal-force 2
                 :s2-anticipation 2
                 :s2-strafe-fire 2
@@ -39,6 +40,7 @@
                 :s2-dragons-heart 2
                 :s2-dragons-descent 2)
    (create-deck "Eugenia" :s2-eugenia
+                :s2-wonderland 1
                 :s2-absinthin-arrow 2
                 :s2-color-spray 2
                 :s2-plot-hook 2
