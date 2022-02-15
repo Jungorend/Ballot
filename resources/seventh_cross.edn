@@ -773,7 +773,7 @@
                     :ability/trigger :hit}
                    {:ability/description "You may search your deck for a card and Transform it. The opponent may search their deck for a card and add it to their hand."
                     :ability/location :boost
-                    :ability/trigger :boost}]}
+                    :ability/trigger :now}]}
 
  {:card/name "Dispelling Horn"
   :card/id   :s2-dispelling-horn

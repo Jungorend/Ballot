@@ -90,4 +90,12 @@
                 :s6-to-me 2
                 :s6-sacred-arrow 2
                 :s6-sealing-hoplon 2
-                :s6-divine-thrust 2)])
+                :s6-divine-thrust 2)
+   (create-deck "Gordeau" :s6-gordeau
+                :s6-mortal-slide 2
+                :s6-grim-reaper 2
+                :s6-precise-aim 2
+                :s6-mortal-glide 2
+                :s6-rusty-nail 2
+                :s6-soul-exodus 1
+                :s6-turbulence 2)])
