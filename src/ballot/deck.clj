@@ -58,4 +58,28 @@
                 :s6-flying-swallow 2
                 :s6-sky-fangs 2
                 :s6-tenacious-mist 2
-                :s6-moon-gyre 2)])
+                :s6-moon-gyre 2)
+   (create-deck "Hyde" :s6-hyde
+                :s6-dead-set-daze 2
+                :s6-gyro-vortex 2
+                :s6-shadow-scare 2
+                :s6-hydecar 3
+                :s6-black-orbiter 2
+                :s6-red-clad-craver 3
+                :s6-vacant-shift 2)
+   (create-deck "Carmine" :s6-carmine
+                :s6-twist 2
+                :s6-be-devoured 2
+                :s6-this-is-the-end 2
+                :s6-spin 2
+                :s6-give-me-that 2
+                :s6-pulverize 2
+                :s6-thrust 2)
+   (create-deck "Phonon" :s6-phonon
+                :s6-tuning-satisfaction 4
+                :s6-sliding-affliction 2
+                :s6-suppressive-restriction 2
+                :s6-guidance-ascension 2
+                :s6-impulsive-frustration 2
+                :s6-binding-beatitude 2
+                :s6-complete-servitude 2)])

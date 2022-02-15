@@ -9,6 +9,8 @@
             [discljord.events :refer [message-pump!]]
             [ballot.deck :as deck]))
 
+;; NOTE: For Power/Speed/Range -1 is X, and -2 is N/A
+
 
 (defn create-idents
   "Returns a vector of hashmaps each containing a schema entity.
@@ -117,6 +119,13 @@
          (reduce #(str %1 (first %2) "\n") "" seasons)
          "\nCards:\n" (reduce #(str %1 (first (first %2)) " (" (clojure.string/upper-case (get (name (second (first %2)))0)) ") - " (second %2) "\n") "" c))))
 
+(defn print-stats
+  "Stores stats as numbers. -1 refers to X, and -2 refers to N/A. This converts them to a string if so."
+  [stat]
+  (cond (= -1 stat) "X"
+        (= -2 stat) "N/A"
+        :else stat))
+
 (defn describe-attack-card
   [card abilities]
   (let [sorted-abilities (sort-by #(case (:ability/trigger %)
@@ -130,14 +139,14 @@
         attacks (filter #(= :attack (:ability/location %)) sorted-abilities)
         boosts (filter #(= :boost (:ability/location %)) sorted-abilities)
         range (if (= (:card/min-range card) (:card/max-range card))
-                (:card/min-range card)
-                (str (:card/min-range card) " ~ " (:card/max-range card)))]
+                (print-stats (:card/min-range card))
+                (str (print-stats (:card/min-range card)) " ~ " (print-stats (:card/max-range card))))]
     (str (:card/name card) "\n"
          (if (= (:card/type card) :ultra)
            (str (:card/cost card) " Gauge.\n")
            (when (> (:card/cost card) 0)
              (str (:card/cost card) " Force.\n")))
-         "Range: " range " | Power: " (:card/power card) " | Speed: " (:card/speed card)
+         "Range: " range " | Power: " (print-stats (:card/power card)) " | Speed: " (print-stats (:card/speed card))
          (when (> (:card/armor card) 0) (str " | Armor: " (:card/armor card)))
          (when (> (:card/guard card) 0) (str " | Guard: " (:card/guard card))) "\n"
          (if (:card/description card) (:card/description card) "") "\n"
@@ -145,6 +154,7 @@
          "\n" (:card/boost-name card)
          (cond
            (= (:card/boost-type card) :transform) " (T)"
+           (= (:card/boost-type card) :trap) (str " - " (:card/boost-cost card) " Force. (Trap)")
            (= (:card/boost-type card) :instant) (str " - " (:card/boost-cost card) " Force.")
            (= (:card/boost-type card) :continuous) (str " - " (:card/boost-cost card) " Force. (+)")
            (= (:card/boost-type card) :gauge-instant) (str " - " (:card/boost-cost card) " Gauge.")
