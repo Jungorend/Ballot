@@ -38,6 +38,22 @@
   :character/gauge-cost 1
   :character/seasons {:season/name "Undernight"}}
 
+ {:character/name "Waldstein"
+  :character/id :s6-waldstein
+  :character/exceed-name "Waldstein"
+  :character/innate-ability "ACTION: Strike. Your attack has \"Hit: Push or Pull 1.\""
+  :character/exceed-ability "ACTION, 1 Gauge: Strike. Your attack has +2 Power, +2 Guard, and \"Cleanup: Seal your attack.\" ACTION: Add a card from your hand to your gauge to revert, then take another action."
+  :character/gauge-cost 1
+  :character/seasons {:season/name "Undernight"}}
+
+ {:character/name "Chaos"
+  :character/id :s6-chaos
+  :character/exceed-name "Chaos"
+  :character/innate-ability "ACTION: Strike, placing your attack in any space face-down. Your Special and Ultra attacks set in a space calculate Range from that space."
+  :character/exceed-ability "ACTION, 1 Gauge: Advance or Retreat 1, then Strike, placing your attack in any space face-down. Your Special and Ultra Attacks set in a space calculate Range from that space. ACTION: Add a card from your hand to your gauge to revert, then take another action."
+  :character/gauge-cost 1
+  :character/seasons {:season/name "Undernight"}}
+
  ;; Cards
  {:card/name "The Diviner"
   :card/id :s6-the-diviner

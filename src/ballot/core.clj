@@ -88,7 +88,8 @@
               {:season/number 2, :season/name "Seventh Cross" :season/creator "Level99" :season/mechanics "In this season you have transforms. For every transform in your transformation area, your exceed cost is reduced by 2. During a Strike, if you hit, you may move your attack to your transformation area during cleanup. You may also discard one card to transform the same of the other card if both are in your hand."}
               {:season/number 3, :season/name "Street Fighter" :season/creator "Level99" :season/mechanics "When setting your attack, you may discard 1 Gauge. If you do, your attack is Critical."}
               {:season/number 4, :season/name "Shovel Knight" :season/creator "Level99"}
-              {:season/number 5, :season/name "Blazblue" :season/creator "Level99" :season/mechanics "You have an overdrive area. When you exceed, the cards spent to Exceed are moved to the Overdrive area. If you ever have 0 cards in your Overdrive area, you revert to your normal side. You also have an astral heat which starts outside your deck. If you reshuffle manually, instead of drawing one card at the end of your turn, draw your astral heat."}])
+              {:season/number 5, :season/name "Blazblue" :season/creator "Level99" :season/mechanics "You have an overdrive area. When you exceed, the cards spent to Exceed are moved to the Overdrive area. If you ever have 0 cards in your Overdrive area, you revert to your normal side. You also have an astral heat which starts outside your deck. If you reshuffle manually, instead of drawing one card at the end of your turn, draw your astral heat."}
+              {:season/number 6, :season/name "Undernight" :season/creator "Level99"}])
 ;; TODO: Have a mechanics: explanation
 ;; TODO: Have characters display gauge cost amount
 
