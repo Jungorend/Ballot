@@ -91,6 +91,7 @@
 ;; TODO: Have characters display gauge cost amount
 
 (def seventh-cross (edn/read-string (slurp "resources/seventh_cross.edn")))
+(def undernight (edn/read-string (slurp "resources/undernight.edn")))
 
 (defn describe-character
   [card seasons deck-cards]
@@ -209,7 +210,9 @@
 (d/transact conn schema)
 (d/transact conn entries)
 (d/transact conn seventh-cross)
+(d/transact conn undernight)
 (d/transact conn deck/s2-decks)
+(d/transact conn deck/s6-decks)
 
 (def state (atom nil))
 (def bot-id (atom nil))

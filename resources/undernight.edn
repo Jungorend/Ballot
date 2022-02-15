@@ -1,0 +1,232 @@
+[{:character/name "Linne"
+  :character/id :s6-linne
+  :character/exceed-name "Linne"
+  :character/innate-ability "ACTION: Draw 2, then Advance or Retreat 1. The opponent draws 1."
+  :character/exceed-ability "ACTION: Play a Continuous Boost from your Gauge. If this causes you to Strike, gain +1 Power. ACTION: Add a card from your hand to your gauge to revert, then take another action."
+  :character/gauge-cost 1
+  :character/seasons {:season/name "Undernight"}}
+
+ {:character/name "Hyde"
+  :character/id :s6-hyde
+  :character/exceed-name "Hyde"
+  :character/innate-ability "ACTION: Close or Retreat 1. You may Strike with a card from your hand face-up. If you do not, add a card from your hand to your Gauge."
+  :character/exceed-ability "ACTION: Strike with a card from your Gauge face-up. Your attack has +3 Power and \"Cleanup: Seal your attack.\""
+  :character/gauge-cost 1
+  :character/seasons {:season/name "Undernight"}}
+
+ {:character/name "Phonon"
+  :character/id :s6-phonon
+  :character/exceed-name "Phonon"
+  :character/innate-ability "ACTION: Strike. If this is not the turn after a strike, your attack has +2 Power. Otherwise, your attack has +1 Power."
+  :character/exceed-ability "ACTION, 1 Gauge: Strike. Your attack has +2 Power. If this is not the turn after a strike, Close or Retreat 1 before setting your attack."
+  :character/gauge-cost 1
+  :character/seasons {:season/name "Undernight"}}
+
+ {:character/name "Yuzuriha"
+  :character/id :s6-yuzuriha
+  :character/exceed-name "Yuzuriha"
+  :character/innate-ability "ACTION: Add a card from your hand to your Gauge. If you have 4 or more cards in your Gauge after this, Exceed."
+  :character/exceed-ability "ACTION: Your attacks have \"Cleanup: Discard your attack.\" ACTION: Strike with a random card from your Gauge face-up. If you did, your attack has +2 Power and +1 Speed. The opponent sets their attack first (you still win Speed ties). ACTION: Add a card from your hand to your gauge to revert, then take another action."
+  :character/gauge-cost 1
+  :character/seasons {:season/name "Undernight"}}
+
+ {:character/name "Orie"
+  :character/id :s6-orie
+  :character/exceed-name "Orie"
+  :character/innate-ability "ACTION: Strike. Your Special and Ultra Attacks have +2 Armor."
+  :character/exceed-ability "ACTION, 1 Gauge: Strike. Your attack has \"Hit: Your printed Power becomes equal to the printed Power of the top card of your discard.\" ACTION: Add a card from your hand to your gauge to revert, then take another action."
+  :character/gauge-cost 1
+  :character/seasons {:season/name "Undernight"}}
+
+ ;; Cards
+ {:card/name "The Diviner"
+  :card/id :s6-the-diviner
+  :card/type :ultra
+  :card/cost 2
+  :card/min-range 2
+  :card/max-range 3
+  :card/power 6
+  :card/speed 3
+  :card/guard 0
+  :card/armor 0
+  :card/boost-name "Concentration (Deep Focus)"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "-1 Speed."
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "Ignore Guard"
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/trigger :now
+                    :ability/location :boost
+                    :ability/description "Now: Strike."}
+                   {:ability/description "Hit: Gain Advantage."
+                    :ability/trigger :hit
+                    :ability/location :boost}
+                   {:ability/description "Ignore Guard."
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "+0~1 Range and +1 Speed for each Boost in play (yours and the opponent's)."
+                    :ability/trigger :passive
+                    :ability/location :attack}]}
+
+ {:card/name "Elusive Flash"
+  :card/id :s6-elusive-flash
+  :card/type :ultra
+  :card/cost 1
+  :card/min-range 1
+  :card/max-range 2
+  :card/power 4
+  :card/speed 4
+  :card/guard 0
+  :card/armor 0
+  :card/boost-name "Resistance (Sheer Wall)"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Attacks at range 2 do not hit you."
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "+1 Armor"
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "+3 Guard"
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "Now: Strike."
+                    :ability/location :boost
+                    :ability/trigger :now}
+                   {:ability/description "Hit: Gain Advantage."
+                    :ability/trigger :hit
+                    :ability/location :boost}]}
+
+ {:card/name "Divine Blaze"
+  :card/id :s6-divine-blaze
+  :card/type :ultra
+  :card/cost 3
+  :card/min-range 1
+  :card/max-range 2
+  :card/power 3
+  :card/speed 6
+  :card/guard 0
+  :card/armor 0
+  :card/boost-name "Culling (Demise Razor)"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "If this is the turn after a Strike, +4 Power."
+                    :ability/location :attack
+                    :ability/trigger :passive}
+                   {:ability/description "Hit: Push 3 and gain Advantage."
+                    :ability/trigger :hit
+                    :ability/location :attack}
+                   {:ability/description "Now: Strike."
+                    :ability/location :boost
+                    :ability/trigger :now}
+                   {:ability/description "Hit: The opponent discards a card at random. Gain Advantage."
+                    :ability/trigger :hit
+                    :ability/location :boost}]}
+
+ {:card/name "Flying Swallow"
+  :card/id :s6-flying-swallow
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 1
+  :card/power 3
+  :card/speed 4
+  :card/guard 0
+  :card/armor 0
+  :card/boost-name "Roll (Sure Kill Artist)"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Before: You may Advance 3 and gain +2 Power."
+                    :ability/trigger :before
+                    :ability/location :attack}
+                   {:ability/description "After: If you have not moved this Strike, Advance 3 and draw 1."
+                    :ability/location :attack
+                    :ability/trigger :after}
+                   {:ability/description "Now: Advance or Retreat 1, then Strike."
+                    :ability/trigger :now
+                    :ability/location :boost}
+                   {:ability/description "Hit: Gain Advantage."
+                    :ability/location :boost
+                    :ability/trigger :hit}]}
+
+ {:card/name "Sky Fangs"
+  :card/id :s6-sky-fangs
+  :card/type :special
+  :card/cost 0
+  :card/min-range 3
+  :card/max-range 5
+  :card/power 3
+  :card/speed 4
+  :card/guard 0
+  :card/armor 3
+  :card/boost-name "Overcome (Godlike)"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "After: Close 3 and lose all Armor."
+                    :ability/trigger :after
+                    :ability/location :attack}
+                   {:ability/description "+1 Power."
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "Now: Strike."
+                    :ability/trigger :now
+                    :ability/location :boost}
+                   {:ability/description "Hit: Gain Advantage."
+                    :ability/location :boost
+                    :ability/trigger :hit}]}
+
+ {:card/name "Tenacious Mist"
+  :card/id :s6-tenacious-mist
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 1
+  :card/power 4
+  :card/speed 5
+  :card/guard 0
+  :card/armor 0
+  :card/boost-name "Sidestep (Transparent Foe)"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "After: Gain X Armor, where X is the damage this attack dealt."
+                    :ability/trigger :after
+                    :ability/location :attack}
+                   {:ability/description "Now: Name a Normal, then Strike. The named card cannot hit you."
+                    :ability/trigger :now
+                    :ability/location :boost}
+                   {:ability/description "Hit: Gain Advantage."
+                    :ability/trigger :hit
+                    :ability/location :boost}]}
+
+ {:card/name "Moon Gyre"
+  :card/id :s6-moon-gyre
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 2
+  :card/power 3
+  :card/speed 5
+  :card/guard 0
+  :card/armor 0
+  :card/boost-name "Vanish (Transcend)"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "If the opponent initiated this Strike, +2 Speed."
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "After: Advance 2."
+                    :ability/trigger :after
+                    :ability/location :attack}
+                   {:ability/description "Now: Strike."
+                    :ability/trigger :now
+                    :ability/location :boost}
+                   {:ability/description "Before: Close 2."
+                    :ability/location :boost
+                    :ability/trigger :before}
+                   {:ability/description "Hit: Gain Advantage."
+                    :ability/trigger :hit
+                    :ability/location :boost}]}
+ ]

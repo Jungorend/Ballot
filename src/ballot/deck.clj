@@ -49,3 +49,13 @@
                 :s2-wonderlight 1
                 :s2-cats-cradle 2
                 :s2-queen-of-hearts 2)])
+
+(def s6-decks
+  [(create-deck "Linne" :s6-linne
+                :s6-the-diviner 2
+                :s6-elusive-flash 2
+                :s6-divine-blaze 2
+                :s6-flying-swallow 2
+                :s6-sky-fangs 2
+                :s6-tenacious-mist 2
+                :s6-moon-gyre 2)])
