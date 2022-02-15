@@ -96,30 +96,6 @@
 (def seventh-cross (edn/read-string (slurp "resources/seventh_cross.edn")))
 (def undernight (edn/read-string (slurp "resources/undernight.edn")))
 
-(defn describe-character
-  [card seasons deck-cards]
-  (let [description (if (:character/description card)
-                      (:character/description card)
-                      "")
-        exceed-description (if (:character/exceed-description card)
-                             (:character/exceed-description card)
-                             "")
-        c (sort-by #(case (second (first %))
-                      :normal 4
-                      :special 3
-                      :ultra 2
-                      :character 1
-                      0)
-                   (into [] (frequencies (map #(take 2 %) deck-cards))))]
-    (str (:character/name card) " (" (:character/gauge-cost card) "G)\n"
-         description "\n"
-         (:character/innate-ability card) "\n\n"
-         "Exceed Mode: " (or (:character/exceed-name card) "") "\n"
-         exceed-description "\n"
-         (:character/exceed-ability card) "\n\n"
-         (reduce #(str %1 (first %2) "\n") "" seasons)
-         "\nCards:\n" (reduce #(str %1 (first (first %2)) " (" (clojure.string/upper-case (get (name (second (first %2)))0)) ") - " (second %2) "\n") "" c))))
-
 (defn print-stats
   "Stores stats as numbers. -1 refers to X, and -2 refers to N/A. This converts them to a string if so."
   [stat]
@@ -268,35 +244,38 @@
 (defn update-lfg-queue []
   (swap! state update :lfg-queue (fn [time] (filter #(not= 1 (.compareTo (java.time.LocalDateTime/now)
                                                                          (second %))) time))))
-(defn character-lookup
-  ;; TODO: Make searching case insensitive and provide options, like cards does
+
+(defn lookup-character
   [args conn]
-  (if
-    (empty? (d/q '[:find ?c :in $ ?deck-name :where [?c :deck/name ?deck-name]] @conn (clojure.string/join " " args)))
-    "No character found with that name."
-    (let [name (clojure.string/join " " args)
-          cards (d/q '[:find ?card-name ?type ?i
-                       :in $ ?deck-name :where
-                       [?card :card/name ?card-name]
-                       [?card :card/type ?type]
-                       [?i :card-instance/card ?card]
-                       [?deck :deck/cards ?i]
-                       [?deck :deck/name ?deck-name]]
-                     @conn name)
-          char (first (first (d/q '[:find ?char
-                                    :in $ ?deck-name :where
-                                    [?c :character/id ?char]
-                                    [?deck :deck/character ?c]
-                                    [?deck :deck/name ?deck-name]]
-                                  @conn name)))
-          char-full (d/pull @conn '[*] [:character/id char])
-          seasons (d/q '[:find ?name ?mechanics :in $ ?char :where
-                         [?c :character/id ?char]
-                         [?c :character/seasons ?sid]
-                         [?sid :season/name ?name]
-                         [?sid :season/mechanics ?mechanics]]
-                       @conn char)]
-      (describe-character char-full seasons cards))))
+  (let [deck (d/entity @conn (ffirst (d/q '[:find ?deck :in $ ?name :where
+                                           [?deck :deck/name ?deck-name]
+                                           [(ballot.core/equal-strings? ?name ?deck-name)]]
+                                         @conn (clojure.string/join " " args))))
+        character (:deck/character deck)
+        cards (frequencies (map #(:card-instance/card %) (:deck/cards deck)))
+        sorted-cards (sort-by #(case (:card/type (first %))
+                                 :normal 4
+                                 :special 3
+                                 :ultra 2
+                                 :character 1
+                                 0)
+                              (into [] cards))]
+    (if (empty? deck)
+      "Nothing found with that name."
+      (str (:character/name character) " (" (:character/gauge-cost character) "G)\n"
+           (or (:character/description character) "") "\n"
+           (:character/innate-ability character) "\n\n"
+           "Exceed Mode: " (or (:character/exceed-name character) "") "\n"
+           (or (:character/exceed-description character) "") "\n"
+           (:character/exceed-ability character) "\n"
+           (reduce #(str %1 (:season/mechanics %2) "\n") "" (:character/seasons character))
+           "\nCards:\n" (reduce #(str %1
+                                      (:card/name (first %2))
+                                      (if (= 0 (:card/cost (first %2)))
+                                        " "
+                                        (str " (" (:card/cost (first %2)) (if (= :ultra (:card/type (first %2))) "G" "F") ")"))
+                                      " x" (second %2) "\n")
+                                "" sorted-cards)))))
 
 (defmethod handle-event :message-create
   [_ {:keys [channel-id content mentions author] :as _data}]
@@ -305,7 +284,7 @@
     (cond
       (some #{@bot-id} (map :id mentions)) (discord-rest/create-message! (:rest @state) channel-id :content (:help config))
       (= "!help" first-word) (discord-rest/create-message! (:rest @state) channel-id :content (:help config))
-      (= "!character" first-word) (let [description (character-lookup args conn)]
+      (= "!character" first-word) (let [description (lookup-character args conn)]
                                     (when description (discord-rest/create-message! (:rest @state) channel-id :content (str "```\n" description "```"))))
       (= "!card" first-word) (let [description (lookup-card args conn)]
                                (when description (discord-rest/create-message! (:rest @state) channel-id :content (str "```\n" description "```"))))
