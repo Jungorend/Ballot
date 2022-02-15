@@ -719,4 +719,182 @@
                     :ability/trigger :now
                     :ability/location :boost}]}
 
+ {:card/name "Divine Thrust"
+  :card/id :s6-divine-thrust
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 2
+  :card/power 3
+  :card/speed 6
+  :card/guard 0
+  :card/armor 0
+  :card/boost-name "Aggressive"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "After: Advance 4."
+                    :ability/trigger :after
+                    :ability/location :attack}
+                   {:ability/description "+1 Power."
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "Now: Advance or Retreat 1."
+                    :ability/trigger :now
+                    :ability/location :boost}]}
+
+ {:card/name "Sealing Hoplon"
+  :card/id :s6-sealing-hoplon
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 3
+  :card/power 2
+  :card/speed 3
+  :card/guard 0
+  :card/armor 0
+  :card/boost-name "Wide"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Stun Immunity"
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "Ignore Guard"
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "Hit: Advance or Retreat 1 and gain Advantage."
+                    :ability/trigger :hit
+                    :ability/location :attack}
+                   {:ability/description "+0~1 Range"
+                    :ability/location :boost
+                    :ability/trigger :passive}
+                   {:ability/description "Now: Advance or Retreat 1."
+                    :ability/location :boost
+                    :ability/trigger :now}]}
+
+ {:card/name "Sacred Arrow"
+  :card/id :s6-sacred-arrow
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 2
+  :card/power 5
+  :card/speed 2
+  :card/guard 0
+  :card/armor 0
+  :card/boost-name "Tactical"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Attacks with Speed 5 or greater do not hit you."
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "+1 Speed"
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "Now: Advance or Retreat 1."
+                    :ability/trigger :now
+                    :ability/location :boost}]}
+
+ {:card/name "To Me! (Command Order)"
+  :card/id :s6-to-me
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 2
+  :card/power 3
+  :card/speed 4
+  :card/guard 0
+  :card/armor 0
+  :card/boost-name "Aerial Leap"
+  :card/boost-type :instant
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Stun Immunity"
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "You cannot be Pushed or Pulled"
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "Hit: Advance or Retreat 1 and gain Advantage."
+                    :ability/trigger :hit
+                    :ability/location :attack}
+                   {:ability/description "Advance 4. If you advanced past the opponent, you may Strike."
+                    :ability/trigger :now
+                    :ability/location :boost}]}
+
+ {:card/name "Succession"
+  :card/id :s6-succession
+  :card/type :special
+  :card/cost 0
+  :card/min-range 3
+  :card/max-range 5
+  :card/power 3
+  :card/speed 2
+  :card/guard 0
+  :card/armor 0
+  :card/boost-name "Defensive"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Stun Immunity"
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "Hit: Pull 3 and gain Advantage."
+                    :ability/trigger :hit
+                    :ability/location :attack}
+                   {:ability/description "+1 Armor"
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "+1 Guard"
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "Now: Advance or Retreat 1."
+                    :ability/location :boost
+                    :ability/trigger :now}]}
+
+ {:card/name "Rest in Peace"
+  :card/id :s6-rest-in-peace
+  :card/type :ultra
+  :card/cost 2
+  :card/min-range 1
+  :card/max-range 2
+  :card/power 1
+  :card/speed 0
+  :card/guard 0
+  :card/armor 6
+  :card/boost-name "The Ruler"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Hit: If you were hit, +6 Power."
+                    :ability/trigger :hit
+                    :ability/location :attack}
+                   {:ability/description "During a Strike, Advance or Retreat effects on your attacks are increased by 1."
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "Now: Draw a card."
+                    :ability/trigger :now
+                    :ability/location :boost}]}
+
+ {:card/name "Luminous Embrace"
+  :card/id :s6-luminous-embrace
+  :card/type :ultra
+  :card/cost 3
+  :card/min-range 3
+  :card/max-range 6
+  :card/power 7
+  :card/speed 2
+  :card/guard 0
+  :card/armor 0
+  :card/boost-name "Fifth Executor"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Attacks at Range 4 or greater do not hit you."
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "After: Close 5 and gain Advantage."
+                    :ability/trigger :after
+                    :ability/location :attack}
+                   {:ability/description "Now: Strike"
+                    :ability/trigger :now
+                    :ability/location :boost}
+                   {:ability/description "Hit: Your total Power becomes 5 (Ignore printed values, bonuses, and penalties). Add this to your Gauge."
+                    :ability/trigger :hit
+                    :ability/location :boost}]}
  ]

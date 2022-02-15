@@ -82,4 +82,12 @@
                 :s6-guidance-ascension 2
                 :s6-impulsive-frustration 2
                 :s6-binding-beatitude 2
-                :s6-complete-servitude 2)])
+                :s6-complete-servitude 2)
+   (create-deck "Orie" :s6-orie
+                :s6-luminous-embrace 2
+                :s6-rest-in-peace 2
+                :s6-succession 2
+                :s6-to-me 2
+                :s6-sacred-arrow 2
+                :s6-sealing-hoplon 2
+                :s6-divine-thrust 2)])
