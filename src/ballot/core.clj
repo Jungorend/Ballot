@@ -161,7 +161,7 @@
 (defn equal-strings?
   "Returns true if both strings are equal regardless of capitalization"
   [dictionary-name string2]
-  (= (.toLowerCase (remove-unsupported-characters dictionary-name)) (remove-unsupported-characters (.toLowerCase string2))))
+  (clojure.string/includes? (.toLowerCase (remove-unsupported-characters dictionary-name)) (remove-unsupported-characters (.toLowerCase string2))))
 
 (defn lookup-card
   [card-name conn]
