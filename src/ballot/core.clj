@@ -160,8 +160,8 @@
 
 (defn equal-strings?
   "Returns true if both strings are equal regardless of capitalization"
-  [string1 string2]
-  (= (.toLowerCase string1) (.toLowerCase string2)))
+  [dictionary-name string2]
+  (= (.toLowerCase (remove-unsupported-characters dictionary-name)) (.toLowerCase string2)))
 
 (defn lookup-card
   [card-name conn]
@@ -249,7 +249,7 @@
   [args conn]
   (let [deck (d/entity @conn (ffirst (d/q '[:find ?deck :in $ ?name :where
                                            [?deck :deck/name ?deck-name]
-                                           [(ballot.core/equal-strings? ?name ?deck-name)]]
+                                           [(ballot.core/equal-strings? ?deck-name ?name)]]
                                          @conn (clojure.string/join " " args))))
         character (:deck/character deck)
         cards (frequencies (map #(:card-instance/card %) (:deck/cards deck)))

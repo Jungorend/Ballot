@@ -1079,4 +1079,183 @@
                    {:ability/description "Before: +1 Power for every 2 cards in the opponent's hand."
                     :ability/trigger :before
                     :ability/location :boost}]}
+
+ {:card/name "Sougetsu Ittou-ryu et cetera! Yae Ichirin"
+  :card/id :s6-sougetsu-ittou-ryu-et-cetera-yae-ichirin
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 3
+  :card/power 4
+  :card/speed 5
+  :card/guard 0
+  :card/armor 0
+  :card/boost-name "Swift and Deadly"
+  :card/boost-type :instant
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Hit: Gain Advantage."
+                    :ability/trigger :hit
+                    :ability/location :attack}
+                   {:ability/description "After: Advance 3."
+                    :ability/trigger :after
+                    :ability/location :attack}
+                   {:ability/description "Advance or Retreat 2, then Strike."
+                    :ability/trigger :now
+                    :ability/location :boost}]}
+
+ {:card/name "Over Here!"
+  :card/id :s6-over-here
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 3
+  :card/power 1
+  :card/speed 4
+  :card/guard 0
+  :card/armor 0
+  :card/boost-name "Unsheathe"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Hit: Choose a random card in your Gauge. +X Power, then Advance or Retreat X. X is the chosen card's printed Power."
+                    :ability/trigger :hit
+                    :ability/location :attack}
+                   {:ability/description "+2 Power"
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "+1 Speed"
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "Now: Strike with a random card from your Gauge face-up. The opponent sets their attack first (you still win speed ties)."
+                    :ability/trigger :now
+                    :ability/location :boost}]}
+
+ {:card/name "Battoujutsu San no Kata: Tachi"
+  :card/id :s6-battoujutsu-san-no-kata-tachi
+  :card/type :special
+  :card/cost 0
+  :card/min-range 2
+  :card/max-range 4
+  :card/power 5
+  :card/speed 3
+  :card/guard 5
+  :card/armor 0
+  :card/boost-name "Not Over Yet"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Ignore Armor"
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "Ignore Guard"
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "+0~1 Range"
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "Cleanup: If you were stunned, sustain this."
+                    :ability/trigger :cleanup
+                    :ability/location :boost}]}
+
+ {:card/name "Battoujutsu Ni No Kata: Saki"
+  :card/id :s6-battoujutsu-ni-no-kata-saki
+  :card/type :special
+  :card/cost 0
+  :card/min-range 3
+  :card/max-range 5
+  :card/power 7
+  :card/speed 1
+  :card/guard 0
+  :card/armor 0
+  :card/boost-name "Come At Me!"
+  :card/boost-type :continuous
+  :card/boost-cost 1
+  :card/abilities [{:ability/description "If you set this from your Gauge, Stun Immunity."
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "+3 Power"
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "At the start of your turn, add this to your Gauge."
+                    :ability/trigger :passive
+                    :ability/location :boost}]}
+
+ {:card/name "Battoujutsu Ichi no Kata: Kiri"
+  :card/id :s6-battoujutsu-ichi-no-kata-kiri
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 3
+  :card/power 7
+  :card/speed 1
+  :card/guard 5
+  :card/armor 1
+  :card/boost-name "Try Hard"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "You cannot be Pushed or Pulled."
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "Hit: For each point of damage you took during this Strike, -1 Power."
+                    :ability/trigger :hit
+                    :ability/location :attack}
+                   {:ability/description "After: Draw 1."
+                    :ability/trigger :after
+                    :ability/location :attack}
+                   {:ability/description "+2 Power"
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "Cleanup: If you were stunned, sustain this."
+                    :ability/trigger :cleanup
+                    :ability/location :boost}]}
+
+ {:card/name "Sogetsu Ittou-Ryuu Ougi: Kashou"
+  :card/id :s6-sogetsu-ittou-ryuu-ougi-kashou
+  :card/type :ultra
+  :card/cost 2
+  :card/min-range 1
+  :card/max-range 4
+  :card/power 0
+  :card/speed 6
+  :card/guard 0
+  :card/armor 0
+  :card/boost-name "Iris Blade"
+  :card/boost-type :instant
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "This attack does not stun."
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "Hit: +X Power. X is the printed Power of the top card of your discard pile."
+                    :ability/trigger :hit
+                    :ability/location :attack}
+                   {:ability/description "After: Advance 4."
+                    :ability/trigger :after
+                    :ability/location :attack}
+                   {:ability/description "Add up to 2 cards from the top of your deck to your Gauge. If you have 4 or more Gauge after this, Exceed."
+                    :ability/trigger :now
+                    :ability/location :boost}]}
+
+ {:card/name "Zero no Kata Hi-Ougi: Inochi Kurenai"
+  :card/id :s6-zero-no-kata-hi-ougi-inochi-kurenai
+  :card/type :ultra
+  :card/cost 1
+  :card/min-range 1
+  :card/max-range 2
+  :card/power 6
+  :card/speed 3
+  :card/guard 0
+  :card/armor 0
+  :card/boost-name "Ainsel Last"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Cleanup: If you were stunned, you may add this to your boost area as a Continuous Boost. Sustain it."
+                    :ability/trigger :cleanup
+                    :ability/location :attack}
+                   {:ability/description "+1 Power"
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "+1 Speed"
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "After: Add this to your Gauge."
+                    :ability/trigger :after
+                    :ability/location :boost}]}
  ]

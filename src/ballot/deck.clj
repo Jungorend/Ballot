@@ -98,4 +98,12 @@
                 :s6-mortal-glide 2
                 :s6-rusty-nail 2
                 :s6-soul-exodus 1
-                :s6-turbulence 2)])
+                :s6-turbulence 2)
+   (create-deck "Yuzuriha" :s6-yuzuriha
+                :s6-zero-no-kata-hi-ougi-inochi-kurenai 2
+                :s6-sogetsu-ittou-ryuu-ougi-kashou 2
+                :s6-battoujutsu-ichi-no-kata-kiri 2
+                :s6-battoujutsu-ni-no-kata-saki 2
+                :s6-battoujutsu-san-no-kata-tachi 2
+                :s6-over-here 2
+                :s6-sougetsu-ittou-ryu-et-cetera-yae-ichirin 2)])
