@@ -286,15 +286,16 @@
                     "guard" :card/guard
                     "range" :range
                     nil)
-        comparison (case (.toLowerCase (second args))
+        comparison (case (second args)
                      ">" '>
                      ">=" '>=
                      "<" '<
                      "<=" '<=
-                     "=" '=)
+                     "=" '=
+                     nil)
         value (Integer/parseInt (nth args 2))
         stat-keyword (symbol (.toLowerCase (str "?" (first args))))]
-    (cond (nil? stat-type) nil
+    (cond (or (nil? stat-type) (nil? comparison)) nil
           (= :range stat-type) `[[?e :card/min-range ?min-range]
                                  [?e :card/max-range ?max-range]
                                  [:blah]]
@@ -307,15 +308,17 @@
   (loop [filters []
          a args]
     (if (empty? a)
-      (d/q (apply conj '[:find ?card-name
-                         :where [?e :card/name ?card-name]]
-                  filters) @conn)
+      (if (empty? filters)
+        "No valid search queries provided."
+        (d/q (apply conj '[:find ?card-name
+                           :where [?e :card/name ?card-name]]
+                    filters) @conn))
       (case (first a)
         "-s" (recur (let [update (stat-search (take 3 (rest a)))]
                       (if update
                         (apply conj filters update)
                         filters)) (drop 4 a))
-        ""
+        (recur filters (rest a))
         ))))
 
 
