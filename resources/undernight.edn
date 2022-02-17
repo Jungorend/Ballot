@@ -1,6 +1,5 @@
 [{:character/name "Linne"
   :character/id :s6-linne
-  :character/exceed-name "Linne"
   :character/innate-ability "ACTION: Draw 2, then Advance or Retreat 1. The opponent draws 1."
   :character/exceed-ability "ACTION: Play a Continuous Boost from your Gauge. If this causes you to Strike, gain +1 Power. ACTION: Add a card from your hand to your gauge to revert, then take another action."
   :character/gauge-cost 1
@@ -8,7 +7,6 @@
 
  {:character/name "Hyde"
   :character/id :s6-hyde
-  :character/exceed-name "Hyde"
   :character/innate-ability "ACTION: Close or Retreat 1. You may Strike with a card from your hand face-up. If you do not, add a card from your hand to your Gauge."
   :character/exceed-ability "ACTION: Strike with a card from your Gauge face-up. Your attack has +3 Power and \"Cleanup: Seal your attack.\""
   :character/gauge-cost 1
@@ -16,7 +14,6 @@
 
  {:character/name "Phonon"
   :character/id :s6-phonon
-  :character/exceed-name "Phonon"
   :character/innate-ability "ACTION: Strike. If this is not the turn after a strike, your attack has +2 Power. Otherwise, your attack has +1 Power."
   :character/exceed-ability "ACTION, 1 Gauge: Strike. Your attack has +2 Power. If this is not the turn after a strike, Close or Retreat 1 before setting your attack."
   :character/gauge-cost 1
@@ -24,7 +21,6 @@
 
  {:character/name "Yuzuriha"
   :character/id :s6-yuzuriha
-  :character/exceed-name "Yuzuriha"
   :character/innate-ability "ACTION: Add a card from your hand to your Gauge. If you have 4 or more cards in your Gauge after this, Exceed."
   :character/exceed-ability "ACTION: Your attacks have \"Cleanup: Discard your attack.\" ACTION: Strike with a random card from your Gauge face-up. If you did, your attack has +2 Power and +1 Speed. The opponent sets their attack first (you still win Speed ties). ACTION: Add a card from your hand to your gauge to revert, then take another action."
   :character/gauge-cost 1
@@ -32,7 +28,6 @@
 
  {:character/name "Orie"
   :character/id :s6-orie
-  :character/exceed-name "Orie"
   :character/innate-ability "ACTION: Strike. Your Special and Ultra Attacks have +2 Armor."
   :character/exceed-ability "ACTION, 1 Gauge: Strike. Your attack has \"Hit: Your printed Power becomes equal to the printed Power of the top card of your discard.\" ACTION: Add a card from your hand to your gauge to revert, then take another action."
   :character/gauge-cost 1
@@ -40,7 +35,6 @@
 
  {:character/name "Waldstein"
   :character/id :s6-waldstein
-  :character/exceed-name "Waldstein"
   :character/innate-ability "ACTION: Strike. Your attack has \"Hit: Push or Pull 1.\""
   :character/exceed-ability "ACTION, 1 Gauge: Strike. Your attack has +2 Power, +2 Guard, and \"Cleanup: Seal your attack.\" ACTION: Add a card from your hand to your gauge to revert, then take another action."
   :character/gauge-cost 1
@@ -48,7 +42,6 @@
 
  {:character/name "Chaos"
   :character/id :s6-chaos
-  :character/exceed-name "Chaos"
   :character/innate-ability "ACTION: Strike, placing your attack in any space face-down. Your Special and Ultra attacks set in a space calculate Range from that space."
   :character/exceed-ability "ACTION, 1 Gauge: Advance or Retreat 1, then Strike, placing your attack in any space face-down. Your Special and Ultra Attacks set in a space calculate Range from that space. ACTION: Add a card from your hand to your gauge to revert, then take another action."
   :character/gauge-cost 1
@@ -56,9 +49,22 @@
 
  {:character/name "Gordeau"
   :character/id :s6-gordeau
-  :character/exceed-name "Gordeau"
   :character/innate-ability "ACTION: Strike. Your attack has \"Hit: The opponent must discard a card.\""
   :character/exceed-ability "ACTION, 1 Gauge: The opponent must spend 1 force, if able. Take another action. ACTION: Add a card from your hand to your gauge to revert, then take another action."
+  :character/gauge-cost 1
+  :character/seasons {:season/name "Undernight"}}
+
+ {:character/name "Wagner"
+  :character/id :s6-wagner
+  :character/innate-ability "ACTION: Close or Retreat 1. Play a Continuous Boost from your hand or reveal a hand with none."
+  :character/exceed-ability "ACTION: Close or Retreat 1. Play a Continuous Boost from your Gauge. If this did not cause you to Strike, take another action. ACTION: Add a card from your hand to your gauge to revert, then take another action."
+  :character/gauge-cost 1
+  :character/seasons {:season/name "Undernight"}}
+
+ {:character/name "Enkidu"
+  :character/id :s6-enkidu
+  :character/innate-ability "ACTION: Return a copy of 'Three Precept Strike' from your discard pile to your hand. If you do, Close 1."
+  :character/exceed-ability "ACTION, Seal a copy of 'Three Precept Strike' from your Gauge to Strike. If you do, your attack has +2 Power and +1 Speed. ACTION: Add a card from your hand to your gauge to revert, then take another action."
   :character/gauge-cost 1
   :character/seasons {:season/name "Undernight"}}
 
@@ -1256,6 +1262,713 @@
                     :ability/trigger :passive
                     :ability/location :boost}
                    {:ability/description "After: Add this to your Gauge."
+                    :ability/trigger :after
+                    :ability/location :boost}]}
+
+ {:card/name "Cold Reflection"
+  :card/id :s6-cold-reflection
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 2
+  :card/power 2
+  :card/speed 4
+  :card/guard 0
+  :card/armor 0
+  :card/boost-name "Lie In Wait"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "If this was not set in a space, +2 Speed."
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "Hit: Push 3 (from Chaos)."
+                    :ability/trigger :hit
+                    :ability/location :attack}
+                   {:ability/description "+3 Guard"
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "When this Continuous Boost is discarded, draw 2."
+                    :ability/trigger :passive
+                    :ability/location :boost}]}
+
+ {:card/name "Spew Out"
+  :card/id :s6-spew-out
+  :card/type :special
+  :card/cost 0
+  :card/min-range 2
+  :card/max-range 3
+  :card/power 4
+  :card/speed 3
+  :card/guard 4
+  :card/armor 0
+  :card/boost-name "Tactical"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "After: Advance or Retreat 1."
+                    :ability/trigger :after
+                    :ability/location :attack}
+                   {:ability/description "+1 Speed"
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "Now: Advance or Retreat 1."
+                    :ability/trigger :now
+                    :ability/location :boost}]}
+
+ {:card/name "Repel"
+  :card/id :s6-repel
+  :card/type :special
+  :card/cost 0
+  :card/min-range 0
+  :card/max-range 0
+  :card/power 5
+  :card/speed 3
+  :card/guard 0
+  :card/armor 0
+  :card/boost-name "Compounding Plots"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "If this was set in a space, the opponent cannot Advance or Retreat into that space."
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "Hit: Push 2 (from Chaos)."
+                    :ability/trigger :hit
+                    :ability/location :attack}
+                   {:ability/description "+1 Power"
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "Now: Take another action."
+                    :ability/trigger :now
+                    :ability/location :boost}]}
+
+ {:card/name "Conceal"
+  :card/id :s6-conceal
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 2
+  :card/power 5
+  :card/speed 2
+  :card/guard 0
+  :card/armor 0
+  :card/boost-name "Checkmate"
+  :card/boost-type :continuous
+  :card/boost-cost 2
+  :card/abilities [{:ability/description "Attacks with Speed 5 or greater do not hit you."
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "After: Retreat 1."
+                    :ability/trigger :after
+                    :ability/location :attack}
+                   {:ability/description "+4 Power"
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "Now: Discard until you have one card in hand, then Strike."
+                    :ability/trigger :now
+                    :ability/location :boost}]}
+
+ {:card/name "That's Your Prey"
+  :card/id :s6-thats-your-prey
+  :card/type :special
+  :card/cost 0
+  :card/min-range 0
+  :card/max-range 1
+  :card/power 5
+  :card/speed 1
+  :card/guard 5
+  :card/armor 0
+  :card/boost-name "Umbral"
+  :card/boost-type :continuous
+  :card/boost-cost 1
+  :card/abilities [{:ability/description "If this was not set in a space, +2 Armor."
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "Hit: If the opponent is on this attack's space, +2 Power."
+                    :ability/trigger :hit
+                    :ability/location :attack}
+                   {:ability/description "Now: Take another Action."
+                    :ability/trigger :now
+                    :ability/location :boost}
+                   {:ability/description "After: If your attack was set in a space, Advance or Retreat into that space."
+                    :ability/trigger :after
+                    :ability/location :boost}]}
+
+ {:card/name "Dissect Barrage"
+  :card/id :s6-dissect-barrage
+  :card/type :ultra
+  :card/cost 2
+  :card/min-range 1
+  :card/max-range 2
+  :card/power 5
+  :card/speed 5
+  :card/guard 0
+  :card/armor 0
+  :card/boost-name "Aerial Leap"
+  :card/boost-type :instant
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Calculate Range from Chaos (even if this was set in a space)."
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "After: If this was set in a space, Advance or Retreat to that space."
+                    :ability/trigger :after
+                    :ability/location :attack}
+                   {:ability/description "Advance 4. If you Advanced past the opponent, you may Strike."
+                    :ability/trigger :now
+                    :ability/location :boost}]}
+
+ {:card/name "Deep Revenance"
+  :card/id :s6-deep-revenance
+  :card/type :ultra
+  :card/cost 4
+  :card/min-range 4
+  :card/max-range 4
+  :card/power 10
+  :card/speed 2
+  :card/guard 5
+  :card/armor 2
+  :card/boost-name "Chaos Code"
+  :card/boost-type :continuous
+  :card/boost-cost 1
+  :card/abilities [{:ability/description "After: Draw until you have 7 cards in hand."
+                    :ability/trigger :after
+                    :ability/location :attack}
+                   {:ability/description "Now: Strike, placing your attack in any space face-down. If you reveal a Normal Attack, calculate Range from that space."
+                    :ability/trigger :now
+                    :ability/location :attack}]}
+
+ {:card/name "Wirbelwind"
+  :card/id :s6-wirbelwind
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 2
+  :card/power 6
+  :card/speed 4
+  :card/guard 2
+  :card/armor 1
+  :card/boost-name "Blowback"
+  :card/boost-type :instant
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Attacks at Range 4 or greater do not hit you."
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "Hit: Push 3."
+                    :ability/trigger :hit
+                    :ability/location :attack}
+                   {:ability/description "After: Advance 2."
+                    :ability/trigger :after
+                    :ability/location :boost}
+                   {:ability/description "Range 1: Push 1 or 2, then Strike."
+                    :ability/trigger :now
+                    :ability/location :boost}]}
+
+ {:card/name "Eisen Nagel"
+  :card/id :s6-eisen-nagel
+  :card/type :special
+  :card/cost 0
+  :card/min-range 2
+  :card/max-range 4
+  :card/power 6
+  :card/speed 3
+  :card/guard 2
+  :card/armor 1
+  :card/boost-name "Flex"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Hit: Push or Pull 1."
+                    :ability/trigger :hit
+                    :ability/location :attack}
+                   {:ability/description "After: If the opponent is stunned, gain Advantage."
+                    :ability/trigger :after
+                    :ability/location :attack}
+                   {:ability/description "+1 Armor"
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "+1 Guard."
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "Now: Strike."
+                    :ability/trigger :now
+                    :ability/location :boost}]}
+
+ {:card/name "Sturmangriff"
+  :card/id :s6-sturmangriff
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 1
+  :card/power 5
+  :card/speed 2
+  :card/guard 2
+  :card/armor 1
+  :card/boost-name "Face Me!"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Before: Close 4."
+                    :ability/trigger :before
+                    :ability/location :attack}
+                   {:ability/description "Hit: Push or Pull 3."
+                    :ability/trigger :hit
+                    :ability/location :attack}
+                   {:ability/description "Now: Draw 2."
+                    :ability/trigger :now
+                    :ability/location :boost}
+                   {:ability/description "At the start of your turn, Strike. If you do, your attack has +2 Speed and +2 Armor."
+                    :ability/trigger :passive
+                    :ability/location :boost}]}
+
+ {:card/name "Ferzen Volf"
+  :card/id :s6-ferzen-volf
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 3
+  :card/power 4
+  :card/speed 1
+  :card/guard 2
+  :card/armor 1
+  :card/boost-name "Reach"
+  :card/boost-type :continuous
+  :card/boost-cost 1
+  :card/abilities [{:ability/description "You cannot be Pushed or Pulled."
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "Before, Range 1: Push 2 and +2 Power."
+                    :ability/trigger :before
+                    :ability/location :attack}
+                   {:ability/description "Hit: Push 2."
+                    :ability/trigger :hit
+                    :ability/location :attack}
+                   {:ability/description "+0~1 Range"
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "Now: Strike"
+                    :ability/trigger :now
+                    :ability/location :boost}]}
+
+ {:card/name "Katastrophe"
+  :card/id :s6-katastrophe
+  :card/type :ultra
+  :card/cost 2
+  :card/min-range 1
+  :card/max-range 2
+  :card/power 7
+  :card/speed 5
+  :card/guard 0
+  :card/armor 0
+  :card/boost-name "Hecatoncheir"
+  :card/boost-type :instant
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Hit: Push 8."
+                    :ability/trigger :hit
+                    :ability/location :attack}
+                   {:ability/description "For each card in your hand, draw 1."
+                    :ability/trigger :now
+                    :ability/location :boost}]}
+
+ {:card/name "Werfen Erschlagen"
+  :card/id :s6-werfen-erschlagen
+  :card/type :ultra
+  :card/cost 2
+  :card/min-range 2
+  :card/max-range 3
+  :card/power 4
+  :card/speed 4
+  :card/guard 0
+  :card/armor 0
+  :card/boost-name "The Destroyers"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Ignore Armor"
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "Hit: The opponent discards 4 cards at random."
+                    :ability/trigger :hit
+                    :ability/location :attack}
+                   {:ability/description "Your Normal Attacks have +2 Range and +2 Power."
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "After: If your attack did not hit, return this to your hand."
+                    :ability/trigger :after
+                    :ability/location :boost}]}
+
+ {:card/name "Verderben"
+  :card/id :s6-verderben
+  :card/type :ultra
+  :card/cost 4
+  :card/min-range 3
+  :card/max-range 4
+  :card/power 10
+  :card/speed 1
+  :card/guard 0
+  :card/armor 4
+  :card/boost-name "Maximize Power"
+  :card/boost-type :continuous
+  :card/boost-cost 1
+  :card/abilities [{:ability/description "Stun Immunity"
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "This attack must be set face-up (otherwise it becomes invalid)."
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "+4 Armor"
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "Now: Advance up to 2."
+                    :ability/trigger :now
+                    :ability/location :boost}
+                   {:ability/description "At the start of your turn, add this to your Gauge."
+                    :ability/trigger :passive
+                    :ability/location :boost}]}
+
+ {:card/name "Hitze Falke"
+  :card/id :s6-hitze-falke
+  :card/type :ultra
+  :card/cost 2
+  :card/min-range 3
+  :card/max-range 4
+  :card/power 7
+  :card/speed 1
+  :card/guard 3
+  :card/armor 3
+  :card/boost-name "Flame Brand"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "You may set this as your attack face-up from your boost area. If you set it any other way, it is invalid."
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "After: Seal this"
+                    :ability/trigger :after
+                    :ability/location :attack}
+                   {:ability/description "+1 Power"
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "Cleanup: If you were not stunned, sustain this."
+                    :ability/trigger :cleanup
+                    :ability/location :boost}]}
+
+ {:card/name "Megiddo L'or Celeste Grace"
+  :card/id :s6-megiddo-lor-celeste-grace
+  :card/type :ultra
+  :card/cost 2
+  :card/min-range 1
+  :card/max-range 2
+  :card/power 6
+  :card/speed 6
+  :card/guard 0
+  :card/armor 0
+  :card/boost-name "Ancile"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "You may set this card as your attack face-up from your boost area. If you set this any other way, it is invalid."
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "After: Seal this."
+                    :ability/trigger :after
+                    :ability/location :attack}
+                   {:ability/description "+1 Armor"
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "Cleanup: If you were not stunned, sustain this."
+                    :ability/trigger :cleanup
+                    :ability/location :boost}]}
+
+ {:card/name "Sturm Brecher"
+  :card/id :s6-sturm-brecher
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 2
+  :card/power 5
+  :card/speed 4
+  :card/guard 0
+  :card/armor 0
+  :card/boost-name "Tactical"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Hit: Push 3."
+                    :ability/trigger :hit
+                    :ability/location :attack}
+                   {:ability/description "After: If this did not hit, you may add this to your boost area as a Continuous Boost. Sustain it."
+                    :ability/trigger :after
+                    :ability/location :attack}
+                   {:ability/description "+1 Speed"
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "Now: Advance or Retreat 1."
+                    :ability/trigger :now
+                    :ability/location :boost}]}
+
+ {:card/name "Wackenroder"
+  :card/id :s6-wackenroder
+  :card/type :special
+  :card/cost 0
+  :card/min-range 2
+  :card/max-range 3
+  :card/power 6
+  :card/speed 4
+  :card/guard 4
+  :card/armor 0
+  :card/boost-name "Deflection"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Hit: Push 2."
+                    :ability/trigger :hit
+                    :ability/location :attack}
+                   {:ability/description "After: Retreat 1."
+                    :ability/trigger :after
+                    :ability/location :attack}
+                   {:ability/description "+1 Power"
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "Hit: Gain Armor equal to your Power."
+                    :ability/trigger :hit
+                    :ability/location :boost}]}
+
+ {:card/name "Kugel Blitz"
+  :card/id :s6-kugel-blitz
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 1
+  :card/power 4
+  :card/speed 5
+  :card/guard 0
+  :card/armor 0
+  :card/boost-name "Overpower"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Before: Close 2."
+                    :ability/trigger :before
+                    :ability/location :attack}
+                   {:ability/description "After: Advance 2. If you did not hit, you may add this to your boost area as a Continuous Boost. Sustain it."
+                    :ability/trigger :after
+                    :ability/location :attack}
+                   {:ability/description "+1 Power"
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "Before: Close 1."
+                    :ability/trigger :before
+                    :ability/location :boost}]}
+
+ {:card/name "Filthy Dog!"
+  :card/id :s6-filthy-dog
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 1
+  :card/power 3
+  :card/speed 6
+  :card/guard 0
+  :card/armor 0
+  :card/boost-name "Recover"
+  :card/boost-type :instant
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "If the opponent initiated this Strike, +1 Speed."
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "Hit: If you initiated this Strike, gain Advantage."
+                    :ability/trigger :hit
+                    :ability/location :attack}
+                   {:ability/description "Advance up to 3. If you Advanced past the opponent, add a Special or Ultra from your discard pile to your hand."
+                    :ability/trigger :now
+                    :ability/location :boost}]}
+
+ {:card/name "Schild Zack"
+  :card/id :s6-schild-zack
+  :card/type :special
+  :card/cost 0
+  :card/min-range 2
+  :card/max-range 2
+  :card/power 5
+  :card/speed 6
+  :card/guard 0
+  :card/armor 0
+  :card/boost-name "Defend"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "After: If you did not hit, you may add this to your boost area as a Continuous Boost. Sustain it (it begins providing its bonuses immediately)."
+                    :ability/trigger :after
+                    :ability/location :attack}
+                   {:ability/description "+1 Armor"
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "+3 Guard"
+                    :ability/trigger :passive
+                    :ability/location :boost}]}
+
+ {:card/name "Tidal Spin"
+  :card/id :s6-tidal-spin
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 1
+  :card/power 5
+  :card/speed 7
+  :card/guard 0
+  :card/armor 0
+  :card/boost-name "Tactical"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "If the opponent initiated this Strike, this attack does not stun."
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "After: Advance 2."
+                    :ability/trigger :after
+                    :ability/location :attack}
+                   {:ability/description "+1 Speed"
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "Now: Advance or Retreat 1."
+                    :ability/trigger :now
+                    :ability/location :boost}]}
+
+ {:card/name "Three Precept Strike"
+  :card/id :s6-three-precept-strike
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 3
+  :card/power 3
+  :card/speed 5
+  :card/guard 0
+  :card/armor 0
+  :card/boost-name "Calamity Crest"
+  :card/boost-type :instant
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "+1 Power and +1 Guard for each copy of \"Three Precept Strike\" in your Gauge."
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "After: Close 1. You may reveal a copy of this from your hand to gain Advantage."
+                    :ability/trigger :after
+                    :ability/location :attack}
+                   {:ability/description "Spend 3 life to add this to your Gauge, then take another action."
+                    :ability/trigger :now
+                    :ability/location :boost}]}
+
+ {:card/name "Chained Kick"
+  :card/id :s6-chained-kick
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 2
+  :card/power 4
+  :card/speed 3
+  :card/guard 4
+  :card/armor 0
+  :card/boost-name "Reckless Run"
+  :card/boost-type :instant
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "+1 Power and +1 Guard for each copy of \"Three Precept Strike\" in your Gauge."
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "Before: Advance 1."
+                    :ability/trigger :before
+                    :ability/location :attack}
+                   {:ability/description "Advance 2. You may spend any amount of Force to Advance 2 for each Force spent."
+                    :ability/trigger :now
+                    :ability/location :boost}]}
+
+ {:card/name "Gale Edge"
+  :card/id :s6-gale-edge
+  :card/type :special
+  :card/cost 0
+  :card/min-range 2
+  :card/max-range 3
+  :card/power 6
+  :card/speed 2
+  :card/guard 0
+  :card/armor 0
+  :card/boost-name "Chain Shift"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Attacks with Speed 5 or greater do not hit you."
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "After: Advance 2."
+                    :ability/trigger :after
+                    :ability/location :attack}
+                   {:ability/description "+1 Speed"
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "Now: Strike."
+                    :ability/trigger :now
+                    :ability/location :boost}
+                   {:ability/description "After: Add this to your Gauge."
+                    :ability/location :boost
+                    :ability/trigger :after}]}
+
+ {:card/name "Thunder Stomp"
+  :card/id :s6-thunder-stomp
+  :card/type :special
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 2
+  :card/power 4
+  :card/speed 1
+  :card/guard 4
+  :card/armor 1
+  :card/boost-name "Maelstrom"
+  :card/boost-type :instant
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "The opponent cannot Advance or Retreat."
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "Discard your hand, then draw 4. If you discarded 3 or more cards this way, take another action."
+                    :ability/trigger :now
+                    :ability/location :boost}]}
+
+ {:card/name "Spiral Dual Palm Strike"
+  :card/id :s6-spiral-dual-palm-strike
+  :card/type :ultra
+  :card/cost 2
+  :card/min-range 1
+  :card/max-range 3
+  :card/power 4
+  :card/speed 4
+  :card/guard 0
+  :card/armor 6
+  :card/boost-name "Immovable Object"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "After: Close 2 and lose all Armor."
+                    :ability/trigger :after
+                    :ability/location :attack}
+                   {:ability/description "+1 Armor"
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "+1 Guard"
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "You cannot be Pushed or Pulled."
+                    :ability/trigger :passive
+                    :ability/location :boost}
+                   {:ability/description "After: You may spend 1 Gauge to sustain this."}
+                   :ability/trigger :after
+                   :ability/location :boost]}
+
+ {:card/name "Demon Seal: Abyssal Force"
+  :card/id :s6-demon-seal-abyssal-force
+  :card/type :ultra
+  :card/cost 6
+  :card/min-range 2
+  :card/max-range 5
+  :card/power 10
+  :card/speed 1
+  :card/guard 6
+  :card/armor 0
+  :card/boost-name "Unstoppable Force"
+  :card/boost-type :continuous
+  :card/boost-cost 1
+  :card/abilities [{:ability/description "This attack's Gauge Cost is reduced by 1 for each copy of \"Three Precept Strike\" in your Gauge."
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "After: Gain Advantage. Return any number of \"Three Precept Strike\" from your Gauge to your hand."
+                    :ability/trigger :after
+                    :ability/location :attack}
+                   {:ability/description "Hit: Gain Advantage."
+                    :ability/trigger :hit
+                    :ability/location :boost}
+                   {:ability/description "After: You may spend 1 Gauge to sustain this."
                     :ability/trigger :after
                     :ability/location :boost}]}
  ]

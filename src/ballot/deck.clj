@@ -106,4 +106,36 @@
                 :s6-battoujutsu-ni-no-kata-saki 2
                 :s6-battoujutsu-san-no-kata-tachi 2
                 :s6-over-here 2
-                :s6-sougetsu-ittou-ryu-et-cetera-yae-ichirin 2)])
+                :s6-sougetsu-ittou-ryu-et-cetera-yae-ichirin 2)
+   (create-deck "Chaos" :s6-chaos
+                :s6-deep-revenance 2
+                :s6-dissect-barrage 2
+                :s6-thats-your-prey 2
+                :s6-conceal 2
+                :s6-repel 2
+                :s6-spew-out 2
+                :s6-cold-reflection 2)
+   (create-deck "Waldstein" :s6-waldstein
+                :s6-verderben 2
+                :s6-werfen-erschlagen 2
+                :s6-katastrophe 2
+                :s6-ferzen-volf 2
+                :s6-sturmangriff 2
+                :s6-eisen-nagel 2
+                :s6-wirbelwind 2)
+   (create-deck "Wagner" :s6-wagner
+                :s6-schild-zack 2
+                :s6-filthy-dog 2
+                :s6-kugel-blitz 2
+                :s6-wackenroder 2
+                :s6-sturm-brecher 2
+                :s6-megiddo-lor-celeste-grace 2
+                :s6-hitze-falke 2)
+   (create-deck "Enkidu" :s6-enkidu
+                :s6-demon-seal-abyssal-force 2
+                :s6-spiral-dual-palm-strike 2
+                :s6-thunder-stomp 2
+                :s6-gale-edge 2
+                :s6-chained-kick 2
+                :s6-three-precept-strike 6
+                :s6-tidal-spin 2)])
