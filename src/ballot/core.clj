@@ -310,9 +310,9 @@
     (if (empty? a)
       (if (empty? filters)
         "No valid search queries provided."
-        (d/q (apply conj '[:find ?card-name
-                           :where [?e :card/name ?card-name]]
-                    filters) @conn))
+        (reduce #(str %1 (first %2) "\n") "Found the following cards:\n" (d/q (apply conj '[:find ?card-name
+                                                                                    :where [?e :card/name ?card-name]]
+                                                                             filters) @conn)))
       (case (first a)
         "-s" (recur (let [update (stat-search (take 3 (rest a)))]
                       (if update
