@@ -277,6 +277,45 @@
                                       " x" (second %2) "\n")
                                 "" sorted-cards)))))
 
+(defn stat-search
+  [args]
+  #_(let [stat-type (case (.toLowerCase (first args))
+                    "power" :card/power
+                    "speed" :card/speed
+                    "armor" :card/armor
+                    "guard" :card/guard
+                    "range" :range
+                    nil)
+        comparison (case (.toLowerCase (second args))
+                     ">" '>
+                     ">=" '>=
+                     "<" '<
+                     "<=" '<=
+                     "=" '=)
+        stat-keyword (symbol (.toLowerCase (str "?" (first args))))]
+    (cond (nil? stat-type) nil
+          (= :range stat-type) `[[?e :card/min-range ?min-range]
+                                 [?e :card/max-range ?max-range]
+                                 [:blah]]
+          :else `[[?e ,stat-type ,stat-keyword]
+                  [(,comparison stat-type ,stat-keyword)]])
+    )
+  nil)
+
+(defn search-cards
+  [args conn]
+  (loop [filters []
+         a args]
+    (if (empty? a)
+      filters
+      (case (first a)
+        "-s" (recur (let [update (stat-search (take 3 (rest a)))]
+                      (if update
+                        (conj filters update)
+                        filters)) (drop 4 a))
+        ""
+        ))))
+
 (defmethod handle-event :message-create
   [_ {:keys [channel-id content mentions author] :as _data}]
   (let [first-word (first (clojure.string/split content #" "))
@@ -288,6 +327,8 @@
                                     (when description (discord-rest/create-message! (:rest @state) channel-id :content (str "```\n" description "```"))))
       (= "!card" first-word) (let [description (lookup-card args conn)]
                                (when description (discord-rest/create-message! (:rest @state) channel-id :content (str "```\n" description "```"))))
+      (= "!search" first-word) (let [description (search-cards args conn)]
+                                 (when description (discord-rest/create-message! (:rest @state) channel-id :content (str "```\n" description "```"))))
       (= "!lfg" first-word) (do (update-lfg-queue)
                                 (cond (empty? (:lfg-queue @state)) (let [time (if (empty? args)
                                                                                 60

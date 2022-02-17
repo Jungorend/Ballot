@@ -63,7 +63,7 @@
                 :s6-dead-set-daze 2
                 :s6-gyro-vortex 2
                 :s6-shadow-scare 2
-                :s6-hydecar 3
+                :s6-pale-bringer 3
                 :s6-black-orbiter 2
                 :s6-red-clad-craver 3
                 :s6-vacant-shift 2)
