@@ -1917,34 +1917,34 @@
                     :ability/trigger :now
                     :ability/location :boost}]}
 
- {:card/name "Spiral Dual Palm Strike"
-  :card/id :s6-spiral-dual-palm-strike
-  :card/type :ultra
-  :card/cost 2
-  :card/min-range 1
-  :card/max-range 3
-  :card/power 4
-  :card/speed 4
-  :card/guard 0
-  :card/armor 6
+ {:card/name       "Spiral Dual Palm Strike"
+  :card/id         :s6-spiral-dual-palm-strike
+  :card/type       :ultra
+  :card/cost       2
+  :card/min-range  1
+  :card/max-range  3
+  :card/power      4
+  :card/speed      4
+  :card/guard      0
+  :card/armor      6
   :card/boost-name "Immovable Object"
   :card/boost-type :continuous
   :card/boost-cost 0
-  :card/abilities [{:ability/description "After: Close 2 and lose all Armor."
-                    :ability/trigger :after
-                    :ability/location :attack}
-                   {:ability/description "+1 Armor"
-                    :ability/trigger :passive
-                    :ability/location :boost}
-                   {:ability/description "+1 Guard"
-                    :ability/trigger :passive
-                    :ability/location :boost}
-                   {:ability/description "You cannot be Pushed or Pulled."
-                    :ability/trigger :passive
-                    :ability/location :boost}
-                   {:ability/description "After: You may spend 1 Gauge to sustain this."}
-                   :ability/trigger :after
-                   :ability/location :boost]}
+  :card/abilities  [{:ability/description "After: Close 2 and lose all Armor."
+                     :ability/trigger     :after
+                     :ability/location    :attack}
+                    {:ability/description "+1 Armor"
+                     :ability/trigger     :passive
+                     :ability/location    :boost}
+                    {:ability/description "+1 Guard"
+                     :ability/trigger     :passive
+                     :ability/location    :boost}
+                    {:ability/description "You cannot be Pushed or Pulled."
+                     :ability/trigger     :passive
+                     :ability/location    :boost}
+                    {:ability/description "After: You may spend 1 Gauge to sustain this."
+                     :ability/trigger     :after
+                     :ability/location    :boost}]}
 
  {:card/name "Demon Seal: Abyssal Force"
   :card/id :s6-demon-seal-abyssal-force
