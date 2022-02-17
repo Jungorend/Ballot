@@ -279,7 +279,7 @@
 
 (defn stat-search
   [args]
-  #_(let [stat-type (case (.toLowerCase (first args))
+  (let [stat-type (case (.toLowerCase (first args))
                     "power" :card/power
                     "speed" :card/speed
                     "armor" :card/armor
@@ -292,29 +292,32 @@
                      "<" '<
                      "<=" '<=
                      "=" '=)
+        value (Integer/parseInt (nth args 2))
         stat-keyword (symbol (.toLowerCase (str "?" (first args))))]
     (cond (nil? stat-type) nil
           (= :range stat-type) `[[?e :card/min-range ?min-range]
                                  [?e :card/max-range ?max-range]
                                  [:blah]]
-          :else `[[?e ,stat-type ,stat-keyword]
-                  [(,comparison stat-type ,stat-keyword)]])
-    )
-  nil)
+          :else `[[~'?e ~stat-type ~(symbol stat-keyword)]
+                  [(~comparison ~(symbol stat-keyword) ~value)]])
+    ))
 
 (defn search-cards
   [args conn]
   (loop [filters []
          a args]
     (if (empty? a)
-      filters
+      (d/q (apply conj '[:find ?card-name
+                         :where [?e :card/name ?card-name]]
+                  filters) @conn)
       (case (first a)
         "-s" (recur (let [update (stat-search (take 3 (rest a)))]
                       (if update
-                        (conj filters update)
+                        (apply conj filters update)
                         filters)) (drop 4 a))
         ""
         ))))
+
 
 (defmethod handle-event :message-create
   [_ {:keys [channel-id content mentions author] :as _data}]
