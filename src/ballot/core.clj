@@ -95,6 +95,7 @@
 
 (def seventh-cross (edn/read-string (slurp "resources/seventh_cross.edn")))
 (def undernight (edn/read-string (slurp "resources/undernight.edn")))
+(def normals (edn/read-string (slurp "resources/normals.edn")))
 
 (defn print-stats
   "Stores stats as numbers. -1 refers to X, and -2 refers to N/A. This converts them to a string if so."
@@ -198,6 +199,7 @@
 (d/transact conn entries)
 (d/transact conn seventh-cross)
 (d/transact conn undernight)
+(d/transact conn normals)
 (d/transact conn deck/s2-decks)
 (d/transact conn deck/s6-decks)
 
@@ -247,35 +249,37 @@
 
 (defn lookup-character
   [args conn]
-  (let [deck (d/entity @conn (ffirst (d/q '[:find ?deck :in $ ?name :where
-                                           [?deck :deck/name ?deck-name]
-                                           [(ballot.core/equal-strings? ?deck-name ?name)]]
-                                         @conn (clojure.string/join " " args))))
-        character (:deck/character deck)
-        cards (frequencies (map #(:card-instance/card %) (:deck/cards deck)))
-        sorted-cards (sort-by #(case (:card/type (first %))
-                                 :normal 4
-                                 :special 3
-                                 :ultra 2
-                                 :character 1
-                                 0)
-                              (into [] cards))]
-    (if (empty? deck)
-      "Nothing found with that name."
-      (str (:character/name character) " (" (:character/gauge-cost character) "G)\n"
-           (or (:character/description character) "") "\n"
-           (:character/innate-ability character) "\n\n"
-           "Exceed Mode: " (or (:character/exceed-name character) "") "\n"
-           (or (:character/exceed-description character) "") "\n"
-           (:character/exceed-ability character) "\n"
-           (reduce #(str %1 (:season/mechanics %2) "\n") "" (:character/seasons character))
-           "\nCards:\n" (reduce #(str %1
-                                      (:card/name (first %2))
-                                      (if (= 0 (:card/cost (first %2)))
-                                        " "
-                                        (str " (" (:card/cost (first %2)) (if (= :ultra (:card/type (first %2))) "G" "F") ")"))
-                                      " x" (second %2) "\n")
-                                "" sorted-cards)))))
+  (if (ballot.core/equal-strings? "spike" (clojure.string/join " " args)) ;; TODO: Remove this when we add actual Spike.
+    "You know what Spike does, bitcoins."
+    (let [deck (d/entity @conn (ffirst (d/q '[:find ?deck :in $ ?name :where
+                                              [?deck :deck/name ?deck-name]
+                                              [(ballot.core/equal-strings? ?deck-name ?name)]]
+                                            @conn (clojure.string/join " " args))))
+          character (:deck/character deck)
+          cards (frequencies (map #(:card-instance/card %) (:deck/cards deck)))
+          sorted-cards (sort-by #(case (:card/type (first %))
+                                   :normal 4
+                                   :special 3
+                                   :ultra 2
+                                   :character 1
+                                   0)
+                                (into [] cards))]
+      (if (empty? deck)
+        "Nothing found with that name."
+        (str (:character/name character) " (" (:character/gauge-cost character) "G)\n"
+             (or (:character/description character) "") "\n"
+             (:character/innate-ability character) "\n\n"
+             "Exceed Mode: " (or (:character/exceed-name character) "") "\n"
+             (or (:character/exceed-description character) "") "\n"
+             (:character/exceed-ability character) "\n"
+             (reduce #(str %1 (:season/mechanics %2) "\n") "" (:character/seasons character))
+             "\nCards:\n" (reduce #(str %1
+                                        (:card/name (first %2))
+                                        (if (= 0 (:card/cost (first %2)))
+                                          " "
+                                          (str " (" (:card/cost (first %2)) (if (= :ultra (:card/type (first %2))) "G" "F") ")"))
+                                        " x" (second %2) "\n")
+                                  "" sorted-cards))))))
 
 (defn stat-search
   [args]

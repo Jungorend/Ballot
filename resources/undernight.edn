@@ -427,7 +427,7 @@
                      :ability/trigger     :now
                      :ability/location    :boost}]}
 
- {:card/name       "Carmine"
+ {:card/name       "You Shit! This is the End!"
   :card/id         :s6-this-is-the-end
   :card/type       :ultra
   :card/cost       3
