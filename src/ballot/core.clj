@@ -300,14 +300,14 @@
                                         "<" `[[(< ~'?min-range ~min-range)]]
                                         "<=" `[[(<= ~'?min-range ~min-range)]])))
         :else (let [stat-type (keyword (str "card/" (first args)))
-                    comparison (resolve (symbol (second args)))
+                    comparison (symbol (second args))
                     stat-keyword (->> (first args)
                                       (.toLowerCase)
                                       (str "?")
                                       (symbol))
                     value (Integer/parseInt (nth args 2))]
                 `[[~'?e ~stat-type ~(symbol stat-keyword)]
-                  [(~comparison ~(symbol stat-keyword) ~value)]])))
+                  [(~comparison ~stat-keyword ~value)]])))
 
 (defn search-cards
   [args conn]
