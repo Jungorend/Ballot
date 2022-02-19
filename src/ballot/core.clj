@@ -309,44 +309,6 @@
                 `[[~'?e ~stat-type ~(symbol stat-keyword)]
                   [(~comparison ~(symbol stat-keyword) ~value)]])))
 
-(defn stat-search
-  [args]
-  (let [stat-type (case (.toLowerCase (first args))
-                    "power" :card/power
-                    "speed" :card/speed
-                    "armor" :card/armor
-                    "guard" :card/guard
-                    "range" :range
-                    nil)
-        comparison (case (second args)
-                     ">" '>
-                     ">=" '>=
-                     "<" '<
-                     "<=" '<=
-                     "=" '=
-                     nil)
-        value (Integer/parseInt (nth args 2))
-        stat-keyword (symbol (.toLowerCase (str "?" (first args))))]
-    (cond (or (nil? stat-type) (nil? comparison)) nil
-          (= :range stat-type) (let [r (clojure.string/split (nth args 2) #"~")
-                                     min-range (Integer/parseInt (get r 0))
-                                     max-range (if (= 1 (count r))
-                                                 min-range
-                                                 (Integer/parseInt (get r 1)))]
-                                 (apply conj '[[?e :card/min-range ?min-range]
-                                               [?e :card/max-range ?max-range]]
-                                        (case (second args)
-                                          "=" `[[(= ~'?min-range ~min-range)]
-                                                [(= ~'?max-range ~max-range)]]
-                                          ">" `[[(> ~'?min-range ~min-range)]]
-                                          ">=" `[[(> ~'?min-range ~min-range)]]
-                                          "<" `[[(< ~'?min-range ~min-range)]]
-                                          "<=" `[[(<= ~'?min-range ~min-range)]]
-                                          nil)))
-          :else `[[~'?e ~stat-type ~(symbol stat-keyword)]
-                  [(~comparison ~(symbol stat-keyword) ~value)]])
-    ))
-
 (defn search-cards
   [args conn]
   (loop [filters []
