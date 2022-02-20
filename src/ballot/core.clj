@@ -299,7 +299,7 @@
                                         ">=" `[[(> ~'?min-range ~min-range)]]
                                         "<" `[[(< ~'?min-range ~min-range)]]
                                         "<=" `[[(<= ~'?min-range ~min-range)]])))
-        :else (let [stat-type (keyword (str "card/" (first args)))
+        :else (let [stat-type (keyword (.toLowerCase (str "card/" (first args))))
                     comparison (symbol (second args))
                     stat-keyword (->> (first args)
                                       (.toLowerCase)
