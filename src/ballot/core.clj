@@ -309,6 +309,13 @@
                 `[[~'?e ~stat-type ~(symbol stat-keyword)]
                   [(~comparison ~stat-keyword ~value)]])))
 
+(defn text-search
+  [args]
+  (case (first a)
+    "-*" [[?e :card/abilities ?ability]
+          [?ability :ability/description ?description]
+          [(clojure.string/includes? 0 0)]]))
+
 (defn search-cards
   [args conn]
   (loop [filters []
@@ -319,13 +326,28 @@
         (reduce #(str %1 (first %2) "\n") "Found the following cards:\n" (d/q (apply conj '[:find ?card-name
                                                                                     :where [?e :card/name ?card-name]]
                                                                              filters) @conn)))
-      (case (first a)
-        "-s" (recur (let [update (stat-search (take 3 (rest a)))]
+      (cond
+        (= (first a) "-s") (recur (let [update (stat-search (take 3 (rest a)))]
                       (if update
                         (apply conj filters update)
                         filters)) (drop 4 a))
-        (recur filters (rest a))
+        (re-matches #"-[asbhcp*]" (first a)) (let [len (-> (clojure.string/join " " a)
+                                                                   (clojure.string/split #"-[asbhcp\*]\s+")
+                                                                   (second)
+                                                                   (clojure.string/split #"\s+")
+                                                                   (count)
+                                                                   (inc))
+                                                           update (text-search (take len a))]
+                                                       (recur (if update
+                                                                (apply conj filters update)
+                                                                filters) (drop len a)))
+        :else (recur filters (rest a))
         ))))
+
+(comment
+  (def test-one ["-s" "power" ">" "5" "-b" "Ignore" "armor"])
+  (def test-two ["-b" "ignore" "armor"])
+  (search-cards test-one conn))
 
 
 (defmethod handle-event :message-create
