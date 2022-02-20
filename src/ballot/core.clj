@@ -311,10 +311,21 @@
 
 (defn text-search
   [args]
-  (case (first a)
-    "-*" [[?e :card/abilities ?ability]
-          [?ability :ability/description ?description]
-          [(clojure.string/includes? 0 0)]]))
+  (let [text (clojure.string/join (rest args))
+        base-filter '[[?e :card/abilities ?ability]
+                      [?ability :ability/description ?description]]]
+    (apply conj base-filter
+           (case (first args)
+             "-*" `[[(ballot.core/equal-strings? ~'?description ~(clojure.string/join " " (rest args)))]]
+             "-b" `[[~'?ability :ability/trigger :before]
+                    [(ballot.core/equal-strings? ~'?description ~(clojure.string/join " " (rest args)))]]
+             "-h" `[[~'?ability :ability/trigger :hit]
+                    [(ballot.core/equal-strings? ~'?description ~(clojure.string/join " " (rest args)))]]
+             "-a" `[[~'?ability :ability/trigger :after]
+                    [(ballot.core/equal-strings? ~'?description ~(clojure.string/join " " (rest args)))]]
+             "-o" `[[~'?ability :ability/trigger :boost]
+                    [(ballot.core/equal-strings? ~'?description ~(clojure.string/join " " (rest args)))]]
+             ))))
 
 (defn search-cards
   [args conn]
@@ -331,8 +342,8 @@
                       (if update
                         (apply conj filters update)
                         filters)) (drop 4 a))
-        (re-matches #"-[asbhcp*]" (first a)) (let [len (-> (clojure.string/join " " a)
-                                                                   (clojure.string/split #"-[asbhcp\*]\s+")
+        (re-matches #"-[abhcpo\*]\s+" (first a)) (let [len (-> (clojure.string/join " " a)
+                                                                   (clojure.string/split #"-[abhcpo\*]\s+")
                                                                    (second)
                                                                    (clojure.string/split #"\s+")
                                                                    (count)
