@@ -311,14 +311,14 @@
 
 (defn text-search
   [args]
-  (let [text (clojure.string/join (rest args))
+  (let [text (clojure.string/join " " (rest args))
         base-filter '[[?e :card/abilities ?ability]
                       [?ability :ability/description ?description]]]
     (apply conj base-filter
            (case (first args)
-             "-*" `[[(ballot.core/equal-strings? ~'?description ~(clojure.string/join " " (rest args)))]]
+             "-*" `[[(ballot.core/equal-strings? ~'?description ~text)]]
              "-b" `[[~'?ability :ability/trigger :before]
-                    [(ballot.core/equal-strings? ~'?description ~(clojure.string/join " " (rest args)))]]
+                    [(ballot.core/equal-strings? ~'?description ~text)]]
              "-h" `[[~'?ability :ability/trigger :hit]
                     [(ballot.core/equal-strings? ~'?description ~(clojure.string/join " " (rest args)))]]
              "-a" `[[~'?ability :ability/trigger :after]
@@ -342,7 +342,7 @@
                       (if update
                         (apply conj filters update)
                         filters)) (drop 4 a))
-        (re-matches #"-[abhcpo\*]\s+" (first a)) (let [len (-> (clojure.string/join " " a)
+        (re-matches #"-[abhcpo*]" (first a)) (let [len (-> (clojure.string/join " " a)
                                                                    (clojure.string/split #"-[abhcpo\*]\s+")
                                                                    (second)
                                                                    (clojure.string/split #"\s+")
@@ -352,14 +352,7 @@
                                                        (recur (if update
                                                                 (apply conj filters update)
                                                                 filters) (drop len a)))
-        :else (recur filters (rest a))
-        ))))
-
-(comment
-  (def test-one ["-s" "power" ">" "5" "-b" "Ignore" "armor"])
-  (def test-two ["-b" "ignore" "armor"])
-  (search-cards test-one conn))
-
+        :else (recur filters (rest a))))))
 
 (defmethod handle-event :message-create
   [_ {:keys [channel-id content mentions author] :as _data}]
