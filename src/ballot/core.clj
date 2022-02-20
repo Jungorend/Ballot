@@ -309,23 +309,27 @@
                 `[[~'?e ~stat-type ~(symbol stat-keyword)]
                   [(~comparison ~stat-keyword ~value)]])))
 
+(defn any-strings-equal?
+  [description strings]
+  (some #(equal-strings? description %) strings))
+
 (defn text-search
+  "Assembles a datalog :where clause vector for the card filters
+  passed in."
   [args]
-  (let [text (clojure.string/join " " (rest args))
-        base-filter '[[?e :card/abilities ?ability]
-                      [?ability :ability/description ?description]]]
-    (apply conj base-filter
-           (case (first args)
-             "-*" `[[(ballot.core/equal-strings? ~'?description ~text)]]
-             "-b" `[[~'?ability :ability/trigger :before]
-                    [(ballot.core/equal-strings? ~'?description ~text)]]
-             "-h" `[[~'?ability :ability/trigger :hit]
-                    [(ballot.core/equal-strings? ~'?description ~(clojure.string/join " " (rest args)))]]
-             "-a" `[[~'?ability :ability/trigger :after]
-                    [(ballot.core/equal-strings? ~'?description ~(clojure.string/join " " (rest args)))]]
-             "-o" `[[~'?ability :ability/trigger :boost]
-                    [(ballot.core/equal-strings? ~'?description ~(clojure.string/join " " (rest args)))]]
-             ))))
+  (let [texts (clojure.string/split (clojure.string/join " " (rest args)) #" -or ")
+        trigger (case (first args)
+                  "-b" :before
+                  "-h" :hit
+                  "-a" :after
+                  "-o" :boost
+                  nil)]
+    (apply conj `[[~'?e :card/abilities ~'?ability]
+                  [~'?ability :ability/description ~'?description]]
+           `[(ballot.core/any-strings-equal? ~'?description ~texts)]
+           (if trigger
+             `[[~'?ability :ability/trigger ~trigger]]
+             []))))
 
 (defn search-cards
   [args conn]
