@@ -57,6 +57,7 @@
     {:id :card/id :type :k :unique :db.unique/identity}
     {:id :card/name :type :s}
     {:id :card/description :type :s}
+    {:id :card/exceed-description :type :s}
     {:id :card/type :type :k :doc "options: :special :ultra :normal :astral-heat :character-card"}
     {:id :card/cost :type :i}
     {:id :card/min-range :type :i}
@@ -95,6 +96,7 @@
 
 (def seventh-cross (edn/read-string (slurp "resources/seventh_cross.edn")))
 (def undernight (edn/read-string (slurp "resources/undernight.edn")))
+(def shovelknight (edn/read-string (slurp "resources/shovelknight.edn")))
 (def normals (edn/read-string (slurp "resources/normals.edn")))
 
 (defn print-stats
@@ -143,7 +145,8 @@
 (defn describe-character-card
   [card]
   (str (:card/name card) "\n"
-       (:card/description card) "\n"))
+       (:card/description card) "\n"
+       (:card/exceed-description card) "\n"))
 
 (defn display-card
   "Returns a string in a clean format showing the information of an Exceed card.
@@ -201,8 +204,10 @@
 (d/transact conn entries)
 (d/transact conn seventh-cross)
 (d/transact conn undernight)
+(d/transact conn shovelknight)
 (d/transact conn normals)
 (d/transact conn deck/s2-decks)
+(d/transact conn deck/s4-decks)
 (d/transact conn deck/s6-decks)
 
 (def state (atom nil))

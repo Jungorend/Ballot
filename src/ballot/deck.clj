@@ -139,3 +139,30 @@
                 :s6-chained-kick 2
                 :s6-three-precept-strike 6
                 :s6-tidal-spin 2)])
+
+(def s4-decks
+  [(create-deck "Shovel Knight and Shield Knight" :s4-shovel-shield
+                :s4-buckler-blow 2
+                :s4-charge-slash 2
+                :s4-discovery 2
+                :s4-shield-gong 2
+                :s4-shovel-drop 2
+                :s4-shield-boomerang 2
+                :s4-tandem-attack 2
+                :s4-shield-knight 1)
+   (create-deck "Shovel Knight" :s4-propeller-knight
+                :s4-cannonball 2
+                :s4-headwind 2
+                :s4-propeller-pull 2
+                :s4-saber-lunge 2
+                :s4-swoop 2
+                :s4-full-broadside 2
+                :s4-launcher 2)
+   (create-deck "Mole Knight" :s4-mole-knight
+                :s4-belly-slide 2
+                :s4-block-push 2
+                :s4-burrow-dig 2
+                :s4-diving-dig 2
+                :s4-headbutt 2
+                :s4-cave-in 2
+                :s4-erupt 2)])

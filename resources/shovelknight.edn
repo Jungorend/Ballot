@@ -1,0 +1,502 @@
+[{:character/name           "Shovel Knight & Shield Knight"
+  :character/id             :s4-shovel-shield
+  :character/innate-ability "Begin with Shield Knight on your space. (Some of your attacks calculate range from her position.) As an action, you may place Shield Knight onto your space, or move Shield Knight 1 space."
+  :character/exceed-ability "When you Exceed, flip Shield Knight to her Exceed side and place her onto any space. As an action, you may place Shield Knight onto any space."
+  :character/gauge-cost     3
+  :character/seasons        {:season/name "Shovel Knight"}}
+  
+ {:card/name "Shield Knight"
+  :card/id :s4-shield-knight
+  :card/type :character
+  :card/description "During Strikes, your Advance and Close effects starting from this space may travel up to 1 space farther. (Shield Knight cannot be attacked. She may share her space with other characters.)"
+  :card/exceed-description "During Strikes, your Advance and Close effects starting from this space may travel up to 1 space farther. When you are hit (after Hit effects), you have +2 Armor if Shield Knight is on a space between you and the attack's source. (Shield Knight cannot be attacked. She may share her space with other characters.).)"}
+
+{:character/name           "Propeller Knight"
+  :character/id             :s4-propeller-knight
+  :character/innate-ability "Your Special and Ultra Attacks have \"Hit: If the opponent is at this attack's maximum Range, +2 Power.\" (Before or after other Hit triggers)"
+  :character/exceed-ability "When you Exceed, Advance or Retreat up to 2. Your Special and Ultra Attacks have \"Hit: If the opponent is at this attack's maximum Range, +2 Power.\" (Before or after other Hit triggers)"
+  :character/gauge-cost     2
+  :character/seasons        {:season/name "Shovel Knight"}}
+  
+{:character/name           "Mole Knight"
+  :character/id             :s4-mole-knight
+  :character/innate-ability "Begin with your Burrow on your space. As an action, move your Burrow onto a space at Range 3 (exactly, in either direction) and draw a card."
+  :character/exceed-ability "Begin with your Burrow on your space. As an action, move your Burrow onto a space at Range 2, 3, or 4 (exactly, in either direction) and draw a card."
+  :character/gauge-cost     4
+  :character/seasons        {:season/name "Shovel Knight"}}
+  
+ {:card/name "Burrow"
+  :card/id :s4-burrow
+  :card/type :character
+  :card/description "When you initiate a Strike, after setting your attack, you may have your attack gain: \"Before: If your Burrow is unoccupied, Advance or Retreat until you are in its space.\""
+  :card/exceed-description "When you initiate a Strike, after setting your attack, you may have your attack gain: \"Before: If your Burrow is unoccupied, Advance or Retreat until you are in its space. If you did, +2 Power.\""}
+  
+ ;; Cards
+ {:card/name       "Shield Boomerang"
+  :card/id         :s4-shield-boomerang
+  :card/type       :ultra
+  :card/cost       3
+  :card/min-range  2
+  :card/max-range  4
+  :card/power      6
+  :card/speed      3
+  :card/guard      0
+  :card/armor      0
+  :card/boost-name "Shovel of Hope"
+  :card/boost-type :instant
+  :card/boost-cost 1
+  :card/abilities  [{:ability/trigger     :now
+                     :ability/location    :boost
+                     :ability/description "Draw 4 cards, then add this card to your Gauge."}
+                    {:ability/description "This attack calculates its Range from Shield Knight instead of Shovel Knight."
+                     :ability/trigger     :passive
+                     :ability/location    :attack}
+                    {:ability/description "Attacks at Range 2, 3, or 4 from Shield Knight do not hit you."
+                     :ability/trigger     :passive
+                     :ability/location    :attack}]}
+
+ {:card/name       "Tandem Attack"
+  :card/id         :s4-tandem-attack
+  :card/type       :ultra
+  :card/cost       2
+  :card/min-range  1
+  :card/max-range  1
+  :card/power      7
+  :card/speed      5
+  :card/guard      0
+  :card/armor      0
+  :card/boost-name "Inseperable"
+  :card/boost-type :continuous
+  :card/boost-cost 1
+  :card/abilities  [{:ability/description "Before: Advance 1 or 2. If you did not move into or out of Shield Knight's space during this movement, this attack does not hit."
+                     :ability/trigger     :before
+                     :ability/location    :attack}
+                    {:ability/description "While you occupy the same space as Shield Knight, +3 Power, +3 Armor, and Opponents cannot move you."
+                     :ability/trigger     :passive
+                     :ability/location    :boost}]}
+
+ {:card/name       "Buckler Blow"
+  :card/id         :s4-buckler-blow
+  :card/type       :special
+  :card/cost       1
+  :card/min-range  0
+  :card/max-range  1
+  :card/power      2
+  :card/speed      7
+  :card/guard      0
+  :card/armor      0
+  :card/boost-name "Quick Switch"
+  :card/boost-type :instant
+  :card/boost-cost 1
+  :card/abilities  [{:ability/description "This attack calculates its Range from Shield Knight instead of Shovel Knight."
+                     :ability/location    :attack
+                     :ability/trigger     :passive}
+                    {:ability/description "Hit: Push 2 from Shield Knight. (If the opponent is on Shield Knight, push either direction)"
+                     :ability/trigger     :hit
+                     :ability/location    :attack}
+                    {:ability/description "If Shield Knight is on an unoccupied space, switch places with her. Then, take another action."
+                     :ability/trigger     :now
+                     :ability/location    :boost}]}
+
+ {:card/name       "Charge Slash"
+  :card/id         :s4-charge-slash
+  :card/type       :special
+  :card/cost       0
+  :card/min-range  1
+  :card/max-range  2
+  :card/power      5
+  :card/speed      1
+  :card/guard      6
+  :card/armor      0
+  :card/boost-name "Charge Up"
+  :card/boost-type :continuous
+  :card/boost-cost 1
+  :card/abilities  [{:ability/description "+1 Power and Ignore Armor if you initiated this Strike."
+                     :ability/trigger     :passive
+                     :ability/location    :attack}
+                    {:ability/description "Before: Close 1."
+                     :ability/location    :attack
+                     :ability/trigger     :before}
+                    {:ability/description "+2 Power and +2 Guard"
+                     :ability/trigger     :passive
+                     :ability/location    :boost}]}
+
+ {:card/name       "Discovery!"
+  :card/id         :s4-discovery
+  :card/type       :special
+  :card/cost       0
+  :card/min-range  1
+  :card/max-range  2
+  :card/power      1
+  :card/speed      6
+  :card/guard      0
+  :card/armor      0
+  :card/boost-name "Quick Step"
+  :card/boost-type :instant
+  :card/boost-cost 0
+  :card/abilities  [{:ability/description "Before: Advance 1. Draw a card, then add a card from your hand to your Gauge."
+                     :ability/trigger     :before
+                     :ability/location    :attack}
+                    {:ability/description "Advance or Retreat 1, then take another action."
+                     :ability/trigger     :now
+                     :ability/location    :boost}]}
+
+ {:card/name       "Shield Gong"
+  :card/id         :s4-shield-gong
+  :card/type       :special
+  :card/cost       1
+  :card/min-range  0
+  :card/max-range  1
+  :card/power      4
+  :card/speed      2
+  :card/guard      4
+  :card/armor      2
+  :card/boost-name "Full Defense"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities  [{:ability/description "This attack calculates its Range from Shield Knight instead of Shovel Knight."
+                     :ability/trigger     :passive
+                     :ability/location    :attack}
+                    {:ability/description "Hit: Push 2 from Shield Knight. (If the opponent is on Shield Knight, push either direction)"
+                     :ability/trigger     :hit
+                     :ability/location    :attack}
+                    {:ability/description "Attacks from opponents on the opposite side of Shield Knight do not hit you."
+                     :ability/trigger     :passive
+                     :ability/location    :boost}]}
+					 
+ {:card/name       "Shovel Drop (Shovel & Shield)"
+  :card/id         :s4-shovel-drop
+  :card/type       :special
+  :card/cost       0
+  :card/min-range  1
+  :card/max-range  2
+  :card/power      4
+  :card/speed      4
+  :card/guard      3
+  :card/armor      0
+  :card/boost-name "Hop"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities  [{:ability/description "Before: Advance 2. If you moved past an opponent, +2 Power."
+                     :ability/trigger     :before
+                     :ability/location    :attack}
+                    {:ability/description "Move Shield Knight 1 or 2 spaces, then take another action."
+                     :ability/trigger     :now
+                     :ability/location    :boost}]}
+					 
+ {:card/name       "Full Broadside"
+  :card/id         :s4-full-broadside
+  :card/type       :ultra
+  :card/cost       3
+  :card/min-range  2
+  :card/max-range  4
+  :card/power      6
+  :card/speed      2
+  :card/armor      0
+  :card/guard      0
+  :card/boost-name "Private Reserve"
+  :card/boost-type :instant
+  :card/boost-cost 0
+  :card/abilities  [{:ability/description "Stun Immunity."
+                     :ability/trigger     :passive
+                     :ability/location    :attack}
+                    {:ability/description "Before: If the opponent did not move during this Strike, Push or Pull up to 3."
+                     :ability/trigger     :before
+                     :ability/location    :attack}
+					{:ability/description "Search your discard pile for a Continuous Boost. You may play it, paying all costs, then shuffle your discard pile."
+					 :ability/trigger     :now
+                     :ability/location    :boost}]}
+					
+ {:card/name       "Launcher"
+  :card/id         :s4-launcher
+  :card/type       :ultra
+  :card/cost       2
+  :card/min-range  4
+  :card/max-range  4
+  :card/power      3
+  :card/speed      7
+  :card/armor      0
+  :card/guard      0
+  :card/boost-name "Fly Up"
+  :card/boost-type :instant
+  :card/boost-cost 1
+  :card/abilities  [{:ability/description "Hit: Pull 3 and gain Advantage."
+                     :ability/trigger     :hit
+                     :ability/location    :attack}
+					{:ability/description "Move to any space."
+					 :ability/trigger     :now
+                     :ability/location    :boost}]}
+					 
+ {:card/name       "Cannonball"
+  :card/id         :s4-cannonball
+  :card/type       :special
+  :card/cost       0
+  :card/min-range  4
+  :card/max-range  6
+  :card/power      4
+  :card/speed      3
+  :card/armor      0
+  :card/guard      3
+  :card/boost-name "Quick Step"
+  :card/boost-type :instant
+  :card/boost-cost 0
+  :card/abilities  [{:ability/description "Ignore Armor"
+                     :ability/trigger     :passive
+                     :ability/location    :attack}
+					{:ability/description "Hit: Push up to 1, then draw a card."
+                     :ability/trigger     :hit
+                     :ability/location    :attack}
+					{:ability/description "After: Advance 1 or 2."
+                     :ability/trigger     :after
+                     :ability/location    :attack}
+					{:ability/description "Advance or Retreat 1, then take another action."
+					 :ability/trigger     :now
+                     :ability/location    :boost}]}
+					 
+ {:card/name       "Headwind"
+  :card/id         :s4-headwind
+  :card/type       :special
+  :card/cost       0
+  :card/min-range  3
+  :card/max-range  4
+  :card/power      1
+  :card/speed      5
+  :card/armor      0
+  :card/guard      0
+  :card/boost-name "Wind Stream"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities  [{:ability/description "Before, Range 1~2: Push 2 and gain +2 Power."
+                     :ability/trigger     :before
+                     :ability/location    :attack}
+					{:ability/description "+1 Power"
+                     :ability/trigger     :passive
+                     :ability/location    :boost}
+					{:ability/description "Before: Push 1 or 2."
+					 :ability/trigger     :before
+                     :ability/location    :boost}]}
+					 
+ {:card/name       "Propeller Pull"
+  :card/id         :s4-propeller-pull
+  :card/type       :special
+  :card/cost       0
+  :card/min-range  1
+  :card/max-range  2
+  :card/power      4
+  :card/speed      2
+  :card/armor      0
+  :card/guard      6
+  :card/boost-name "Jet Stream"
+  :card/boost-type :continuous
+  :card/boost-cost 1
+  :card/abilities  [{:ability/description "Before: You may Pull 2. If this moved the opponent past you, they must discard a card at random."
+                     :ability/trigger     :before
+                     :ability/location    :attack}
+					{:ability/description "+1 Speed"
+                     :ability/trigger     :passive
+                     :ability/location    :boost}
+					{:ability/description "Before: Pull 1 or 2."
+					 :ability/trigger     :before
+                     :ability/location    :boost}]}
+					 
+ {:card/name       "Saber Lunge"
+  :card/id         :s4-saber-lunge
+  :card/type       :special
+  :card/cost       0
+  :card/min-range  1
+  :card/max-range  2
+  :card/power      2
+  :card/speed      6
+  :card/armor      0
+  :card/guard      0
+  :card/boost-name "Jet Stream"
+  :card/boost-type :continuous
+  :card/boost-cost 1
+  :card/abilities  [{:ability/description "Hit: Advance 4, then choose one: - Gain Advantage. - After: Return this card to your hand."
+                     :ability/trigger     :hit
+                     :ability/location    :attack}
+					{:ability/description "+1 Power and +1 Speed."
+                     :ability/trigger     :passive
+                     :ability/location    :boost}
+					{:ability/description "Now: If you are at Range 2, draw a card."
+					 :ability/trigger     :now
+                     :ability/location    :boost}]}
+					 
+ {:card/name       "Swoop"
+  :card/id         :s4-swoop
+  :card/type       :special
+  :card/cost       1
+  :card/min-range  1
+  :card/max-range  1
+  :card/power      1
+  :card/speed      7
+  :card/armor      0
+  :card/guard      0
+  :card/boost-name "Rose Toss"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities  [{:ability/description "After: Advance up to 3."
+                     :ability/trigger     :after
+                     :ability/location    :attack}
+					{:ability/description "Cleanup: Add this card to your boost area as a Continuous Boost. Sustain it."
+                     :ability/trigger     :cleanup
+                     :ability/location    :attack}
+					{:ability/description "+1 Power."
+                     :ability/trigger     :passive
+                     :ability/location    :boost}
+					{:ability/description "Now: If you are at Range 3, you may add a card from your hand to your Gauge."
+					 :ability/trigger     :now
+                     :ability/location    :boost}]}
+					 
+ {:card/name       "Cave In"
+  :card/id         :s4-cave-in
+  :card/type       :ultra
+  :card/cost       2
+  :card/min-range  1
+  :card/max-range  3
+  :card/power      4
+  :card/speed      1
+  :card/armor      3
+  :card/guard      0
+  :card/boost-name "Undermine"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities  [{:ability/description "Opponents within Range of this attack (when they begin moving) cannot move."
+                     :ability/trigger     :passive
+                     :ability/location    :attack}
+                    {:ability/description "After: Draw 2 cards."
+                     :ability/trigger     :after
+                     :ability/location    :attack}
+					{:ability/description "At the start of your turn, choose one: ● Discard this card. If you do, deal 4 non-lethal damage to the opponent on your Burrow. ● Move your Burrow 1 space."
+					 :ability/trigger     :passive
+                     :ability/location    :boost}]}
+					
+ {:card/name       "Erupt"
+  :card/id         :s4-erupt
+  :card/type       :ultra
+  :card/cost       3
+  :card/min-range  2
+  :card/max-range  4
+  :card/power      8
+  :card/speed      1
+  :card/armor      2
+  :card/guard      5
+  :card/boost-name "Molten Armor"
+  :card/boost-type :instant
+  :card/boost-cost 1
+  :card/abilities  [{:ability/description "+0~1 Range."
+                     :ability/trigger     :passive
+                     :ability/location    :boost}
+					{:ability/description "The first time this Strike you are hit (after Hit effects), deal 2 non-lethal damage."
+					 :ability/trigger     :passive
+                     :ability/location    :boost}]}
+					 
+ {:card/name       "Belly Slide"
+  :card/id         :s4-belly-slide
+  :card/type       :special
+  :card/cost       0
+  :card/min-range  1
+  :card/max-range  1
+  :card/power      4
+  :card/speed      2
+  :card/armor      1
+  :card/guard      5
+  :card/boost-name "Tunnel Vision"
+  :card/boost-type :continuous
+  :card/boost-cost 1
+  :card/abilities  [{:ability/description "Before: Advance 1."
+                     :ability/trigger     :before
+                     :ability/location    :attack}
+					{:ability/description "Hit: Draw a card."
+                     :ability/trigger     :hit
+                     :ability/location    :attack}
+					{:ability/description "Before: Advance 2."
+					 :ability/trigger     :before
+                     :ability/location    :boost}]}
+					 
+ {:card/name       "Block Push"
+  :card/id         :s4-block-push
+  :card/type       :special
+  :card/cost       0
+  :card/min-range  3
+  :card/max-range  6
+  :card/power      5
+  :card/speed      2
+  :card/armor      0
+  :card/guard      6
+  :card/boost-name "Stockpile"
+  :card/boost-type :continuous
+  :card/boost-cost 1
+  :card/abilities  [{:ability/description "Hit: Push 1."
+                     :ability/trigger     :hit
+                     :ability/location    :attack}
+					{:ability/description "+2 Armor and +2 Guard"
+                     :ability/trigger     :passive
+                     :ability/location    :boost}]}
+					 
+ {:card/name       "Burrow Dig"
+  :card/id         :s4-burrow-dig
+  :card/type       :special
+  :card/cost       0
+  :card/min-range  1
+  :card/max-range  1
+  :card/power      3
+  :card/speed      7
+  :card/armor      0
+  :card/guard      0
+  :card/boost-name "Lost Treasure"
+  :card/boost-type :instant
+  :card/boost-cost 0
+  :card/abilities  [{:ability/description "Before: Draw a card and Advance 2."
+                     :ability/trigger     :before
+                     :ability/location    :attack}
+					{:ability/description "Return a Special or Ultra Attack from your discard pile to your hand, then shuffle your discard. Do not draw at the end of your turn."
+					 :ability/trigger     :now
+                     :ability/location    :boost}]}
+					 
+ {:card/name       "Diving Dig"
+  :card/id         :s4-diving-dig
+  :card/type       :special
+  :card/cost       0
+  :card/min-range  1
+  :card/max-range  1
+  :card/power      5
+  :card/speed      3
+  :card/armor      0
+  :card/guard      0
+  :card/boost-name "Tunneling"
+  :card/boost-type :instant
+  :card/boost-cost 0
+  :card/abilities  [{:ability/description "Ignore Guard."
+                     :ability/trigger     :passive
+                     :ability/location    :attack}
+					{:ability/description "Hit: Retreat 1. The opponent must discard a card at random."
+                     :ability/trigger     :hit
+                     :ability/location    :attack}
+					{:ability/description "Advance or Retreat up to 3. Then, if you are on your Burrow, add this card to your Gauge."
+					 :ability/trigger     :now
+                     :ability/location    :boost}]}
+					 
+ {:card/name       "Headbutt"
+  :card/id         :s4-headbutt
+  :card/type       :special
+  :card/cost       1
+  :card/min-range  1
+  :card/max-range  2
+  :card/power      4
+  :card/speed      6
+  :card/armor      0
+  :card/guard      0
+  :card/boost-name "Come at Me!"
+  :card/boost-type :continuous
+  :card/boost-cost 1
+  :card/abilities  [{:ability/description "Hit: Push 2, then choose one: Retreat 1, or Advance 2 and gain Advantage.	"
+                     :ability/trigger     :hit
+                     :ability/location    :attack}
+					{:ability/description "+3 Power."
+                     :ability/trigger     :passive
+                     :ability/location    :boost}
+					{:ability/description "At the start of your next turn, add this card to your Gauge and draw a card."
+					 :ability/trigger     :passive
+                     :ability/location    :boost}]}
+ ]
