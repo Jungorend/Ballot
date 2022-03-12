@@ -376,6 +376,7 @@
                                (when description (discord-rest/create-message! (:rest @state) channel-id :content (str "```\n" description "```"))))
       (= "!search" first-word) (let [description (search-cards args conn)]
                                  (when description (discord-rest/create-message! (:rest @state) channel-id :content (str "```\n" description "```"))))
+      (= "!playerdatabase" first-word) (discord-rest/create-message! (:rest @state) channel-id :content "The Player Database is located here: https://docs.google.com/spreadsheets/d/1dYfLiUI0cacy8-SJ6UZF6WWcRSUVVUCdp_LzYHq95Qo/edit?usp=sharing")
       (= "!lfg" first-word) (do (update-lfg-queue)
                                 (cond (empty? (:lfg-queue @state)) (let [time (if (empty? args)
                                                                                 60
