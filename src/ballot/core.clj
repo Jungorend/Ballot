@@ -301,7 +301,7 @@
                                         "=" `[[(= ~'?min-range ~min-range)]
                                               [(= ~'?max-range ~max-range)]]
                                         ">" `[[(> ~'?min-range ~min-range)]]
-                                        ">=" `[[(> ~'?min-range ~min-range)]]
+                                        ">=" `[[(>= ~'?min-range ~min-range)]]
                                         "<" `[[(< ~'?min-range ~min-range)]]
                                         "<=" `[[(<= ~'?min-range ~min-range)]])))
         :else (let [stat-type (keyword (.toLowerCase (str "card/" (first args))))
