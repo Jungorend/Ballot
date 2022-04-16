@@ -140,6 +140,103 @@
                 :s6-three-precept-strike 6
                 :s6-tidal-spin 2)])
 
+(def s3-decks
+  [(create-deck "C. Viper" :s3-cviper
+                :s3-seismic-hammer 2
+                :s3-temple-massage 2
+                :s3-thunder-knuckle 2
+                :s3-burning-kick 2
+                :s3-emergency-combination 2
+                :s3-burst-time 2
+                :s3-burning-dance 2)
+   (create-deck "Vega" :s3-vega
+                :s3-rolling-crystal-flash 2
+                :s3-pounce 2
+                :s3-sky-high-claw 2
+                :s3-flying-barcelona-attack 2
+                :s3-scarlet-terror 2
+                :s3-splendid-claw 2
+                :s3-bloody-high-claw 2)
+   (create-deck "M. Bison" :s3-mbison
+                :s3-somersault-skull-diver 2
+                :s3-psycho-crusher 2
+                :s3-sliding-kick 2
+                :s3-devil-reverse 2
+                :s3-head-stomp-bison 2
+                :s3-psycho-crusher 2
+                :s3-nightmare-booster 2)
+   (create-deck "Chun-Li" :s3-chunli
+                :s3-kikoken 2
+                :s3-spinning-bird-kick 2
+                :s3-head-stomp 2
+                :s3-flipping-ax-kick 2
+                :s3-lightning-legs 2
+                :s3-kikousho 2
+                :s3-hosenka 2)
+   (create-deck "Cammy" :s3-cammy
+                :s3-cannonball 2
+                :s3-spiral-arrow 2
+                :s3-dive-kick 2
+                :s3-cannon-spike 2
+                :s3-cqc 2
+                :s3-gyro-drive-smasher 2)
+   (create-deck "Zangief" :s3-zangief
+                :s3-flying-power-bomb 2
+                :s3-double-lariat 2
+                :s3-spinning-piledriver 2
+                :s3-banishing-flat 2
+                :s3-atomic-suplex 2
+                :s3-siberian-blizzard 2
+                :s3-ultimate-atomic-buster 2)
+   (create-deck "Dan" :s3-dan
+                :s3-gadouken 2
+                :s3-koryuken 2
+                :s3-dankukyaku 2
+                :s3-saikyo-haraigoshi 2
+                :s3-haoh-gadouken 2
+                :s3-legendary-taunt 2
+                :s3-shisso-buraiken 2)
+   (create-deck "Akuma" :s3-akuma
+                :s3-hyakkishu 2
+                :s3-tatsumaki-zankukyaku 2
+                :s3-gohadouken 2
+                :s3-zugaihasatsu 2
+                :s3-goshoryuken 2
+                :s3-wrath-of-the-raging-demon 2
+                :s3-demon-armageddon 2)
+   (create-deck "Ryu" :s3-ryu
+                :s3-one-inch-punch 2
+                :s3-tatsumaki-senpukyaku-ryu 2
+                :s3-donkey-kick 2
+                :s3-hadoken-ryu 2
+                :s3-shoryuken-ryu 2
+                :s3-metsu-shoryuken 2
+                :s3-metsu-hadoken 2)
+   (create-deck "Ken" :s3-ken
+                :s3-knee-bash 2
+                :s3-tatsumaki-senpukyaku-ken 2
+                :s3-axe-kick 2
+                :s3-hadoken-ken 2
+                :s3-shoryuken-ken 2
+                :s3-guren-senpukyaku 2
+                :s3-shinryuken 2)
+   (create-deck "Guile" :s3-guile
+                :s3-flash-kick 2
+                :s3-reverse-spin-kick 2
+                :s3-sonic-boom 2
+                :s3-spinning-back-knuckle 2
+                :s3-double-sweep-kick 2
+                :s3-flash-explosion 2
+                :s3-sonic-hurricane 2)
+   (create-deck "Sagat" :s3-sagat
+                :s3-low-tiger-shot 2
+                :s3-tiger-knee 2
+                :s3-tiger-uppercut 2
+                :s3-tiger-shot 2
+                :s3-low-step-kick 2
+                :s3-tiger-destruction 2
+                :s3-tiger-cannon 2)])
+
 (def s4-decks
   [(create-deck "Shovel Knight and Shield Knight" :s4-shovel-shield
                 :s4-buckler-blow 2

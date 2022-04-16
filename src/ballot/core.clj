@@ -97,6 +97,7 @@
 (def seventh-cross (edn/read-string (slurp "resources/seventh_cross.edn")))
 (def undernight (edn/read-string (slurp "resources/undernight.edn")))
 (def shovelknight (edn/read-string (slurp "resources/shovelknight.edn")))
+(def streetfighter (edn/read-string (slurp "resources/streetfighter.edn")))
 (def normals (edn/read-string (slurp "resources/normals.edn")))
 
 (defn print-stats
@@ -205,8 +206,10 @@
 (d/transact conn seventh-cross)
 (d/transact conn undernight)
 (d/transact conn shovelknight)
+(d/transact conn streetfighter)
 (d/transact conn normals)
 (d/transact conn deck/s2-decks)
+(d/transact conn deck/s3-decks)
 (d/transact conn deck/s4-decks)
 (d/transact conn deck/s6-decks)
 
