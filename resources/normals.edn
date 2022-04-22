@@ -79,7 +79,7 @@
                     :ability/trigger :before}
                    {:ability/description "Choose and discard a boost in play."
                     :ability/location :boost
-                    :ability/trigger now}]}
+                    :ability/trigger :now}]}
 
  {:card/name "Spike"
   :card/id :normal-spike
