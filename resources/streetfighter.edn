@@ -1,6 +1,5 @@
 [{:character/name "C. Viper"
   :character/id :s3-cviper
-  :character/exceed-name "C. Viper"
   :character/innate-ability "After you resolve a Continuous Boost, you may Strike."
   :character/exceed-ability "When you Exceed, draw 5 cards. After you resolve a Continuous Boost, you may Strike. If you do, your attack is Critical"
   :character/gauge-cost 3
@@ -8,7 +7,6 @@
   
   {:character/name "Vega"
   :character/id :s3-vega
-  :character/exceed-name "Vega"
   :character/innate-ability "If you are at the edge of the arena, when you set your attack, your Special and Ultra Attacks have +2 Power."
   :character/exceed-ability "If you are at the edge of the arena, when you set your attack, your Special and Ultra Attacks have +3 Power and +1 Speed."
   :character/gauge-cost 3
@@ -16,7 +14,6 @@
   
   {:character/name "M. Bison"
   :character/id :s3-mbison
-  :character/exceed-name "M. Bison"
   :character/innate-ability "As an action, you may add a card from your hand to your gauge and draw a card."
   :character/exceed-ability "As an action, you may add up to 3 cards from your hand to your gauge and draw that many cards. When you Exceed, you may take this action immediately."
   :character/gauge-cost 3
@@ -24,7 +21,6 @@
   
   {:character/name "Chun-Li"
   :character/id :s3-chunli
-  :character/exceed-name "Chun-Li"
   :character/innate-ability "After you resolve a Boost, you may Retreat 1."
   :character/exceed-ability "After you resolve a Boost, you may Retreat 1. For each Continuous Boost you have in play, your attacks have +0-1 Range."
   :character/gauge-cost 3
@@ -32,7 +28,6 @@
   
   {:character/name "Cammy"
   :character/id :s3-cammy
-  :character/exceed-name "Cammy"
   :character/innate-ability "If you move past the opponent during a Strike, your attack's range includes them."
   :character/exceed-ability "If you move past the opponent during a Strike, your attack has 'Hit: +1 Power and gain Advantage' and its range includes them."
   :character/gauge-cost 3
@@ -40,7 +35,6 @@
   
   {:character/name "Zangief"
   :character/id :s3-zangief
-  :character/exceed-name "Zangief"
   :character/innate-ability "If the opponent is at range 1, when you set your attack, it gains 'Critical: +1 Power and +1 Speed'."
   :character/exceed-ability "When you Exceed, pull up to 2. If the opponent is at range 1, when you set your attack, it gains 'Critical: +3 Power and +1 Speed' "
   :character/gauge-cost 3
@@ -48,7 +42,6 @@
   
   {:character/name "Dan"
   :character/id :s3-dan
-  :character/exceed-name "Dan"
   :character/innate-ability "Your Wild Swings have 'Critical: +1 Power and +1 Speed'."
   :character/exceed-ability "Your Wild Swings have 'Critical: +1 Power and +1 Speed'. When drawing at the end of your turn, draw from the top or bottom of your deck. You may then discard a card."
   :character/gauge-cost 2
@@ -56,7 +49,6 @@
   
   {:character/name "Akuma"
   :character/id :s3-akuma
-  :character/exceed-name "Akuma"
   :character/innate-ability "Your attacks have 'Critical: Both players have +2 Power'."
   :character/exceed-ability "Your attacks have 'Critical: Both players have +3 Power'."
   :character/gauge-cost 2
@@ -64,7 +56,6 @@
   
   {:character/name "Ryu"
   :character/id :s3-ryu
-  :character/exceed-name "Ryu"
   :character/innate-ability "As an action, you may Move 1."
   :character/exceed-ability "As an action, you may Move 1 and draw a card."
   :character/gauge-cost 2
@@ -72,7 +63,6 @@
   
   {:character/name "Ken"
   :character/id :s3-ken
-  :character/exceed-name "Ken"
   :character/innate-ability "As an action, you may Close 1 and draw a card."
   :character/exceed-ability "When you Exceed, draw a card and Close up to 2. As an action, you may Close 1 and draw a card. Then, you may Strike."
   :character/gauge-cost 3
@@ -80,7 +70,6 @@
   
   {:character/name "Guile"
   :character/id :s3-guile
-  :character/exceed-name "Guile"
   :character/innate-ability "When using a Change Cards action, the first Gauge spent generates 2 additional Force."
   :character/exceed-ability "When using a Change Cards action, the first Gauge spent generates 2 additional Force. If you spent Gauge this way, you may then Strike."
   :character/gauge-cost 2
@@ -88,7 +77,6 @@
   
   {:character/name "Sagat"
   :character/id :s3-sagat
-  :character/exceed-name "Sagat"
   :character/innate-ability "When you initiate a Strike, you may place your attack face-up to gain +1 Speed."
   :character/exceed-ability "When you Exceed, draw 2 cards and Retreat up to 2. When you initiate a Strike, you may place your attack face-up to gain +1 Power and +1 Speed."
   :character/gauge-cost 3

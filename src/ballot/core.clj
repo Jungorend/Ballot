@@ -248,11 +248,6 @@
     (update-role! user-id (:name emoji))
     (discord-rest/delete-user-reaction! (:rest @state) channel-id message-id (:name emoji) user-id)))
 
-(defmethod handle-event :message-create
-  [_ {:keys [channel-id author mentions] :as _data}]
-  (when (some #{@bot-id} (map :id mentions))
-    (discord-rest/create-message! (:rest @state) channel-id :content "x")))
-
 (defn update-lfg-queue []
   (swap! state update :lfg-queue (fn [time] (filter #(not= 1 (.compareTo (java.time.LocalDateTime/now)
                                                                          (second %))) time))))
