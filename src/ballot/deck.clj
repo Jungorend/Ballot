@@ -131,6 +131,23 @@
                 :s6-sturm-brecher 2
                 :s6-megiddo-lor-celeste-grace 2
                 :s6-hitze-falke 2)
+   (create-deck "Nanase" :s6-nanase
+                :s6-lumiere 2
+                :s6-atmosphere 2
+                :s6-anges-invitation 2
+                :s6-let-the-fleur 2
+                :s6-vrai-couer 2
+                :s6-plumage 2
+                :s6-le-reve 2)
+   (create-deck "Merkava" :s6-merkava
+                :s6-resentfully-rage 2
+                :s6-defile 2
+                :s6-persistently-cling 2
+                :s6-agitate 2
+                :s6-drill-through 2
+                :s6-breathe-out 2
+                :s6-capture-and-devour 2
+                :s6-rampage 2)
    (create-deck "Enkidu" :s6-enkidu
                 :s6-demon-seal-abyssal-force 2
                 :s6-spiral-dual-palm-strike 2

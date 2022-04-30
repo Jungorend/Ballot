@@ -68,6 +68,72 @@
   :character/gauge-cost     1
   :character/seasons        {:season/name "Undernight"}}
 
+ #:character {:name "Hilda"
+              :id :s6-hilda
+              :innate-ability "ACTION: Strike. Your Normal Attacks have +1~1 Range and -1 Power."
+              :exceed-ability "ACTION, 1 Gauge: Choose one: Push 1, Pull 1, or draw 1. Afterwards, take another action, except Strike. (You may still play a Boost which causes you to Strike.)\nACTION: Add a card from your hand to your Gauge to Revert, then take another action."
+              :gauge-cost 1
+              :seasons {:season/name "Undernight"}}
+
+ #:character {:name "Nanase"
+              :id :s6-nanase
+              :innate-ability "ACTION: Strike. Your attack has -1 Power, -1 Speed, and \"Hit: Gain Advantage.\""
+              :exceed-ability "ACTION, 1 Gauge: Choose +2 Power or \"Hit: Gain Advantage.\" Strike. Your attack has the chosen bonus. The opponent has +1 Power.\nACTION: Add a card from your hand to your Gauge to Revert, then take another action."
+              :gauge-cost 1
+              :seasons {:season/name "Undernight"}}
+
+ #:character {:name "Londrekia"
+              :id :s6-londrekia
+              :innate-ability "ACTION: Discard all your Gauge and Strike. Gain bonuses based on how much Gauge you discarded:
+1+:After: Advance or Retreat 1.
+2+:After: Draw 2.
+3+ After: Reveal the opponent's hand."
+              :gauge-cost 1
+              :exceed-ability "When you are stunned, discard all of your Gauge, draw that many cards, and Revert.\nACTION, 1 Gauge: Strike. Your attack has +2 Power and +1 Speed. The opponent gains \"Ignore Armor, Ignore Guard.\"\nACTION: Add a card from your hand to your Gauge to Revert, then take another action."
+              :seasons {:season/name "Undernight"}}
+
+ #:character {:name "Vatista"
+              :id :s6-vatista
+              :seasons {:season/name "Undernight"}
+              :gauge-cost 1
+              :innate-ability "ACTION: Strike. Push, Pull and draw effects on your attacks are increased by 1."
+              :exceed-ability "ACTION, 2 Gauge: Strike. Push, Pull, Advance, Retreat, and draw effects on your attacks are increased by 2.\nACTION: Add a card from your hand to your Gauge to Revert, then take another action."}
+
+ #:character {:name "Byakuya"
+              :id :s6-byakuya
+              :gauge-cost 1
+              :seasons {:season/name "Undernight"}
+              :innate-ability "ACTION: Strike. Discard a \"Web Trap\" Boost on the opponent's space to gain +2 Power and +2 Speed."
+              :exceed-ability "ACTION, 2 Gauge: Draw 2, then you may Strike with an EX Attack. If you do, your attack has +1 Power. (If you choose not to strike with an EX attack, your turn ends.)\nACTION: Add a card from your hand to your Gauge to Revert, then take another action."}
+
+ #:character {:name "Seth"
+              :id :s6-seth
+              :gauge-cost 1
+              :seasons {:season/name "Undernight"}
+              :innate-ability "ACTION: Strike. Your attack has +1 Speed and \"This attack deals non-lethal damage and does not stun.\""
+              :exceed-ability "ACTION, 1 Gauge: Strike. Your attack has +2 Speed and \"This attack deals non-lethal damage and does not stun.\"\nACTION: Add a card from your hand to your Gauge to Revert, then take another action."}
+
+ #:character {:name "Mika"
+              :id :s6-mika
+              :gauge-cost 1
+              :seasons {:season/name "Undernight"}
+              :innate-ability "ACTION: Discard a card from your hand. Look at the top card of your deck. You may play a Boost from your hand. If you did not Strike this turn, Strike with a Wild Swing."
+              :exceed-ability "ACTION, 1 Gauge: Look at the top card of your deck. You may play a Boost from your hand. If you did not Strike this turn, Strike with a Wild Swing.\nACTION: Add a card from your hand to your Gauge to Revert, then take another action."}
+
+ #:character {:name "Carmine"
+              :id :s6-carmine
+              :gauge-cost 1
+              :seasons {:season/name "Undernight"}
+              :innate-ability "ACTION: Move a \"Dissolve\" Boost in play 1 space. If you did, Advance or Retreat 1."
+              :exceed-ability "ACTION: Play a \"Dissolve\" Boost from your Gauge. If you did, Advance or Retreat 1.\nACTION: Add a card from your hand to your Gauge to Revert, then take another action."}
+
+ #:character {:name "Merkava"
+              :id :s6-merkava
+              :gauge-cost 1
+              :seasons {:season/name "Undernight"}
+              :innate-ability "ACTION: Choose Advance or Retreat. Reveal the top card of your deck. Advance or Retreat X, whichever you choose, where X is the revealed card's printed Power."
+              :exceed-ability "ACTION: Discard a card from your Gauge, Advance or Retreat X, where X is the discarded card's printed Power.\nACTION: Add a card from your hand to your Gauge to Revert, then take another action."}
+
  ;; Cards
  {:card/name       "The Diviner"
   :card/id         :s6-the-diviner
@@ -1971,4 +2037,359 @@
                     {:ability/description "After: You may spend 1 Gauge to sustain this."
                      :ability/trigger     :after
                      :ability/location    :boost}]}
+
+ #:card {:name "Lumiere of the Dawn"
+         :id :s6-lumiere
+         :type :ultra
+         :cost 3
+         :min-range 1
+         :max-range 1
+         :power 9
+         :speed 4
+         :armor 6
+         :guard 0
+         :boost-name "Surge Forward"
+         :boost-type :instant
+         :boost-cost 1
+         :abilities [#:ability {:description "Before: If your Speed is greater than the opponent's, this attack does not hit and you lose all Armor."
+                                :trigger :before
+                                :location :attack}
+                     #:ability {:description "Advance 3, then take another action."
+                                :trigger :now
+                                :location :boost}]}
+
+ #:card {:name "Atmosphere of the Aether"
+         :id :s6-atmosphere
+         :type :ultra
+         :cost 3
+         :min-range 1
+         :max-range 2
+         :power 4
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Zephyr"
+         :boost-cost 0
+         :boost-type :continuous
+         :abilities [#:ability {:description "Hit: Push 3 and draw 2."
+                                :trigger :hit
+                                :location :attack}
+                     #:ability {:description "+2 Speed\nThe opponent has +3 Power."
+                                :trigger :passive
+                                :location :boost}
+                     #:ability {:description "Now: Take another action."
+                                :trigger :now
+                                :location :boost}]}
+
+ #:card {:name "Ange's Invitation"
+         :id :s6-anges-invitation
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 5
+         :speed 3
+         :armor 0
+         :guard 0
+         :boost-name "Chain Shift"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Attacks with Speed 6 or greater do not hit you."
+                                :trigger :passive
+                                :location :attack}
+                     #:ability {:description "After: Advance 3."
+                                :trigger :after
+                                :location :attack}
+                     #:ability {:description "+1 Speed."
+                                :trigger :passive
+                                :location :boost}
+                     #:ability {:description "Now: Strike."
+                                :trigger :now
+                                :location :boost}
+                     #:ability {:description "After: Add this to your Gauge."
+                                :trigger :after
+                                :location :boost}]}
+
+ #:card {:name "Plumage Dancing in the Wind"
+         :id :s6-plumage
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 3
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Reach"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "If the opponent initiated this Strike, +1 Speed. Otherwise, +2 Power."
+                                :trigger :passive
+                                :location :attack}
+                     #:ability {:description "+0~1 Range"
+                                :trigger :passive
+                                :location :boost}
+                     #:ability {:description "Now: Strike"
+                                :trigger :now
+                                :location :boost}]}
+
+ #:card {:name "Let the Fleur Carry Your Feelings"
+         :id :s6-let-the-fleur
+         :cost 0
+         :type :special
+         :min-range 2
+         :max-range 4
+         :power 4
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Jumping to Conclusions"
+         :boost-type :instant
+         :boost-cost 2
+         :abilities [#:ability {:description "After: If the opponent is stunned, Advance or Retreat 2 and draw 2."
+                                :trigger :after
+                                :location :attack}
+                     #:ability {:description "Look at the opponent's hand, then Strike."
+                                :trigger :now
+                                :location :boost}]}
+
+ #:card {:name "Conveying My Vrai Couer"
+         :id :s6-vrai-couer
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 3
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Overpower"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: Close 3."
+                                :trigger :before
+                                :location :attack}
+                     #:ability {:description "Hit: Push or Pull 1."
+                                :trigger :hit
+                                :location :attack}
+                     #:ability {:description "+1 Power"
+                                :trigger :passive
+                                :location :boost}
+                     #:ability {:description "Before: Close 1."
+                                :trigger :before
+                                :location :boost}]}
+
+ #:card {:name "Chasing le Reve"
+         :id :s6-le-reve
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 3
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Windmill"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "After: Advance 3 and draw 1."
+                                :trigger :after
+                                :location :attack}
+                     #:ability {:description "The opponent has +3 Power"
+                                :trigger :passive
+                                :location :boost}
+                     #:ability {:description "Now: Take another action."
+                                :trigger :now
+                                :location :boost}
+                     #:ability {:description "Before: Close 2."
+                                :trigger :before
+                                :location :boost}]}
+
+ #:card {:name "I, Resentfully Rage"
+         :id :s6-resentfully-rage
+         :type :ultra
+         :cost 3
+         :min-range 1
+         :max-range 3
+         :power 6
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Jormungandr"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: Push until your opponent is at Range 5."
+                                :trigger :hit
+                                :location :attack}
+                     #:ability {:description "After: You may return this to the top of your deck."
+                                :trigger :after
+                                :location :attack}
+                     #:ability {:description "Your Normal Attacks have +1~2 Range."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "After: If you did not play a Normal Attack, sustain this."
+                                :trigger :after
+                                :location :boost}]}
+
+ #:card {:name "I, Defile"
+         :id :s6-defile
+         :type :ultra
+         :cost -1
+         :min-range 1
+         :max-range 8
+         :power -1
+         :speed 8
+         :armor 0
+         :guard 0
+         :boost-name "Dark Bite"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "X is your Range to the opponent. This effect works at all times (even outside a Strike)."
+                                :trigger :passive
+                                :location :attack}
+                     #:ability {:description "Your attack's Range includes Range 1."
+                                :trigger :passive
+                                :location :boost}
+                     #:ability {:description "Now: Strike."
+                                :trigger :now
+                                :location :boost}]}
+
+ #:card {:name "I, Persistently Cling"
+         :id :s6-persistently-cling
+         :type :special
+         :cost 0
+         :min-range 0
+         :max-range 0
+         :power 7
+         :speed 1
+         :armor 0
+         :guard 5
+         :boost-name "Wide"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "When you set this, you may place it face-up on a space. If you do, calculate Range from that space."
+                                :trigger :now
+                                :location :attack}
+                     #:ability {:description "After: If this did not hit, return it to your hand."
+                                :trigger :after
+                                :location :attack}
+                     #:ability {:description "+0~1 Range"
+                                :trigger :passive
+                                :location :boost}
+                     #:ability {:description "Now: Advance or Retreat 1."
+                                :trigger :now
+                                :location :boost}]}
+
+ #:card {:name "I, Agitate"
+         :id :s6-agitate
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 3
+         :power 5
+         :speed 3
+         :armor 0
+         :guard 5
+         :boost-name "Lie in Wait"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: Reveal the top card of your deck. Push or Pull X, where X is the revealed card's Power."
+                                :trigger :hit
+                                :location :attack}
+                     #:ability {:description "+3 Guard\n When this is discarded, draw 2."
+                                :trigger :passive
+                                :location :boost}]}
+
+ #:card {:name "I, Drill Through"
+         :id :s6-drill-through
+         :cost 0
+         :type :special
+         :min-range 1
+         :max-range 1
+         :power 2
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Madness"
+         :boost-cost 0
+         :boost-type :continous
+         :abilities [#:ability {:description "Before: Spend up to 3 Force. For each Force spent, +1 Power and Close 1."
+                                :trigger :before
+                                :location :attack}
+                     #:ability {:description "Now: Strike"
+                                :trigger :now
+                                :location :boost}
+                     #:ability {:description "Hit: If you have no cards in hand, +4 Power."
+                                :trigger :hit
+                                :location :boost}]}
+
+ #:card {:name "I, Breathe Out"
+         :id :s6-breathe-out
+         :type :special
+         :cost 0
+         :min-range 2
+         :max-range 4
+         :power 3
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Instant Flight"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "After: Retreat 2. You may return this to the top of your deck."
+                                :trigger :after
+                                :location :attack}
+                     #:ability {:description "Before: Reveal the top card of your deck. Advance or Retreat X, where X is the revealed card's power."
+                                :trigger :before
+                                :location :boost}]}
+
+ #:card {:name "I, Capture and Devour"
+         :id :s6-capture-and-devour
+         :type :special
+         :cost 0
+         :min-range 3
+         :max-range 6
+         :power 1
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Slithering"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: Close 5 and gain Advantage"
+                                :trigger :hit
+                                :location :attack}
+                     #:ability {:description "Before: Advance or Retreat 1."
+                                :trigger :before
+                                :location :boost}]}
+
+ #:card {:name "I, Rampage"
+         :id :s6-rampage
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 3
+         :power 4
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Deflection"
+         :boost-cost 0
+         :boost-type :continuous
+         :abilities [#:ability {:description "Before: Advance 3."
+                                :trigger :before
+                                :location :attack}
+                     #:ability {:description "Hit: Push or Pull 1."
+                                :trigger :hit
+                                :location :attack}
+                     #:ability {:description "After: You may return this to the top of your deck."
+                                :trigger :after
+                                :location :attack}
+                     #:ability {:description "+1 Power"
+                                :trigger :passive
+                                :location :boost}
+                     #:ability {:description "Hit: Gain Armor equal to your Power."
+                                :trigger :hit
+                                :location :boost}]}
+
  ]

@@ -124,7 +124,7 @@
                 (str (print-stats (:card/min-range card)) " ~ " (print-stats (:card/max-range card))))]
     (str (:card/name card) "\n"
          (if (= (:card/type card) :ultra)
-           (str (:card/cost card) " Gauge.\n")
+           (str (print-stats (:card/cost card)) " Gauge.\n")
            (when (> (:card/cost card) 0)
              (str (:card/cost card) " Force.\n")))
          "Range: " range " | Power: " (print-stats (:card/power card)) " | Speed: " (print-stats (:card/speed card))
