@@ -155,7 +155,55 @@
                 :s6-gale-edge 2
                 :s6-chained-kick 2
                 :s6-three-precept-strike 6
-                :s6-tidal-spin 2)])
+                :s6-tidal-spin 2)
+  (create-deck "Hilda" :s6-hilda
+               :s6-impalement 2
+               :s6-in-the-darkness 2
+               :s6-condensity-gloom 2
+               :s6-interference 2
+               :s6-revenant-pillar 2
+               :s6-tri-furket 2
+               :s6-skewer 4)
+  (create-deck "Seth" :s6-seth
+               :s6-distant-frontier 2
+               :s6-abyssal-geometry 2
+               :s6-captive-segment 2
+               :s6-piercing-penetration 2
+               :s6-transgressing-convict 2
+               :s6-vanishing-confusion 2
+               :s6-dead-space-of-intrusion 2)
+  (create-deck "Londrekia" :s6-londrekia
+               :s6-cocytus-ice-prison 2
+               :s6-frozen-cleave 2
+               :s6-hail-storm 2
+               :s6-circular-step 4
+               :s6-snow-blossom 2
+               :s6-frozen-vine 2
+               :s6-frozen-spire 2)
+  (create-deck "Mika" :s6-mika
+               :s6-mikas-galaxy 2
+               :s6-mikas-revolution 2
+               :s6-mikas-cannon 2
+               :s6-mikas-hip-attack 2
+               :s6-mikas-tornado 2
+               :s6-mikas-missile 2
+               :s6-mikas-crash 2)
+  (create-deck "Byakuya" :s6-byakuya
+               :s6-endless-nightmare 2
+               :s6-become-a-part-of-me 2
+               :s6-or-shredded 4
+               :s6-caught-you 2
+               :s6-how-shall-i-cook-you 4
+               :s6-ill-plant-it-somewhere-here 2
+               :s6-minced 4)
+  (create-deck "Vatista" :s6-vatista
+               :s6-ruber-angelus 2
+               :s6-armabellum 2
+               :s6-lateus-orbis 2
+               :s6-transvoranse 2
+               :s6-mikoruseo 2
+               :s6-lumen-stella 2
+               :s6-zahhishio 2)])
 
 (def s3-decks
   [(create-deck "C. Viper" :s3-cviper
