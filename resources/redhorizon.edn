@@ -150,7 +150,7 @@
          :boost-name "Backstep & Lunge"
          :boost-type :continuous
          :boost-cost 0
-         :abailities [#:ability {:description "Before: +1 Power for each card in your Gauge (max 5)."
+         :abilities [#:ability {:description "Before: +1 Power for each card in your Gauge (max 5)."
                                  :trigger :before
                                  :location :attack}
                       #:ability {:description "Hit: Close 4 spaces and gain Advantage."
@@ -176,7 +176,7 @@
          :boost-name "Bracing"
          :boost-type :continuous
          :boost-cost 0
-         :abailities [#:ability {:description "Before: Advance 2 spaces."
+         :abilities [#:ability {:description "Before: Advance 2 spaces."
                                  :trigger :before
                                  :location :attack}
                       #:ability {:description "Hit: You gain Advantage."
