@@ -1,0 +1,190 @@
+[#:character {:name "Reese"
+              :id :s1-reese
+              :innate-ability "Whenever Reese stuns an opponent, he may pay 1 Gauge to gain Advantage."
+              :exceed-ability "Whenever Reese stuns an opponent, he gains Advantage. Whenever Reese initiates a Strike on the first turn after a Strike, he has +2 Power."
+              :gauge-cost 3
+              :seasons {:season/name "Red Horizon"}}
+
+ #:character {:name "Heidi"
+              :id :s1-heidi
+              :gauge-cost 3
+              :seasons {:season/name "Red Horizon"}
+              :innate-ability "Whenever Heidi resolves a Boost, she draws a card."
+              :exceed-ability "Heidi has +2 Power if she has a Continuous Boost in play. Whenever Heidi resolves a Boost, she draws a card."}
+
+ #:character {:name "Vincent"
+              :id :s1-vincent
+              :gauge-cost 3
+              :seasons {:season/name "Red Horizon"}
+              :innate-ability "When choosing cards for a Strike, Vincent may pay up to 3 Force for +2 Guard per Force spent."
+              :exceed-ability "When choosing cards for a Strike, Vincent may pay up to 3 Force for +1 Armor and +2 Guard per Force spent."}
+
+ #:character {:name "Nehtali"
+              :id :s1-nehtali
+              :gauge-cost 3
+              :seasons {:season/name "Red Horizon"}
+              :innate-ability "As an action, Nehtali may put the top card of each player's Discard into that player's Gauge."
+              :exceed-ability "As an action, Nethali may put the top 2 cards of her Discard into her Gauge and the top card of the opponent's Discard into their Gauge."}
+
+ #:character {:name "Eva"
+              :id :s1-eva
+              :gauge-cost 3
+              :seasons {:season/name "Red Horizon"}
+              :innate-ability "After: You may return one of your in-play Continuous Boosts to your hand."
+              :exceed-ability "After: You may return one of your in-play Continuous Boosts to your hand. Eva may play up to 2 Continuous Boosts as a single action."}
+
+ #:character {:name "Kaden"
+              :id :s1-kaden
+              :gauge-cost 3
+              :seasons {:season/name "Red Horizon"}
+              :innate-ability "Whenever Kaden uses an EX attack, he draws a card."
+              :exceed-ability "Whenever Kaden uses an EX attack, he has an additional +2 Power on that attack, and draws a card."}
+
+ #:character {:name "Miska"
+              :id :s1-miska
+              :gauge-cost 3
+              :seasons {:season/name "Red Horizon"}
+              :innate-ability "As an action, you may place your Bear marker onto the board in any space, or move it to any space if it is already in play."
+              :exceed-ability "Flip your Bear marker to its Exceed side. As an action, you may place your Bear Marker onto the board in any space, or move it to any space if it is already in play."}
+
+ #:card {:name "Bear"
+         :id :s1-bear
+         :type :character
+         :description "Bear may share a space with another character. When you place a Normal Attack to Strike, you may pay 2 Force to declare that you will calculate its range from Bear's position instead."
+         :exceed-description "Bear may share a space with another character. When you place a Normal Attack to Strike, you may declare that you will calculate its range from Bear's position instead."}
+
+ #:character {:name "Lily"
+              :id :s1-lily
+              :gauge-cost 3
+              :seasons {:season/name "Red Horizon"}
+              :innate-ability "Lily's Normal Attacks have +0~1 Range. Lily pays 1 less total Force when retreating."
+              :exceed-ability "Lily's Normal Attacks have +0~2 Range. Lily pays 1 less total Force when retreating."}
+
+ #:character {:name "Satoshi"
+              :id :s1-satoshi
+              :gauge-cost 3
+              :seasons {:season/name "Red Horizon"}
+              :innate-ability "Whenever Satoshi initiates a Strike, he has +2 Power if he has more cards in hand than the opponent (before choosing his attack)."
+              :exceed-ability "Whenever Satoshi initiates a Strike, he has +4 Power if he has more cards in hand than the opponent (before choosing his attack)."}
+
+ #:character {:name "Mei Lien"
+              :id :s1-mei-lien
+              :gauge-cost 3
+              :seasons {:season/name "Red Horizon"}
+              :innate-ability "If there is a copy of an attack in your Discard, other copies have +0~1 Range. If there is a copy of an attack in your Gauge, other copies have +2 Power."
+              :exceed-ability "If there is a copy of an attack in your Discard, other copies have +0~2 Range. If there is a copy of an attack in your Gauge, other copies have +4 Power."}
+
+ #:character {:name "Baelkhor"
+              :id :s1-baelkhor
+              :gauge-cost 1
+              :seasons {:season/name "Red Horizon"}
+              :innate-ability "Whenever Baelkhor hits an opponent, he may pay 2 life to seal the opponent's attack after the Strike. (It is removed from the game and doesn't go to the opponent's Gauge.)"
+              :exceed-ability "Baelkhor's attacks have +3 Power and +1 Speed if another attack with that name has been sealed. (As an action, Baelkhor may spend 1 Gauge to return to Normal Mode.)"}
+
+ #:character {:name "Morathi"
+              :id :s1-morathi
+              :gauge-cost 3
+              :seasons {:season/name "Red Horizon"}
+              :innate-ability "When you use a Wild Swing, look at the top card of your deck, you may draw it or put it back, then perform the Wild Swing."
+              :exceed-ability "When you use a Wild Swing, you may pick up to 3 cards from the top of your deck. Choose one to be your Wild Swing, add one to your hand, and discard the remaining one."}
+
+ #:character {:name "Gabrek"
+              :id :s1-gabrek
+              :gauge-cost 3
+              :seasons {:season/name "Red Horizon"}
+              :innate-ability "Before choosing his attack during a Stirke, if Gabrek is at Range 1, he draws a card."
+              :exceed-ability "If Gabrek initiates a Strike at Range 1, his opponent must defend with a Wild Swing. If an opponent initiates a Strike at Range 1, Gabrek draws a card."}
+
+ #:character {:name "Ulrik"
+              :id :s1-ulrik
+              :gauge-cost 3
+              :seasons {:season/name "Red Horizon"}
+              :innate-ability "As an action, Ulrik may close or retreat 1 space, then Strike."
+              :exceed-ability "As an action, Ulrik may close or retreat 2 spaces, then Strike."}
+
+ #:character {:name "Alice"
+              :id :s1-alice
+              :gauge-cost 3
+              :seasons {:season/name "Red Horizon"}
+              :innate-ability "When Alice's attack's Maximum Range is 3 or more, and her attack is at Maximum Range, she has +2 Power."
+              :exceed-ability "When Alice's attack's Maximum Range is 3 or more, and her attack is at Maximum Range, she has +2 Power and \"Attacks do not hit you.\""}
+
+ #:character {:name "Zoey"
+              :id :s1-zoey
+              :gauge-cost 3
+              :seasons {:season/name "Red Horizon"}
+              :innate-ability "After: If your attack hit, you may add the top card of your Discard to your Gauge and return your attack to your hand."
+              :exceed-ability "After: If your attack hit, you may add the top card of your Discard to your Gauge and return your attack to your hand. When you spend Gauge, add the spent cards to your hand."}
+
+ #:character {:name "Super Skull Man 33"
+              :id :s1-skullman
+              :gauge-cost 3
+              :seasons {:season/name "Red Horizon"}
+              :innate-ability "Whenever Skull Man uses a Wild Swing, he has +1 Power."
+              :exceed-ability "Whenever Skull Man uses a Wild Swing, he has +2 Power and +3 Guard."}
+
+ #:character {:name "Devris"
+              :id :s1-devris
+              :gauge-cost 2
+              :seasons {:season/name "Red Horizon"}
+              :innate-ability "When you spend Gauge for Force, each Gauge spent provides up to 2 Force instead. As an Action, you may spend 1 life to add the top card of your Deck to your Gauge."
+              :exceed-ability "When you spend Gauge for Force, each Gauge spent provides up to 3 Force instead. As an action, you may spend 1 life to add the top card of your Deck to your Gauge."}
+
+ #:character {:name "Juno"
+              :id :s1-juno
+              :gauge-cost 3
+              :seasons {:season/name "Red Horizon"}
+              :innate-ability "After: If your attack hit, you may return a Continuous Boost form your discard pile to play without paying its cost, and do not discard it after this Strike. When it would be discarded from it, Seal it instead."
+              :exceed-ability "Before: You may return a Continuous Boost from your discard pile to play without paying its cost, and do not discard it after this Strike. When it would be discarded from it, Seal it instead."}
+
+ #:card {:name "Ballista"
+         :id :s1-ballista
+         :type :special
+         :cost 0
+         :min-range 3
+         :max-range 5
+         :power 0
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Backstep & Lunge"
+         :boost-type :continuous
+         :boost-cost 0
+         :abailities [#:ability {:description "Before: +1 Power for each card in your Gauge (max 5)."
+                                 :trigger :before
+                                 :location :attack}
+                      #:ability {:description "Hit: Close 4 spaces and gain Advantage."
+                                 :trigger :hit
+                                 :location :attack}
+                      #:ability {:description "Retreat 2 spaces."
+                                 :trigger :now
+                                 :location :boost}
+                      #:ability {:description "Before: Close 2 Spaces."
+                                 :trigger :before
+                                 :location :boost}]}
+
+ #:card {:name "Chivalry"
+         :id :s1-chivalry
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 4
+         :speed 4
+         :armor 0
+         :guard 4
+         :boost-name "Bracing"
+         :boost-type :continuous
+         :boost-cost 0
+         :abailities [#:ability {:description "Before: Advance 2 spaces."
+                                 :trigger :before
+                                 :location :attack}
+                      #:ability {:description "Hit: You gain Advantage."
+                                 :trigger :hit
+                                 :location :attack}
+                      #:ability {:description "+1 Armor ang +1 Guard at the start of each of the opponent's turns."
+                                 :trigger :passive
+                                 :location :boost}]}
+
+
+ ]

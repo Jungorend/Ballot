@@ -13,6 +13,13 @@
              :deck/cards []}
             c)))
 
+(def s1-decks
+  [(create-deck "Reese" :s1-reese
+                :s1-ballista 2
+                :s1-chivalry 2
+
+                )])
+
 (def s2-decks
   [(create-deck "Renea" :s2-renea
                 :s2-briefcase 1

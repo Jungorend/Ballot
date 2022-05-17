@@ -94,6 +94,7 @@
 ;; TODO: Have a mechanics: explanation
 ;; TODO: Have characters display gauge cost amount
 
+(def redhorizon (edn/read-string (slurp "resources/redhorizon.edn")))
 (def seventh-cross (edn/read-string (slurp "resources/seventh_cross.edn")))
 (def undernight (edn/read-string (slurp "resources/undernight.edn")))
 (def shovelknight (edn/read-string (slurp "resources/shovelknight.edn")))
@@ -203,11 +204,13 @@
 (def conn (d/connect cfg))
 (d/transact conn schema)
 (d/transact conn entries)
-(d/transact conn seventh-cross)
-(d/transact conn undernight)
-(d/transact conn shovelknight)
-(d/transact conn streetfighter)
 (d/transact conn normals)
+(d/transact conn redhorizon)
+(d/transact conn seventh-cross)
+(d/transact conn streetfighter)
+(d/transact conn shovelknight)
+(d/transact conn undernight)
+(d/transact conn deck/s1-decks)
 (d/transact conn deck/s2-decks)
 (d/transact conn deck/s3-decks)
 (d/transact conn deck/s4-decks)
