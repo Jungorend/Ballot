@@ -373,6 +373,7 @@
       (= "!help" first-word) (discord-rest/create-message! (:rest @state) channel-id :content (:help config))
       (= "!character" first-word) (let [description (lookup-character args conn)]
                                     (when description (discord-rest/create-message! (:rest @state) channel-id :content (str "```\n" description "```"))))
+      (= "!nomoretfs" first-word) (discord-rest/create-message! (:rest @state) (channel-id :content "https://cdn.discordapp.com/attachments/816004662754541628/981942732845088808/FirstCustomsRule.png"))
       (= "!card" first-word) (let [description (lookup-card args conn)]
                                (when description (discord-rest/create-message! (:rest @state) channel-id :content (str "```\n" description "```"))))
       (= "!search" first-word) (let [description (search-cards args conn)]
