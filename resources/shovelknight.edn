@@ -633,8 +633,8 @@
                :card/id :s4-homing-orb
                :card/type :special
                :card/cost 0
-               :card/min-range X
-               :card/max-range X
+               :card/min-range -1
+               :card/max-range -1
                :card/power 3
                :card/speed 6
                :card/armor 0
