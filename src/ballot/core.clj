@@ -240,6 +240,7 @@
       (:black-heart e)  (toggle-role! user-id :designer)
       (:yellow-heart e) (toggle-role! user-id :east-coast)
       (:purple-heart e) (toggle-role! user-id :west-coast)
+      (:green-heart e)  (toggle-role! user-id :mentee)
       (:blue-heart e)   (toggle-role! user-id :oceania)
       (:diamonds e)       (toggle-role! user-id :europe)
       nil)))

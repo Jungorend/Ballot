@@ -30,6 +30,27 @@
   :card/type :character
   :card/description "When you initiate a Strike, after setting your attack, you may have your attack gain: \"Before: If your Burrow is unoccupied, Advance or Retreat until you are in its space.\""
   :card/exceed-description "When you initiate a Strike, after setting your attack, you may have your attack gain: \"Before: If your Burrow is unoccupied, Advance or Retreat until you are in its space. If you did, +2 Power.\""}
+
+ #:character {:name "Enchantress"
+              :id :s4-enchantress
+              :innate-ability "Do not draw a card at the end of your turn (discard as normal if above 7 cards). At the end of your turn or during Cleanup, if your hand is empty, draw until you have 6 cards in hand."
+              :exceed-ability "When you Exceed, shuffle your hand and discard pile into your deck. Instead of drawing a card at the end of your turn, you may draw until you have 7 cards (then discard down to 7)."
+              :gauge-cost 4
+              :seasons {:season/name "Shovel Knight"}}
+
+ #:character {:name "Fight"
+              :id :s4-fight
+              :innate-ability "When you set your attack, spend up to 2 Force for +1 Power each."
+              :exceed-ability "When you Exceed, put up to 2 Continuous Boosts from your discard, hand, or gauge into play (without paying their costs) then shuffle your discard. When you set your attack, spend up to 3 Force for +1 Power each."
+              :gauge-cost 3
+              :seasons {:season/name "Shovel Knight"}}
+
+ #:character {:name "King Knight"
+              :id :s4-king-knight
+              :innate-ability "You may Boost with your Royal Decrees (if they are not sealed). After resolving a Decree or Continuous Boost, draw a card."
+              :exceed-ability "When you Exceed, draw 2 cards. You may Boost with your Royal or Glorious Decrees (if they are not sealed). After resolving a Decree or Continuous Boost, draw a card."
+              :gauge-cost 3
+              :seasons {:season/name "Shovel Knight"}}
   
  ;; Cards
  {:card/name       "Shield Boomerang"
@@ -499,4 +520,551 @@
 					{:ability/description "At the start of your next turn, add this card to your Gauge and draw a card."
 					 :ability/trigger     :passive
                      :ability/location    :boost}]}
+
+              {:card/name "Rapid Beam"
+               :card/id :s4-rapid-beam
+               :card/type :ultra
+               :card/cost 3
+               :card/min-range 5
+               :card/max-range 8
+               :card/power 4
+               :card/speed 4
+               :card/description "\"Let us dance together into the abyss!\""
+               :card/armor 0
+               :card/guard 0
+               :card/boost-name "Dark Strafe"
+               :card/boost-cost 2
+               :card/boost-type :instant
+               :card/abilities [{:ability/description "Hit: +1 Power for each card in your hand, to a maximum of +7."
+                                 :ability/location :attack
+                                 :ability/trigger :hit}
+                                {:ability/description "Move to any space, then draw or discard up to 3 cards."
+                                 :ability/location :boost
+                                 :ability/trigger :now}]}
+
+              {:card/name "Shattering Scream"
+               :card/id :s4-shattering-scream
+               :card/type :ultra
+               :card/cost 3
+               :card/min-range 1
+               :card/max-range 1
+               :card/power 6
+               :card/speed 4
+               :card/description "\"Weakling!\""
+               :card/armor 0
+               :card/guard 6
+               :card/boost-name "Critical Attack"
+               :card/boost-cost 2
+               :card/boost-type :continuous
+               :card/abilities [{:ability/description "Before: +0~1 Range for each card in your hand."
+                                 :ability/location :attack
+                                 :ability/trigger :before}
+                                {:ability/description "Hit: The opponent must draw or discard cards until they have the same number in hand as you. +1 Power per card drawn (not discards) this way."
+                                 :ability/location :boost
+                                 :ability/trigger :hit}]}
+
+              {:card/name "Magic Shot"
+               :card/id :s4-magic-shot
+               :card/type :special
+               :card/cost 1
+               :card/min-range 2
+               :card/max-range 5
+               :card/power 2
+               :card/speed 5
+               :card/armor 0
+               :card/guard 0
+               :card/boost-name "Rebirth"
+               :card/boost-cost 0
+               :card/boost-type :instant
+               :card/abilities [{:ability/description "Hit: Add the top card of your discard pile to your Gauge."
+                                 :ability/trigger :hit
+                                 :ability/location :attack}
+                                {:ability/description "Put any number of cards from your hand on the bottom of your deck in any order, then draw that many cards plus one"
+                                 :ability/trigger :now
+                                 :ability/location :boost}]}
+
+              {:card/name "Fly Charge"
+               :card/id :s4-fly-charge
+               :card/type :special
+               :card/cost 0
+               :card/min-range 1
+               :card/max-range 1
+               :card/power 4
+               :card/speed 4
+               :card/armor 0
+               :card/guard 4
+               :card/boost-name "Mind Control"
+               :card/boost-type :instant
+               :card/boost-cost 0
+               :card/abilities [{:ability/description "Before: Spend up to 3 Force. For each Force spent, Close 1."
+                                 :ability/trigger :before
+                                 :ability/location :attack}
+                                {:ability/description "After: Advance X, where X is the number of cards in your hand."
+                                 :ability/trigger :after
+                                 :ability/location :attack}
+                                {:ability/description "Spend up to 3 Force. The opponent must reveal that many cards from their hand. Choose one of the revealed cards and discard it."
+                                 :ability/trigger :now
+                                 :ability/location :boost}]}
+
+              {:card/name "Fire Wave"
+               :card/id :s4-fire-wave
+               :card/type :special
+               :card/cost 1
+               :card/min-range 3
+               :card/max-range 6
+               :card/power 4
+               :card/speed 4
+               :card/guard 4
+               :card/armor 0
+               :card/boost-name "Will Made Real"
+               :card/boost-cost 0
+               :card/boost-type :instant
+               :card/abilities [{:ability/description "If you have 2 or fewer cards in hand, +2 Armor."
+                                 :ability/trigger :passive
+                                 :ability/location :attack}
+                                {:ability/description "After: Push 2."
+                                 :ability/trigger :after
+                                 :ability/location :attack}
+                                {:ability/description "Draw or discard up to 2 cards, then Strike."
+                                 :ability/trigger :now
+                                 :ability/location :boost}]}
+
+              {:card/name "Homing Orb"
+               :card/id :s4-homing-orb
+               :card/type :special
+               :card/cost 0
+               :card/min-range X
+               :card/max-range X
+               :card/power 3
+               :card/speed 6
+               :card/armor 0
+               :card/guard 0
+               :card/boost-name "Ground Break"
+               :card/boost-type :instant
+               :card/boost-cost 0
+               :card/abilities [{:ability/description "X is the number of cards in your hand, up to a maximum of 7."
+                                 :ability/trigger :passive
+                                 :ability/location :attack}
+                                {:ability/description "Hit: Push or Pull 1."
+                                 :ability/trigger :hit
+                                 :ability/location :attack}
+                                {:ability/description "Your opponent may Advance or Retreat up to 2. If they move fewer than 2 spaces with this effect, do 5 non-lethal damage."
+                                 :ability/trigger :now
+                                 :ability/location :boost}]}
+
+              {:card/name "Spiral Orb"
+               :card/id :s4-spiral-orb
+               :card/type :special
+               :card/cost 1
+               :card/min-range 1
+               :card/max-range 3
+               :card/power 4
+               :card/speed 1
+               :card/armor 2
+               :card/guard 4
+               :card/boost-name "Destruction Force"
+               :card/boost-cost 0
+               :card/boost-type :continuous
+               :card/abilities [{:ability/description "Hit: Draw or discard up to 2 cards."
+                                 :ability/location :attack
+                                 :ability/trigger :hit}
+                                {:ability/description "After: You may draw or discard a card."
+                                 :ability/trigger :after
+                                 :ability/location :attack}
+                                {:ability/description "Hit: The opponent may discard up to cards. If they do not discard 2 cards this way, +3 Power."
+                                 :ability/trigger :hit
+                                 :ability/location :boost}]}
+
+              {:card/name "Flamethrower"
+               :card/id :s4-flamethrower
+               :card/type :ultra
+               :card/cost 2
+               :card/min-range 1
+               :card/max-range 1
+               :card/power 4
+               :card/speed 5
+               :card/description "\"A blessing of violence upon you.\""
+               :card/armor 0
+               :card/guard 0
+               :card/boost-name "Explorb"
+               :card/boost-cost 1
+               :card/boost-type :continuous
+               :card/abilities [{:ability/description "Ignore Guard"
+                                 :ability/location :attack
+                                 :ability/trigger :passive
+                                 :ability/keywords "Ignore Guard"}
+                                {:ability/description "Before: +0~1 Range for each Force you spent this turn."
+                                 :ability/location :attack
+                                 :ability/trigger :before}
+                                {:ability/description "Now: Advance or Retreat 2."
+                                 :ability/location :boost
+                                 :ability/trigger :now}
+                                {:ability/description "Hit: Put the top 2 cards of your deck into Gauge."
+                                 :ability/location :boost
+                                 :ability/trigger :hit}]}
+              {:card/name "Rail Gun"
+               :card/id :s4-rail-gun
+               :card/type :ultra
+               :card/cost 4
+               :card/min-range 3
+               :card/max-range 8
+               :card/power 7
+               :card/speed 5
+               :card/description "\"If it can bleed, perhaps it can die.\""
+               :card/armor 0
+               :card/guard 0
+               :card/boost-name "Mothorb"
+               :card/boost-cost 1
+               :card/boost-type :continuous
+               :card/abilities [{:ability/description "Hit: The opponent has -1 Armor for each Force you spent this turn."
+                                 :ability/location :attack
+                                 :ability/trigger :hit}
+                                {:ability/description "Hit: Put the top card of your deck to Gauge for each Force you spent this turn."
+                                 :ability/location :boost
+                                 :ability/trigger :hit}]}
+              {:card/name "Lightning Gun"
+               :card/id :s4-lightning-gun
+               :card/type :ultra
+               :card/cost 2
+               :card/min-range 1
+               :card/max-range 3
+               :card/power 2
+               :card/speed 6
+               :card/description "\"A crowning achievement of brutality.\""
+               :card/armor 0
+               :card/guard 0
+               :card/boost-name "Arachnomorph"
+               :card/boost-cost 0
+               :card/boost-type :continuous
+               :card/abilities [{:ability/description "Hit: +1 Power for each Force you spent this turn."
+                                 :ability/trigger :hit
+                                 :ability/location :attack}
+                                {:ability/description "+1 Speed."
+                                 :ability/location :boost
+                                 :ability/trigger :passive}
+                                {:ability/description "Now: Advance or Retreat 1."
+                                 :ability/location :boost
+                                 :ability/trigger :now}]}
+              {:card/name "Electro Charge"
+               :card/id :s4-electro-charge
+               :card/type :special
+               :card/cost 0
+               :card/min-range 4
+               :card/max-range 6
+               :card/power 5
+               :card/speed 1
+               :card/guard 0
+               :card/armor 0
+               :card/boost-name "Speed Shell"
+               :card/boost-cost 0
+               :card/boost-type :continuous
+               :card/abilities [{:ability/description "+3 Guard for each Force you spent this turn."
+                                 :ability/trigger :passive
+                                 :ability/location :attack}
+                                {:ability/description "Hit: Add the top card of your discard to your Gauge."
+                                 :ability/trigger :hit
+                                 :ability/location :attack}
+                                {:ability/description "+1 Speed."
+                                 :ability/trigger :passive
+                                 :ability/location :boost}
+                                {:ability/description "After: Retreat 1."
+                                 :ability/trigger :after
+                                 :ability/location :boost}]}
+              {:card/name "Power Jump"
+               :card/id :s4-power-jump
+               :card/type :special
+               :card/cost 0
+               :card/min-range 1
+               :card/max-range 2
+               :card/power 2
+               :card/speed 3
+               :card/guard 1
+               :card/armor 3
+               :card/boost-name "Dash"
+               :card/boost-cost 0
+               :card/boost-type :instant
+               :card/abilities [{:ability/description "Hit: Retreat 2."
+                                 :ability/trigger :hit
+                                 :ability/location :attack}
+                                {:ability/description "After: Push 1."
+                                 :ability/trigger :after
+                                 :ability/location :attack}
+                                {:ability/description "Advance or Retreat 2. If you did not move past your opponent, add this card to your Gauge"
+                                 :ability/trigger :now
+                                 :ability/location :boost}]}
+              {:card/name "Retreating Bolts"
+               :card/id :s4-retreating-bolts
+               :card/type :special
+               :card/cost 0
+               :card/min-range 3
+               :card/max-range 3
+               :card/power 2
+               :card/speed 4
+               :card/armor 0
+               :card/guard 0
+               :card/boost-name "Deadlock Boots"
+               :card/boost-type :continuous
+               :card/boost-cost 1
+               :card/abilities [{:ability/description "+1 Speed for each Force you spent this turn."
+                                 :ability/trigger :passive
+                                 :ability/location :attack}
+                                {:ability/description "Before: Retreat 2."
+                                 :ability/trigger :before
+                                 :ability/location :attack}
+                                {:ability/description "Stun Immunity"
+                                 :ability/location :boost
+                                 :ability/trigger :passive
+                                 :ability/keywords "Stun Immunity"}
+                                {:ability/description "Now: Advance or Retreat 1."
+                                 :ability/location :boost
+                                 :ability/trigger :now}]}
+              {:card/name "Explosive Shot"
+               :card/id :s4-explosive-shot
+               :card/type :special
+               :card/cost 0
+               :card/min-range 3
+               :card/max-range 5
+               :card/power 3
+               :card/speed 5
+               :card/armor 0
+               :card/guard 0
+               :card/boost-name "Shoot Orb"
+               :card/boost-type :continuous
+               :card/abilities [{:ability/description "Hit, Range 3+: +3 Power."
+                                 :ability/trigger :Hit
+                                 :ability/location :boost}]}
+              {:card/name "Royal Decree"
+               :card/type :character
+               :card/boost-name "Kingly Strut"
+               :card/boost-cost 3
+               :card/boost-type :continuous
+               :card/abilities [{:ability/description "This Boost cannot be discarded from play."
+                                 :ability/location :boost
+                                 :ability/trigger :passive}
+                                 {:ability/description "+2 Power and +2 Armor"
+                                 :ability/location :boost
+                                 :ability/trigger :passive}
+                                 {:ability/description "Now: Close 1 or 2."
+                                 :ability/location :boost
+                                 :ability/trigger :now}
+                                 {:ability/description "Cleanup: Seal this card."
+                                 :ability/location :boost
+                                 :ability/trigger :cleanup}]}
+
+              {:card/name "Royal Decree"
+               :card/type :character
+               :card/boost-name "Lordly Might"
+               :card/boost-cost 3
+               :card/boost-type :continuous
+               :card/abilities [{:ability/description "This Boost cannot be discarded from play."
+                                 :ability/location :boost
+                                 :ability/trigger :passive}
+                                 {:ability/description "+1 Power and +2 Speed"
+                                 :ability/location :boost
+                                 :ability/trigger :passive}
+                                 {:ability/description "Cleanup: Seal this card."
+                                 :ability/location :boost
+                                 :ability/trigger :cleanup}]}
+
+              {:card/name "Glorious Cape"
+               :card/id :s4-magnificent-cape
+               :card/type :character
+               :card/boost-name "Magnificent Cape"
+               :card/boost-cost 4
+               :card/boost-type :continuous
+               :card/abilities [{:ability/description "This Boost cannot be discarded from play."
+                                 :ability/location :boost
+                                 :ability/trigger :passive}
+                                 {:ability/description "+2 Power and +2 Speed"
+                                 :ability/location :boost
+                                 :ability/trigger :passive}
+                                 {:ability/description "Now: Close up to 3."
+                                 :ability/location :boost
+                                 :ability/trigger :now}
+                                 {:ability/description "Cleanup: Seal this card."
+                                 :ability/location :boost
+                                 :ability/trigger :cleanup}]}
+
+              {:card/name "Royal Decree"
+               :card/id :s4-royal-decree
+               :card/type :character
+               :card/boost-name "Pay to Win"
+               :card/boost-cost 3
+               :card/boost-type :continuous
+               :card/abilities [{:ability/description "This Boost cannot be discarded from play."
+                                 :ability/location :boost
+                                 :ability/trigger :passive}
+                                 {:ability/description "+3 Power and +3 Armor"
+                                 :ability/location :boost
+                                 :ability/trigger :passive}
+                                 {:ability/description "Hit, Range 1: The opponent discards 2 cards at random."
+                                 :ability/location :boost
+                                 :ability/trigger :hit}
+                                 {:ability/description "After: Draw 2 cards"
+                                 :ability/location :boost
+                                 :ability/trigger :after}
+                                 {:ability/description "Cleanup: Seal this card."
+                                 :ability/location :boost
+                                 :ability/trigger :cleanup}]}
+
+              {:card/name "Victory Trumpets"
+               :card/id :s4-victory-trumpets
+               :card/type :ultra
+               :card/cost 2
+               :card/min-range 2
+               :card/max-range 4
+               :card/power 0
+               :card/speed 3
+               :card/description "\"All bow before me!\""
+               :card/armor 2
+               :card/guard 4
+               :card/boost-name "Royal Tribute"
+               :card/boost-cost 0
+               :card/boost-type :instant
+               :card/abilities [{:ability/description "This attack's Range is calculated from the center space of the arena"
+                                 :ability/location :attack
+                                 :ability/trigger :passive}
+                                {:ability/description "After: Sustain your Boosts. Do not Seal your Decrees this Cleanup."
+                                 :ability/location :attack
+                                 :ability/trigger :after}
+                                {:ability/description "Draw 2 cards. You may take the Boost action."
+                                 :ability/location :boost
+                                 :ability/trigger :now}]}
+
+              {:card/name "King of Cards"
+               :card/id :s4-king-of-cards
+               :card/type :ultra
+               :card/cost 3
+               :card/min-range 1
+               :card/max-range 2
+               :card/power 6
+               :card/speed 6
+               :card/description "\"As the embodiment of opulence, I demand tribute!\""
+               :card/armor 0
+               :card/guard 0
+               :card/boost-name "Kingmaker"
+               :card/boost-cost 0
+               :card/boost-type :continuous
+               :card/abilities [{:ability/description "Hit: Spend up to 9 Force. For every 3 Force spent, +3 Power and add the top card of your discard pile to your Gauge."
+                                 :ability/location :attack
+                                 :ability/trigger :hit}
+                                {:ability/description "If you are in Exceed Mode, +2 Speed. If the opponent is in Exceed Mode, +2 Power."
+                                 :ability/location :boost
+                                 :ability/trigger :passive}]}
+
+              {:card/name "Shoulder Bash"
+               :card/id :s4-shoulder-bash
+               :card/type :special
+               :card/cost 0
+               :card/min-range 1
+               :card/max-range 1
+               :card/power 5
+               :card/speed 2
+               :card/armor 0
+               :card/guard 6
+               :card/boost-name "Brutal Coronation"
+               :card/boost-cost 1
+               :card/boost-type :continuous
+               :card/abilities [{:ability/description "Before: Close 2."
+                                 :ability/trigger :before
+                                 :ability/location :attack}
+                                {:ability/description "After: Advance up to 2."
+                                 :ability/trigger :hit
+                                 :ability/location :attack}
+                                {:ability/description "+1 Power, +1 Armor, and +1 Guard"
+                                 :ability/trigger :passive
+                                 :ability/location :boost}
+                                {:ability/description "Now: Draw until you have 3 cards in hand."
+                                 :ability/trigger :now
+                                 :ability/location :boost}]}
+
+              {:card/name "Scepter Smite"
+               :card/id :s4-scepter-smite
+               :card/type :special
+               :card/cost 0
+               :card/min-range 1
+               :card/max-range 2
+               :card/power 4
+               :card/speed 4
+               :card/guard 0
+               :card/armor 0
+               :card/boost-name "Charge Up"
+               :card/boost-cost 1
+               :card/boost-type :continuous
+               :card/abilities [{:ability/description "Hit: If the opponent has 4 or more Guard, +2 Power."
+                                 :ability/trigger :hit
+                                 :ability/location :attack}
+                                {:ability/description "+2 Power and +2 Guard"
+                                 :ability/trigger :passive
+                                 :ability/location :boost}]}
+
+              {:card/name "Spin Jump"
+               :card/id :s4-spin-jump
+               :card/type :special
+               :card/cost 0
+               :card/min-range 1
+               :card/max-range 1
+               :card/power 4
+               :card/speed 5
+               :card/guard 0
+               :card/armor 0
+               :card/boost-name "Edict"
+               :card/boost-cost 1
+               :card/boost-type :continuous
+               :card/abilities [{:ability/description "Before: Close 1."
+                                 :ability/trigger :before
+                                 :ability/location :attack}
+                                {:ability/description "Hit: Advance 3 or 4, then you may play a Continuous Boost from your hand Sustain it. (this cannot play a Decree)."
+                                 :ability/trigger :hit
+                                 :ability/location :attack}
+                                {:ability/description "When you reveal your attack, if there is a copy of it in your discard pile, it is considered an EX attack."
+                                 :ability/trigger :passive
+                                 :ability/location :boost}]}
+
+              {:card/name "Scepter Slam"
+               :card/id :s4-scepter-slam
+               :card/type :special
+               :card/cost 0
+               :card/min-range 1
+               :card/max-range 1
+               :card/power 2
+               :card/speed 5
+               :card/armor 0
+               :card/guard 0
+               :card/boost-name "Unsteady Ground"
+               :card/boost-type :instant
+               :card/boost-cost 1
+               :card/abilities [{:ability/description "Before: Close 3."
+                                 :ability/trigger :before
+                                 :ability/location :attack}
+                                {:ability/description "Hit: Spend up to 3 Force. For each Force spent, +1 Power."
+                                 :ability/trigger :hit
+                                 :ability/location :attack}
+                                {:ability/description "Push or Pull 1 or 2, then the opponent may spend 1 Gauge. If they do not, take another action."
+                                 :ability/location :boost
+                                 :ability/trigger :now}]}
+
+              {:card/name "Healing Hammer"
+               :card/id :s4-healing-hammer
+               :card/type :special
+               :card/cost 1
+               :card/min-range 1
+               :card/max-range 2
+               :card/power 2
+               :card/speed 6
+               :card/armor 0
+               :card/guard 0
+               :card/boost-name "To Me, Minion"
+               :card/boost-cost 0
+               :card/boost-type :continuous
+               :card/abilities [{:ability/description "After: If you hit, you may Seal this card. If you do, gain 4 life and add the top 2 cards of your discard pile to your Gauge."
+                                 :ability/trigger :after
+                                 :ability/location :attack}
+                                {:ability/description "+1 Speed"
+                                 :ability/trigger :passive
+                                 :ability/location :boost}
+                                {:ability/description "Now: Advance or Retreat 1 or 2."
+                                 :ability/trigger :now
+                                 :ability/location :boost}]}
+
  ]

@@ -334,4 +334,33 @@
                 :s4-diving-dig 2
                 :s4-headbutt 2
                 :s4-cave-in 2
-                :s4-erupt 2)])
+                :s4-erupt 2)
+   (create-deck "Enchantress" :s4-enchantress
+                :s4-rapid-beam 2
+                :s4-shattering-scream 2
+                :s4-magic-shot 2
+                :s4-fly-charge 2
+                :s4-fire-wave 2
+                :s4-homing-orb 2
+                :s4-spiral-orb 2)
+   (create-deck "Fight" :s4-fight
+                :s4-explosive-shot 2
+                :s4-electro-charge 2
+                :s4-power-jump 2
+                :s4-retreating-bolts 2
+                :s4-flamethrower 2
+                :s4-lightning-gun 2
+                :s4-rail-gun 2)
+   (create-deck "King Knight" :s4-king-knight
+                :s4-kingly-strut 1
+                :s4-lordly-might 1
+                :s4-magnificent-cape 1
+                :s4-pay-to-win 1
+                :s4-healing-hammer 2
+                :s4-scepter-slam 2
+                :s4-scepter-smite 2
+                :s4-shoulder-bash 2
+                :s4-spin-jump 2
+                :s4-king-of-cards 2
+                :s4-victory-trumpets 2)
+   ])
