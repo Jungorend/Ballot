@@ -83,6 +83,8 @@
 
  {:card/name "Spike"
   :card/id :normal-spike
+  :card/type :normal
+  :card/cost 0
   :card/min-range 2
   :card/max-range 3
   :card/power 5
@@ -101,6 +103,8 @@
 
  {:card/name "Sweep"
   :card/id :normal-sweep
+  :card/type :normal
+  :card/cost 0
   :card/min-range 1
   :card/max-range 3
   :card/power 6
@@ -119,6 +123,8 @@
 
  {:card/name "Focus"
   :card/id :normal-focus
+  :card/type :normal
+  :card/cost 0
   :card/min-range 1
   :card/max-range 2
   :card/power 4
@@ -140,6 +146,8 @@
 
  {:card/name "Block"
   :card/id :normal-block
+  :card/type :normal
+  :card/cost 0
   :card/min-range -2
   :card/max-range -2
   :card/power -2
