@@ -1982,14 +1982,14 @@
   :card/armor 0
   :card/guard 0
   :card/boost-name "Spartan Sandals"
-  :card/boost-cost1
+  :card/boost-cost 1
   :card/boost-type :instant
-  :card/abilities [{:ability/description "Hit: Push 3. Then, if the opponent is at the edge of the arena, +2 Power."
-                    :ability/location :attack
-                    :ability/trigger :hit}
-                   {:ability/description "Push 2. Then, if the opponent is at the edge of the arena, take another action."
-                    :ability/location :boost
-                    :ability/trigger :now}]}
+  :card/abilities [#:ability {:description "Hit: Push 3. Then, if the opponent is at the edge of the arena, +2 Power."
+                              :location :attack
+                              :trigger :hit}
+                   #:ability {:description "Push 2. Then, if the opponent is at the edge of the arena, take another action."
+                              :trigger :now
+                              :location :boost}]}
 
  {:card/name "Phaser"
   :card/type :ultra
