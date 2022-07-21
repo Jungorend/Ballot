@@ -1987,7 +1987,7 @@
   :card/cost 1
   :card/min-range 1
   :card/max-range 1
-  :card/power N/A
+  :card/power -1
   :card/speed 4
   :card/description "\"Let's finish this.\""
   :card/armor 0
