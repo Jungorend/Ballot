@@ -16,9 +16,7 @@
 (def s1-decks
   [(create-deck "Reese" :s1-reese
                 :s1-ballista 2
-                :s1-chivalry 2
-
-                )])
+                :s1-chivalry 2)])
 
 (def s2-decks
   [(create-deck "Renea" :s2-renea
@@ -163,54 +161,54 @@
                 :s6-chained-kick 2
                 :s6-three-precept-strike 6
                 :s6-tidal-spin 2)
-  (create-deck "Hilda" :s6-hilda
-               :s6-impalement 2
-               :s6-in-the-darkness 2
-               :s6-condensity-gloom 2
-               :s6-interference 2
-               :s6-revenant-pillar 2
-               :s6-tri-furket 2
-               :s6-skewer 4)
-  (create-deck "Seth" :s6-seth
-               :s6-distant-frontier 2
-               :s6-abyssal-geometry 2
-               :s6-captive-segment 2
-               :s6-piercing-penetration 2
-               :s6-transgressing-convict 2
-               :s6-vanishing-confusion 2
-               :s6-dead-space-of-intrusion 2)
-  (create-deck "Londrekia" :s6-londrekia
-               :s6-cocytus-ice-prison 2
-               :s6-frozen-cleave 2
-               :s6-hail-storm 2
-               :s6-circular-step 4
-               :s6-snow-blossom 2
-               :s6-frozen-vine 2
-               :s6-frozen-spire 2)
-  (create-deck "Mika" :s6-mika
-               :s6-mikas-galaxy 2
-               :s6-mikas-revolution 2
-               :s6-mikas-cannon 2
-               :s6-mikas-hip-attack 2
-               :s6-mikas-tornado 2
-               :s6-mikas-missile 2
-               :s6-mikas-crash 2)
-  (create-deck "Byakuya" :s6-byakuya
-               :s6-endless-nightmare 2
-               :s6-become-a-part-of-me 2
-               :s6-or-shredded 4
-               :s6-caught-you 2
-               :s6-how-shall-i-cook-you 4
-               :s6-ill-plant-it-somewhere-here 2
-               :s6-minced 4)
-  (create-deck "Vatista" :s6-vatista
-               :s6-ruber-angelus 2
-               :s6-armabellum 2
-               :s6-lateus-orbis 2
-               :s6-transvoranse 2
-               :s6-mikoruseo 2
-               :s6-lumen-stella 2
-               :s6-zahhishio 2)])
+   (create-deck "Hilda" :s6-hilda
+                :s6-impalement 2
+                :s6-in-the-darkness 2
+                :s6-condensity-gloom 2
+                :s6-interference 2
+                :s6-revenant-pillar 2
+                :s6-tri-furket 2
+                :s6-skewer 4)
+   (create-deck "Seth" :s6-seth
+                :s6-distant-frontier 2
+                :s6-abyssal-geometry 2
+                :s6-captive-segment 2
+                :s6-piercing-penetration 2
+                :s6-transgressing-convict 2
+                :s6-vanishing-confusion 2
+                :s6-dead-space-of-intrusion 2)
+   (create-deck "Londrekia" :s6-londrekia
+                :s6-cocytus-ice-prison 2
+                :s6-frozen-cleave 2
+                :s6-hail-storm 2
+                :s6-circular-step 4
+                :s6-snow-blossom 2
+                :s6-frozen-vine 2
+                :s6-frozen-spire 2)
+   (create-deck "Mika" :s6-mika
+                :s6-mikas-galaxy 2
+                :s6-mikas-revolution 2
+                :s6-mikas-cannon 2
+                :s6-mikas-hip-attack 2
+                :s6-mikas-tornado 2
+                :s6-mikas-missile 2
+                :s6-mikas-crash 2)
+   (create-deck "Byakuya" :s6-byakuya
+                :s6-endless-nightmare 2
+                :s6-become-a-part-of-me 2
+                :s6-or-shredded 4
+                :s6-caught-you 2
+                :s6-how-shall-i-cook-you 4
+                :s6-ill-plant-it-somewhere-here 2
+                :s6-minced 4)
+   (create-deck "Vatista" :s6-vatista
+                :s6-ruber-angelus 2
+                :s6-armabellum 2
+                :s6-lateus-orbis 2
+                :s6-transvoranse 2
+                :s6-mikoruseo 2
+                :s6-lumen-stella 2
+                :s6-zahhishio 2)])
 
 (def s3-decks
   [(create-deck "C. Viper" :s3-cviper
@@ -319,7 +317,7 @@
                 :s4-shield-boomerang 2
                 :s4-tandem-attack 2
                 :s4-shield-knight 1)
-   (create-deck "Shovel Knight" :s4-propeller-knight
+   (create-deck "Propeller Knight" :s4-propeller-knight
                 :s4-cannonball 2
                 :s4-headwind 2
                 :s4-propeller-pull 2
@@ -335,6 +333,39 @@
                 :s4-headbutt 2
                 :s4-cave-in 2
                 :s4-erupt 2)
+   (create-deck "Tinker Knight" :s4-tinker-knight
+                :s4-drill-arm 2
+                :s4-flail 2
+                :s4-missiles 2
+                :s4-mobile-gear 2
+                :s4-wrench-toss 2
+                :s4-bomb-bounce 2
+                :s4-mech-charge 2)
+   (create-deck "Plague Knight" :s4-plague-knight
+                :s4-chain-reaction 2
+                :s4-giant-bomb 2
+                :s4-long-pitch 2
+                :s4-perfect-pitch 2
+                :s4-staff-of-surging 2
+                :s4-castle-crasher 2
+                :s4-triple-dose 2)
+   (create-deck "Polar Knight" :s4-polar-knight
+                :s4-ice-spike 5
+                :s4-polar-plow 2
+                :s4-shovel-charge 2
+                :s4-snow-shovel-drop 2
+                :s4-shovel-slam 2
+                :s4-stomp 2
+                :s4-icicle-drop 2
+                :s4-snow-slash 2)
+   (create-deck "Treasure Knight" :s4-treasure-knight
+                :s4-anchor-launch 2
+                :s4-aqua-mine 2
+                :s4-dive-charge 2
+                :s4-scuttle-slam 2
+                :s4-treasure-coin 2
+                :s4-angler-call 2
+                :s4-maelstrom-chest 2)
    (create-deck "Enchantress" :s4-enchantress
                 :s4-rapid-beam 2
                 :s4-shattering-scream 2
@@ -343,6 +374,14 @@
                 :s4-fire-wave 2
                 :s4-homing-orb 2
                 :s4-spiral-orb 2)
+   (create-deck "Specter Knight" :s4-specter-knight
+                :s4-bounding-soul 2
+                :s4-dread-talon 2
+                :s4-spider-scythe 2
+                :s4-spin-scythe 2
+                :s4-throwing-sickle 2
+                :s4-barrier-lantern 2
+                :s4-dread-reaper 2)
    (create-deck "Fight" :s4-fight
                 :s4-explosive-shot 2
                 :s4-electro-charge 2
@@ -363,4 +402,14 @@
                 :s4-spin-jump 2
                 :s4-king-of-cards 2
                 :s4-victory-trumpets 2)
-   ])
+   (create-deck "Beheaded" :s4-the-beheaded
+                :s4-brutality 1
+                :s4-tactics 1
+                :s4-survival 1
+                :s4-assault-shield 2
+                :s4-dive-attack 2
+                :s4-infantry-bow 2
+                :s4-twin-daggers 2
+                :s4-wrenching-whip 2
+                :s4-phaser 2
+                :s4-wave-of-denial 2)])
