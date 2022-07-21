@@ -105,7 +105,6 @@
 
  #:card {:name "Ice Spike"
          :id :s4-ice-spike
-         :seasons {:season/name "Shovel Knight"}
          :type :character
          :description "Limit 1 per space. When placing an Ice Spike, you may move this instead. (Max 5 Ice Spikes on the arena)"}
 
