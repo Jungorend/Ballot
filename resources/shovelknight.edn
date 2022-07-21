@@ -33,7 +33,6 @@
 
  #:character {:name "Enchantress"
               :id :s4-enchantress
-              :type :character
               :innate-ability "Do not draw a card at the end of your turn (discard as normal if above 7 cards). At the end of your turn or during Cleanup, if your hand is empty, draw until you have 6 cards in hand."
               :exceed-ability "When you Exceed, shuffle your hand and discard pile into your deck. Instead of drawing a card at the end of your turn, you may draw until you have 7 cards (then discard down to 7)."
               :gauge-cost 4
@@ -41,7 +40,6 @@
 
  #:character {:name "Fight"
               :id :s4-fight
-              :type :character
               :innate-ability "When you set your attack, spend up to 2 Force for +1 Power each."
               :exceed-ability "When you Exceed, put up to 2 Continuous Boosts from your discard, hand, or gauge into play (without paying their costs) then shuffle your discard. When you set your attack, spend up to 3 Force for +1 Power each."
               :gauge-cost 3
@@ -49,7 +47,6 @@
 
  #:character {:name "King Knight"
               :id :s4-king-knight
-              :type :character
               :innate-ability "You may Boost with your Royal Decrees (if they are not sealed). After resolving a Decree or Continuous Boost, draw a card."
               :exceed-ability "When you Exceed, draw 2 cards. You may Boost with your Royal or Glorious Decrees (if they are not sealed). After resolving a Decree or Continuous Boost, draw a card."
               :gauge-cost 3
@@ -57,7 +54,6 @@
 
  #:character {:name "The Beheaded"
               :id :s4-the-beheaded
-              :type :character
               :seasons {:season/name "Dead Cells"}
               :gauge-cost 2
               :innate-ability "No effect"
@@ -65,7 +61,6 @@
 
  #:character {:name "Treasure Knight"
               :id :s4-treasure-knight
-              :type :character
               :seasons {:season/name "Shovel Knight"}
               :gauge-cost 3
               :innate-ability "When spending Force during a Strike, you may generate 1 Force for free. (This includes the cost for Force Specials.)"
@@ -73,7 +68,6 @@
 
  #:character {:name "Tinker Knight"
               :id :s4-tinker-knight
-              :type :character
               :seasons {:season/name "Shovel Knight"}
               :gauge-cost 42
               :innate-ability "Your life begins at half its maximum. When your life would reach 0, Exceed at no cost instead (immediately, before resolving the rest of the Strike)."
@@ -81,7 +75,6 @@
 
  #:character {:name "Specter Knight"
               :id :s4-specter-knight
-              :type :character
               :seasons {:season/name "Shovel Knight"}
               :gauge-cost 4
               :innate-ability "When you initiate a Strike, after setting your attack, you may Seal 2 cards from your hand face down. If you do, Before: Advance 2."
@@ -89,7 +82,6 @@
 
  #:character {:name "Plague Knight"
               :id :s4-plague-knight
-              :type :character
               :seasons {:season/name "Shovel Knight"}
               :gauge-cost 2
               :innate-ability "After setting cards for a Strike, you may discard a card at random from your hand. Add all Before, Hit, and After triggers on the discarded card to your attack."
@@ -97,7 +89,6 @@
 
  #:character {:name "Polar Knight"
               :id :s4-polar-knight
-              :type :character
               :seasons {:season/name "Shovel Knight"}
               :gauge-cost 3
               :innate-ability "Your attacks have \"After: Place an Ice Spike onto an unoccupied space within this attack's range (in either direction). Hit: You may remove an Ice Spike from the opponent's space for +2 Power.\""
