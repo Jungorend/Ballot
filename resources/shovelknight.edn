@@ -103,11 +103,11 @@
               :innate-ability "Your attacks have \"After: Place an Ice Spike onto an unoccupied space within this attack's range (in either direction). Hit: You may remove an Ice Spike from the opponent's space for +2 Power.\""
               :exceed-ability "When you Exceed, place Ice Spikes onto 3 different spaces (occupied or unoccupied). Your attacks have \"After: Place an Ice Spike onto an unoccupied space within this attack's range (in either direction). Hit: You may remove an Ice Spike from the opponent's space for +3 Power.\""}
 
- #:character {:name "Ice Spike"
-              :id :s4-ice-spike
-              :seasons {:season/name "Shovel Knight"}
-              :type :character
-              :description "Limit 1 per space. When placing an Ice Spike, you may move this instead. (Max 5 Ice Spikes on the arena)"}
+ #:card {:name "Ice Spike"
+         :id :s4-ice-spike
+         :seasons {:season/name "Shovel Knight"}
+         :type :character
+         :description "Limit 1 per space. When placing an Ice Spike, you may move this instead. (Max 5 Ice Spikes on the arena)"}
 
  {:card/name "Brutality"
   :card/id :s4-brutality
