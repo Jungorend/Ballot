@@ -11,14 +11,13 @@
 
 ;; NOTE: For Power/Speed/Range -1 is X, and -2 is N/A
 
-
 (defn create-idents
   "Returns a vector of hashmaps each containing a schema entity.
    This is a helper function to reduce the amount of typing necessary.
    Requires each item to have the following keys: `:ident` `:type`. Optionally,
    `:cardinality` can be set, otherwise will be assumed to be one.
    `:unique` can be set as well to define an attribute as unique.
-   
+
    Type values: :i (long) :s (string) :k (keyword) :r (ref)"
   [idents]
   (mapv (fn [{:keys [id type cardinality unique doc]}]
@@ -171,31 +170,29 @@
 
 (defn lookup-card
   [card-name conn]
-  (if (equal-strings? "spike" (clojure.string/join " " card-name))
-    "You know what Spike does, bitcoins."
-    (let [card-keyword (-> (clojure.string/join "-" card-name)
-                           (clojure.string/lower-case)
-                           (remove-unsupported-characters)
-                           (keyword))
-          card (d/q `[:find ?id
-                      :where [?id :card/id ~card-keyword]]
-                    @conn)]
-      (if (empty? card)
-        (let [names (d/q '[:find ?card-id
-                           :in $ ?card-name
-                           :where
-                           [?id :card/id ?card-id]
-                           [?id :card/name ?name]
-                           [(ballot.core/equal-strings? ?name ?card-name)]]
-                         @conn (clojure.string/join " " card-name))]
-          (cond (empty? names) "No cards could be found with that name."
-                (= (count names) 1) (display-card (first (first names)) conn)
-                :else (str "Multiple potential cards. Try one of the following:\n"
-                           (reduce #(str %1 "!card " (let [s (clojure.string/split (name (first %2)) #"-")]
-                                                       (-> (clojure.string/join " " s)
-                                                           (remove-unsupported-characters))) "\n")
-                                   "" names))))
-        (display-card card-keyword conn)))))
+  (let [card-keyword (-> (clojure.string/join "-" card-name)
+                         (clojure.string/lower-case)
+                         (remove-unsupported-characters)
+                         (keyword))
+        card (d/q `[:find ?id
+                    :where [?id :card/id ~card-keyword]]
+                  @conn)]
+    (if (empty? card)
+      (let [names (d/q '[:find ?card-id
+                         :in $ ?card-name
+                         :where
+                         [?id :card/id ?card-id]
+                         [?id :card/name ?name]
+                         [(ballot.core/equal-strings? ?name ?card-name)]]
+                       @conn (clojure.string/join " " card-name))]
+        (cond (empty? names) "No cards could be found with that name."
+              (= (count names) 1) (display-card (first (first names)) conn)
+              :else (str "Multiple potential cards. Try one of the following:\n"
+                         (reduce #(str %1 "!card " (let [s (clojure.string/split (name (first %2)) #"-")]
+                                                     (-> (clojure.string/join " " s)
+                                                         (remove-unsupported-characters))) "\n")
+                                 "" names))))
+      (display-card card-keyword conn))))
 
 (def cfg {:store {:backend :file :path "db"}})
 
@@ -259,9 +256,9 @@
 (defn lookup-character
   [args conn]
   (let [deck (d/entity @conn (ffirst (d/q '[:find ?deck :in $ ?name :where
-                                           [?deck :deck/name ?deck-name]
-                                           [(ballot.core/equal-strings? ?deck-name ?name)]]
-                                         @conn (clojure.string/join " " args))))
+                                            [?deck :deck/name ?deck-name]
+                                            [(ballot.core/equal-strings? ?deck-name ?name)]]
+                                          @conn (clojure.string/join " " args))))
         character (:deck/character deck)
         cards (frequencies (map #(:card-instance/card %) (:deck/cards deck)))
         sorted-cards (sort-by #(case (:card/type (first %))
@@ -282,7 +279,7 @@
            (reduce #(str %1 (:season/mechanics %2) "\n") "" (:character/seasons character))
            "\nCards:\n" (reduce #(str %1
                                       (:card/name (first %2))
-                                      (if (= 0 (:card/cost (first %2)))
+                                      (if (or (nil? (:card/cost (first %2))) (= 0 (:card/cost (first %2))))
                                         " "
                                         (str " (" (:card/cost (first %2)) (if (= :ultra (:card/type (first %2))) "G" "F") ")"))
                                       " x" (second %2) "\n")
@@ -293,19 +290,19 @@
   (cond (or (nil? (#{"power" "speed" "armor" "guard" "range"} (.toLowerCase (first args))))
             (nil? (#{"=" ">" ">=" "<" "<="} (second args)))) nil
         (= "range" (.toLowerCase (first args))) (let [r (clojure.string/split (nth args 2) #"~")
-                                   min-range (Integer/parseInt (get r 0))
-                                   max-range (if (= 1 (count r))
-                                               min-range
-                                               (Integer/parseInt (get r 1)))]
-                               (apply conj '[[?e :card/min-range ?min-range]
-                                             [?e :card/max-range ?max-range]]
-                                      (case (second args)
-                                        "=" `[[(= ~'?min-range ~min-range)]
-                                              [(= ~'?max-range ~max-range)]]
-                                        ">" `[[(> ~'?min-range ~min-range)]]
-                                        ">=" `[[(>= ~'?min-range ~min-range)]]
-                                        "<" `[[(< ~'?min-range ~min-range)]]
-                                        "<=" `[[(<= ~'?min-range ~min-range)]])))
+                                                      min-range (Integer/parseInt (get r 0))
+                                                      max-range (if (= 1 (count r))
+                                                                  min-range
+                                                                  (Integer/parseInt (get r 1)))]
+                                                  (apply conj '[[?e :card/min-range ?min-range]
+                                                                [?e :card/max-range ?max-range]]
+                                                         (case (second args)
+                                                           "=" `[[(= ~'?min-range ~min-range)]
+                                                                 [(= ~'?max-range ~max-range)]]
+                                                           ">" `[[(> ~'?min-range ~min-range)]]
+                                                           ">=" `[[(>= ~'?min-range ~min-range)]]
+                                                           "<" `[[(< ~'?min-range ~min-range)]]
+                                                           "<=" `[[(<= ~'?min-range ~min-range)]])))
         :else (let [stat-type (keyword (.toLowerCase (str "card/" (first args))))
                     comparison (symbol (second args))
                     stat-keyword (->> (first args)
@@ -346,23 +343,23 @@
       (if (empty? filters)
         "No valid search queries provided."
         (reduce #(str %1 (first %2) "\n") "Found the following cards:\n" (d/q (apply conj '[:find ?card-name
-                                                                                    :where [?e :card/name ?card-name]]
-                                                                             filters) @conn)))
+                                                                                            :where [?e :card/name ?card-name]]
+                                                                                     filters) @conn)))
       (cond
         (= (first a) "-s") (recur (let [update (stat-search (take 3 (rest a)))]
-                      (if update
-                        (apply conj filters update)
-                        filters)) (drop 4 a))
+                                    (if update
+                                      (apply conj filters update)
+                                      filters)) (drop 4 a))
         (re-matches #"-[abhcpo*]" (first a)) (let [len (-> (clojure.string/join " " a)
-                                                                   (clojure.string/split #"-[abhcpo\*]\s+")
-                                                                   (second)
-                                                                   (clojure.string/split #"\s+")
-                                                                   (count)
-                                                                   (inc))
-                                                           update (text-search (take len a))]
-                                                       (recur (if update
-                                                                (apply conj filters update)
-                                                                filters) (drop len a)))
+                                                           (clojure.string/split #"-[abhcpo\*]\s+")
+                                                           (second)
+                                                           (clojure.string/split #"\s+")
+                                                           (count)
+                                                           (inc))
+                                                   update (text-search (take len a))]
+                                               (recur (if update
+                                                        (apply conj filters update)
+                                                        filters) (drop len a)))
         :else (recur filters (rest a))))))
 
 (defmethod handle-event :message-create

@@ -1475,7 +1475,7 @@
 
  {:card/name "Icicle Drops"
   :card/type :ultra
-  :card/id :s4-icicle-drops
+  :card/id :s4-icicle-drop
   :card/cost 3
   :card/min-range 1
   :card/max-range 8

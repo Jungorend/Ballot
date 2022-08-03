@@ -28,6 +28,14 @@
                 :s2-called-shot 2
                 :s2-paranormal-investigation 2
                 :s2-flare 2)
+   (create-deck "Celinka" :s2-celinka
+                :s2-dispelling-horn 2
+                :s2-moon-fall 2
+                :s2-moon-flare 2
+                :s2-swift-exorcism 2
+                :s2-wishing-ward 2
+                :s2-moon-ritual-dance 2
+                :s2-purifying-roar 2)
    (create-deck "Remiliss" :s2-remiliss
                 :s2-caustic-vent 2
                 :s2-ground-zero 2
@@ -36,6 +44,54 @@
                 :s2-toxic-tendrils 2
                 :s2-consumption 2
                 :s2-nuclear-option 2)
+   (create-deck "Geoffrey" :s2-geoffrey
+                :s2-bastion-stance 2
+                :s2-golden-arrow 2
+                :s2-inquisition 2
+                :s2-sacrament-of-blades 2
+                :s2-solemn-exorcism 2
+                :s2-crusaders-oath 2
+                :s2-inviolable-judgement 2)
+   (create-deck "Taisei" :s2-taisei
+                :anathema-surge 2
+                :ashen-claws 2
+                :blackvolt 2
+                :bloodthirst 2
+                :dust-to-dust 2
+                :chaos-scissors 2
+                :nightmare-tares 2)
+   (create-deck "D'janette" :s2-djanette
+                :s2-affliction 2
+                :s2-black-death 2
+                :s2-blood-thorns 2
+                :s2-charnel-blast 2
+                :s2-profane-sanctuary 2
+                :s2-carmine-offering 2
+                :s2-death-knell 2)
+   (create-deck "Zsolt" :s2-zsolt
+                :s2-blaze-of-fervor 2
+                :s2-cross-up 2
+                :s2-fatal-eye 2
+                :s2-gunblaze 2
+                :s2-whip-crack 2
+                :s2-fantical-purification 2
+                :s2-wild-hunt 2)
+   (create-deck "Minato" :s2-minato
+                :s2-barnstorming 2
+                :s2-bus-stop 2
+                :s2-cabstand 2
+                :s2-flight-13 2
+                :s2-jump-the-shark 2
+                :s2-a-streetcar-named-disaster 2
+                :s2-hellward-bound 2)
+   (create-deck "Tournelouse" :s2-tournelouse
+                :s2-death-omen 2
+                :s2-evil-eye 2
+                :s2-grim-thundercalling 2
+                :s2-lightning-spike 2
+                :s2-southpaw 2
+                :s2-bargeist-fang 2
+                :s2-netherstorm 2)
    (create-deck "Iaquis" :s2-iaquis
                 :s2-dragons-fire 2
                 :s2-dragons-flight 2
