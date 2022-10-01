@@ -16,7 +16,12 @@
 (def s1-decks
   [(create-deck "Reese" :s1-reese
                 :s1-ballista 2
-                :s1-chivalry 2)])
+                :s1-chivalry 2
+                :s1-checkmate 2
+                :s1-sovereign-glory 2
+                :s1-gallant-defender 2
+                :s1-knight-wave 2
+                :s1-gauntlet-flurry 2)])
 
 (def s2-decks
   [(create-deck "Renea" :s2-renea
@@ -53,13 +58,13 @@
                 :s2-crusaders-oath 2
                 :s2-inviolable-judgement 2)
    (create-deck "Taisei" :s2-taisei
-                :anathema-surge 2
-                :ashen-claws 2
-                :blackvolt 2
-                :bloodthirst 2
-                :dust-to-dust 2
-                :chaos-scissors 2
-                :nightmare-tares 2)
+                :s2-anathema-surge 2
+                :s2-ashen-claws 2
+                :s2-blackvolt 2
+                :s2-bloodthirst 2
+                :s2-dust-to-dust 2
+                :s2-chaos-scissors 2
+                :s2-nightmare-tares 2)
    (create-deck "D'janette" :s2-djanette
                 :s2-affliction 2
                 :s2-black-death 2
@@ -469,3 +474,14 @@
                 :s4-wrenching-whip 2
                 :s4-phaser 2
                 :s4-wave-of-denial 2)])
+
+(def s5-decks
+  [(create-deck "Ragna the Bloodedge" :s5-ragna-the-bloodedge
+                :s5-inferno-divider 2
+                :s5-hells-fang 2
+                :s5-dead-spike 2
+                :s5-gauntlet-hades 2
+                :s5-blood-scythe 2
+                :s5-devoured-by-darkness 2
+                :s5-carnage-scissors 2
+                :s5-black-onslaught 1)])

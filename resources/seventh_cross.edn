@@ -1149,7 +1149,7 @@
                                 :trigger :before}]}
 
  #:card {:name "Blackvolt"
-         :id :s2-ashen-claws
+         :id :s2-blackvolt
          :type :special
          :cost 0
          :min-range 1
@@ -1222,7 +1222,7 @@
                                 :trigger :hit}]}
 
  #:card {:name "Nightmare Tares"
-         :id :s2-ashen-claws
+         :id :s2-nightmare-tares
          :description "\"No mercy, and no escape...\""
          :type :ultra
          :cost 2

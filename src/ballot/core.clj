@@ -98,6 +98,7 @@
 (def undernight (edn/read-string (slurp "resources/undernight.edn")))
 (def shovelknight (edn/read-string (slurp "resources/shovelknight.edn")))
 (def streetfighter (edn/read-string (slurp "resources/streetfighter.edn")))
+(def blazblue (edn/read-string (slurp "resources/blazblue.edn")))
 (def normals (edn/read-string (slurp "resources/normals.edn")))
 
 (defn print-stats
@@ -123,7 +124,8 @@
                 (print-stats (:card/min-range card))
                 (str (print-stats (:card/min-range card)) " ~ " (print-stats (:card/max-range card))))]
     (str (:card/name card) "\n"
-         (if (= (:card/type card) :ultra)
+         (if (or (= (:card/type card) :astral)
+                 (= (:card/type card) :ultra))
            (str (print-stats (:card/cost card)) " Gauge.\n")
            (when (> (:card/cost card) 0)
              (str (:card/cost card) " Force.\n")))
@@ -141,6 +143,8 @@
            (= (:card/boost-type card) :gauge-instant) (str " - " (:card/boost-cost card) " Gauge.")
            :else (str " - " (:card/boost-cost card) " Gauge (+)"))
          "\n"
+         (when (= (:card/type card) :astral)
+           (str "This is an Astral. It begins sealed. If you manually reshuffle your deck, instead of drawing a card at the end of your turn, put this into your hand.\n"))
          (reduce #(str %1 (:ability/description %2) "\n") "" boosts))))
 
 (defn describe-character-card
@@ -207,10 +211,12 @@
 (d/transact conn streetfighter)
 (d/transact conn shovelknight)
 (d/transact conn undernight)
+(d/transact conn blazblue)
 (d/transact conn deck/s1-decks)
 (d/transact conn deck/s2-decks)
 (d/transact conn deck/s3-decks)
 (d/transact conn deck/s4-decks)
+(d/transact conn deck/s5-decks)
 (d/transact conn deck/s6-decks)
 
 (def state (atom nil))

@@ -137,6 +137,53 @@
               :innate-ability "After: If your attack hit, you may return a Continuous Boost form your discard pile to play without paying its cost, and do not discard it after this Strike. When it would be discarded from it, Seal it instead."
               :exceed-ability "Before: You may return a Continuous Boost from your discard pile to play without paying its cost, and do not discard it after this Strike. When it would be discarded from it, Seal it instead."}
 
+ #:card {:name "Checkmate"
+         :id :s1-checkmate
+         :description "\"You just lost the game.\""
+         :type :ultra
+         :cost 3
+         :min-range 1
+         :max-range 1
+         :power 8
+         :speed 1
+         :armor 0
+         :guard 0
+         :boost-name "Mixup"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Attacks at Range 1 do not hit you."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Your opponent must discard a card at random, then you Strike."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Sovereign Glory"
+         :id :s1-sovereign-glory
+         :type :ultra
+         :cost 2
+         :min-range 1
+         :max-range 3
+         :power 4
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Street Justice"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: Draw 2 cards."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: +1 Power for each card in hand you have more than the opponent."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+2 Power if you are in Exceed Mode."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "+2 Speed if an opponent is in Exceed Mode."
+                                :location :boost
+                                :trigger :passive}]}
+
  #:card {:name "Ballista"
          :id :s1-ballista
          :type :special
@@ -151,17 +198,40 @@
          :boost-type :continuous
          :boost-cost 0
          :abilities [#:ability {:description "Before: +1 Power for each card in your Gauge (max 5)."
-                                 :trigger :before
-                                 :location :attack}
-                      #:ability {:description "Hit: Close 4 spaces and gain Advantage."
-                                 :trigger :hit
-                                 :location :attack}
-                      #:ability {:description "Retreat 2 spaces."
-                                 :trigger :now
-                                 :location :boost}
-                      #:ability {:description "Before: Close 2 Spaces."
-                                 :trigger :before
-                                 :location :boost}]}
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: Close 4 spaces and gain Advantage (you take the next turn, regardless of who initiated the Strike)."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Retreat 2 spaces."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "Before: Close 2 spaces."
+                                :location :boost
+                                :trigger :before}]}
+
+ #:card {:name "Gallant Defender"
+         :id :s1-gallant-defender
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 2
+         :speed 1
+         :armor 0
+         :guard 5
+         :boost-name "Opportunist"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: Close 3 spaces."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: +1 Power for each point of damage you have taken this Strike."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+2 Speed and +2 Power. If your opponent declares a Strike discard this card."
+                                :location :boost
+                                :trigger :passive}]}
 
  #:card {:name "Chivalry"
          :id :s1-chivalry
@@ -177,14 +247,57 @@
          :boost-type :continuous
          :boost-cost 0
          :abilities [#:ability {:description "Before: Advance 2 spaces."
-                                 :trigger :before
-                                 :location :attack}
-                      #:ability {:description "Hit: You gain Advantage."
-                                 :trigger :hit
-                                 :location :attack}
-                      #:ability {:description "+1 Armor ang +1 Guard at the start of each of the opponent's turns."
-                                 :trigger :passive
-                                 :location :boost}]}
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: You gain Advantage (you take the next turn, regardless of who initiated the Strike)."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+1 Armor and +1 Guard at the start of each of the opponent's turns."
+                                :location :boost
+                                :trigger :passive}]}
 
+ #:card {:name "Knight Wave"
+         :id :s1-knight-wave
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 2
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Invitation"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: +2 Power if the opponent has more cards in hand than you."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: Move 1 space."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "The opponent must move 1 space, then you may move 1 space, then Strike."
+                                :location :boost
+                                :trigger :now}]}
 
- ]
+ #:card {:name "Gauntlet Flurry"
+         :id :s1-gauntlet-flurry
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 1
+         :speed 7
+         :armor 0
+         :guard 0
+         :boost-name "Ambitious"
+         :boost-type :instant
+         :boost-cost 1
+         :abilities [#:ability {:description "Before: Close 1 space."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: You gain Advantage (you take the next turn, regardless of who initiated the Strike)."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Draw 3 cards, then Strike."
+                                :location :boost
+                                :trigger :now}]}]

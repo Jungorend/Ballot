@@ -1,0 +1,199 @@
+[#:character {:name "Ragna the Bloodege"
+              :id :s6-ragna
+              :innate-ability "Hit: Gain 1 life."
+              :exceed-ability "When you Exceed, draw 1, Close up to 1, and Strike.\nHit: +1 Power and gain 2 life.\nOverdrive: Take 1 nonlethal damage, then you may Push 1."
+              :gauge-cost 4
+              :character/seasons {:season/name "Blazblue"}}
+
+ #:card {:name "Inferno Divider"
+         :id :s5-inferno-divider
+         :type :special
+         :cost 1
+         :min-range 1
+         :max-range 2
+         :power 3
+         :speed 7
+         :armor 0
+         :guard 0
+         :boost-name "Unrelenting"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "Hit: If you initiated this Strike, +2 Power and Push 1."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+1 Power and Stun Immunity"
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Hell's Fang"
+         :id :s5-hells-fang
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 4
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Foul-Tempered"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: Close 3."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: Push 2 and gain Advantage."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+1 Power and +2 Armor"
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: You may spend 2 life to draw 1."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Dead Spike"
+         :id :s5-dead-spike
+         :type :special
+         :cost 0
+         :min-range 2
+         :max-range 4
+         :power 5
+         :speed 3
+         :armor 0
+         :guard 4
+         :boost-name "Nightmare Edge"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: Push 1."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: Close 1 or 2."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "+1 Speed"
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Hit: Push 1 or 2."
+                                :location :boost
+                                :trigger :hit}]}
+
+ #:card {:name "Gauntlet Hades"
+         :id :s5-gauntlet-hades
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 4
+         :speed 3
+         :armor 0
+         :guard 4
+         :boost-name "Revolver Action"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Ignore Armor"
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Before: Advance 1 or 2. If you Advanced past the opponent, this attack does not hit."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Now: Draw 2."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "Hit: Gain Advantage."
+                                :location :boost
+                                :trigger :hit}]}
+
+ #:card {:name "Blood Scythe"
+         :id :s5-blood-scythe
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 5
+         :speed 1
+         :armor 0
+         :guard 6
+         :boost-name "Soul Eater"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: Advance 1."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: Add the top card of your discard pile to your Gauge."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Now: Close 1 and draw 1."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "Hit: Gain 2 life."
+                                :location :boost
+                                :trigger :hit}]}
+
+ #:card {:name "Devoured by Darkness"
+         :id :s5-devoured-by-darkness
+         :type :ultra
+         :cost 3
+         :min-range 1
+         :max-range 2
+         :power 5
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Azure Grimoire"
+         :boost-type :instant
+         :boost-cost 1
+         :abilities [#:ability {:description "If you are in Exceed Mode, +0-1 Range and +1 Speed."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: Gain 3 life."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Spend up to 5 life to draw that many cards. Take another action."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Carnage Scissors"
+         :id :s5-carnage-scissors
+         :type :ultra
+         :cost 2
+         :min-range 1
+         :max-range 1
+         :power 5
+         :speed 3
+         :armor 0
+         :guard 0
+         :boost-name "Not Over Yet"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Attacks at Range 4 and 5 do not hit you."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Before: Close 4."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "+2 Power"
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now, Range 1: Push 2 and Strike."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Black Onslaught"
+         :id :s5-black-onslaught
+         :type :astral
+         :cost 4
+         :min-range 2
+         :max-range 3
+         :power 6
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Burst"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: If you have exactly 1 life, +6 Power."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Draw 2. Seal this and take another action."
+                                :location :attack
+                                :trigger :passive}]}]
