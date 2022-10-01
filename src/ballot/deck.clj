@@ -476,7 +476,7 @@
                 :s4-wave-of-denial 2)])
 
 (def s5-decks
-  [(create-deck "Ragna the Bloodedge" :s5-ragna-the-bloodedge
+  [(create-deck "Ragna the Bloodedge" :s5-ragna
                 :s5-inferno-divider 2
                 :s5-hells-fang 2
                 :s5-dead-spike 2

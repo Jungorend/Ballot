@@ -132,6 +132,8 @@
          "Range: " range " | Power: " (print-stats (:card/power card)) " | Speed: " (print-stats (:card/speed card))
          (when (> (:card/armor card) 0) (str " | Armor: " (:card/armor card)))
          (when (> (:card/guard card) 0) (str " | Guard: " (:card/guard card))) "\n"
+         (when (= (:card/type card) :astral)
+           (str "\nThis is an Astral. It begins sealed. If you manually reshuffle your deck, instead of drawing a card at the end of your turn, put this into your hand.\n"))
          (if (:card/description card) (:card/description card) "") "\n"
          (reduce #(str %1 (:ability/description %2) "\n") "" attacks)
          "\n" (:card/boost-name card)
@@ -142,8 +144,6 @@
            (= (:card/boost-type card) :continuous) (str " - " (:card/boost-cost card) " Force. (+)")
            (= (:card/boost-type card) :gauge-instant) (str " - " (:card/boost-cost card) " Gauge.")
            :else (str " - " (:card/boost-cost card) " Gauge (+)"))
-         (when (= (:card/type card) :astral)
-           (str "\nThis is an Astral. It begins sealed. If you manually reshuffle your deck, instead of drawing a card at the end of your turn, put this into your hand.\n"))
          "\n"
          (reduce #(str %1 (:ability/description %2) "\n") "" boosts))))
 
