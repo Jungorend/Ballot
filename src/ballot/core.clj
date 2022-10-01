@@ -142,9 +142,9 @@
            (= (:card/boost-type card) :continuous) (str " - " (:card/boost-cost card) " Force. (+)")
            (= (:card/boost-type card) :gauge-instant) (str " - " (:card/boost-cost card) " Gauge.")
            :else (str " - " (:card/boost-cost card) " Gauge (+)"))
-         "\n"
          (when (= (:card/type card) :astral)
-           (str "This is an Astral. It begins sealed. If you manually reshuffle your deck, instead of drawing a card at the end of your turn, put this into your hand.\n"))
+           (str "\nThis is an Astral. It begins sealed. If you manually reshuffle your deck, instead of drawing a card at the end of your turn, put this into your hand.\n"))
+         "\n"
          (reduce #(str %1 (:ability/description %2) "\n") "" boosts))))
 
 (defn describe-character-card
@@ -287,7 +287,7 @@
                                       (:card/name (first %2))
                                       (if (or (nil? (:card/cost (first %2))) (= 0 (:card/cost (first %2))))
                                         " "
-                                        (str " (" (:card/cost (first %2)) (if (= :ultra (:card/type (first %2))) "G" "F") ")"))
+                                        (str " (" (:card/cost (first %2)) (if (or (= :astral (:card/type (first %2))) (= :ultra (:card/type (first %2)))) "G" "F") ")"))
                                       " x" (second %2) "\n")
                                 "" sorted-cards)))))
 

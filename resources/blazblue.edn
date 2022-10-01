@@ -1,8 +1,15 @@
 [#:character {:name "Ragna the Bloodege"
-              :id :s6-ragna
+              :id :s5-ragna
               :innate-ability "Hit: Gain 1 life."
               :exceed-ability "When you Exceed, draw 1, Close up to 1, and Strike.\nHit: +1 Power and gain 2 life.\nOverdrive: Take 1 nonlethal damage, then you may Push 1."
               :gauge-cost 4
+              :character/seasons {:season/name "Blazblue"}}
+
+ #:character {:name "Iron Tager"
+              :id :s5-iron-tager
+              :innate-ability "When you would Advance or Retreat 3 or more, instead move only 2. When you initiate a Strike, you may spend 1 Gauge to Pull 2."
+              :exceed-ability "When you would Advance or Retreat 3 or more spaces, you may instead move only 2. Your attacks have +1 Power and +4 Guard.\nYou may Pull 2."
+              :gauge-cost 5
               :character/seasons {:season/name "Blazblue"}}
 
  #:card {:name "Inferno Divider"
@@ -195,5 +202,5 @@
                                 :location :attack
                                 :trigger :before}
                      #:ability {:description "Draw 2. Seal this and take another action."
-                                :location :attack
+                                :location :boost
                                 :trigger :passive}]}]
