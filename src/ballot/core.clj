@@ -243,7 +243,6 @@
       (:black-heart e)  (toggle-role! user-id :designer)
       (:yellow-heart e) (toggle-role! user-id :east-coast)
       (:purple-heart e) (toggle-role! user-id :west-coast)
-      (:green-heart e)  (toggle-role! user-id :mentee)
       (:blue-heart e)   (toggle-role! user-id :oceania)
       (:diamonds e)       (toggle-role! user-id :europe)
       nil)))
@@ -268,6 +267,7 @@
         character (:deck/character deck)
         cards (frequencies (map #(:card-instance/card %) (:deck/cards deck)))
         sorted-cards (sort-by #(case (:card/type (first %))
+                                 :astral 5
                                  :normal 4
                                  :special 3
                                  :ultra 2
@@ -276,7 +276,9 @@
                               (into [] cards))]
     (if (empty? deck)
       "Nothing found with that name."
-      (str (:character/name character) " (" (:character/gauge-cost character) "G)\n"
+      (str (:character/name character) (if (:character/gauge-cost character)
+                                         (str " (" (:character/gauge-cost character) "G)\n")
+                                         "\n")
            (or (:character/description character) "") "\n"
            (:character/innate-ability character) "\n\n"
            "Exceed Mode: " (or (:character/exceed-name character) "") "\n"

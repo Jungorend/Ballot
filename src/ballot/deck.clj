@@ -484,4 +484,24 @@
                 :s5-blood-scythe 2
                 :s5-devoured-by-darkness 2
                 :s5-carnage-scissors 2
-                :s5-black-onslaught 1)])
+                :s5-black-onslaught 1)
+   (create-deck "Jin Kisaragi" :s5-jin
+                :s5-violent-ice 2
+                :s5-crystal-strike 2
+                :s5-permafrost 2
+                :s5-ice-blade 2
+                :s5-dual-ice-strike 2
+                :s5-moonsong 2
+                :s5-ice-fang 2
+                :s5-arctic-dungeon 1)
+   (create-deck "Hazama" :s5-hazama
+                :s5-ouroboros-1 1
+                :s5-ouroboros-2 1
+                :s5-hungry-darkness-of-1000-souls 1
+                :s5-eternal-coils-of-the-dragon-serpent 2
+                :s5-serpents-infernal-rapture 2
+                :s5-rising-fang 2
+                :s5-devouring-fang 2
+                :s5-falling-fang 2
+                :s5-venom-sword 2
+                :s5-hungry-coils 2)])

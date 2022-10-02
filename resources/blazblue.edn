@@ -12,6 +12,30 @@
               :gauge-cost 5
               :character/seasons {:season/name "Blazblue"}}
 
+ #:character {:name "Jin Kisaragi"
+              :id :s5-jin
+              :innate-ability "When you set your attack, you may spend 1 Gauge to gain \"After: Draw 2.\""
+              :exceed-ability "When you Exceed, draw 2. Hit: The opponent must discard a card. After: Draw 1.\nOverdrive: Draw 1."
+              :gauge-cost 4
+              :character/seasons {:season/name "Blazblue"}}
+
+ #:character {:name "Hazama"
+              :id :s5-hazama
+              :innate-ability "When you initiate a Strike, after setting your attack, you may spend 1 Force. If you do, place one of your Ouroboros cards in a space at Range 1."
+              :exceed-ability "When you initiate a Strike, after setting your attack, you may spend 1 Force, If you do, place both of your Ouroboros cards in a space within Range 0~2.\nOverdrive: Deal 1 non-lethal damage, then gain 1 life."
+              :gauge-cost 4
+              :seasons {:season/name "Blazblue"}}
+
+ #:card {:name "Ouroboros"
+         :id :s5-ouroboros-1
+         :type :character
+         :description "Now: If this is in an unoccupied space, Move into this space. Cleanup: Flip this card and remove it from the arena."}
+
+ #:card {:name "Ouroboros"
+         :id :s5-ouroboros-2
+         :type :character
+         :description "Cleanup: Flip this card and remove it from the arena."}
+
  #:card {:name "Inferno Divider"
          :id :s5-inferno-divider
          :type :special
@@ -203,4 +227,373 @@
                                 :trigger :before}
                      #:ability {:description "Draw 2. Seal this and take another action."
                                 :location :boost
-                                :trigger :passive}]}]
+                                :trigger :passive}]}
+
+ #:card {:name "Violent Ice"
+         :id :s5-violent-ice
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 2
+         :speed 7
+         :armor 0
+         :guard 0
+         :boost-name "Pinpoint Strike"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "Hit: If you initiated this Strike, +2 Power."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Now: Strike."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "Hit: +1 Power. You may Advance or Retreat 1. Gain Advantage."
+                                :location :boost
+                                :trigger :hit}]}
+
+ #:card {:name "Crystal Strike"
+         :id :s5-crystal-strike
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 3
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Overhead"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: Close 3."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: Push 1."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Ignore Armor"
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: Strike."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "Hit: Add this to your Gauge."
+                                :location :boost
+                                :trigger :hit}]}
+
+ #:card {:name "Permafrost"
+         :id :s5-permafrost
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 5
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Cool Under Pressure"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: if you have more cards in hand than the opponent, +2 Power."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: Close 1 and draw 1."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "+4 Guard"
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: Draw 2."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Ice Blade"
+         :id :s5-ice-blade
+         :type :special
+         :cost 0
+         :min-range 2
+         :max-range 5
+         :power 4
+         :speed 3
+         :armor 0
+         :guard 5
+         :boost-name "Scorn"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: Close up to 2, then draw 1."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Push 1. Draw 1 and take another action."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Dual Ice Strike"
+         :id :s5-dual-ice-strike
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 3
+         :speed 3
+         :armor 3
+         :guard 3
+         :boost-name "Flying Ice Strike"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "Hit: Push 2. If the opponent is at the edge of the arena, gain Advantage."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "The opponent cannot move. At the end of your next turn, add this to your Gauge."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Moonsong"
+         :id :s5-moonsong
+         :type :ultra
+         :cost 3
+         :min-range 2
+         :max-range 3
+         :power 6
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Pre-emptive Strike"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "Hit: Gain Advantage (you take the next turn, regardless of who initiated the Strike)."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+2 Speed"
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: Strike"
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Ice Fang"
+         :id :s5-ice-fang
+         :type :ultra
+         :cost 2
+         :min-range 4
+         :max-range 7
+         :power 4
+         :speed 4
+         :armor 1
+         :guard 4
+         :boost-name "Power Of Order"
+         :boost-type :instant
+         :boost-cost 1
+         :abilities [#:ability {:description "If you are in Exceed Mode, +1 Power and +1 Armor."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: Close 1, 2, or 3."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Both players draw or discard until they have 4 cards in hand."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Arctic Dungeon"
+         :id :s5-arctic-dungeon
+         :type :astral
+         :cost 4
+         :min-range 1
+         :max-range 8
+         :power 8
+         :speed 0
+         :armor 0
+         :guard -1
+         :boost-name "Burst"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "X is the number of cards in your hand."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: The opponent must discard their hand."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Draw 2. Seal this and take another action."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Hungry Darkness of 1000 Souls"
+         :id :s5-hungry-darkness-of-1000-souls
+         :type :astral
+         :cost 4
+         :min-range 1
+         :max-range 1
+         :power 4
+         :speed 4
+         :armor 0
+         :guard 4
+         :boost-name "Burst"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Ignore Guard"
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: The opponent must discard their hand. For each card discarded this way, +1 Power and you may draw 1."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Draw 2. Seal this and take another action."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Eternal Coils of the Dragon Serpent"
+         :id :s5-eternal-coils-of-the-dragon-serpent
+         :type :ultra
+         :cost 3
+         :min-range 2
+         :max-range 4
+         :power 3
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Having Fun Yet?"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: Spend up to 5 Force. For each Force spent, +1 Power and Pull 8 (each pull is separate)."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Spend up to 5 Force. The opponent must discard that many cards at random. Then, you may Strike."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Serpent's Infernal Rapture"
+         :id :s5-serpents-infernal-rapture
+         :description "\"Super snake kick!\""
+         :type :ultra
+         :cost 4
+         :min-range 1
+         :max-range 1
+         :power 7
+         :speed 8
+         :armor 0
+         :guard 0
+         :boost-name "Check Out My Snake!"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Draw 3 and Strike."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Rising Fang"
+         :id :s5-rising-fang
+         :type :special
+         :cost 1
+         :min-range 1
+         :max-range 2
+         :power 4
+         :speed 2
+         :armor 2
+         :guard 3
+         :boost-name "Vengeful Viper"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "If you initiated this Strike, +2 Armor."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Before: Close 1."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: Push 1, then lose all Armor."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Hit: You may play and sustain the topmost Continuous Boost from your discard pile."
+                                :location :boost
+                                :trigger :hit}]}
+
+ #:card {:name "Devouring Fang"
+         :id :s5-devouring-fang
+         :type :special
+         :cost 1
+         :min-range 1
+         :max-range 2
+         :power 6
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Bloody Fangs"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Ignore Armor"
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Now: Draw 1."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "After: If the opponent is stunned, draw 2."
+                                :location :boost
+                                :trigger :after}]}
+
+ #:card {:name "Falling Fang"
+         :id :s5-falling-fang
+         :type :special
+         :cost 1
+         :min-range 2
+         :max-range 3
+         :power 3
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Shadow Serpent"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: Push up to 1. Gain Advantage."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Advance or Retreat 1 or 2, then draw 1."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Venom Sword"
+         :id :s5-venom-sword
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 4
+         :power 4
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Serpent's Redemption"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: Push until the opponent is at this attack's Maximum Range."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: Draw 1."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Your Force Costs are reduced by 1."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: Advance or Retreat 2."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Hungry Coils"
+         :id :s5-hungry-coils
+         :type :special
+         :cost 0
+         :min-range 2
+         :max-range 3
+         :power 3
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Serpent's Benediction"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: Pull 4. The opponent must discard a card at random."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: Gain Advantage."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Your Force Costs are reduced by 1."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: You may Strike. If you do, the opponent sets their card first."
+                                :location :boost
+                                :trigger :now}]}]
