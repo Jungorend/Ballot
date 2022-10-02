@@ -26,6 +26,13 @@
               :gauge-cost 4
               :seasons {:season/name "Blazblue"}}
 
+ #:character {:name "Rachel Alucard"
+              :id :s5-rachel
+              :innate-ability "Once per turn as an action, spend up to 2 Force to Close or Retreat that much, then take another action."
+              :exceed-ability "Once per turn as an action, spend up to 2 Force to Close, Retreat, Push, or Pull that much, then take another action.\nOverdrive: You may play a Continous Boost from your hand."
+              :gauge-cost 3
+              :seasons {:season/name "Blazblue"}}
+
  #:card {:name "Ouroboros"
          :id :s5-ouroboros-1
          :type :character
@@ -35,6 +42,13 @@
          :id :s5-ouroboros-2
          :type :character
          :description "Cleanup: Flip this card and remove it from the arena."}
+
+ #:character {:name "Noel Vermillion"
+              :id :s5-noel
+              :innate-ability "When you initiate a Strike, you may spend 1 Gauge to gain +1 Speed."
+              :exceed-ability "When you initiate a Strike, your attack has +1 Speed and \"Hit: Gain Advantage.\"\nOverdrive: Close or Retreat 1."
+              :gauge-cost 4
+              :seasons {:season/name "Blazblue"}}
 
  #:card {:name "Inferno Divider"
          :id :s5-inferno-divider
@@ -596,4 +610,379 @@
                                 :trigger :passive}
                      #:ability {:description "Now: You may Strike. If you do, the opponent sets their card first."
                                 :location :boost
-                                :trigger :now}]}]
+                                :trigger :now}]}
+
+ #:card {:name "Clownish Calendula"
+         :id :s5-clownish-calendula
+         :description "\"Begone. This is the end.\""
+         :type :astral
+         :cost 3
+         :min-range 3
+         :max-range 3
+         :power 12
+         :speed 3
+         :armor 0
+         :guard 6
+         :boost-name "Burst"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Draw 2. Seal this and take another action."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Baden Baden Lily"
+         :id :s5-baden-baden-lily
+         :type :ultra
+         :cost 2
+         :min-range 1
+         :max-range 1
+         :power 3
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Sylpheed Flight"
+         :boost-type :instant
+         :boost-cost 1
+         :abilities [#:ability {:description "This attack’s Range includes your Lightning Rods."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: +1 Power for each of your Lightning Rods in the opponent’s space."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: Advance or Retreat up to 2."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Advance or Retreat into a space containing one of your Lightning Rods. Take another action."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Tempest Dahlia"
+         :id :s5-tempest-dahlia
+         :type :ultra
+         :cost 3
+         :min-range 3
+         :max-range 5
+         :power 5
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "George XIII"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "Hit: Draw 2."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: Push up to 2, then Close 2."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Now: Place this in any space and draw 1."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "After: Deal 3 non-lethal damage to an opponent in this space."
+                                :location :boost
+                                :trigger :after}]}
+
+ #:card {:name "Flying Lobelia"
+         :id :s5-flying-lobelia
+         :type :special
+         :cost 1
+         :min-range 2
+         :max-range 5
+         :power 3
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Gust of Wind"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "Hit: Push 1."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Cleanup: You may place the top card of your discard pile face-down in any space within this attack’s Range as a Lightning Rod Marker."
+                                :location :attack
+                                :trigger :cleanup}
+                     #:ability {:description "Before: Push 1 or 2."
+                                :location :boost
+                                :trigger :before}]}
+
+ #:card {:name "Spike Drop"
+         :id :s5-spike-drop
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 3
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Lotus Barrel"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Ignore Armor."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Before: If you have a Continuous Boost in play, +2 Power."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Choose a card from your discard pile and place it face-down in any space as a Lightning Rod Marker."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Tiny Lobelia"
+         :id :s5-tiny-lobelia
+         :type :special
+         :cost 0
+         :min-range 3
+         :max-range 6
+         :power 3
+         :speed 4
+         :armor 0
+         :guard 4
+         :boost-name "Initiative"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: Add the top card of your discard to your Gauge."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Cleanup: You may place this card face-down in any space within this attack’s Range as a Lightning Rod Marker."
+                                :location :attack
+                                :trigger :cleanup}
+                     #:ability {:description "+1 Speed."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Hit: You may draw 1 or gain Advantage."
+                                :location :boost
+                                :trigger :hit}]}
+
+ #:card {:name "Whirlwind"
+         :id :s5-whirlwind
+         :type :special
+         :cost 0
+         :min-range 2
+         :max-range 3
+         :power 3
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Impish Gypsophila"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: You may sustain one of your Continuous Boosts."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Now: Place this in any space and draw 1."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "Hit: If the opponent is in this space, +1 Power and you may Push or Pull 1."
+                                :location :boost
+                                :trigger :hit}]}
+
+ #:card {:name "Electric Chair"
+         :id :s5-electric-chair
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 5
+         :speed 1
+         :armor 0
+         :guard 7
+         :boost-name "Ivy Blossom"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: Draw 1."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Now: Place this in any space and draw 1."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "Cleanup: If the opponent is in this space, deal 1 non-lethal damage and sustain this."
+                                :location :boost
+                                :trigger :cleanup}]}
+
+ #:card {:name "Valkyrie Veil"
+         :id :s5-valkyrie-veil
+         :type :astral
+         :cost 3
+         :min-range 1
+         :max-range 2
+         :power 3
+         :speed 2
+         :armor 5
+         :guard 0
+         :boost-name "Burst"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Stun Immunity."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Before: If you were hit, +4 Power and you may draw 1, 2, 3, or 4."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Draw 2. Seal this and take another action."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Zero Gun: Fenrir"
+         :id :s5-zero-gun-fenrir
+         :type :ultra
+         :cost 2
+         :min-range 1
+         :max-range 1
+         :power 5
+         :speed 7
+         :armor 0
+         :guard 0
+         :boost-name "Drive Charge"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "Hit: Push 2 and draw 2."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Now: Strike."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "Before: Advance 2."
+                                :location :boost
+                                :trigger :before}]}
+
+ #:card {:name "Bullet Storm"
+         :id :s5-bullet-storm
+         :type :ultra
+         :cost 3
+         :min-range 3
+         :max-range 4
+         :power 6
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Power of the Eye"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Ignore Armor."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Look at the opponent’s hand, then Strike."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Assault Through"
+         :id :s5-assault-through
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 4
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Step In"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: Advance 1."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: Push 3 and gain Advantage."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Close 1 and Strike."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Muzzle Flitter"
+         :id :s5-muzzle-flitter
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 3
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Chain Revolver"
+         :boost-type :instant
+         :boost-cost 1
+         :abilities [#:ability {:description "Before: Close 1."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: You may spend 1 Force. If you do, Ignore Guard."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Draw 3 and Strike."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Optic Barrel"
+         :id :s5-optic-barrel
+         :type :special
+         :cost 0
+         :min-range 2
+         :max-range 3
+         :power 5
+         :speed 3
+         :armor 0
+         :guard 4
+         :boost-name "Overpower"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: You may spend 1 Force to gain +1-2 Range."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "After: You may Advance 2."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Now: Strike."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "+1 Power."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Spring Raid"
+         :id :s5-spring-raid
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 3
+         :speed 7
+         :armor 0
+         :guard 0
+         :boost-name "Dash Cancel"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: Close 1."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: Push 2."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Now: Close 2."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "Hit: Add this to your Gauge and gain Advantage."
+                                :location :boost
+                                :trigger :hit}]}
+
+ #:card {:name "Type One"
+         :id :s5-type-one
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 3
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Swift Attack"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: Advance 2. If you moved past the opponent, their attacks do not hit you."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "+1 Speed."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Hit: Gain Advantage and add this to your Gauge."
+                                :location :boost
+                                :trigger :hit}]}]

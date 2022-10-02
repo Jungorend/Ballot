@@ -504,4 +504,22 @@
                 :s5-devouring-fang 2
                 :s5-falling-fang 2
                 :s5-venom-sword 2
-                :s5-hungry-coils 2)])
+                :s5-hungry-coils 2)
+   (create-deck "Rachel Alucard" :s5-rachel
+                :s5-electric-chair 2
+                :s5-flying-lobelia 2
+                :s5-spike-drop 2
+                :s5-tiny-lobelia 2
+                :s5-whirlwind 2
+                :s5-baden-baden-lily 2
+                :s5-tempest-dahlia 2
+                :s5-clownish-calendula 1)
+   (create-deck "Noel Vermillion" :s5-noel
+                :s5-assault-through 2
+                :s5-muzzle-flitter 2
+                :s5-optic-barrel 2
+                :s5-spring-raid 2
+                :s5-type-one 2
+                :s5-bullet-storm 2
+                :s5-zero-gun-fenrir 2
+                :s5-valkyrie-veil 1)])
