@@ -523,7 +523,7 @@
                 :s5-bullet-storm 2
                 :s5-zero-gun-fenrir 2
                 :s5-valkyrie-veil 1)
-   (create-deck "Iron Tager" :s5-tager
+   (create-deck "Iron Tager" :s5-iron-tager
                 :s5-king-of-tager 1
                 :s5-magna-tech-wheel 2
                 :s5-genesic-emerald-tager-buster 2
