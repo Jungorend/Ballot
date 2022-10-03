@@ -522,4 +522,22 @@
                 :s5-type-one 2
                 :s5-bullet-storm 2
                 :s5-zero-gun-fenrir 2
-                :s5-valkyrie-veil 1)])
+                :s5-valkyrie-veil 1)
+   (create-deck "Iron Tager" :s5-tager
+                :s5-king-of-tager 1
+                :s5-magna-tech-wheel 2
+                :s5-genesic-emerald-tager-buster 2
+                :s5-atomic-collider 2
+                :s5-crimson-punisher 2
+                :s5-gigantic-tager-driver 2
+                :s5-sledgehammer 2
+                :s5-spark-bolt 2)
+   (create-deck "Taokaka" :s5-taokaka
+                :s5-attack-meow-pow 1
+                :s5-imma-beat-the-crap-outta-you 2
+                :s5-hexa-edge 2
+                :s5-cat-spirit-one 2
+                :s5-double-paw-strike 2
+                :s5-kitty-litter-special 2
+                :s5-slashy-slashy 2
+                :s5-trick-edge 2)])

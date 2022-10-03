@@ -50,6 +50,27 @@
               :gauge-cost 4
               :seasons {:season/name "Blazblue"}}
 
+ #:character {:name "Taokaka"
+              :id :s5-taokaka
+              :innate-ability "When you initiate a Strike with a Wild Swing, your attack has \"Before: Advance 2, then you may spend 1 Force to Retreat 2.\""
+              :exceed-ability "When you initiate a Strike, your attack has \"Before: Advance 2, then you may Retreat 2.\"\nOverdrive: Advance or Retreat 2."
+              :gauge-cost 3
+              :seasons {:season/name "Blazblue"}}
+
+ #:character {:name "Nu-13"
+              :id :s5-nu-13
+              :innate-ability "When you set your attack, you may spend 1 Force to gain +3~4 Range."
+              :exceed-ability "When you Exceed, draw 1. Your attacks have +0~4 Range and \"Hit: You may Advance 3.\"\nOverdrive: Retreat 1."
+              :gauge-cost 3
+              :seasons {:season/name "Blazblue"}}
+
+ #:character {:name "Arakune"
+              :id :s5-arakune
+              :innate-ability "Your Exceed Cost is reduced by 1 for each card in your Overdrive. Your Specials and Ultras have \"Hit: You may add the top card of your discard pile to your Overdrive.\""
+              :exceed-ability "When you Exceed, draw 2, then Strike. The first time each Strike you reveal an attack, discard a card from your Overdrive (performing your Overdrive effect). If the discarded card's Speed matches that of the revealed attack, -8~0 Range, +2 Power, and +1 Speed.\nOverdrive: Look at the top card of your deck; you may seal it face-down."
+              :gauge-cost 8
+              :seasons {:season/name "Blazblue"}}
+
  #:card {:name "Inferno Divider"
          :id :s5-inferno-divider
          :type :special
@@ -985,4 +1006,372 @@
                                 :trigger :passive}
                      #:ability {:description "Hit: Gain Advantage and add this to your Gauge."
                                 :location :boost
-                                :trigger :hit}]}]
+                                :trigger :hit}]}
+
+ #:card {:name "King of Tager"
+         :id :s5-king-of-tager
+         :type :astral
+         :cost 4
+         :min-range 1
+         :max-range 1
+         :power 16
+         :speed 0
+         :armor 0
+         :guard 3
+         :boost-name "Burst"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "When you are hit, after Hit effects, gain +3 Armor for each card in your Gauge."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Before: Pull 1 or 2."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Draw 2. Seal this and take another action."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Magna Tech Wheel"
+         :id :s5-magna-tech-wheel
+         :type :ultra
+         :cost 3
+         :min-range 1
+         :max-range 1
+         :power 8
+         :speed 1
+         :armor 2
+         :guard 6
+         :boost-name "Demon Cells"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "Before: Spend up to 2 Gauge to Close 1 per Gauge spent."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit, Exceed Mode: +4 Power."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+2 Power, +2 Armor, +2 Guard."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Genesic Emerald Tager Buster"
+         :id :s5-genesic-emerald-tager-buster
+         :type :ultra
+         :cost 4
+         :min-range 1
+         :max-range 1
+         :power 10
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Charge In"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: Spend up to 2 Gauge to Pull 1 for each Gauge spent."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Close 2, then Strike."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Atomic Collider"
+         :id :s5-atomic-collider
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 6
+         :speed 3
+         :armor 0
+         :guard 3
+         :boost-name "Powerful Blow"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "Before: Pull 2."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: Pull 1 or 2."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+2 Power"
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: Strike."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Crimson Punisher"
+         :id :s5-crimson-punisher
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 5
+         :speed 1
+         :armor 2
+         :guard 5
+         :boost-name "Reach"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "Ignore Armor."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "After: Close 1."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "+0-1 Range."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: Strike."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Gigantic Tager Driver"
+         :id :s5-gigantic-tager-driver
+         :type :special
+         :cost 1
+         :min-range 1
+         :max-range 1
+         :power 7
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Voltic Charge"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: The opponent must discard a card at random."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+3 Armor"
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Sledgehammer"
+         :id :s5-sledgehammer
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 4
+         :speed 4
+         :armor 1
+         :guard 3
+         :boost-name "Gadget Finger"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: Close 1."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: Close 1."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "If the opponent is at Rage 1, add this to your Gauge and draw 1."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Spark Bolt"
+         :id :s5-spark-bolt
+         :type :special
+         :cost 1
+         :min-range 3
+         :max-range 8
+         :power 4
+         :speed 1
+         :armor 0
+         :guard 0
+         :boost-name "Heavy"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "+1 Speed for each card in your Gauge."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: Pull 2 and gain Advantage."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "-2 Speed and +4 Armor. You cannot be Pushed or Pulled."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Attack Meow Pow!"
+         :id :s5-attack-meow-pow
+         :type :astral
+         :cost 4
+         :min-range 1
+         :max-range 1
+         :power 9
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Burst"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: Advance 4."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Draw 2. Seal this and take another action."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Imma Beat the Crap Outta You!"
+         :id :s5-imma-beat-the-crap-outta-you
+         :type :ultra
+         :cost 2
+         :min-range 1
+         :max-range 1
+         :power 7
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Meow I’m Serious!"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "Before: Close 2."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Now: Strike."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "Hit: Advance or Retreat 3."
+                                :location :boost
+                                :trigger :hit}]}
+
+ #:card {:name "Hexa Edge!"
+         :id :s5-hexa-edge
+         :type :ultra
+         :cost 3
+         :min-range 1
+         :max-range 1
+         :power 6
+         :speed 7
+         :armor 0
+         :guard 0
+         :boost-name "Almost Becoming Two!"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "Hit: Push 2 and gain advantage."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Now: Place a card on top of your deck, then Strike with a Wild Swing."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "Hit: Gain Advantage."
+                                :location :boost
+                                :trigger :hit}]}
+
+ #:card {:name "Cat Spirit One!"
+         :id :s5-cat-spirit-one
+         :type :special
+         :cost 1
+         :min-range 1
+         :max-range 2
+         :power 2
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Feral Fury!"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "Hit: Spend up to 2 Force for +1 Power each."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: Retreat 2."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Now: Strike."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "Hit: Draw 2."
+                                :location :boost
+                                :trigger :hit}]}
+
+ #:card {:name "Double Paw Strike!"
+         :id :s5-double-paw-strike
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 4
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Cat Jump!"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Before, Range 1: +2 Power."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: Push 1."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Advance 3."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Kitty Litter Special!"
+         :id :s5-kitty-litter-special
+         :type :special
+         :cost 0
+         :min-range 3
+         :max-range 5
+         :power 3
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Pounce!"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: Close 2 and gain Advantage."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: Draw 1."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Advance or Retreat 1, then Strike."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Slashy Slashy!"
+         :id :s5-slashy-slashy
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 3
+         :speed 3
+         :armor 0
+         :guard 4
+         :boost-name "Let’s Play!"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: Spend up to 2 Force. For each Force spent, +1 Power and draw 1."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: Push 2."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Look at the top card of your deck. You may discard it or put it back. Then, Strike with a Wild Swing."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Trick Edge!"
+         :id :s5-trick-edge
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 4
+         :speed 3
+         :armor 0
+         :guard 0
+         :boost-name "Surprise!"
+         :boost-type :instant
+         :boost-cost 1
+         :abilities [#:ability {:description "Ignore Guard."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Before: If you are at the edge of the arena, Close 3."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "If the opponent is at Range 1, Retreat 2 and Strike."
+                                :location :boost
+                                :trigger :now}]}]
