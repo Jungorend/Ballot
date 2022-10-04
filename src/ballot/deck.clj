@@ -21,7 +21,63 @@
                 :s1-sovereign-glory 2
                 :s1-gallant-defender 2
                 :s1-knight-wave 2
-                :s1-gauntlet-flurry 2)])
+                :s1-gauntlet-flurry 2)
+   (create-deck "Nehtali" :s1-nehtali
+                :s1-azazels-torment 2
+                :s1-darkness-barrier 2
+                :s1-hellfire 2
+                :s1-soul-thresher 2
+                :s1-volt-damnation 2
+                :s1-heavens-punishment 2
+                :s1-hells-salvation 2)
+   (create-deck "Heidi" :s1-heidi
+                :s1-artillery-cannon 2
+                :s1-dagger-strike-install 2
+                :s1-iron-knuckle 2
+                :s1-mech-cannon 2
+                :s1-steel-driver 2
+                :s1-dagger-storm-drei-install 2
+                :s1-rail-driver 2)
+   (create-deck "Vincent" :s1-vincent
+                :s1-crimson-barrage 2
+                :s1-gatling-punch 2
+                :s1-majority-whip 2
+                :s1-national-guard 2
+                :s1-phoenix-ascent 2
+                :s1-ballot-fixing 2
+                :s1-phoenix-revival 2)
+   (create-deck "Eva" :s1-eva
+                :s1-cyber-destroyer 2
+                :s1-enki-thresher 2
+                :s1-plasma-barrage 2
+                :s1-riot-machine 2
+                :s1-upgrade 2
+                :s1-harnessing-chaos 2
+                :s1-shifting-technology 2)
+   (create-deck "Kaden" :s1-kaden
+                :s1-calamity-bell 2
+                :s1-chain-strike 2
+                :s1-double-charge-executioner 2
+                :s1-fusion-bane 2
+                :s1-havoc-call 2
+                :s1-dark-tide-summon 2
+                :s1-rising-host 2)
+   (create-deck "Miska" :s1-miska
+                :s1-bear-rush 2
+                :s1-canine-strike 2
+                :s1-fire-in-the-hole 2
+                :s1-knee-capper 2
+                :s1-silver-fang 2
+                :s1-savage-wildsider 2
+                :s1-scorched-earth 2)
+   (create-deck "Lily" :s1-lily
+                :s1-bullet-barrage 2
+                :s1-double-tap 2
+                :s1-excessive-force 2
+                :s1-hair-trigger 2
+                :s1-mug-shot 2
+                :s1-magic-bullet 2
+                :s1-wild-bunch 2)])
 
 (def s2-decks
   [(create-deck "Renea" :s2-renea

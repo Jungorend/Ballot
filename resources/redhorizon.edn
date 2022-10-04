@@ -300,4 +300,1038 @@
                                 :trigger :hit}
                      #:ability {:description "Draw 3 cards, then Strike."
                                 :location :boost
-                                :trigger :now}]}]
+                                :trigger :now}]}
+
+ #:card {:name "Azazel's Torment"
+         :id :s1-azazels-torment
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 3
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Divine Harvester"
+         :boost-type :instant
+         :boost-cost 2
+         :abilities [#:ability {:description "Before: +3 Power if your opponent has 3 or more Gauge."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: Push the opponent 3 spaces."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Retreat 2 spaces, then Strike."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Darkness Barrier"
+         :id :s1-darkness-barrier
+         :type :special
+         :cost 0
+         :min-range 3
+         :max-range 5
+         :power 5
+         :speed 1
+         :armor 0
+         :guard 0
+         :boost-name "Soul Exchange"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Attacks at Range 4 do not hit you."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Your opponent discards 1 Gauge. If they do, add this card to your Gauge."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Hellfire"
+         :id :s1-hellfire
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 3
+         :power 0
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Gauge Boost"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: +1 Power for each card in your Gauge."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Add this card to your Gauge."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Soul Thresher"
+         :id :s1-soul-thresher
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 7
+         :power 0
+         :speed 7
+         :armor 0
+         :guard 0
+         :boost-name "Clutch of Evil"
+         :boost-type :instant
+         :boost-cost 1
+         :abilities [#:ability {:description "Before: You may spend 1 Gauge for +2 Power."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Move the opponent 1 space, then Strike."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Volt Damnation"
+         :id :s1-volt-damnation
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 5
+         :speed 1
+         :armor 0
+         :guard 6
+         :boost-name "Swift Destruction"
+         :boost-type :continuous
+         :boost-cost 2
+         :abilities [#:ability {:description "Ignore Armor"
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "+4 Speed"
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Heaven's Punishment"
+         :id :s1-heavens-punishment
+         :type :ultra
+         :cost 3
+         :min-range 3
+         :max-range 5
+         :power 0
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Begone!"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: +2 Power for each card in your opponent's Gauge."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "After: Move 1 space."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "If you are at Range 1, push the opponent 3 spaces."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Hell's Salvation"
+         :id :s1-hells-salvation
+         :description "\"You cease to amuse me.\""
+         :type :ultra
+         :cost 5
+         :min-range 2
+         :max-range 2
+         :power 12
+         :speed 7
+         :armor 0
+         :guard 0
+         :boost-name "Building Power"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Draw 2 cards. Add one of them to your Gauge."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Artillery Cannon"
+         :id :s1-artillery-cannon
+         :type :special
+         :cost 0
+         :min-range 4
+         :max-range 7
+         :power 4
+         :speed 3
+         :armor 0
+         :guard 4
+         :boost-name "Iron Grit"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "Ignore Armor"
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "You cannot take more than 4 damage (after applying Armor)."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: Strike."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Dagger Strike - Install"
+         :id :s1-dagger-strike-install
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 3
+         :power 2
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Mechanical Genius"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: At the end of this Strike, play and sustain a Continuous Boost from hand without paying its cost."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Put a Continuous Boost from your discard into play (this does not count as resolving it)."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Iron Knuckle"
+         :id :s1-iron-knuckle
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 2
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Switchbox"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: Move the opponent 1, 2, or 3 spaces."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Reveal a non-Continuous Boost from your hand and perform its effects."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Mech Cannon"
+         :id :s1-mech-cannon
+         :type :special
+         :cost 0
+         :min-range 3
+         :max-range 6
+         :power 3
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Panzer Soldatin"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "Before: +2 Power if you have a Continuous Boost in play."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "+1 Power, +1 Speed, +1 Armor, and +1 Guard"
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Steel Driver"
+         :id :s1-steel-driver
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 2
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Destructor Beam"
+         :boost-type :instant
+         :boost-cost 2
+         :abilities [#:ability {:description "Hit: Push the opponent 4 spaces. +1 Power for each space the opponent cannot be pushed."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Discard any number of cards; your opponent must discard the same number."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Dagger Storm - Drei Install"
+         :id :s1-dagger-storm-drei-install
+         :type :ultra
+         :cost 3
+         :min-range 1
+         :max-range 3
+         :power 3
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Boundless"
+         :boost-type :continuous
+         :boost-cost 4
+         :abilities [#:ability {:description "Hit: Pick up the top 3 cards of your deck. You may play and sustain any Continuous Boosts among them without paying any cost, and discard the rest."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+2 Power, +2 Armor, and +2 Guard"
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Rail Driver"
+         :id :s1-rail-driver
+         :description "\"Full steam ahead!\""
+         :type :ultra
+         :cost 3
+         :min-range 1
+         :max-range 2
+         :power 6
+         :speed 2
+         :armor 0
+         :guard 0
+         :boost-name "Sturmwaffe"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "Stun Immunity"
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: At the end of this strike, play a Boost from your hand without paying its cost."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+2 Speed"
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: Move 1 or 2 spaces."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Crimson Barrage"
+         :id :s1-crimson-barrage
+         :type :special
+         :cost 0
+         :min-range 2
+         :max-range 5
+         :power 4
+         :speed 1
+         :armor 0
+         :guard 0
+         :boost-name "National Debt"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: Name 2 cards. Your opponent must discard all copies of those cards, then reveal their hand."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Draw until you have 3 cards in hand."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Gatling Punch"
+         :id :s1-gatling-punch
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 2
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Fortress Frame"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "Hit: Spent up to 7 Force for +1 Power per Force spent."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+5 Guard"
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: Strike."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Majority Whip"
+         :id :s1-majority-whip
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 3
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Rushdown"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: Push the opponent as far as possible."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+2 Speed"
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: Close 2 spaces."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "National Guard"
+         :id :s1-national-guard
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 6
+         :speed 3
+         :armor 0
+         :guard 0
+         :boost-name "Bunker Buster"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: Close 1 space for each point of damage taken this turn."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Ignore Guard"
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: Draw a card."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Phoenix Ascent"
+         :id :s1-phoenix-ascent
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 3
+         :speed 6
+         :armor 0
+         :guard 2
+         :boost-name "Foundation"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: Push the opponent 1 space."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+2 Armor, and opponents cannot move you."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Ballot Fixing"
+         :id :s1-ballot-fixing
+         :description "\"Time for you to disappear!\""
+         :type :ultra
+         :cost 2
+         :min-range 1
+         :max-range 2
+         :power 4
+         :speed 8
+         :armor 0
+         :guard 0
+         :boost-name "National Scar"
+         :boost-type :instant
+         :boost-cost 2
+         :abilities [#:ability {:description "Ignore Guard"
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: Gain Advantage."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Draw until you have 5 cards in hand."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Phoenix Revival"
+         :id :s1-phoenix-revival
+         :type :ultra
+         :cost 3
+         :min-range 1
+         :max-range 3
+         :power 6
+         :speed 1
+         :armor 4
+         :guard 0
+         :boost-name "A Moment of Reflection"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: Regain 4 life."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Spend up to 5 Force to regain that much life."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Cyber Destroyer"
+         :id :s1-cyber-destroyer
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 1
+         :speed 7
+         :armor 0
+         :guard 0
+         :boost-name "Emergent Technology"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: You may keep one of your Continuous Boosts in play at the end of this Strike (any cumulative bonuses on these Boosts reset)."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+0~1 Range"
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Enki Thresher"
+         :id :s1-enki-thresher
+         :type :special
+         :cost 0
+         :min-range 2
+         :max-range 4
+         :power 3
+         :speed 1
+         :armor 0
+         :guard 0
+         :boost-name "Lost Memories"
+         :boost-type :continuous
+         :boost-cost 5
+         :abilities [#:ability {:description "Stun Immunity"
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "At the start of each of the opponent's turns, +1 Speed (max of +3)."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Plasma Barrage"
+         :id :s1-plasma-barrage
+         :type :special
+         :cost 0
+         :min-range 3
+         :max-range 5
+         :power 4
+         :speed 4
+         :armor 0
+         :guard 4
+         :boost-name "Auto-Defense Engine"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "After: Move 1 or 2 spaces."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "At the start of each opponent's turns, +1 Armor (max of +3)."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Riot Machine"
+         :id :s1-riot-machine
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 1
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Revoke"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: +2 Power for each Continuous Boost you have in play."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Choose a Continous Boost in play. It now affects you instead of its controller."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Upgrade"
+         :id :s1-upgrade
+         :type :special
+         :cost 0
+         :min-range -2
+         :max-range -2
+         :power 6
+         :speed 3
+         :armor 0
+         :guard 0
+         :boost-name "Mandatory Upgrades"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: Do not discard any of your Continuous Boosts in play at the end of this Strike (any cumulative bonuses on these Boosts reset)."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "At the start of each of the opponent's turns, +1 Popewr (max of +3)."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Harnessing Chaos"
+         :id :s1-harnessing-chaos
+         :type :ultra
+         :cost 3
+         :min-range 1
+         :max-range 1
+         :power 1
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Rejuvenation"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "Before: For each Continuous Boost you have in play, +1 Power and +0~1 Range."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "At the start of each of the opponent's turns, draw a card."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Shifting Technology"
+         :id :s1-shifting-technology
+         :type :ultra
+         :cost 1
+         :min-range 1
+         :max-range 2
+         :power 2
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Liberation"
+         :boost-type :continuous
+         :boost-cost 2
+         :abilities [#:ability {:description "Hit: Do not discard your Continuous Boosts at the end of this Strike (any cumulative bonuses on those Boosts reset)."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "At the start of each of the opponent's turns, add the top card of your Discard to your Gauge."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Calamity Bell"
+         :id :s1-calamity-bell
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 3
+         :speed 3
+         :armor 0
+         :guard 5
+         :boost-name "Recall"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: Push the opponent 3 spaces."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Reveal a card in your hand. Return a copy of that card from your discard to your hand."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Chain Strike"
+         :id :s1-chain-strike
+         :type :special
+         :cost 0
+         :min-range 4
+         :max-range 6
+         :power 1
+         :speed 7
+         :armor 0
+         :guard 0
+         :boost-name "No Pain"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "Hit: Pull the opponent up to 4 spaces and gain Advantage."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Stun Immunity"
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Double Charge Executioner"
+         :id :s1-double-charge-executioner
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 6
+         :speed 1
+         :armor 0
+         :guard 5
+         :boost-name "Chain Extension"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "After: You may return a card from your Discard to your hand."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "+0~2 Range"
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Fusion Bane"
+         :id :s1-fusion-bane
+         :type :special
+         :cost 0
+         :min-range 2
+         :max-range 3
+         :power 6
+         :speed 1
+         :armor 0
+         :guard 4
+         :boost-name "Secret Weapon"
+         :boost-type :instant
+         :boost-cost 2
+         :abilities [#:ability {:description "Hit: Push the opponent 1 space."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: Pick up the top 3 cards of your deck. Draw 1 and discard the rest."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Search your deck for a card and add it to your hand. Shuffle your deck afterwards."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Havoc Call"
+         :id :s1-havoc-call
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 3
+         :power 3
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Perfect Evolution"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Attacks at range 4 or greater do not hit you."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Pick up the top 3 cards of your deck. Draw one, and put the rest on the bottom of your deck."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Dark Tide Summon"
+         :id :s1-dark-tide-summon
+         :type :ultra
+         :cost 2
+         :min-range 1
+         :max-range 4
+         :power 3
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Silence"
+         :boost-type :instant
+         :boost-cost 1
+         :abilities [#:ability {:description "Hit: Name another card and return all copies of it from your discard to your hand."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Name a card and return all copies of it from your discard to your hand."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Rising Host"
+         :id :s1-rising-host
+         :type :ultra
+         :cost 1
+         :min-range 1
+         :max-range 3
+         :power 1
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Insurmountable"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "Hit: Put all copies of this card from your deck, discard, and in play into your hand."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+3 Armor and +3 Guard."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Bear Rush"
+         :id :s1-bear-rush
+         :type :special
+         :cost 0
+         :min-range 0
+         :max-range 1
+         :power 1
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Iron Will"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "This attack always calculates its range from your Bear Marker."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: +1 Power for each card in your opponent's hand and move them 1 space."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+1 Armor and +3 Guard"
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Canine Strike"
+         :id :s1-canine-strike
+         :type :special
+         :cost 0
+         :min-range 3
+         :max-range 7
+         :power 3
+         :speed 3
+         :armor 0
+         :guard 0
+         :boost-name "A Helping Hand"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "Before: Retreat as far as possible."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "+2 Power and +2 Speed."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "If you are not in the same space as your Bear Marker when you play this, discard it."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Fire in the Hole!"
+         :id :s1-fire-in-the-hole
+         :type :special
+         :cost 0
+         :min-range 3
+         :max-range 5
+         :power 6
+         :speed 0
+         :armor 0
+         :guard 0
+         :boost-name "Protect Your Master"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Stun Immunity"
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: Push the opponent as far as possible."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "If the opponent is in the same space as your Bear Marker, move him up to 3 spaces."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Knee Capper"
+         :id :s1-knee-capper
+         :type :special
+         :cost 0
+         :min-range 2
+         :max-range 4
+         :power 3
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Acrobatics"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Ignore Guard"
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: Move up to 2 spaces."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Move 4 spaces."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Silver Fang"
+         :id :s1-silver-fang
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 3
+         :power 3
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "On Patrol"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: Push the opponent up to 3 spaces."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: Move your Bear Marker to any space."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Add this card to your Gauge, then move your Bear Marker to any space."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Savage Wildsider"
+         :id :s1-savage-wildsider
+         :type :ultra
+         :cost 1
+         :min-range 0
+         :max-range 0
+         :power 6
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Priority Requisition"
+         :boost-type :instant
+         :boost-cost 2
+         :abilities [#:ability {:description "Stun Immunity."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "This attack always calculates its range from your Bear Marker."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Search your deck for a card, add it to your hand, then Strike. Shuffle your deck afterwards."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Scorched Earth"
+         :id :s1-scorched-earth
+         :type :ultra
+         :cost 3
+         :min-range 4
+         :max-range 8
+         :power 10
+         :speed 0
+         :armor 0
+         :guard 0
+         :boost-name "Brilliant Tactician"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Stun Immunity"
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: Push the opponent as far as possible."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+3 Speed"
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Bullet Barrage"
+         :id :s1-bullet-barrage
+         :type :special
+         :cost 0
+         :min-range 3
+         :max-range 6
+         :power 3
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Reload"
+         :boost-type :instant
+         :boost-cost 2
+         :abilities [#:ability {:description "Hit: You may discard up to 2 additional attacks that include your Range to the opponent for +2 Power each."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Discard your hand, then draw until you have 6 cards in hand."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Double Tap"
+         :id :s1-double-tap
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 2
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Muzzle Flash"
+         :boost-type :instant
+         :boost-cost 2
+         :abilities [#:ability {:description "Ignore Armor"
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: Push the opponent 4 spaces."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "If you are at range 1, push the opponent 4 spaces."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Excessive Force"
+         :id :s1-excessive-force
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 2
+         :speed 7
+         :armor 0
+         :guard 0
+         :boost-name "Point Blank"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: Push the opponent 3 spaces."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "-2~0 Range"
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Hair Trigger"
+         :id :s1-hair-trigger
+         :type :special
+         :cost 0
+         :min-range 2
+         :max-range 6
+         :power 3
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Just Keep Shooting"
+         :boost-type :instant
+         :boost-cost 3
+         :abilities [#:ability {:description "After: Move 1 space."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Discard your hand, then draw until you have 6 cards in hand, then Strike."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Mug Shot"
+         :id :s1-mug-shot
+         :type :special
+         :cost 0
+         :min-range 4
+         :max-range 5
+         :power 4
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Somersault"
+         :boost-type :instant
+         :boost-cost 1
+         :abilities [#:ability {:description "Before: Move 4 spaces."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Move 5 spaces."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "The Magic Bullet"
+         :id :s1-magic-bullet
+         :type :ultra
+         :cost 2
+         :min-range 4
+         :max-range 4
+         :power 7
+         :speed 7
+         :armor 0
+         :guard 0
+         :boost-name "Taking Aim"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: If you used this as a Wild Swing or you have no other cards in your hand, the range of this attack becomes 2~6."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "+0~3 Range and +1 Speed."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "The Wild Bunch"
+         :id :s1-wild-bunch
+         :type :ultra
+         :cost 3
+         :min-range 3
+         :max-range 6
+         :power 3
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Suppressing Fire"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: You may discard up to 3 additional attacks that contain your range to the opponent for +3 Power each."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Each time the opponent moves, they take 1 damage per space moved. This damage does not stun."
+                                :location :boost
+                                :trigger :passive}]}]
