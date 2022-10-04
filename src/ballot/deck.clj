@@ -641,4 +641,15 @@
                 :s5-banishing-rays 2
                 :s5-broken-bunker-assault 2
                 :s5-flame-cage 2
-                :s5-solid-wheel 2)])
+                :s5-solid-wheel 2)
+   (create-deck "Nine The Phantom" :s5-nine
+                :s5-colorless-void 1
+                :s5-azurite-inferno 2
+                :s5-lapis-lazuli-of-lamentation 2
+                :s5-emerald-of-enmity 2
+                :s5-morganite-of-malice 2
+                :s5-coral-of-catastrophe 2
+                :s5-kunzite-of-keep-breaker 2
+                :s5-amethyst-of-annihilation 2
+                :s5-navy-pressure 2
+                :s5-flame-punisher 2)])

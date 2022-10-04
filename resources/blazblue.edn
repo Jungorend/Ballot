@@ -2357,4 +2357,237 @@
                                 :trigger :passive}
                      #:ability {:description "After: Add this to your Gauge."
                                 :location :boost
-                                :trigger :after}]}]
+                                :trigger :after}]}
+
+ #:card {:name "Colorless Void"
+         :id :s5-colorless-void
+         :type :astral
+         :cost 9
+         :min-range 3
+         :max-range 3
+         :power 9
+         :speed 9
+         :armor 0
+         :guard 0
+         :boost-name "Burst"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "This attack’s Gauge cost is reduced by 1 for each Normal in your Sealed area."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Draw 2. Seal this and take another action."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Azurite Inferno"
+         :id :s5-azurite-inferno
+         :type :ultra
+         :cost 1
+         :min-range 1
+         :max-range 1
+         :power 2
+         :speed 8
+         :armor 0
+         :guard 0
+         :boost-name "Teleport Step"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: You may Seal up to 2 cards from your discard pile."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Advance or Retreat 2. Take another action."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Lapis Lazuli of Lamentation"
+         :id :s5-lapis-lazuli-of-lamentation
+         :type :special
+         :cost 1
+         :min-range 1
+         :max-range 1
+         :power 2
+         :speed 7
+         :armor 0
+         :guard 0
+         :boost-name "Citrine of Change"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: You may Seal a card from your discard pile."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: Advance or Retreat 1. For every 2 Normals in your Sealed area, you may repeat this effect."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Attacks at Range 4+ do not hit you."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "At the start of your next turn, add this to your Gauge."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Emerald of Enmity"
+         :id :s5-emerald-of-enmity
+         :type :special
+         :cost 1
+         :min-range 2
+         :max-range 4
+         :power 2
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Seamoss Gate"
+         :boost-type :instant
+         :boost-cost 1
+         :abilities [#:ability {:description "Before: For each Normal in your Sealed area, +0-1 Range."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: Push 1, then Retreat 1."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Seal a card from your discard pile. Take another action."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Morganite of Malice"
+         :id :s5-morganite-of-malice
+         :type :special
+         :cost 0
+         :min-range 3
+         :max-range 5
+         :power 4
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Flax Nurture"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: Pull 5."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: If the opponent is Stunned, add the top card of your discard pile to your Gauge."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Draw 3, then shuffle 2 cards from your hand into your Deck."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Coral of Catastrophe"
+         :id :s5-coral-of-catastrophe
+         :type :special
+         :cost 0
+         :min-range 2
+         :max-range 3
+         :power 3
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Andradite of Accord"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: For each Normal in your Sealed area, +1 Power, to a maximum of +5."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "+0-1 Range."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Hit: Advance or Retreat 2."
+                                :location :boost
+                                :trigger :hit}]}
+
+ #:card {:name "Kunzite of Keep Breaker"
+         :id :s5-kunzite-of-keep-breaker
+         :type :special
+         :cost 0
+         :min-range X
+         :max-range X
+         :power 5
+         :speed 3
+         :armor 0
+         :guard 0
+         :boost-name "Uvarovite of Undoing"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Ignore Armor. X is your Range to the opponent."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Now: Draw 2."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "After: If the opponent is Stunned, they must discard 2 cards at random."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Amethyst of Annihilation"
+         :id :s5-amethyst-of-annihilation
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 3
+         :power 5
+         :speed 2
+         :armor 0
+         :guard 4
+         :boost-name "Taaffeite of Temptation"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "Ignore Guard."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: Push 2. If the opponent was Pushed one or more spaces, gain Advantage."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+1 Power, +1 Speed, +1 Armor."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Navy Pressure"
+         :id :s5-navy-pressure
+         :type :special
+         :cost 1
+         :min-range 4
+         :max-range 7
+         :power 6
+         :speed 1
+         :armor 0
+         :guard 5
+         :boost-name "Heliodor of Humility"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: The opponent must discard a card at random."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: If you hit, you may add the top card of your discard to your Gauge and place this on top of your Deck."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "+1 Armor and +3 Guard."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: Seal a card from your hand."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Flame Punisher"
+         :id :s5-flame-punisher
+         :type :ultra
+         :cost 2
+         :min-range 2
+         :max-range 5
+         :power 7
+         :speed 0
+         :armor 0
+         :guard 0
+         :boost-name "Hi no Kagutsuchi"
+         :boost-type :instant
+         :boost-cost 3
+         :abilities [#:ability {:description "Stun Immunity."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: Push 2."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: Draw 2."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Add your hand to your Gauge. Draw 6."
+                                :location :boost
+                                :trigger :now}]}]
