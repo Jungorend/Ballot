@@ -71,6 +71,45 @@
               :gauge-cost 8
               :seasons {:season/name "Blazblue"}}
 
+ #:character {:name "Litchi Faye-ling"
+              :id :s5-litchi
+              :innate-ability "Begin with Mantenbo removed from the arena. Once per turn as an action, you may place Mantenbo in your space or remove it from the arena. Then, take another action."
+              :exceed-ability "When you set your attack, if Mantenbo is in your space, +1 Speed.\nOverdrive: You may place Mantenbo in any space or move into Mantenbo's Space."
+              :gauge-cost 3
+              :seasons {:season/name "Blazblue"}}
+
+ #:card {:name "Mantenbo"
+         :id :s5-mantenbo
+         :type :character
+         :description "While this is removed from the arena, your attacks have +0~1 Range and -1 Speed. As an action, you may move this 1 or 2 spaces. Hit: If this is in the opponent's space, you may remove this from the arena to gain +1 Power and Advantage."}
+
+ #:character {:name "Platinum the Trinity"
+              :id :s5-platinum
+              :innate-ability "Cleanup: You may reveal the top card of your deck. If it has a Continuous Boost, play that boost, then sustain it; otherwise, discard it."
+              :exceed-ability "Cleanup: You may reveal the top card of your deck. If it has a Continuous Boost, play that boost; otherwise, discard it. In either case, you may sustain one of your Continuous Boosts.\nOverdrive: If the discarded card has a Continuous Boost, play that boost."
+              :gauge-cost 3
+              :seasons {:season/name "Blazblue"}}
+
+ #:character {:name "Kokonoe Mercury"
+              :id :s5-kokonoe
+              :innate-ability "Begin with your Graviton out of play. Your Continuous Boosts have \"Now: You may place your Graviton in any space.\""
+              :exceed-ability "When you Exceed, place your Graviton in any space and take another action. When spending Gauge, you may generate Gauge by spending that much Force. You may invalidate your Ultras (even if you can afford them).\nOverdrive: You may place your Graviton in any space."
+              :gauge-cost 2
+              :seasons {:season/name "Blazblue"}}
+
+ #:card {:name "Graviton"
+         :id :s5-graviton
+         :type :character
+         :description "When you set your attack, you may spend 1 Force. If you do, your attacks have \"Before: Pull 1 toward this space; if the opponent is already in this space, instead Push or Pull 1.\" Cleanup: Remove this from the arena."}
+
+ #:character {:name "Nine the Phantom"
+              :id :s5-nine
+              :innate-ability "Begin with one of each Ultra and Special sealed. When you seal a card, first return a sealed card with the same printed Speed to your hand. Hit: If there is no sealed copy of your attack, you may add a card from your hand to your Gauge to gain \"Cleanup: Seal your attack.\""
+              :exceed-ability "When you seal a card, first return a sealed card with the same printed Speed to your hand. Cleanup: You may spend 1 Force to seal your attack.\nOverdrive: You may seal a card from your discard pile."
+              :gauge-cost 4
+              :seasons {:season/name "Blazblue"}}
+
+
  #:card {:name "Inferno Divider"
          :id :s5-inferno-divider
          :type :special
@@ -1374,4 +1413,954 @@
                                 :trigger :before}
                      #:ability {:description "If the opponent is at Range 1, Retreat 2 and Strike."
                                 :location :boost
-                                :trigger :now}]}]
+                                :trigger :now}]}
+
+#:card {:name "n to infinity"
+         :id :s5-n-to-infinity
+         :type :astral
+         :cost 3
+         :min-range 1
+         :max-range 1
+         :power 5
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Burst"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: Close 3."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "After: If the opponent is Stunned, deal 99 damage."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Draw 2. Seal this and take another action."
+                                :location :boost
+                                :trigger :now}]}
+
+#:card {:name "f of g"
+         :id :s5-f-of-g
+         :type :ultra
+         :cost 2
+         :min-range 3
+         :max-range 7
+         :power 3
+         :speed 3
+         :armor 0
+         :guard 3
+         :boost-name "Wall Teleport"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: Choose up to 3 cards from your discard pile and add them to your Overdrive."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "If you are at the edge of the arena, Advance up to 8."
+                                :location :boost
+                                :trigger :now}]}
+
+#:card {:name "f inverse"
+         :id :s5-f-inverse
+         :type :ultra
+         :cost 3
+         :min-range 2
+         :max-range 2
+         :power 4
+         :speed 7
+         :armor 0
+         :guard 0
+         :boost-name "Forbidden Knowledge"
+         :boost-type :instant
+         :boost-cost 1
+         :abilities [#:ability {:description "If this attack is invalid, +3 Armor."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit, Range 1: +2 Power."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "After: Push or Pull 1 or 2."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Look at the top 5 cards of your deck. Seal 1 face-down, add one to your Gauge, add one to your Overdrive, and return the rest in any order."
+                                :location :boost
+                                :trigger :now}]}
+
+#:card {:name "Disjoint Union"
+         :id :s5-disjoint-union
+         :type :special
+         :cost 0
+         :min-range 4
+         :max-range 4
+         :power 3
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Bell Bug"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "Before, Range 1: You may Push 3 or 4."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "After: If the opponent is Stunned, add the top card of your discard pile to your Overdrive."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Now: Strike."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "Hit: Draw 1, then add this to your Overdrive."
+                                :location :boost
+                                :trigger :hit}
+
+#:card {:name "f piecewise"
+         :id :s5-f-piecewise
+         :type :special
+         :cost 0
+         :min-range 0
+         :max-range 0
+         :power 6
+         :speed 2
+         :armor 0
+         :guard 6
+         :boost-name "Zero Vector"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "Before: Spend up to 3 Force for +2 Range each."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "After: Advance or Retreat 2."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Now: Name a card, then Strike. The named card is invalid for both players."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "After: Add this card to your Overdrive."
+                                :location :boost
+                                :trigger :after}]}
+
+#:card {:name "If p, then q"
+         :id :s5-if-p-then-q
+         :type :special
+         :cost 1
+         :min-range 1
+         :max-range 1
+         :power N/A
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Equals 0"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Attacks with higher Speed do not hit you."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Before: You may Advance 3."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "After: You may add this card to your Overdrive."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "-1 Speed. Attacks at Range X do not hit you. X is the number of cards in your Overdrive."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: Draw 1."
+                                :location :boost
+                                :trigger :now}]}
+
+#:card {:name "Permutation n, r"
+         :id :s5-permutation-n-r
+         :type :special
+         :cost 0
+         :min-range 7
+         :max-range 7
+         :power 5
+         :speed 3
+         :armor 1
+         :guard 5
+         :boost-name "A±B"
+         :boost-type :instant
+         :boost-cost 1
+         :abilities [#:ability {:description "Before: Spend up to 3 Force for -2 Range each."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: The opponent must discard a card at random. If they do, add it to your Overdrive."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Opponent chooses: They add a card from their hand to your Overdrive, or you look at their hand and the top card of their deck."
+                                :location :boost
+                                :trigger :now}]}
+
+#:card {:name "y, two-dash"
+         :id :s5-y-two-dash
+         :type :special
+         :cost 0
+         :min-range 2
+         :max-range 3
+         :power 4
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Irrationality"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: Advance 2 or 3. If you moved past the opponent this way, +2 Power."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Both players have +1 Range(minimum & maximum) and -1 Power."
+                                :location :boost
+                                :trigger :passive}]}
+
+#:card {:name "Sword of Destruction"
+         :id :s5-sword-of-destruction
+         :type :astral
+         :cost 3
+         :min-range 1
+         :max-range 1
+         :power 3
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Burst"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit, Range 1: +10 Power."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Draw 2. Seal this and take another action."
+                                :location :attack
+                                :trigger :before}]}
+
+#:card {:name "Legacy Edge"
+         :id :s5-legacy-edge
+         :type :ultra
+         :cost 3
+         :min-range 4
+         :max-range 8
+         :power 7
+         :speed 3
+         :armor 0
+         :guard 0
+         :boost-name "Counter Assault"
+         :boost-type :instant
+         :boost-cost 2
+         :abilities [#:ability {:description "Attacks at Range 5+ do not hit you."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: Gain Advantage, then Advance or Retreat up to 8."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "If the opponent is at Range 1, Push 3 and draw 2."
+                                :location :boost
+                                :trigger :now}]}
+
+#:card {:name "Calamity Sword"
+         :id :s5-calamity-sword
+         :description "\"Lay Waste.\""
+         :type :ultra
+         :cost 3
+         :min-range 2
+         :max-range 3
+         :power 6
+         :speed 7
+         :armor 0
+         :guard 0
+         :boost-name "Broken Weapon"
+         :boost-type :instant
+         :boost-cost 2
+         :abilities [#:ability {:description "Shuffle your hand into your deck. Draw 5."
+                                :location :boost
+                                :trigger :now}]}
+
+#:card {:name "Sickle Storm"
+         :id :s5-sickle-storm
+         :type :special
+         :cost 0
+         :min-range 2
+         :max-range 4
+         :power 4
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Alter Space"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: If you are at Range 5+, gain Advantage. Otherwise, Push or Pull 2."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+1 Speed."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Hit: You may Push or Pull 1."
+                                :location :boost
+                                :trigger :hit}]}
+
+#:card {:name "Spike Chaser"
+         :id :s5-spike-chaser
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 5
+         :speed 3
+         :armor 0
+         :guard 0
+         :boost-name "Luminous Slave"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: Spend up to 3 Force for +0-1 Range each."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "After: Retreat 2."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "-2-0 Range."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: Draw 1."
+                                :location :boost
+                                :trigger :now}]}
+
+#:card {:name "Supra Rage"
+         :id :s5-supra-rage
+         :type :special
+         :cost 0
+         :min-range 2
+         :max-range 3
+         :power 3
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Air Dash"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: You may Retreat 1."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: Push 1."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Advance or Retreat 3."
+                                :location :boost
+                                :trigger :now}]}
+
+#:card {:name "Sword Dance"
+         :id :s5-sword-dance
+         :type :special
+         :cost 0
+         :min-range 2
+         :max-range 2
+         :power 3
+         :speed 4
+         :armor 0
+         :guard 4
+         :boost-name "Gravity Seed"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "Before: Draw 2."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: Spend up to 4 Force for +1 Power each."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: You may add this card to your Overdrive."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Opponents cannot Advance or Retreat."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "At the start of your next turn, add this card to your Gauge."
+                                :location :boost
+                                :trigger :passive}]}
+
+#:card {:name "Sword Summoner"
+         :id :s5-sword-summoner
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 2
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Aerial Backflip"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit, Range 4+: +3 Power."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: If the opponent is Stunned, draw 1."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Retreat 2. If you are at Range 4 or 5, Strike."
+                                :location :boost
+                                :trigger :now}]}
+
+#:card {:name "Nine Gates of Heaven"
+         :id :s5-nine-gates-of-heaven
+         :type :astral
+         :cost 4
+         :min-range 1
+         :max-range 1
+         :power 3
+         :speed 7
+         :armor 0
+         :guard 0
+         :boost-name "Burst"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: Advance 3. Then, if Matenbo is in your space, +6 Power."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Draw 2. Seal this and take another action."
+                                :location :boost
+                                :trigger :now}]}
+
+#:card {:name "Thirteen Orphans"
+         :id :s5-thirteen-orphans
+         :type :ultra
+         :cost 3
+         :min-range 0
+         :max-range 1
+         :power 6
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Lao Jiu"
+         :boost-type :instant
+         :boost-cost 1
+         :abilities [#:ability {:description "Calculate Range from Matenbo. Does not hit if Matenbo is not in the arena."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: Push or Pull 1."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Seal your hand, draw 5, and Strike."
+                                :location :boost
+                                :trigger :now}]}
+
+#:card {:name "All Green"
+         :id :s5-all-green
+         :type :ultra
+         :cost 2
+         :min-range 3
+         :max-range 3
+         :power 5
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Additional Backstep"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit, Exceed mode: +2 Power."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Retreat 1 or 2, then Strike."
+                                :location :boost
+                                :trigger :now}]}
+
+#:card {:name "Four Winds"
+         :id :s5-four-winds
+         :type :special
+         :cost 1
+         :min-range 0
+         :max-range 1
+         :power 3
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Straight Through"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Calculate Range from Matenbo. Does not hit if Matenbo is not in the arena."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: Push or Pull 1, then Draw 1."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+4 Guard."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: Remove Matenbo from the arena, then Strike."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "Hit: Push 1 or 2."
+                                :location :boost
+                                :trigger :hit}]}
+
+#:card {:name "Reach: Robbing the Kong"
+         :id :s5-reach-robbing-the-kong
+         :type :special
+         :cost 1
+         :min-range 1
+         :max-range 1
+         :power 4
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Reach: Kong on Kong"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: If Matenbo is in an unoccupied space, Advance or Retreat to its space and remove it from the arena. Otherwise, +2 Power."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "After: Place Matenbo in the opponent’s space."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "If Matenbo is in your space, Advance 2 and Strike."
+                                :location :boost
+                                :trigger :now}]}
+
+#:card {:name "Tsubame Gaeshi"
+         :id :s5-tsubame-gaeshi
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 3
+         :speed 7
+         :armor 0
+         :guard 0
+         :boost-name "Three Dragons"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "If the opponent initiated this Strike, +4 Guard and you cannot be Pushed or Pulled."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: Push 2."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: If this attack hit, place Matenbo in the opponent’s space."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Now: Draw 1."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "Hit: Spend up to 3 Force for +1 Power each."
+                                :location :boost
+                                :trigger :hit}]}
+
+#:card {:name "Unarmed Lunge"
+         :id :s5-unarmed-lunge
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 5
+         :speed 3
+         :armor 1
+         :guard 5
+         :boost-name "Kote Gaeshi"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Ignore Armor."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Before: If the opponent is between you and Matenbo, Close 3."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: Advance 4."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Move Matenbo up to 3 spaces. Take another action."
+                                :location :boost
+                                :trigger :now}]}
+
+#:card {:name "Renchan"
+         :id :s5-renchan
+         :type :special
+         :cost 1
+         :min-range 2
+         :max-range 3
+         :power 4
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Reach: Last Chance"
+         :boost-type :instant
+         :boost-cost 1
+         :abilities [#:ability {:description "After: Place Matenbo in a space within this attack’s Range(in either direction)."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "If Matenbo is in an unoccupied space, move into its space and Strike."
+                                :location :boost
+                                :trigger :now}]}
+
+#:card {:name "Shining Layered Force"
+         :id :s5-shining-layered-force
+         :type :astral
+         :cost 4
+         :min-range 2
+         :max-range 2
+         :power 9
+         :speed 5
+         :armor 3
+         :guard 0
+         :boost-name "Burst"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: Push or Pull 2."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: Push 8."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Draw 2. Seal this and take another action."
+                                :location :boost
+                                :trigger :now}]}
+
+#:card {:name "Miracle Jeanne"
+         :id :s5-miracle-jeanne
+         :type :ultra
+         :cost 4
+         :min-range 2
+         :max-range 3
+         :power 3
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Piko Hammer"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: You may play up to 2 Continuous Boosts from your discard pile."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "After: Sustain all your Boosts."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "+2 Armor."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Hit: If the opponent has 3 or more Guard, +2 Power. Otherwise, -1 Power."
+                                :location :boost
+                                :trigger :hit}]}
+
+#:card {:name "Cure Dot Typhoon"
+         :id :s5-cure-dot-typhoon
+         :type :ultra
+         :cost 2
+         :min-range 1
+         :max-range 1
+         :power 4
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Magical Cat Hammer"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: Advance 1 or 2."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "After: You may place a card from your discard pile on top of your Deck."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "+1-2 Range and +1 Speed."
+                                :location :boost
+                                :trigger :passive}]}
+
+#:card {:name "Dramatic Sammy"
+         :id :s5-dramatic-sammy
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 4
+         :speed 2
+         :armor 0
+         :guard 0
+         :boost-name "Magical Bomb"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Ignore Armor, Ignore Guard."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Before: Advance 1 or 2."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: Gain Advantage. You may sustain one of your Continuous Boosts."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Hit, Range 2: +2 Power."
+                                :location :boost
+                                :trigger :hit}]}
+
+#:card {:name "Dream Sally"
+         :id :s5-dream-sally
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 5
+         :power 3
+         :speed 1
+         :armor 0
+         :guard 5
+         :boost-name "Magical Boomerang"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: If the opponent moved or was moved during this Strike, +2 Power."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: Draw 1, then return your attack to the top of the deck."
+                                :location :boost
+                                :trigger :after}]}
+
+#:card {:name "Happy Magicka"
+         :id :s5-happy-magicka
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 3
+         :power 3
+         :speed 1
+         :armor 2
+         :guard 4
+         :boost-name "Magical Missile"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: If you were hit, the opponent must discard a card at random."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+2 Speed."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Before: Retreat 2."
+                                :location :boost
+                                :trigger :before}]}
+
+#:card {:name "Mami Circular"
+         :id :s5-mami-circular
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 4
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Magical Bat"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: Advance 3. If you Advanced past the opponent, Ignore Armor."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "-1 Speed and +5 Guard."
+                                :location :boost
+                                :trigger :passive}]}
+
+#:card {:name "Mystique Momo"
+         :id :s5-mystique-momo
+         :type :special
+         :cost 0
+         :min-range 2
+         :max-range 5
+         :power 2
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Magical Do-Re-Mi Box"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: You may discard one of your Continuous Boosts from play to gain +2 Power."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Before: Pull 2."
+                                :location :boost
+                                :trigger :before}]}
+
+#:card {:name "Ultimate Impact"
+         :id :s5-ultimate-impact
+         :type :astral
+         :cost 4
+         :min-range 1
+         :max-range 1
+         :power 7
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Burst"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "If this attack is invalid, add it to your Gauge."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: Push 3. Then, if the opponent is at Range 4, draw any number of cards."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Draw 2. Seal this and take another action."
+                                :location :boost
+                                :trigger :now}]}
+
+#:card {:name "Flaming Belobog v2.73"
+         :id :s5-flaming-belabog
+         :type :ultra
+         :cost 2
+         :min-range 1
+         :max-range 4
+         :power 5
+         :speed 2
+         :armor 2
+         :guard 4
+         :boost-name "Jamming Dark v1.65"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit, Range 3+: You may return up to 2 cards from your discard pile to your hand."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After, Range 4: You may play a non-EX attack from your hand(paying all costs)."
+                                :location :boost
+                                :trigger :after}]}
+
+#:card {:name "Dreadnought Exterminator"
+         :id :s5-dreadnought-exterminator
+         :type :ultra
+         :cost 4*
+         :min-range 4
+         :max-range 8
+         :power 7
+         :speed 3
+         :armor 0
+         :guard 5
+         :boost-name "Reckless Upgrades"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "If you are in Exceed mode, this attack’s Gauge cost is increased by 4, and it has +7 Power."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: Spend up to 4 Force for +1 Power each."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "The opponent has +3 Power."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: Add the top three cards of your discard pile to your Gauge."
+                                :location :boost
+                                :trigger :now}]}
+
+#:card {:name "Absolute Zero v4.32"
+         :id :s5-absolute-zero
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 2
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Grappling Hook"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: The opponent must discard a card at random. Then, if you have 2 or more Gauge, you must spend 2 Gauge. If you do, +3 Power and Push 2."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+2 Range."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: Strike."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "Hit: Pull 2 and draw 1."
+                                :location :boost
+                                :trigger :hit}]}
+
+#:card {:name "Banishing Rays v3.10"
+         :id :s5-banishing-rays
+         :type :special
+         :cost 0
+         :min-range 3
+         :max-range 3
+         :power 3
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Planar Haze v1.24"
+         :boost-type :instant
+         :boost-cost 1
+         :abilities [#:ability {:description "If Graviton is in play, +2 Speed."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "After: Advance or Retreat 1."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "If the Graviton is in an unoccupied space, Move into its space and take another action. Otherwise, Advance 4 or 5."
+                                :location :boost
+                                :trigger :now}]}
+
+#:card {:name "Broken Bunker Assault v2.21"
+         :id :s5-broken-bunker-assault
+         :type :special
+         :cost 1
+         :min-range 1
+         :max-range 1
+         :power 5
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Impact Hammer"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "If Graviton is in play, -2 Speed."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Before: Close 2."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: If Graviton is in your space, +2 Power."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+2 Armor."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Hit: Spend up to 2 Gauge. For each Gauge spent, +1 Power and Push 1."
+                                :location :boost
+                                :trigger :hit}]}
+
+#:card {:name "Flame Cage v1.43"
+         :id :s5-flame-cage
+         :type :special
+         :cost 0
+         :min-range 2
+         :max-range 5
+         :power 3
+         :speed 3
+         :armor 1
+         :guard 3
+         :boost-name "Overtime"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit, Range 4+: +2 Power."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: Push or Pull 1."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Now: Draw 4."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "At the start of your turn, add this to your Gauge and discard 3 cards."
+                                :location :boost
+                                :trigger :passive}]}
+
+#:card {:name "Solid Wheel v3.37"
+         :id :s5-solid-wheel
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 4
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Timed Explosives"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "Before: Advance 4. If you enter Graviton’s space during this movement, end your movement in its space and gain Advantage."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "+2 Power."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "After: Add this to your Gauge."
+                                :location :boost
+                                :trigger :after}]}
+
+
+
+
+]

@@ -540,4 +540,49 @@
                 :s5-double-paw-strike 2
                 :s5-kitty-litter-special 2
                 :s5-slashy-slashy 2
-                :s5-trick-edge 2)])
+                :s5-trick-edge 2)
+   (create-deck "Arakune" :s5-arakune
+                :s5-n-to-infinity 1
+                :s5-f-of-g 2
+                :s5-f-inverse 2
+                :s5-disjoint-union 2
+                :s5-f-piecewise 2
+                :s5-if-p-then-q 2
+                :s5-permutation-n-r 2
+                :s5-y-two-dash 2)
+   (create-deck "Nu-13" :s5-nu-13
+                :s5-sword-of-destruction 1
+                :s5-legacy-edge 2
+                :s5-calamity-sword 2
+                :s5-sickle-sword 2
+                :s5-spike-chaser 2
+                :s5-supra-rage 2
+                :s5-sword-dance 2
+                :s5-sword-summoner 2)
+   (create-deck "Litchi Faye-Ling" :s5-litchi
+                :s5-renchan 2
+                :s5-unarmed-lunge 2
+                :s5-tsubame-gaeshi 2
+                :s5-reach-robbing-the-kong 2
+                :s5-four-winds 2
+                :s5-all-green 2
+                :s5-thirteen-orphans 2
+                :s5-nine-gates-of-heaven 1)
+   (create-deck "Platinum the Trinity" :s5-platinum
+                :s5-shining-layered-force 1
+                :s5-miracle-jeanne 2
+                :s5-cure-dot-typhoon 2
+                :s5-dramatic-sammy 2
+                :s5-dream-sally 2
+                :s5-happy-magicka 2
+                :s5-mami-circular 2
+                :s5-mystique-momo 2)
+   (create-deck "Kokonoe Mercury" :s5-mercury
+                :s5-ultimate-impact 1
+                :s5-flaming-belabog 2
+                :s5-dreadnought-exterminator 2
+                :s5-absolute-zero 2
+                :s5-banishing-rays 2
+                :s5-broken-bunker-assault 2
+                :s5-flame-cage 2
+                :s5-solid-wheel 2)])
