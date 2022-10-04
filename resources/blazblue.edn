@@ -109,7 +109,6 @@
               :gauge-cost 4
               :seasons {:season/name "Blazblue"}}
 
-
  #:card {:name "Inferno Divider"
          :id :s5-inferno-divider
          :type :special
@@ -1415,7 +1414,7 @@
                                 :location :boost
                                 :trigger :now}]}
 
-#:card {:name "n to infinity"
+ #:card {:name "n to infinity"
          :id :s5-n-to-infinity
          :type :astral
          :cost 3
@@ -1438,7 +1437,7 @@
                                 :location :boost
                                 :trigger :now}]}
 
-#:card {:name "f of g"
+ #:card {:name "f of g"
          :id :s5-f-of-g
          :type :ultra
          :cost 2
@@ -1458,7 +1457,7 @@
                                 :location :boost
                                 :trigger :now}]}
 
-#:card {:name "f inverse"
+ #:card {:name "f inverse"
          :id :s5-f-inverse
          :type :ultra
          :cost 3
@@ -1484,7 +1483,7 @@
                                 :location :boost
                                 :trigger :now}]}
 
-#:card {:name "Disjoint Union"
+ #:card {:name "Disjoint Union"
          :id :s5-disjoint-union
          :type :special
          :cost 0
@@ -1508,9 +1507,9 @@
                                 :trigger :now}
                      #:ability {:description "Hit: Draw 1, then add this to your Overdrive."
                                 :location :boost
-                                :trigger :hit}
+                                :trigger :hit}]}
 
-#:card {:name "f piecewise"
+ #:card {:name "f piecewise"
          :id :s5-f-piecewise
          :type :special
          :cost 0
@@ -1536,13 +1535,13 @@
                                 :location :boost
                                 :trigger :after}]}
 
-#:card {:name "If p, then q"
+ #:card {:name "If p, then q"
          :id :s5-if-p-then-q
          :type :special
          :cost 1
          :min-range 1
          :max-range 1
-         :power N/A
+         :power -2
          :speed 5
          :armor 0
          :guard 0
@@ -1565,7 +1564,7 @@
                                 :location :boost
                                 :trigger :now}]}
 
-#:card {:name "Permutation n, r"
+ #:card {:name "Permutation n, r"
          :id :s5-permutation-n-r
          :type :special
          :cost 0
@@ -1588,7 +1587,7 @@
                                 :location :boost
                                 :trigger :now}]}
 
-#:card {:name "y, two-dash"
+ #:card {:name "y, two-dash"
          :id :s5-y-two-dash
          :type :special
          :cost 0
@@ -1608,7 +1607,7 @@
                                 :location :boost
                                 :trigger :passive}]}
 
-#:card {:name "Sword of Destruction"
+ #:card {:name "Sword of Destruction"
          :id :s5-sword-of-destruction
          :type :astral
          :cost 3
@@ -1628,7 +1627,7 @@
                                 :location :attack
                                 :trigger :before}]}
 
-#:card {:name "Legacy Edge"
+ #:card {:name "Legacy Edge"
          :id :s5-legacy-edge
          :type :ultra
          :cost 3
@@ -1651,7 +1650,7 @@
                                 :location :boost
                                 :trigger :now}]}
 
-#:card {:name "Calamity Sword"
+ #:card {:name "Calamity Sword"
          :id :s5-calamity-sword
          :description "\"Lay Waste.\""
          :type :ultra
@@ -1669,7 +1668,7 @@
                                 :location :boost
                                 :trigger :now}]}
 
-#:card {:name "Sickle Storm"
+ #:card {:name "Sickle Storm"
          :id :s5-sickle-storm
          :type :special
          :cost 0
@@ -1692,7 +1691,7 @@
                                 :location :boost
                                 :trigger :hit}]}
 
-#:card {:name "Spike Chaser"
+ #:card {:name "Spike Chaser"
          :id :s5-spike-chaser
          :type :special
          :cost 0
@@ -1718,7 +1717,7 @@
                                 :location :boost
                                 :trigger :now}]}
 
-#:card {:name "Supra Rage"
+ #:card {:name "Supra Rage"
          :id :s5-supra-rage
          :type :special
          :cost 0
@@ -1741,7 +1740,7 @@
                                 :location :boost
                                 :trigger :now}]}
 
-#:card {:name "Sword Dance"
+ #:card {:name "Sword Dance"
          :id :s5-sword-dance
          :type :special
          :cost 0
@@ -1770,7 +1769,7 @@
                                 :location :boost
                                 :trigger :passive}]}
 
-#:card {:name "Sword Summoner"
+ #:card {:name "Sword Summoner"
          :id :s5-sword-summoner
          :type :special
          :cost 0
@@ -1793,7 +1792,7 @@
                                 :location :boost
                                 :trigger :now}]}
 
-#:card {:name "Nine Gates of Heaven"
+ #:card {:name "Nine Gates of Heaven"
          :id :s5-nine-gates-of-heaven
          :type :astral
          :cost 4
@@ -1813,7 +1812,7 @@
                                 :location :boost
                                 :trigger :now}]}
 
-#:card {:name "Thirteen Orphans"
+ #:card {:name "Thirteen Orphans"
          :id :s5-thirteen-orphans
          :type :ultra
          :cost 3
@@ -1836,7 +1835,7 @@
                                 :location :boost
                                 :trigger :now}]}
 
-#:card {:name "All Green"
+ #:card {:name "All Green"
          :id :s5-all-green
          :type :ultra
          :cost 2
@@ -1856,7 +1855,7 @@
                                 :location :boost
                                 :trigger :now}]}
 
-#:card {:name "Four Winds"
+ #:card {:name "Four Winds"
          :id :s5-four-winds
          :type :special
          :cost 1
@@ -1885,7 +1884,7 @@
                                 :location :boost
                                 :trigger :hit}]}
 
-#:card {:name "Reach: Robbing the Kong"
+ #:card {:name "Reach: Robbing the Kong"
          :id :s5-reach-robbing-the-kong
          :type :special
          :cost 1
@@ -1908,7 +1907,7 @@
                                 :location :boost
                                 :trigger :now}]}
 
-#:card {:name "Tsubame Gaeshi"
+ #:card {:name "Tsubame Gaeshi"
          :id :s5-tsubame-gaeshi
          :type :special
          :cost 0
@@ -1937,7 +1936,7 @@
                                 :location :boost
                                 :trigger :hit}]}
 
-#:card {:name "Unarmed Lunge"
+ #:card {:name "Unarmed Lunge"
          :id :s5-unarmed-lunge
          :type :special
          :cost 0
@@ -1963,7 +1962,7 @@
                                 :location :boost
                                 :trigger :now}]}
 
-#:card {:name "Renchan"
+ #:card {:name "Renchan"
          :id :s5-renchan
          :type :special
          :cost 1
@@ -1983,7 +1982,7 @@
                                 :location :boost
                                 :trigger :now}]}
 
-#:card {:name "Shining Layered Force"
+ #:card {:name "Shining Layered Force"
          :id :s5-shining-layered-force
          :type :astral
          :cost 4
@@ -2006,7 +2005,7 @@
                                 :location :boost
                                 :trigger :now}]}
 
-#:card {:name "Miracle Jeanne"
+ #:card {:name "Miracle Jeanne"
          :id :s5-miracle-jeanne
          :type :ultra
          :cost 4
@@ -2032,7 +2031,7 @@
                                 :location :boost
                                 :trigger :hit}]}
 
-#:card {:name "Cure Dot Typhoon"
+ #:card {:name "Cure Dot Typhoon"
          :id :s5-cure-dot-typhoon
          :type :ultra
          :cost 2
@@ -2055,7 +2054,7 @@
                                 :location :boost
                                 :trigger :passive}]}
 
-#:card {:name "Dramatic Sammy"
+ #:card {:name "Dramatic Sammy"
          :id :s5-dramatic-sammy
          :type :special
          :cost 0
@@ -2081,7 +2080,7 @@
                                 :location :boost
                                 :trigger :hit}]}
 
-#:card {:name "Dream Sally"
+ #:card {:name "Dream Sally"
          :id :s5-dream-sally
          :type :special
          :cost 0
@@ -2101,7 +2100,7 @@
                                 :location :boost
                                 :trigger :after}]}
 
-#:card {:name "Happy Magicka"
+ #:card {:name "Happy Magicka"
          :id :s5-happy-magicka
          :type :special
          :cost 0
@@ -2124,7 +2123,7 @@
                                 :location :boost
                                 :trigger :before}]}
 
-#:card {:name "Mami Circular"
+ #:card {:name "Mami Circular"
          :id :s5-mami-circular
          :type :special
          :cost 0
@@ -2144,7 +2143,7 @@
                                 :location :boost
                                 :trigger :passive}]}
 
-#:card {:name "Mystique Momo"
+ #:card {:name "Mystique Momo"
          :id :s5-mystique-momo
          :type :special
          :cost 0
@@ -2164,7 +2163,7 @@
                                 :location :boost
                                 :trigger :before}]}
 
-#:card {:name "Ultimate Impact"
+ #:card {:name "Ultimate Impact"
          :id :s5-ultimate-impact
          :type :astral
          :cost 4
@@ -2187,7 +2186,7 @@
                                 :location :boost
                                 :trigger :now}]}
 
-#:card {:name "Flaming Belobog v2.73"
+ #:card {:name "Flaming Belobog v2.73"
          :id :s5-flaming-belabog
          :type :ultra
          :cost 2
@@ -2207,10 +2206,10 @@
                                 :location :boost
                                 :trigger :after}]}
 
-#:card {:name "Dreadnought Exterminator"
+ #:card {:name "Dreadnought Exterminator"
          :id :s5-dreadnought-exterminator
          :type :ultra
-         :cost 4*
+         :cost 4
          :min-range 4
          :max-range 8
          :power 7
@@ -2233,7 +2232,7 @@
                                 :location :boost
                                 :trigger :now}]}
 
-#:card {:name "Absolute Zero v4.32"
+ #:card {:name "Absolute Zero v4.32"
          :id :s5-absolute-zero
          :type :special
          :cost 0
@@ -2259,7 +2258,7 @@
                                 :location :boost
                                 :trigger :hit}]}
 
-#:card {:name "Banishing Rays v3.10"
+ #:card {:name "Banishing Rays v3.10"
          :id :s5-banishing-rays
          :type :special
          :cost 0
@@ -2282,7 +2281,7 @@
                                 :location :boost
                                 :trigger :now}]}
 
-#:card {:name "Broken Bunker Assault v2.21"
+ #:card {:name "Broken Bunker Assault v2.21"
          :id :s5-broken-bunker-assault
          :type :special
          :cost 1
@@ -2311,7 +2310,7 @@
                                 :location :boost
                                 :trigger :hit}]}
 
-#:card {:name "Flame Cage v1.43"
+ #:card {:name "Flame Cage v1.43"
          :id :s5-flame-cage
          :type :special
          :cost 0
@@ -2337,7 +2336,7 @@
                                 :location :boost
                                 :trigger :passive}]}
 
-#:card {:name "Solid Wheel v3.37"
+ #:card {:name "Solid Wheel v3.37"
          :id :s5-solid-wheel
          :type :special
          :cost 0
@@ -2358,9 +2357,4 @@
                                 :trigger :passive}
                      #:ability {:description "After: Add this to your Gauge."
                                 :location :boost
-                                :trigger :after}]}
-
-
-
-
-]
+                                :trigger :after}]}]
