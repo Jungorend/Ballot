@@ -577,7 +577,7 @@
                 :s5-happy-magicka 2
                 :s5-mami-circular 2
                 :s5-mystique-momo 2)
-   (create-deck "Kokonoe Mercury" :s5-mercury
+   (create-deck "Kokonoe Mercury" :s5-kokonoe
                 :s5-ultimate-impact 1
                 :s5-flaming-belabog 2
                 :s5-dreadnought-exterminator 2
