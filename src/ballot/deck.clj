@@ -554,7 +554,7 @@
                 :s5-sword-of-destruction 1
                 :s5-legacy-edge 2
                 :s5-calamity-sword 2
-                :s5-sickle-sword 2
+                :s5-sickle-storm 2
                 :s5-spike-chaser 2
                 :s5-supra-rage 2
                 :s5-sword-dance 2

@@ -267,10 +267,10 @@
         character (:deck/character deck)
         cards (frequencies (map #(:card-instance/card %) (:deck/cards deck)))
         sorted-cards (sort-by #(case (:card/type (first %))
-                                 :astral 5
-                                 :normal 4
-                                 :special 3
-                                 :ultra 2
+                                 :normal 5
+                                 :special 4
+                                 :ultra 3
+                                 :astral 2
                                  :character 1
                                  0)
                               (into [] cards))]
