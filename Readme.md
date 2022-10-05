@@ -1,4 +1,5 @@
 # Ballot
 
-## Setup
-Need to set environment variables for thes API tokens
+Currently handles the LFG queue, some helpful links, and a card database.
+
+More documentation incoming now that this is being made public.
