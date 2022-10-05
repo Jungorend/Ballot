@@ -77,7 +77,95 @@
                 :s1-hair-trigger 2
                 :s1-mug-shot 2
                 :s1-magic-bullet 2
-                :s1-wild-bunch 2)])
+                :s1-wild-bunch 2)
+   (create-deck "Satoshi" :s1-satoshi
+                :s1-demon-slayer-slash 2
+                :s1-paralyzing-dart 2
+                :s1-sealing-strike 2
+                :s1-shuriken-illusion 2
+                :s1-yokai-fury 2
+                :s1-jingoku-banishment 2
+                :s1-paralyzing-dart 2)
+   (create-deck "Morathi" :s1-morathi
+                :s1-gyro-chain-gash 2
+                :s1-ivory-ghost-charge 2
+                :s1-ivory-ghost-impalement 2
+                :s1-neck-snapper 2
+                :s1-revenger 2
+                :s1-god-of-war 2
+                :s1-shadow-of-death 2)
+   (create-deck "Baelkhor" :s1-baelkhor
+                :s1-accursed-gaze 2
+                :s1-blade-of-souls 2
+                :s1-desperate-might 2
+                :s1-soul-ripper 2
+                :s1-storm-of-souls 2
+                :s1-desperate-gambit 2
+                :s1-from-hell 2)
+   (create-deck "Mei Lien" :s1-mei-lien
+                :s1-dragon-thrash 2
+                :s1-fujin-drum 2
+                :s1-halberdier 2
+                :s1-raijin-knife 2
+                :s1-dragon-tempest 2
+                :s1-raijin-oath 2
+                :s1-cloud-rider 2)
+   (create-deck "Zoey" :s1-zoey
+                :s1-tsunami-slicer 2
+                :s1-neo-cosmic-flare 2
+                :s1-sure-you-can 2
+                :s1-maori-defender 2
+                :s1-gut-shot 2
+                :s1-gale-blade 2
+                :s1-focus-charge 2)
+   (create-deck "Super Skull Man 33" :s1-skullman
+                :s1-zing-zing-zing 2
+                :s1-kaplow 2
+                :s1-zaaaap 2
+                :s1-splam 2
+                :s1-slam-evil 2
+                :s1-bing-bong 2
+                :s1-bang-bang-bang 2)
+   (create-deck "Devris" :s1-devris
+                :s1-firestream 2
+                :s1-demonblood 2
+                :s1-summoned-assailants 2
+                :s1-phantasmal-might 2
+                :s1-marked-for-death 2
+                :s1-drain-life 2
+                :s1-combustion 2)
+   (create-deck "Juno" :s1-juno
+                :s1-meteor-jam 2
+                :s1-juno-live 2
+                :s1-technic-beat 2
+                :s1-star-struck 2
+                :s1-sonic-comet 2
+                :s1-rhythm-beat 2
+                :s1-comet-tail 2)
+   (create-deck "Gabrek" :s1-gabrek
+                :s1-death-valley-face-plant 2
+                :s1-13th-story-oblivion 2
+                :s1-shrug-off 2
+                :s1-rolling-ankle-grab 2
+                :s1-perilous-descent 2
+                :s1-lunar-launcher 2
+                :s1-choke-hold 2)
+   (create-deck "Ulrik" :s1-ulrik
+                :s1-second-strike 2
+                :s1-atomic-bolt 2
+                :s1-lightning-javelin 2
+                :s1-ionization 2
+                :s1-inevitability 2
+                :s1-blitz-hammer 2
+                :s1-100-million-volts 2)
+   (create-deck "Alice" :s1-alice
+                :s1-surprise-punishment 2
+                :s1-cross-blades 2
+                :s1-sword-and-cross 2
+                :s1-soul-gazer 2
+                :s1-guardian-slasher 2
+                :s1-dark-corruption 2
+                :s1-bloody-baptism 2)])
 
 (def s2-decks
   [(create-deck "Renea" :s2-renea
