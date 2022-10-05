@@ -652,4 +652,32 @@
                 :s5-kunzite-of-keep-breaker 2
                 :s5-amethyst-of-annihilation 2
                 :s5-navy-pressure 2
-                :s5-flame-punisher 2)])
+                :s5-flame-punisher 2)
+   (create-deck "Bang Shishigami" :s5-bang
+                :s5-VOID-TEMPEST-KICK 2
+                :s5-UNSTOPPABLE-PALM-THRUST 2
+                :s5-PULVERIZING-BLAST-JUTSU 2
+                :s5-BANG-STYLE-SHURIKEN 2
+                :s5-EXODIA-OBLITERATE 2
+                :s5-FATAL-ERUPTION 2
+                :s5-INFINITE-CHAOS-FIST-OF-THE-VOID 2
+                :s5-THE-ULTIMATE-BANG 1)
+   (create-deck "Hakumen" :s5-hakumen
+                :s5-akumetsu 1
+                :s5-kokuujin-yukikaze 2
+                :s5-kokuujin-shippu 2
+                :s5-enma 2
+                :s5-guren 2
+                :s5-renka 2
+                :s5-yanagi 2
+                :s5-zentetsu 2)
+   (create-deck "Carl Clover" :s5-carl-clover
+                :s5-nirvana 1
+                :s5-deus-ex-machina 1
+                :s5-rhapsody-of-memories 2
+                :s5-laetabilis-cantato 2
+                :s5-cantabile 2
+                :s5-con-anima 2
+                :s5-con-brio 2
+                :s5-con-fuoco 2
+                :s5-volante 2)])

@@ -195,11 +195,11 @@
   [db]
   (let [r (fn [x] (edn/read-string (slurp (str "resources/" x ".edn"))))]
     (dorun (map #(d/transact db %) [schema entries
-                                     (r "normals")
-                                     (r "redhorizon")
-                                     (r "seventh_cross")
-                                     (r "undernight")
-                                     (r "shovelknight")
+                                    (r "normals")
+                                    (r "redhorizon")
+                                    (r "seventh_cross")
+                                    (r "undernight")
+                                    (r "shovelknight")
                                     (r "blazblue")
                                     deck/s1-decks
                                     deck/s2-decks
@@ -217,7 +217,10 @@
     conn))
 
 (def cfg {:store {:backend :file :path "db"}})
-(def conn (d/connect cfg))
+
+(def conn (if (.exists (clojure.java.io/file "db"))
+            (d/connect cfg)
+            (create-new-db cfg)))
 
 (def state (atom nil))
 (def bot-id (atom nil))

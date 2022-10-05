@@ -109,6 +109,33 @@
               :gauge-cost 4
               :seasons {:season/name "Blazblue"}}
 
+ #:character {:name "Bang Shishigami"
+              :id :s5-bang
+              :innate-ability "As an action, you may look at the top 2 cards of your deck, then draw one and discard the other."
+              :exceed-ability "When you Exceed, Strike. Your EX Attacks have +1 Power.\nOverdrive: Return all copies of the discarded card from your discard pile to your hand."
+              :gauge-cost 4
+              :seasons {:season/name "Blazblue"}}
+
+ #:character {:name "Hakumen"
+              :id :s5-hakumen
+              :innate-ability "After drawing at the end of your turn, add the top card of your deck to your Gauge (face-up)."
+              :exceed-ability "When you Exceed, shuffle your discard pile into your deck. The Gauge Costs of your attacks are reduced to 0. When you would pay a Gauge Cost, spend 0 Gauge instead and still gain all benefits as if you had spent Gauge.\nOverdrive: Return a card from your Overdrive to your hand."
+              :gauge-cost 8
+              :seasons {:season/name "Blazblue"}}
+
+ #:character {:name "Carl Clover"
+              :id :s5-carl-clover
+              :innate-ability "Begin with Nirvana in your space. As an action, you may move Nirvana 1 space. (Movement effects on your cards apply to Carl, not Nirvana, unless otherwise stated.)"
+              :exceed-ability "When you Exceed, you may flip Nirvana. Nirvana cannot be flipped during Strikes. As an action, you may move Nirvana 1 space, then Strike.\nOverdrive: You may move Nirvana 1 space."
+              :gauge-cost 3
+              :seasons {:season/name "Blazblue"}}
+
+ #:card {:name "Nirvana"
+         :id :s5-nirvana
+         :type :character
+         :description "(Active) When you set your attack, if the opponent is in or between you and Nirvana's space, your Specials and Ultras gain +1 Power and +1 Speed. The opponent's attack has Before: If Nirvana is in your space or your Range, you may flip her. If you do, you cannot hit, but add this to your Gauge after the Strike."
+         :exceed-description "(Disabled): Nirvana cannot be moved, and attacks that calculate Range from Nirvana cannot hit. Cleanup: If Nirvana was not flipped during this Strike, you may flip Nirvana. (Characters can share Nirvana's space.)"}
+
  #:card {:name "Inferno Divider"
          :id :s5-inferno-divider
          :type :special
@@ -2589,5 +2616,587 @@
                                 :location :attack
                                 :trigger :after}
                      #:ability {:description "Add your hand to your Gauge. Draw 6."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "The Ultimate Bang"
+         :id :s5-THE-ULTIMATE-BANG
+         :type :astral
+         :cost 4
+         :min-range 3
+         :max-range 3
+         :power 2
+         :speed 1
+         :armor 0
+         :guard 30
+         :boost-name "Burst"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: Retreat up to 1."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: +1 Power for each card in your discard pile."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Draw 2. Seal this and take another action."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Infinite Chaos-Fist of the Void"
+         :id :s5-INFINITE-CHAOS-FIST-OF-THE-VOID
+         :type :ultra
+         :cost 2
+         :min-range 1
+         :max-range 1
+         :power 3
+         :speed 9
+         :armor 0
+         :guard 0
+         :boost-name "Beat a Nail With Your Hammer"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: You may add any card from your discard pile to your Gauge."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+1 Speed."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: Advance 2, then Strike."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "After, Exceed Mode: Return this card to your hand."
+                                :location :boost
+                                :trigger :after}]}
+
+ #:card {:name "Fatal Eruption"
+         :id :s5-FATAL-ERUPTION
+         :type :ultra
+         :cost 1
+         :min-range 1
+         :max-range 2
+         :power 5
+         :speed 5
+         :armor 0
+         :guard 4
+         :boost-name "Set Nail"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "Hit: Push 8, Close 4, and Draw 1."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Before: You may Advance or Retreat 2."
+                                :location :boost
+                                :trigger :before}]}
+
+ #:card {:name "Hyper Shadowstep Strike"
+         :id :s5-EXODIA-OBLITERATE
+         :type :ultra
+         :cost 8
+         :min-range 1
+         :max-range 1
+         :power 8
+         :speed 7
+         :armor 0
+         :guard 0
+         :boost-name "For Love and Justice!"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "If you have 4 differently-named Specials in your Overdrive, this attack’s Gauge cost is reduced to 0."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Before: Close 8, then Advance 1."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "+1 Power and +1 Speed."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: Strike."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Bang-Style Shuriken"
+         :id :s5-BANG-STYLE-SHURIKEN
+         :type :special
+         :cost 1
+         :min-range 1
+         :max-range 4
+         :power 1
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Instant Ninpo"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: Draw 1. Then, you may play a Boost from your hand, ignoring its cost(don’t Strike or take additional actions)."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Return a Continuous Boost from play to its owner’s hand. Draw 1 or take another action."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Pulverizing Blast Jutsu"
+         :id :s5-PULVERIZING-BLAST-JUTSU
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 5
+         :speed 2
+         :armor 1
+         :guard 5
+         :boost-name "Double Jump"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Advance 3."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "After: If you were hit, Advance or Retreat up to 2."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Advance 3. If you Advanced past the opponent this way, Advance or Retreat 1, then draw 1."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Unstoppable Palm Thrust"
+         :id :s5-UNSTOPPABLE-PALM-THRUST
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 4
+         :speed 5
+         :armor 0
+         :guard 4
+         :boost-name "Tempest Flying Squirrel Jutsu"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: Push 2 and gain Advantage."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: If the opponent is Stunned, you may Close 2."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Now: Draw 1."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "After: Advance or Retreat 1."
+                                :location :boost
+                                :trigger :after}]}
+
+ #:card {:name "Void Tempest Kick"
+         :id :s5-VOID-TEMPEST-KICK
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 4
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Larger Than Life"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Ignore Guard."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: The opponent must discard a card at random."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: Draw 1."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Hit: +1 Power and gain Advantage. Then, add this to your Gauge."
+                                :location :boost
+                                :trigger :hit}]}
+
+ #:card {:name "Akumetsu"
+         :id :s5-akumetsu
+         :type :astral
+         :cost 8
+         :min-range 1
+         :max-range 1
+         :power 10
+         :speed 0
+         :armor 0
+         :guard 0
+         :boost-name "Burst"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Opponents cannot move. Attacks at Range 1 do not hit you."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Cleanup: Seal this."
+                                :location :attack
+                                :trigger :cleanup}
+                     #:ability {:description "Draw 2. Seal this and take another action."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Kokuujin: Yukikaze"
+         :id :s5-kokuujin-yukikaze
+         :type :ultra
+         :cost 4
+         :min-range 1
+         :max-range 1
+         :power 0
+         :speed 2
+         :armor 0
+         :guard 0
+         :boost-name "Massive"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Stun Immunity. Your Life cannot be reduced below 1 during this Strike."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Before: If you were hit, +6 Power and Close 8."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: Advance 2."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+0-1 Range, +2 Armor, +2 Guard."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Kokuujin: Shippu"
+         :id :s5-kokuujin-shippu
+         :type :ultra
+         :cost 4
+         :min-range 1
+         :max-range 6
+         :power 4
+         :speed 1
+         :armor 2
+         :guard 5
+         :boost-name "Zanshin"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "Hit, Range 1-2: +4 Power."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Stun Immunity."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Before: If you were hit, +3 Power and add this to your Gauge."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Enma"
+         :id :s5-enma
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 4
+         :speed 6
+         :armor 0
+         :guard 3
+         :boost-name "Fuumajin"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: You must spend 1 Gauge(if able). If you do, Close 1."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Attacks at Range 4 or 5 do not hit you."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Cleanup: If the opponent is at Range 4 or 5, you may spend 1 Force to Sustain this."
+                                :location :boost
+                                :trigger :cleanup}]}
+
+ #:card {:name "Guren"
+         :id :s5-guren
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 4
+         :power 3
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Tsubaki"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: You must spend 1 Gauge(if able). If you do, Close 1 or 2 and gain Advantage."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Before: Spend up to 3 Gauge for +1 Power each."
+                                :location :boost
+                                :trigger :before}]}
+
+ #:card {:name "Renka"
+         :id :s5-renka
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 4
+         :speed 4
+         :armor 1
+         :guard 3
+         :boost-name "Reach"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "Hit: You must spend 1 Gauge(if able). If you do, Push 1 or 2."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+0-1 Range."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: Strike."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Yanagi"
+         :id :s5-yanagi
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 3
+         :speed 3
+         :armor 0
+         :guard 5
+         :boost-name "Agito"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: You must spend 1 Gauge(if able). If you do, Close 2."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: If you were hit, +2 Power."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Hit: Advance up to 1. The opponent must discard a card at random."
+                                :location :boost
+                                :trigger :hit}]}
+
+ #:card {:name "Zantetsu"
+         :id :s5-zantetsu
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 4
+         :speed 2
+         :armor 0
+         :guard 6
+         :boost-name "Kishuu"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: You must spend 1 Gauge(if able). If you do, Ignore Armor."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: You must spend 1 Gauge(if able). If you do, +3 Power."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "If you are at Range 3, Close 2 and Strike."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Deus Ex Machina"
+         :id :s5-deus-ex-machina
+         :type :astral
+         :cost 1
+         :min-range 0
+         :max-range 1
+         :power 10
+         :speed 0
+         :armor 4
+         :guard 0
+         :boost-name "Burst"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Stun Immunity. Calculate Range from Nirvana. Nirvana cannot be flipped."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "After: Seal Nirvana."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Draw 2. Seal this and take another action."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Rhapsody of Memories"
+         :id :s5-rhapsody-of-memories
+         :type :ultra
+         :cost 3
+         :min-range 0
+         :max-range 1
+         :power 5
+         :speed 4
+         :armor 0
+         :guard 5
+         :boost-name "Virtuoso"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "Calculate Range from Nirvana. Nirvana cannot be flipped."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: Draw 2."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: Advance or Retreat up to 2."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "+1 Power and +1 Speed."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Before: Move Nirvana up to 1 space."
+                                :location :boost
+                                :trigger :before}]}
+
+ #:card {:name "Laetabilis Cantato"
+         :id :s5-laetabilis-cantato
+         :type :ultra
+         :cost 2
+         :min-range 1
+         :max-range 2
+         :power 3
+         :speed 2
+         :armor 2
+         :guard 5
+         :boost-name "Duet"
+         :boost-type :continuous
+         :boost-cost 1
+         :abilities [#:ability {:description "Hit: Push 1."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: You may flip Nirvana or move her up to 3 spaces."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Now: Strike."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "Hit: If the opponent is in Nirvana’s space or between you and Nirvana, +3 Power."
+                                :location :boost
+                                :trigger :hit}]}
+
+ #:card {:name "Cantabile"
+         :id :s5-cantabile
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 3
+         :power 1
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "La Campanella"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit: Pull 1 or 2. If you initiated the Strike, draw 1 and gain Advantage."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: Move Nirvana up to 1 space."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Move Nirvana into your space. Take another action."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Con Anima"
+         :id :s5-con-anima
+         :type :special
+         :cost 0
+         :min-range 0
+         :max-range 1
+         :power 5
+         :speed 2
+         :armor 0
+         :guard 3
+         :boost-name "Fine Tuning"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Ignore Guard. Calculate Range from Nirvana."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: The opponent must discard 2 cards at random."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: If this attack did not hit, draw 2."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Now: Strike."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "Before: Move Nirvana up to 1 Space."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Con Brio"
+         :id :s5-con-brio
+         :type :special
+         :cost 1
+         :min-range 0
+         :max-range 1
+         :power 3
+         :speed 7
+         :armor 0
+         :guard 0
+         :boost-name "Hurry, Sis!"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Calculate Range from Nirvana."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: Push 2 away from Nirvana. Move the opponent either direction if they are on Nirvana."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "You may flip Nirvana or move her 1 space. Take another action."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Con Fuoco"
+         :id :s5-con-fuoco
+         :type :special
+         :cost 1
+         :min-range 1
+         :max-range 2
+         :power 6
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Vivace"
+         :boost-type :instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Calculate Range from Nirvana."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Before: You may spend 1 Force to move Nirvana 1 or 2 spaces."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: Close 2 and gain Advantage."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Advance 1 or 2. If you Advanced past the opponent, Strike."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Volante"
+         :id :s5-volante
+         :type :special
+         :cost 0
+         :min-range 3
+         :max-range 8
+         :power 3
+         :speed 1
+         :armor 1
+         :guard 6
+         :boost-name "Allegretto"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Calculate Range from Nirvana."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: If the opponent is at Range 1 from Carl, +2 Power and gain Advantage."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: Advance 1 or 2."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "+1 Speed."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "After: Advance or Retreat 1."
                                 :location :boost
                                 :trigger :now}]}]
