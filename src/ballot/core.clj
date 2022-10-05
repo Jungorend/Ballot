@@ -93,14 +93,6 @@
 ;; TODO: Have a mechanics: explanation
 ;; TODO: Have characters display gauge cost amount
 
-(def redhorizon (edn/read-string (slurp "resources/redhorizon.edn")))
-(def seventh-cross (edn/read-string (slurp "resources/seventh_cross.edn")))
-(def undernight (edn/read-string (slurp "resources/undernight.edn")))
-(def shovelknight (edn/read-string (slurp "resources/shovelknight.edn")))
-(def streetfighter (edn/read-string (slurp "resources/streetfighter.edn")))
-(def blazblue (edn/read-string (slurp "resources/blazblue.edn")))
-(def normals (edn/read-string (slurp "resources/normals.edn")))
-
 (defn print-stats
   "Stores stats as numbers. -1 refers to X, and -2 refers to N/A. This converts them to a string if so."
   [stat]
@@ -198,26 +190,34 @@
                                  "" names))))
       (display-card card-keyword conn))))
 
-(def cfg {:store {:backend :file :path "db"}})
+(defn fill-db
+  "Populates a fresh database with Exceed custom data"
+  [db]
+  (let [r (fn [x] (edn/read-string (slurp (str "resources/" x ".edn"))))]
+    (dorun (map #(d/transact db %) [schema entries
+                                     (r "normals")
+                                     (r "redhorizon")
+                                     (r "seventh_cross")
+                                     (r "undernight")
+                                     (r "shovelknight")
+                                    (r "blazblue")
+                                    deck/s1-decks
+                                    deck/s2-decks
+                                    deck/s3-decks
+                                    deck/s4-decks
+                                    deck/s5-decks
+                                    deck/s6-decks]))))
 
-(d/delete-database cfg)
-(d/create-database cfg)
+(defn create-new-db
+  [cfg]
+  (let [conn (do (d/delete-database cfg)
+                 (d/create-database cfg)
+                 (d/connect cfg))]
+    (fill-db conn)
+    conn))
+
+(def cfg {:store {:backend :file :path "db"}})
 (def conn (d/connect cfg))
-(d/transact conn schema)
-(d/transact conn entries)
-(d/transact conn normals)
-(d/transact conn redhorizon)
-(d/transact conn seventh-cross)
-(d/transact conn streetfighter)
-(d/transact conn shovelknight)
-(d/transact conn undernight)
-(d/transact conn blazblue)
-(d/transact conn deck/s1-decks)
-(d/transact conn deck/s2-decks)
-(d/transact conn deck/s3-decks)
-(d/transact conn deck/s4-decks)
-(d/transact conn deck/s5-decks)
-(d/transact conn deck/s6-decks)
 
 (def state (atom nil))
 (def bot-id (atom nil))
