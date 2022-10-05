@@ -2498,8 +2498,8 @@
          :id :s5-kunzite-of-keep-breaker
          :type :special
          :cost 0
-         :min-range X
-         :max-range X
+         :min-range -1
+         :max-range -1
          :power 5
          :speed 3
          :armor 0
