@@ -258,7 +258,9 @@
     (update-role! user-id (:name emoji))
     (discord-rest/delete-user-reaction! (:rest @state) channel-id message-id (:name emoji) user-id)))
 
-(defn update-lfg-queue []
+(defn clear-old-lfq-entries!
+  "Removes any lfg entries that are past their expiration time"
+  []
   (swap! state update :lfg-queue (fn [time] (filter #(not= 1 (.compareTo (java.time.LocalDateTime/now)
                                                                          (second %))) time))))
 
@@ -374,34 +376,42 @@
                                                         filters) (drop len a)))
         :else (recur filters (rest a))))))
 
+(defn post-message!
+  "Posts a message to the channel server in block quotes. If no content, does nothing"
+  [content channel-id]
+  (when content
+    (discord-rest/create-message! (:rest @state) channel-id :content (str "```" content "```"))))
+
+(def nomoretfs "https://cdn.discordapp.com/attachments/816004662754541628/981942732845088808/FirstCustomsRule.png")
+(def playerdb "The Player Database is located here: https://docs.google.com/spreadsheets/d/1dYfLiUI0cacy8-SJ6UZF6WWcRSUVVUCdp_LzYHq95Qo/edit?usp=sharing")
+
+;; This method is called whenever a new message appears on the server.
+;; If Ballot is pinged, it will send the help message.
+;; Otherwise it will check the first word of the message and see if it matches any of the below keywords.
 (defmethod handle-event :message-create
   [_ {:keys [channel-id content mentions author] :as _data}]
-  (let [first-word (first (clojure.string/split content #" "))
-        args (rest (clojure.string/split content #" "))]
-    (cond
-      (some #{@bot-id} (map :id mentions)) (discord-rest/create-message! (:rest @state) channel-id :content (:help config))
-      (= "!help" first-word) (discord-rest/create-message! (:rest @state) channel-id :content (:help config))
-      (= "!character" first-word) (let [description (lookup-character args conn)]
-                                    (when description (discord-rest/create-message! (:rest @state) channel-id :content (str "```\n" description "```"))))
-      (= "!nomoretfs" first-word) (discord-rest/create-message! (:rest @state) channel-id :content "https://cdn.discordapp.com/attachments/816004662754541628/981942732845088808/FirstCustomsRule.png")
-      (= "!card" first-word) (let [description (lookup-card args conn)]
-                               (when description (discord-rest/create-message! (:rest @state) channel-id :content (str "```\n" description "```"))))
-      (= "!search" first-word) (let [description (search-cards args conn)]
-                                 (when description (discord-rest/create-message! (:rest @state) channel-id :content (str "```\n" description "```"))))
-      (= "!playerdb" first-word) (discord-rest/create-message! (:rest @state) channel-id :content "The Player Database is located here: https://docs.google.com/spreadsheets/d/1dYfLiUI0cacy8-SJ6UZF6WWcRSUVVUCdp_LzYHq95Qo/edit?usp=sharing")
-      (= "!lfg" first-word) (do (update-lfg-queue)
-                                (cond (empty? (:lfg-queue @state)) (let [time (if (empty? args)
-                                                                                60
-                                                                                (Integer/parseInt (first args)))]
-                                                                     (discord-rest/create-message! (:rest @state) channel-id :content (str "You have been added to the queue for " time " minutes."))
-                                                                     (swap! state assoc :lfg-queue [[author (.plusMinutes (java.time.LocalDateTime/now) time)]]))
-                                      (some #(= (:id author) %) (mapv #(:id (first %)) (:lfg-queue @state))) (do (swap! state update :lfg-queue
-                                                                                                                        (fn [queue] (filter #(not= (:id author) (:id (first %))) queue)))
-                                                                                                                 (discord-rest/create-message! (:rest @state) channel-id :content "You have been removed from the queue."))
-                                      :else (do (discord-rest/create-message! (:rest @state) channel-id :content (str "Someone is available for a match! Please reach out to "
-                                                                                                                      (mention-user (:id (first (first (:lfg-queue @state))))) "."))
-                                                (swap! state update :lfg-queue #(drop 1 %)))))
-      :else nil)))
+  (let [[first-word & args] (clojure.string/split content #" ")]
+    (if (some #{@bot-id} (map :id mentions)) (discord-rest/create-message! (:rest @state) channel-id :content (:help config))
+        (case first-word
+          "!help"       (discord-rest/create-message! (:rest @state) channel-id :content (:help config))
+          "!nomoretfs"  (discord-rest/create-message! (:rest @state) channel-id :content nomoretfs)
+          "!playerdb"   (discord-rest/create-message! (:rest @state) channel-id :content playerdb)
+          "!character"  (post-message! (lookup-character args conn) channel-id)
+          "!card"       (post-message! (lookup-card args conn) channel-id)
+          "!search"     (post-message! (search-cards args conn) channel-id)
+          "!lfg"        (do (clear-old-lfq-entries!)
+                            (cond (empty? (:lfg-queue @state)) (let [time (if (empty? args)
+                                                                            60
+                                                                            (Integer/parseInt (first args)))]
+                                                                 (discord-rest/create-message! (:rest @state) channel-id :content (str "You have been added to the queue for " time " minutes."))
+                                                                 (swap! state assoc :lfg-queue [[author (.plusMinutes (java.time.LocalDateTime/now) time)]]))
+                                  (some #(= (:id author) %) (mapv #(:id (first %)) (:lfg-queue @state))) (do (swap! state update :lfg-queue
+                                                                                                                    (fn [queue] (filter #(not= (:id author) (:id (first %))) queue)))
+                                                                                                             (discord-rest/create-message! (:rest @state) channel-id :content "You have been removed from the queue."))
+                                  :else (do (discord-rest/create-message! (:rest @state) channel-id :content (str "Someone is available for a match! Please reach out to "
+                                                                                                                  (mention-user (:id (first (first (:lfg-queue @state))))) "."))
+                                            (swap! state update :lfg-queue #(drop 1 %)))))
+          nil))))
 
 (defmethod handle-event :ready
   [_ _]
