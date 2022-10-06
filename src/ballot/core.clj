@@ -198,6 +198,7 @@
                                     (r "normals")
                                     (r "redhorizon")
                                     (r "seventh_cross")
+                                    (r "streetfighter")
                                     (r "undernight")
                                     (r "shovelknight")
                                     (r "blazblue")
