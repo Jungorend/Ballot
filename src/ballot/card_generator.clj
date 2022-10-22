@@ -42,6 +42,38 @@
                   :passive  "ffffff"
                   :effect   "ffffff"
                   :reminder "ffffff"
-                  :trigger  "ffffff"}}})
+                  :trigger  "ffffff"}
+          :format {:range [:bold]
+                   :power [:bold]
+                   :speed [:bold]
+                   :armor [:bold]
+                   :guard [:bold]
+                   :effect []
+                   :flavor [:bold :italic]
+                   :passive [:bold]
+                   :reminder [:italic]
+                   :trigger [:bold]}}})
 
-(selmer/render (slurp "resources/templates/attack.template") conf format-opts)
+(selmer/add-filter! :get-contour-type
+                    (fn [stats]
+                      (case stats
+                        :reminder "effect"
+                        :trigger "effect"
+                        :range "stats"
+                        :power "stats"
+                        :speed "stats"
+                        :guard "stats"
+                        :armor "stats"
+                        (name stats))))
+
+(selmer/add-filter!
+ :wrap-formatoptions
+ (fn [opts]
+   (reduce #(str (case %2
+                   :bold "\\textbf{"
+                   :italic "\\textit{")
+                 %1 "}")
+           "##1"
+           opts)))
+
+(spit "sample" (selmer/render (slurp "resources/templates/attack.template") conf format-opts))

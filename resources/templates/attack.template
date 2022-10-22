@@ -39,20 +39,32 @@
   \definecolor{textcolor<<stat|name>>}{HTML}{'<<color>>'}
 <% endfor %>
 
-\newcommand{\contourflavor}{%
+\newcommand{\contourflavor}{
   \contourlength{<<outline.width.flavor>>pt}
   \contournumber{<<outline.density.flavor>>pt}
-%}
+}
 
-\newcommand{\contourstats}{%
+\newcommand{\contourstats}{
   \contourlength{<<outline.width.stats>>pt}
   \contournumber{<<outline.density.stats>>pt}
-%}
-\newcommand{\contoureffect}{%
+}
+\newcommand{\contoureffect}{
   \contourlength{<<outline.width.effect>>pt}
   \contournumber{<<outline.density.effect>>pt}
-%}
-\newcommand{\contourpassive}{%
+}
+\newcommand{\contourpassive}{
   \contourlength{<<outline.width.passive>>pt}
   \contournumber{<<outline.density.passive>>pt}
-%}
+}
+
+\ExplSyntaxOn
+<% for stat,effects in text.format %>
+  \NewDocumentCommand{\<<stat|name>>}{m} {
+    \seq_set_split:Nnn \l_tmpa_seq { ~ } { #1 }
+    \seq_map_inline:Nn \l_tmpa_seq {
+      \contour<<stat|get-contour-type>>
+      \contour{outlinecolor<<stat|name>>}
+      \textcolor{textcolor<<stat|name>>}{<<effects|wrap-formatoptions>>} ~ }  \unskip
+  }
+<% endfor %>
+\ExplSyntaxOff
