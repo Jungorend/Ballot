@@ -1,0 +1,58 @@
+\documentclass{memoir}
+
+% Enables graphics
+\usepackage{adjustbox} % Let the text area scale if needed
+\usepackage{contour} % Text Outlines
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage[headsep={0in}]{geometry} % As the margins are 0, the gap between header and text must also be
+\usepackage{sfdefault}{<<font>>} % Set Font
+\usepackage{wrapfig}
+\usepackage{xcolor} % Colored Text
+\usepackage{xparse} % Automatic line breaks before contour package applies formatting
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{<<paragraph-spacing>>pt}
+
+\renewcommand{\baselinestretch}{0.9} % distance between lines
+\setstocksize{3in}{5in}
+\settrimmedsize{\stockheight}{\stockwidth}{*}
+\settypeblocksize{2.8in}{3in}{*}
+\setpagecc{3in}{5in}{*}
+\setlrmargins{1in}{*}{*}
+\setulmargins{0.1in}{*}{*}
+
+\setheadfoot{0in}{0in}
+\setlength{\footskip}{0in}
+\setlength{\lowermargin}{0.1in}
+
+\checkandfixthelayout % apply layout settings
+
+\contourlength{1.5pt}
+\pagenumbering{gobble}
+
+<% for stat,color in outline.color %>
+  \definecolor{outlinecolor<<stat|name>>}{HTML}{'<<color>>'}
+<% endfor %>
+
+<% for stat,color in text.color %>
+  \definecolor{textcolor<<stat|name>>}{HTML}{'<<color>>'}
+<% endfor %>
+
+\newcommand{\contourflavor}{%
+  \contourlength{<<outline.width.flavor>>pt}
+  \contournumber{<<outline.density.flavor>>pt}
+%}
+
+\newcommand{\contourstats}{%
+  \contourlength{<<outline.width.stats>>pt}
+  \contournumber{<<outline.density.stats>>pt}
+%}
+\newcommand{\contoureffect}{%
+  \contourlength{<<outline.width.effect>>pt}
+  \contournumber{<<outline.density.effect>>pt}
+%}
+\newcommand{\contourpassive}{%
+  \contourlength{<<outline.width.passive>>pt}
+  \contournumber{<<outline.density.passive>>pt}
+%}
