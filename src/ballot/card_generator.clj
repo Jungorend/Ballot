@@ -1,5 +1,6 @@
 (ns ballot.card-generator
   (:require [selmer.parser :as selmer]
+            [clojure.string :refer [replace]]
             [hickory.core :as hickory]))
 
 ;; Because of the amount of {} in latex, rebinding what the parser uses for readability
@@ -79,14 +80,22 @@
 
 ;; TODO: Replace keyword->latex and "statement-ender" with the actual latex start and enders
 
-(defn keyword->latex
+(defn- keyword->latex
   "This accepts the tags that will be used for the HTML side, and converts them to the form that LaTeX expects."
   [keyword]
-  (case keyword
-    :power "\\lalalaLaTeXLalalalala"
-    :range "\\LalalaLaTexLalalala"))
+  (str "\\"
+       (case keyword
+         :flavor "flavor"
+         :bold "passive"
+         :i "reminder"
+         :guard "guard"
+         :armor "armor"
+         :speed "speed"
+         :power "power"
+         :range "range")
+       "{"))
 
-(defn hiccup->latex
+(defn- hiccup->latex
   "Takes in a Hiccup format document and calls keyword->latex on all keywords"
   ([hiccup] (hiccup->latex hiccup ""))
   ([hiccup result]
@@ -94,10 +103,20 @@
          (vector? (first hiccup)) (recur (rest hiccup) (str result (hiccup->latex (first hiccup) "")))
          (keyword? (first hiccup)) (str result (keyword->latex (first hiccup))
                                         (hiccup->latex (nnext hiccup) "")
-                                        "statement-ender")
+                                        "}")
          :else result)))
 
-(defn format-card
+(defn- cleanup-url-encoding
+  "Hickory encodes the files and so quotes and similar will be replaced. Manually moving back a few."
+  [text]
+  (-> text
+      (replace #"\&amp;quot;" "\"")
+      (replace #"\&#39;" "'")
+      (replace #"\~" "\\textsubscript{\\~{}}")
+      ;; If we need to replace more we'll add them here
+      ))
+
+(defn- format-card
   "Takes in a string representing one card chunk to confirm. Converts it to hiccup format and then parses each tag with the respective equivalent latex format."
   [card]
   (->> card
@@ -105,6 +124,13 @@
        (map hickory/as-hiccup)
        hiccup->latex))
 
+(defn render-attack-card
+  "Pass in `card-text` and this produces the latex document string for it."
+  [card-text]
+  (cleanup-url-encoding
+   (selmer/render (slurp "resources/templates/attack.template")
+                  (assoc conf :text-content (format-card card-text))
+                  format-opts)))
+
 ;; tests
-(spit "sample" (selmer/render (slurp "resources/templates/attack.template") conf format-opts))
-(format-card "This card expects <power>+2 Power</power> and <range>+0~1 Range</range>")
+(spit "sample" (render-attack-card "sample_card.txt"))

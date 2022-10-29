@@ -68,3 +68,15 @@
   }
 <% endfor %>
 \ExplSyntaxOff
+\clubpenalty = 10000
+\widowpenalty = 10000
+
+\begin{document}
+\begin{vplace}
+\begin{wrapfigure}{1}{1\textwidth}
+\begin{center}
+<<text-content>>
+\end{center}
+\end{wrapfigure}
+\end{vplace}
+\end{document}
