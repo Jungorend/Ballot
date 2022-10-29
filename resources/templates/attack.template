@@ -41,20 +41,20 @@
 
 \newcommand{\contourflavor}{
   \contourlength{<<outline.width.flavor>>pt}
-  \contournumber{<<outline.density.flavor>>pt}
+  \contournumber{<<outline.density.flavor>>}
 }
 
 \newcommand{\contourstats}{
   \contourlength{<<outline.width.stats>>pt}
-  \contournumber{<<outline.density.stats>>pt}
+  \contournumber{<<outline.density.stats>>}
 }
 \newcommand{\contoureffect}{
   \contourlength{<<outline.width.effect>>pt}
-  \contournumber{<<outline.density.effect>>pt}
+  \contournumber{<<outline.density.effect>>}
 }
 \newcommand{\contourpassive}{
   \contourlength{<<outline.width.passive>>pt}
-  \contournumber{<<outline.density.passive>>pt}
+  \contournumber{<<outline.density.passive>>}
 }
 
 \ExplSyntaxOn
