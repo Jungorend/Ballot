@@ -6,7 +6,7 @@
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage[headsep={0in}]{geometry} % As the margins are 0, the gap between header and text must also be
-\usepackage{sfdefault}{<<font>>} % Set Font
+\usepackage[sfdefault]{<<font>>} % Set Font
 \usepackage{wrapfig}
 \usepackage{xcolor} % Colored Text
 \usepackage{xparse} % Automatic line breaks before contour package applies formatting
@@ -32,11 +32,11 @@
 \pagenumbering{gobble}
 
 <% for stat,color in outline.color %>
-  \definecolor{outlinecolor<<stat|name>>}{HTML}{'<<color>>'}
+  \definecolor{outlinecolor<<stat|name>>}{HTML}{<<color>>}
 <% endfor %>
 
 <% for stat,color in text.color %>
-  \definecolor{textcolor<<stat|name>>}{HTML}{'<<color>>'}
+  \definecolor{textcolor<<stat|name>>}{HTML}{<<color>>}
 <% endfor %>
 
 \newcommand{\contourflavor}{
@@ -63,8 +63,7 @@
     \seq_set_split:Nnn \l_tmpa_seq { ~ } { #1 }
     \seq_map_inline:Nn \l_tmpa_seq {
       \contour<<stat|get-contour-type>>
-      \contour{outlinecolor<<stat|name>>}
-      \textcolor{textcolor<<stat|name>>}{<<effects|wrap-formatoptions>>} ~ }  \unskip
+      \contour{outlinecolor<<stat|name>>}{\textcolor{textcolor<<stat|name>>}{<<effects|wrap-formatoptions>>}} ~ }  \unskip
   }
 <% endfor %>
 \ExplSyntaxOff

@@ -18,7 +18,7 @@
                      :speed "000000"
                      :armor "000000"
                      :guard "000000"
-                     :flavor "0000000"
+                     :flavor "000000"
                      :passive "000000"
                      :effect "000000"
                      :reminder "000000"
@@ -40,7 +40,7 @@
                   :speed    "fff5a5"
                   :armor    "ae96c3"
                   :guard    "39ab55"
-                  :flavor   "c060000"
+                  :flavor   "c06000"
                   :passive  "ffffff"
                   :effect   "ffffff"
                   :reminder "ffffff"
@@ -112,7 +112,6 @@
   (-> text
       (replace #"\&amp;quot;" "\"")
       (replace #"\&#39;" "'")
-      (replace #"\~" "\\textsubscript{\\~{}}")
       ;; If we need to replace more we'll add them here
       ))
 
@@ -133,4 +132,4 @@
                   format-opts)))
 
 ;; tests
-(spit "sample" (render-attack-card "sample_card.txt"))
+(spit "sample.tex" (render-attack-card (slurp "sample_text.txt")))
