@@ -771,7 +771,7 @@
                 :s5-volante 2)])
 
 (def s7-decks
-  [(create-deck "Sol Badguy" :s7-sol-badguy
+  [(create-deck "Sol Badguy" :s7-sol
                 :s7-heavy-mob-cemetery 2
                 :s7-tyrant-rave 2
                 :s7-wild-throw 2
@@ -780,7 +780,7 @@
                 :s7-night-raid-vortex 2
                 :s7-bandit-bringer 2
                 :s7-volcanic-viper 2)
-   (create-deck "Ky Kiske" :s7-ky-kiske
+   (create-deck "Ky Kiske" :s7-ky
                 :s7-ride-the-lightning 2
                 :s7-sacred-edge 2
                 :s7-foudre-arc 2
