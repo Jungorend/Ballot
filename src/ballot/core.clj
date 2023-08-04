@@ -84,12 +84,13 @@
     {:id :ability/notes :type :s :doc "For rules information and notes."}
     {:id :ability/location :type :k :doc ":attack :boost"}]))
 
-(def entries [{:season/number 1, :season/name "Red Horizon" :season/creator "Level99"}
-              {:season/number 2, :season/name "Seventh Cross" :season/creator "Level99" :season/mechanics "In this season you have transforms. For every transform in your transformation area, your exceed cost is reduced by 2. During a Strike, if you hit, you may move your attack to your transformation area during cleanup. You may also discard one card to transform the same of the other card if both are in your hand."}
-              {:season/number 3, :season/name "Street Fighter" :season/creator "Level99" :season/mechanics "When setting your attack, you may discard 1 Gauge. If you do, your attack is Critical."}
-              {:season/number 4, :season/name "Shovel Knight" :season/creator "Level99"}
-              {:season/number 5, :season/name "Blazblue" :season/creator "Level99" :season/mechanics "You have an overdrive area. When you exceed, the cards spent to Exceed are moved to the Overdrive area. If you ever have 0 cards in your Overdrive area, you revert to your normal side. You also have an astral heat which starts outside your deck. If you reshuffle manually, instead of drawing one card at the end of your turn, draw your astral heat."}
-              {:season/number 6, :season/name "Undernight" :season/creator "Level99"}])
+(def entries [#:season {:number 1 :name "Red Horizon" :creator "Level99"}
+              #:season {:number 2 :name "Seventh Cross" :creator "Level99" :mechanics "In this season you have transforms. For every transform in your transformation area, your exceed cost is reduced by 2. During a Strike, if you hit, you may move your attack to your transformation area during cleanup. You may also discard one card to transform the same of the other card if both are in your hand."}
+              #:season {:number 3 :name "Street Fighter" :creator "Level99" :mechanics "When setting your attack, you may discard 1 Gauge. If you do, your attack is Critical."}
+              #:season {:number 4 :name "Shovel Knight" :creator "Level99"}
+              #:season {:number 5 :name "Blazblue" :creator "Level99" :mechanics "You have an overdrive area. When you exceed, the cards spent to Exceed are moved to the Overdrive area. If you ever have 0 cards in your Overdrive area, you revert to your normal side. You also have an astral heat which starts outside your deck. If you reshuffle manually, instead of drawing one card at the end of your turn, draw your astral heat."}
+              #:season {:number 6 :name "Undernight" :creator "Level99"}
+              #:season {:number 7 :name "Guilty Gear" :creator "Level99" :mechanics "In this season characters have cancels. After resolving a boost, if the boost was cancelable, you may spend 1 Gauge in order to take another action."}])
 ;; TODO: Have a mechanics: explanation
 ;; TODO: Have characters display gauge cost amount
 
@@ -129,13 +130,15 @@
          (if (:card/description card) (:card/description card) "") "\n"
          (reduce #(str %1 (:ability/description %2) "\n") "" attacks)
          "\n" (:card/boost-name card)
-         (cond
-           (= (:card/boost-type card) :transform) " (T)"
-           (= (:card/boost-type card) :trap) (str " - " (:card/boost-cost card) " Force. (Trap)")
-           (= (:card/boost-type card) :instant) (str " - " (:card/boost-cost card) " Force.")
-           (= (:card/boost-type card) :continuous) (str " - " (:card/boost-cost card) " Force. (+)")
-           (= (:card/boost-type card) :gauge-instant) (str " - " (:card/boost-cost card) " Gauge.")
-           :else (str " - " (:card/boost-cost card) " Gauge (+)"))
+         (case (:card/boost-type card)
+           :transform " (T)"
+           :trap (str " - " (:card/boost-cost card) " Force. (Trap)")
+           :instant (str " - " (:card/boost-cost card) " Force.")
+           :continuous (str " - " (:card/boost-cost card) " Force. (+)")
+           :cancelable-continuous (str " - " (:card/boost-cost card) " Force. Cancelable. (+)")
+           :cancelable-instant (str " - " (:card/boost-cost card) " Force. Cancelable.")
+           :gauge-instant (str " - " (:card/boost-cost card) " Guage.")
+           (str " - " (:card/boost-cost card) " Gauge. (+)"))
          "\n"
          (reduce #(str %1 (:ability/description %2) "\n") "" boosts))))
 
@@ -202,12 +205,14 @@
                                     (r "undernight")
                                     (r "shovelknight")
                                     (r "blazblue")
+                                    (r "guiltygear")
                                     deck/s1-decks
                                     deck/s2-decks
                                     deck/s3-decks
                                     deck/s4-decks
                                     deck/s5-decks
-                                    deck/s6-decks]))))
+                                    deck/s6-decks
+                                    deck/s7-decks]))))
 
 (defn create-new-db
   [cfg]
@@ -248,7 +253,7 @@
       (:yellow-heart e) (toggle-role! user-id :east-coast)
       (:purple-heart e) (toggle-role! user-id :west-coast)
       (:blue-heart e)   (toggle-role! user-id :oceania)
-      (:diamonds e)       (toggle-role! user-id :europe)
+      (:diamonds e)     (toggle-role! user-id :europe)
       nil)))
 
 (defmethod handle-event :message-reaction-add

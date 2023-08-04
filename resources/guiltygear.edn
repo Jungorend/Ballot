@@ -1,0 +1,362 @@
+[#:character {:name "Sol Badguy"
+              :id :s7-sol
+              :innate-ability "When you Strike, if you Canceled this turn, +1 Power."
+              :exceed-ability "When you Exceed, Strike. When you Strike, if you Canceled this turn, +2 Power."
+              :gauge-cost 3
+              :seasons {:season/name "Guilty Gear"}}
+
+ #:character {:name "Ky Kiske"
+              :id :s7-ky
+              :innate-ability "The first time each turn you Cancel, you may Advance or Retreat 1."
+              :exceed-ability "The first time each turn you Cancel, draw 1, then you may Advance or Retreat 1."
+              :gauge-cost 2
+              :seasons {:season/name "Guilty Gear"}}
+
+ #:card {:name "Volcanic Viper"
+         :id :s7-volcanic-viper
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 3
+         :speed 5
+         :armor 0
+         :guard 3
+         :boost-name "Bandit Revolver"
+         :boost-type :cancelable-continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "If you initiated, +2 Power. Otherwise, +2 Armor."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Now: Close 1. Draw 1."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "Hit: The opponent must discard a random card."
+                                :location :boost
+                                :trigger :hit}]}
+
+ #:card {:name "Bandit Bringer"
+         :id :s7-bandit-bringer
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 4
+         :speed 3
+         :armor 0
+         :guard 4
+         :boost-name "Free"
+         :boost-cost 0
+         :boost-type :cancellable-instant
+         :abilities [#:ability {:description "Ignore Guard."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Before: Advance 2."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Advance or Retreat up to 2."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Night Raid Vortex"
+         :id :s7-night-raid-vortex
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 4
+         :speed 2
+         :armor 0
+         :guard 6
+         :boost-name "Keep Yourself Alive"
+         :boost-cost 0
+         :boost-type :cancelable-continuous
+         :abilities [#:ability {:description "Before: Close 3; if you Closed fewer than 3 spaces, draw 1."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "+2 Armor"
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: Draw 2."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Fafnir"
+         :id :s7-fafnir
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 5
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Outrage"
+         :boost-cost 0
+         :boost-type :instant
+         :abilities [#:ability {:description "Before: Close 1."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: Push 1. Close 1."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Add a card from your hand to your Gauge. Take another action."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Gun Flame"
+         :id :s7-gun-flame
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 3
+         :power 4
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Rock You"
+         :boost-cost 0
+         :boost-type :cancelable-continuous
+         :abilities [#:ability {:description "Hit: Gain Advantage"
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: +2 Armor. Close 2."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Hit: +1 Power. Draw 1."
+                                :location :boost
+                                :trigger :hit}
+                     #:ability {:description "After: If the opponent is stunned, gain Advantage."
+                                :location :boost
+                                :trigger :after}]}
+
+ #:card {:name "Wild Throw"
+         :id :s7-wild-throw
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 5
+         :speed 3
+         :armor 0
+         :guard 3
+         :boost-name "Smell of the Game"
+         :boost-cost 0
+         :boost-type :cancelable-continuous
+         :abilities [#:ability {:description "Ignore Armor. You cannot be Pushed or Pulled."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: Pull 1. Gain Advantage."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Hit: +1 Power. Add this to your Gauge."
+                                :location :boost
+                                :trigger :hit}]}
+
+ #:card {:name "Tyrant Rave"
+         :description "Let's do this!"
+         :id :s7-tyrant-rave
+         :type :ultra
+         :cost 2
+         :min-range 1
+         :max-range 2
+         :power 3
+         :speed 7
+         :armor 0
+         :guard 0
+         :boost-name "Flame of Corruption"
+         :boost-cost 0
+         :boost-type :cancelable-continuous
+         :abilities [#:ability {:description "Before: Close 1. If you Closed fewer than 1 space, +2 Power."
+                                :location :boost
+                                :trigger :before}
+                     #:ability {:description "Hit: Push 2; if the opponent was Pushed fewer than 2 spaces, +2 Power."
+                                :location :attack
+                                :trigger :hit}]}
+
+ #:card {:name "Heavy Mob Cemetery"
+         :id :s7-heavy-mob-cemetery
+         :type :ultra
+         :cost 3
+         :description "Sorry! It's over!"
+         :min-range 1
+         :max-range 1
+         :power 5
+         :speed 3
+         :armor 0
+         :guard 3
+         :boost-name "Find your one way"
+         :boost-cost 0
+         :boost-type :cancelable-continuous
+         :abilities [#:ability {:description "Before: If you initiated, Close 3."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: Draw 4."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Hit: +1 Power. Draw 2."
+                                :location :boost
+                                :trigger :hit}]}
+
+ #:card {:name "Vapor Thrust"
+         :id :s7-vapor-thrust
+         :cost 0
+         :type :special
+         :min-range 1
+         :max-range 2
+         :power 3
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Holy Orders"
+         :boost-type :cancelable-continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Range 2: +2 Speed"
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "After: Advance 3."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "+1 Speed."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Hit: Gain Advantage."
+                                :location :boost
+                                :trigger :hit}]}
+
+ #:card {:name "Stun Edge"
+         :id :s7-stun-edge
+         :cost 0
+         :type :special
+         :min-range 2
+         :max-range 6
+         :power 3
+         :speed 3
+         :armor 0
+         :guard 5
+         :boost-name "Be Just or Be Dead"
+         :boost-type :cancelable-continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Hit, Range 2: +2 Power. Gain Advantage."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: Advance up to 2."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "+1 Speed."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "After: If the opponent is stunned (even if they were faster), draw 1."
+                                :location :boost
+                                :trigger :after}]}
+
+ #:card {:name "Stun Dipper"
+         :id :s7-stun-dipper
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 4
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Hope"
+         :boost-type :cancelable-instant
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: Close 2."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit, Range 2: The opponent must discard a random card."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Add this to your Gauge."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Dire Eclat"
+         :id :s7-dire-eclat
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 5
+         :speed 4
+         :armor 0
+         :guard 4
+         :boost-name "Faith"
+         :boost-cost 0
+         :boost-type :continuous
+         :abilities [#:ability {:description "Hit: Push 2; if the opponent was Pushed fewer than 2 spaces, draw 2."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+1 Speed and +3 Guard."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Foudre Arc"
+         :id :s7-foudre-arc
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 4
+         :speed 4
+         :armor 0
+         :guard 3
+         :boost-name "Shock State"
+         :boost-cost 0
+         :boost-type :continuous
+         :abilities [#:ability {:description "Before: Advance 3; if you did not Advance past the opponent, draw 1."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Now: Draw 1."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "Hit: +1 Power. Gain Advantage."
+                                :trigger :hit
+                                :location :boost}]}
+
+ #:card {:name "Sacred Edge"
+         :id :s7-sacred-edge
+         :type :ultra
+         :description "This is too much for you."
+         :cost 4
+         :min-range 2
+         :max-range 6
+         :power 5
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Roar of the Spark"
+         :boost-cost 0
+         :boost-type :cancelable-instant
+         :abilities [#:ability {:description "Hit: Close up to 4. Gain Advantage."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Draw 2."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Ride The Lightning"
+         :id :s7-ride-the-lightning
+         :type :ultra
+         :description "Embrace the light!"
+         :cost 4
+         :min-range 1
+         :max-range 1
+         :power 6
+         :speed 1
+         :armor 2
+         :guard 6
+         :boost-name "Thunderseal"
+         :boost-type :cancelable-continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Before: Close 4."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: Push 2. Gain Advantage."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+0~1 Range and +1 Power."
+                                :location :boost
+                                :trigger :passive}]}]

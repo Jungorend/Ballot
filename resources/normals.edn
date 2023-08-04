@@ -163,4 +163,6 @@
                    {:ability/description "After: Add this card to your Gauge at the end of the Strike."
                     :ability/trigger :after
                     :ability/location :attack}
-                   {:ability/description "Name a card. The opponent must discard a copy of that card, or reveal a hand without any."}]}]
+                   {:ability/description "Name a card. The opponent must discard a copy of that card, or reveal a hand without any."
+                    :ability/location :boost
+                    :ability/trigger :now}]}]

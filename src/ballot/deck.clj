@@ -769,3 +769,22 @@
                 :s5-con-brio 2
                 :s5-con-fuoco 2
                 :s5-volante 2)])
+
+(def s7-decks
+  [(create-deck "Sol Badguy" :s7-sol-badguy
+                :s7-heavy-mob-cemetery 2
+                :s7-tyrant-rave 2
+                :s7-wild-throw 2
+                :s7-gun-flame 2
+                :s7-fafnir 2
+                :s7-night-raid-vortex 2
+                :s7-bandit-bringer 2
+                :s7-volcanic-viper 2)
+   (create-deck "Ky Kiske" :s7-ky-kiske
+                :s7-ride-the-lightning 2
+                :s7-sacred-edge 2
+                :s7-foudre-arc 2
+                :s7-dire-eclat 2
+                :s7-stun-dipper 2
+                :s7-stun-edge 2
+                :s7-vapor-thrust 2)])
