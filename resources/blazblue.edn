@@ -1230,7 +1230,7 @@
                      #:ability {:description "Hit: Close 1."
                                 :location :attack
                                 :trigger :hit}
-                     #:ability {:description "If the opponent is at Rage 1, add this to your Gauge and draw 1."
+                     #:ability {:description "If the opponent is at Range 1, add this to your Gauge and draw 1."
                                 :location :boost
                                 :trigger :now}]}
 

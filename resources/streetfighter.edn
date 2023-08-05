@@ -4,86 +4,86 @@
   :character/exceed-ability "When you Exceed, draw 5 cards. After you resolve a Continuous Boost, you may Strike. If you do, your attack is Critical"
   :character/gauge-cost 3
   :character/seasons {:season/name "Street Fighter"}}
-  
-  {:character/name "Vega"
+
+ {:character/name "Vega"
   :character/id :s3-vega
   :character/innate-ability "If you are at the edge of the arena, when you set your attack, your Special and Ultra Attacks have +2 Power."
   :character/exceed-ability "If you are at the edge of the arena, when you set your attack, your Special and Ultra Attacks have +3 Power and +1 Speed."
   :character/gauge-cost 3
   :character/seasons {:season/name "Street Fighter"}}
-  
-  {:character/name "M. Bison"
+
+ {:character/name "M. Bison"
   :character/id :s3-mbison
   :character/innate-ability "As an action, you may add a card from your hand to your gauge and draw a card."
   :character/exceed-ability "As an action, you may add up to 3 cards from your hand to your gauge and draw that many cards. When you Exceed, you may take this action immediately."
   :character/gauge-cost 3
   :character/seasons {:season/name "Street Fighter"}}
-  
-  {:character/name "Chun-Li"
+
+ {:character/name "Chun-Li"
   :character/id :s3-chunli
   :character/innate-ability "After you resolve a Boost, you may Retreat 1."
   :character/exceed-ability "After you resolve a Boost, you may Retreat 1. For each Continuous Boost you have in play, your attacks have +0-1 Range."
   :character/gauge-cost 3
   :character/seasons {:season/name "Street Fighter"}}
-  
-  {:character/name "Cammy"
+
+ {:character/name "Cammy"
   :character/id :s3-cammy
   :character/innate-ability "If you move past the opponent during a Strike, your attack's range includes them."
   :character/exceed-ability "If you move past the opponent during a Strike, your attack has 'Hit: +1 Power and gain Advantage' and its range includes them."
   :character/gauge-cost 3
   :character/seasons {:season/name "Street Fighter"}}
-  
-  {:character/name "Zangief"
+
+ {:character/name "Zangief"
   :character/id :s3-zangief
   :character/innate-ability "If the opponent is at range 1, when you set your attack, it gains 'Critical: +1 Power and +1 Speed'."
   :character/exceed-ability "When you Exceed, pull up to 2. If the opponent is at range 1, when you set your attack, it gains 'Critical: +3 Power and +1 Speed' "
   :character/gauge-cost 3
   :character/seasons {:season/name "Street Fighter"}}
-  
-  {:character/name "Dan"
+
+ {:character/name "Dan"
   :character/id :s3-dan
   :character/innate-ability "Your Wild Swings have 'Critical: +1 Power and +1 Speed'."
   :character/exceed-ability "Your Wild Swings have 'Critical: +1 Power and +1 Speed'. When drawing at the end of your turn, draw from the top or bottom of your deck. You may then discard a card."
   :character/gauge-cost 2
   :character/seasons {:season/name "Street Fighter"}}
-  
-  {:character/name "Akuma"
+
+ {:character/name "Akuma"
   :character/id :s3-akuma
   :character/innate-ability "Your attacks have 'Critical: Both players have +2 Power'."
   :character/exceed-ability "Your attacks have 'Critical: Both players have +3 Power'."
   :character/gauge-cost 2
   :character/seasons {:season/name "Street Fighter"}}
-  
-  {:character/name "Ryu"
+
+ {:character/name "Ryu"
   :character/id :s3-ryu
   :character/innate-ability "As an action, you may Move 1."
   :character/exceed-ability "As an action, you may Move 1 and draw a card."
   :character/gauge-cost 2
   :character/seasons {:season/name "Street Fighter"}}
-  
-  {:character/name "Ken"
+
+ {:character/name "Ken"
   :character/id :s3-ken
   :character/innate-ability "As an action, you may Close 1 and draw a card."
   :character/exceed-ability "When you Exceed, draw a card and Close up to 2. As an action, you may Close 1 and draw a card. Then, you may Strike."
   :character/gauge-cost 3
   :character/seasons {:season/name "Street Fighter"}}
-  
-  {:character/name "Guile"
+
+ {:character/name "Guile"
   :character/id :s3-guile
   :character/innate-ability "When using a Change Cards action, the first Gauge spent generates 2 additional Force."
   :character/exceed-ability "When using a Change Cards action, the first Gauge spent generates 2 additional Force. If you spent Gauge this way, you may then Strike."
   :character/gauge-cost 2
   :character/seasons {:season/name "Street Fighter"}}
-  
-  {:character/name "Sagat"
+
+ {:character/name "Sagat"
   :character/id :s3-sagat
   :character/innate-ability "When you initiate a Strike, you may place your attack face-up to gain +1 Speed."
   :character/exceed-ability "When you Exceed, draw 2 cards and Retreat up to 2. When you initiate a Strike, you may place your attack face-up to gain +1 Power and +1 Speed."
   :character/gauge-cost 3
   :character/seasons {:season/name "Street Fighter"}}
-  
+
   ;; Cards
-  
+
  {:card/name "Seismic Hammer"
   :card/id :s3-seismic-hammer
   :card/type :special
@@ -101,13 +101,13 @@
                     :ability/location :attack
                     :ability/trigger :passive
                     :ability/keywords "critical"}
-					{:ability/description "After: Move up to 2."
+                   {:ability/description "After: Move up to 2."
                     :ability/location :attack
                     :ability/trigger :after}
                    {:ability/description "+1 Power and +5 Guard"
                     :ability/location :boost
                     :ability/trigger :passive}]}
-					
+
  {:card/name "Temple Massage"
   :card/id :s3-temple-massage
   :card/type :special
@@ -125,13 +125,13 @@
                     :ability/location :attack
                     :ability/trigger :hit
                     :ability/keywords "critical"}
-					{:ability/description "Hit: Spend up to 4 Force. For each Force spent, +1 Power."
+                   {:ability/description "Hit: Spend up to 4 Force. For each Force spent, +1 Power."
                     :ability/location :attack
                     :ability/trigger :hit}
                    {:ability/description "Search your Discard Pile for a Continuous Boost. You may play it, paying all costs."
                     :ability/location :boost
-                    :ability/trigger :now}]}					
-					
+                    :ability/trigger :now}]}
+
  {:card/name "Thunder Knuckle"
   :card/id :s3-thunder-knuckle
   :card/type :special
@@ -149,7 +149,7 @@
                     :ability/location :attack
                     :ability/trigger :passive
                     :ability/keywords ["Ignore Guard" "critical"]}
-					{:ability/description "Before: Close 1"
+                   {:ability/description "Before: Close 1"
                     :ability/location :attack
                     :ability/trigger :before}
                    {:ability/description "Hit: Spend up to 4 Force. For each Force spent, +1 Power."
@@ -173,13 +173,13 @@
                     :ability/location :attack
                     :ability/trigger :hit
                     :ability/keywords "critical"}
-					{:ability/description "After: Close 1"
+                   {:ability/description "After: Close 1"
                     :ability/location :attack
                     :ability/trigger :after}
                    {:ability/description "+1 Power and Ignore Armor"
                     :ability/location :boost
                     :ability/trigger :passive}]}
-					
+
  {:card/name "Emergency Combination"
   :card/id :s3-emergency-combination
   :card/type :special
@@ -199,7 +199,7 @@
                    {:ability/description "Draw 2 cards. Add this card to your gauge."
                     :ability/location :boost
                     :ability/trigger :now}]}
-					
+
  {:card/name "Burst Time"
   :card/id :s3-burst-time
   :card/type :ultra
@@ -216,13 +216,13 @@
   :card/abilities [{:ability/description "Stun Immunity"
                     :ability/location :attack
                     :ability/trigger :passive}
-					{:ability/description "If you do not have any Continuous Boosts in play, this attack does not hit."
+                   {:ability/description "If you do not have any Continuous Boosts in play, this attack does not hit."
                     :ability/location :attack
                     :ability/trigger :passive}
                    {:ability/description "+3 Armor and +1 Guard"
                     :ability/location :boost
                     :ability/trigger :passive}]}
-					
+
  {:card/name "Burning Dance"
   :card/id :s3-burning-dance
   :card/type :ultra
@@ -239,10 +239,10 @@
   :card/abilities [{:ability/description "Ignore Armor"
                     :ability/location :attack
                     :ability/trigger :passive}
-					{:ability/description "Hit: Push 8."
+                   {:ability/description "Hit: Push 8."
                     :ability/location :attack
                     :ability/trigger :hit}
-					{:ability/description "After: Close 8."
+                   {:ability/description "After: Close 8."
                     :ability/location :attack
                     :ability/trigger :after}
                    {:ability/description "The opponent has +3 Power."
@@ -251,9 +251,7 @@
                    {:ability/description "Now: Draw 3 cards. Take another action."
                     :ability/location :boost
                     :ability/trigger :now}]}
-					
-					
-					
+
  {:card/name "Rolling Crystal Flash"
   :card/id :s3-rolling-crystal-flash
   :card/type :special
@@ -270,16 +268,16 @@
   :card/abilities [{:ability/description "+1 Speed for each space between you and the opponent."
                     :ability/location :attack
                     :ability/trigger :passive}
-					{:ability/description "Before: Close 5."
+                   {:ability/description "Before: Close 5."
                     :ability/location :attack
                     :ability/trigger :before}
-					{:ability/description "Hit: Push 3."
+                   {:ability/description "Hit: Push 3."
                     :ability/location :attack
-                    :ability/trigger :hit}					
+                    :ability/trigger :hit}
                    {:ability/description "Move 3. If you moved past the opponent during this movement, add this card to your gauge."
                     :ability/location :boost
-                    :ability/trigger :now}]}					
-					
+                    :ability/trigger :now}]}
+
  {:card/name "Pounce"
   :card/id :s3-pounce
   :card/type :special
@@ -297,17 +295,17 @@
                     :ability/location :attack
                     :ability/trigger :passive
                     :ability/keywords "critical"}
-					{:ability/description "Before: Close 2."
+                   {:ability/description "Before: Close 2."
                     :ability/location :attack
                     :ability/trigger :before}
-					{:ability/description "Hit: The opponent must discard a card at random."
+                   {:ability/description "Hit: The opponent must discard a card at random."
                     :ability/location :attack
                     :ability/trigger :hit
-					:ability/keywords "discard"}					
+                    :ability/keywords "discard"}
                    {:ability/description "Retreat up to 2, then Strike."
                     :ability/location :boost
-                    :ability/trigger :now}]}								
-					
+                    :ability/trigger :now}]}
+
  {:card/name "Sky High Claw"
   :card/id :s3-sky-high-claw
   :card/type :special
@@ -324,14 +322,14 @@
   :card/abilities [{:ability/description "Critical: +2 Power."
                     :ability/location :attack
                     :ability/trigger :passive
-					:ability/keywords "critical"}
-					{:ability/description "Before: Close 3."
+                    :ability/keywords "critical"}
+                   {:ability/description "Before: Close 3."
                     :ability/location :attack
-                    :ability/trigger :before}				
+                    :ability/trigger :before}
                    {:ability/description "Move 3. If you moved past the opponent, put a Continuous Boost from your Discard Pile into play."
                     :ability/location :boost
-                    :ability/trigger :now}]}		
-	
+                    :ability/trigger :now}]}
+
  {:card/name "Flying Barcelona Attack"
   :card/id :s3-flying-barcelona-attack
   :card/type :special
@@ -348,13 +346,13 @@
   :card/abilities [{:ability/description "Critical: +2 Power."
                     :ability/location :attack
                     :ability/trigger :passive
-					:ability/keywords "critical"}
-					{:ability/description "Before: Advance as far as possible, then Close 1."
+                    :ability/keywords "critical"}
+                   {:ability/description "Before: Advance as far as possible, then Close 1."
                     :ability/location :attack
-                    :ability/trigger :before}				
+                    :ability/trigger :before}
                    {:ability/description "Advance as far as possible."
                     :ability/location :boost
-                    :ability/trigger :now}]}	
+                    :ability/trigger :now}]}
 
  {:card/name "Scarlet Terror"
   :card/id :s3-scarlet-terror
@@ -372,10 +370,10 @@
   :card/abilities [{:ability/description "Critical: +2 Speed."
                     :ability/location :attack
                     :ability/trigger :passive
-					:ability/keywords "critical"}
-					{:ability/description "Before: Close 2."
+                    :ability/keywords "critical"}
+                   {:ability/description "Before: Close 2."
                     :ability/location :attack
-                    :ability/trigger :before}				
+                    :ability/trigger :before}
                    {:ability/description "If you are at the edge of the arena, move to any space and Strike. Gain your ability's Power and Speed bonuses during this Strike."
                     :ability/location :boost
                     :ability/trigger :now}]}
@@ -396,17 +394,17 @@
   :card/abilities [{:ability/description "Before: Close 2."
                     :ability/location :attack
                     :ability/trigger :before}
-					{:ability/description "Hit: The opponent discards 3 cards at random."
+                   {:ability/description "Hit: The opponent discards 3 cards at random."
                     :ability/location :attack
                     :ability/trigger :hit
-					:ability/keywords "discard"}							
+                    :ability/keywords "discard"}
                    {:ability/description "+1 Power and +1 Armor"
                     :ability/location :boost
                     :ability/trigger :passive}
                    {:ability/description "Cleanup: If you were not stunned, you may spend 1 Force to sustain this card."
                     :ability/location :boost
-                    :ability/trigger :cleanup}]}					
-	
+                    :ability/trigger :cleanup}]}
+
  {:card/name "Bloody High Claw"
   :card/id :s3-bloody-high-claw
   :card/type :ultra
@@ -423,18 +421,16 @@
   :card/abilities [{:ability/description "Before: If there are 3 or more spaces behind the opponent, +3 Power."
                     :ability/location :attack
                     :ability/trigger :before}
-					{:ability/description "Hit: Move up to 8."
+                   {:ability/description "Hit: Move up to 8."
                     :ability/location :attack
-                    :ability/trigger :hit}							
+                    :ability/trigger :hit}
                    {:ability/description "+0~1 Range and your attacks are Critical"
                     :ability/location :boost
                     :ability/trigger :passive}
                    {:ability/description "Cleanup: If you were not stunned, you may spend 1 Force to sustain this card."
                     :ability/location :boost
-                    :ability/trigger :cleanup}]}					
-		
-		
-		
+                    :ability/trigger :cleanup}]}
+
  {:card/name "Somersault Skull Diver"
   :card/id :s3-somersault-skull-diver
   :card/type :special
@@ -451,17 +447,17 @@
   :card/abilities [{:ability/description "Critical: +1 Power, +6 Guard and Ignore Armor."
                     :ability/location :attack
                     :ability/trigger :passive
-					:ability/keywords "critical"}
-					{:ability/description "Before: Advance 1 or 2."
+                    :ability/keywords "critical"}
+                   {:ability/description "Before: Advance 1 or 2."
                     :ability/location :attack
-                    :ability/trigger :before}	
-					{:ability/description "Hit: Push 2."
+                    :ability/trigger :before}
+                   {:ability/description "Hit: Push 2."
                     :ability/location :attack
-                    :ability/trigger :hit}					
+                    :ability/trigger :hit}
                    {:ability/description "Name a card. The opponent must discard a copy of that card or reveal a hand with none. If a card was discarded this way, Strike."
                     :ability/location :boost
                     :ability/trigger :now}]}
-					
+
  {:card/name "Psycho Crusher"
   :card/id :s3-psycho-crusher
   :card/type :special
@@ -475,17 +471,17 @@
   :card/boost-name "Psycho Power"
   :card/boost-cost 1
   :card/boost-type :continuous
-  :card/abilities [	{:ability/description "Before: Advance 3."
+  :card/abilities [{:ability/description "Before: Advance 3."
                     :ability/location :attack
-                    :ability/trigger :before}	
-					{:ability/description "Critical, Hit: Advance or Retreat 3, then draw a card."
+                    :ability/trigger :before}
+                   {:ability/description "Critical, Hit: Advance or Retreat 3, then draw a card."
                     :ability/location :attack
                     :ability/trigger :hit
-					:ability/keywords "critical"}					
+                    :ability/keywords "critical"}
                    {:ability/description "+1 Power for each card in your gauge, to a maximum of +5."
                     :ability/location :boost
                     :ability/trigger :passive}]}
-						
+
  {:card/name "Sliding Kick"
   :card/id :s3-sliding-kick
   :card/type :special
@@ -499,17 +495,17 @@
   :card/boost-name "Quick Backdash"
   :card/boost-cost 0
   :card/boost-type :instant
-  :card/abilities [	{:ability/description "Before: Close 2."
+  :card/abilities [{:ability/description "Before: Close 2."
                     :ability/location :attack
-                    :ability/trigger :before}	
-					{:ability/description "Critical, Hit: +2 Power and Push 2."
+                    :ability/trigger :before}
+                   {:ability/description "Critical, Hit: +2 Power and Push 2."
                     :ability/location :attack
                     :ability/trigger :hit
-					:ability/keywords "critical"}					
+                    :ability/keywords "critical"}
                    {:ability/description "Retreat 2. If you are at range 3, take another action."
                     :ability/location :boost
                     :ability/trigger :passive}]}
-							
+
  {:card/name "Devil Reverse"
   :card/id :s3-devil-reverse
   :card/type :special
@@ -523,17 +519,17 @@
   :card/boost-name "Bison Dollars"
   :card/boost-cost 0
   :card/boost-type :instant
-  :card/abilities [	{:ability/description "Critical, Hit: Advance or Retreat 3."
+  :card/abilities [{:ability/description "Critical, Hit: Advance or Retreat 3."
                     :ability/location :attack
                     :ability/trigger :hit
-					:ability/keywords "critical"}
-					{:ability/description "After: Retreat up to 2."
+                    :ability/keywords "critical"}
+                   {:ability/description "After: Retreat up to 2."
                     :ability/location :attack
-                    :ability/trigger :after}				
+                    :ability/trigger :after}
                    {:ability/description "If the opponent has more cards in hand than you, draw 3 cards. Add this card to your gauge."
                     :ability/location :boost
                     :ability/trigger :now}]}
-							
+
  {:card/name "Head Stomp"
   :card/id :s3-head-stomp-bison
   :card/type :special
@@ -547,17 +543,17 @@
   :card/boost-name "Unstoppable"
   :card/boost-cost 1
   :card/boost-type :continuous
-  :card/abilities [	{:ability/description "Critical: +1 Power and +1 Speed."
+  :card/abilities [{:ability/description "Critical: +1 Power and +1 Speed."
                     :ability/location :attack
                     :ability/trigger :passive
-					:ability/keywords "critical"}
-					{:ability/description "After: Close 2. If the opponent is stunned, Push or Pull up to 2."
+                    :ability/keywords "critical"}
+                   {:ability/description "After: Close 2. If the opponent is stunned, Push or Pull up to 2."
                     :ability/location :attack
-                    :ability/trigger :after}				
+                    :ability/trigger :after}
                    {:ability/description "Stun Immunity. Your attacks have Critical."
                     :ability/location :boost
                     :ability/trigger :passive}]}
-					
+
  {:card/name "Psycho Punisher"
   :card/id :s3-psycho-punisher
   :card/type :ultra
@@ -574,17 +570,17 @@
   :card/abilities [{:ability/description "Before: Close 2."
                     :ability/location :attack
                     :ability/trigger :before}
-					{:ability/description "Critical, Hit: +2 Power and gain Advantage."
+                   {:ability/description "Critical, Hit: +2 Power and gain Advantage."
                     :ability/location :attack
                     :ability/trigger :hit
-					:ability/keywords "critical"}
-					{:ability/description "After: Advance 2."
+                    :ability/keywords "critical"}
+                   {:ability/description "After: Advance 2."
                     :ability/location :attack
-                    :ability/trigger :after}				
+                    :ability/trigger :after}
                    {:ability/description "Move up to 5."
                     :ability/location :boost
                     :ability/trigger :now}]}
-					
+
  {:card/name "Nightmare Booster"
   :card/id :s3-nightmare-booster
   :card/type :ultra
@@ -601,15 +597,14 @@
   :card/abilities [{:ability/description "Critical, Hit: The opponent's attack does not hit you, and gain Advantage."
                     :ability/location :attack
                     :ability/trigger :hit
-					:ability/keywords "critical"}
-					{:ability/description "After: Close 1 or 2."
+                    :ability/keywords "critical"}
+                   {:ability/description "After: Close 1 or 2."
                     :ability/location :attack
                     :ability/trigger :after}
                    {:ability/description "Reveal your hand. Add the top 3 cards of your discard pile to your gauge."
                     :ability/location :boost
                     :ability/trigger :now}]}
 
-									
  {:card/name "Kikoken"
   :card/id :s3-kikoken
   :card/type :special
@@ -623,23 +618,23 @@
   :card/boost-name "Overhead"
   :card/boost-cost 0
   :card/boost-type :continuous
-  :card/abilities [	{:ability/description "Critical: +4 Armor."
+  :card/abilities [{:ability/description "Critical: +4 Armor."
                     :ability/location :attack
                     :ability/trigger :passive
-					:ability/keywords "critical"}
-					{:ability/description "After: Lose all Armor, then Move 1."
+                    :ability/keywords "critical"}
+                   {:ability/description "After: Lose all Armor, then Move 1."
                     :ability/location :attack
-                    :ability/trigger :after}				
+                    :ability/trigger :after}
                    {:ability/description "Ignore Armor"
                     :ability/location :boost
                     :ability/trigger :passive}
-					{:ability/description "Now: Strike"
+                   {:ability/description "Now: Strike"
                     :ability/location :boost
                     :ability/trigger :now}
-					{:ability/description "Hit: Add this card to your gauge."
+                   {:ability/description "Hit: Add this card to your gauge."
                     :ability/location :boost
-                    :ability/trigger :hit}]}	
-	
+                    :ability/trigger :hit}]}
+
  {:card/name "Spinning Bird Kick"
   :card/id :s3-spinning-bird-kick
   :card/type :special
@@ -653,22 +648,22 @@
   :card/boost-name "Guard Crush"
   :card/boost-cost 1
   :card/boost-type :continuous
-  :card/abilities [	{:ability/description "Before: Advance 3."
+  :card/abilities [{:ability/description "Before: Advance 3."
                     :ability/location :attack
                     :ability/trigger :before}
-					{:ability/description "Hit: If you moved past the opponent during this strike, Push or Pull 2."
+                   {:ability/description "Hit: If you moved past the opponent during this strike, Push or Pull 2."
                     :ability/location :attack
-                    :ability/trigger :hit}				
+                    :ability/trigger :hit}
                    {:ability/description "Ignore Guard"
                     :ability/location :boost
                     :ability/trigger :passive}
-					{:ability/description "Now: Strike"
+                   {:ability/description "Now: Strike"
                     :ability/location :boost
                     :ability/trigger :now}
-					{:ability/description "Hit: Add this card to your gauge."
+                   {:ability/description "Hit: Add this card to your gauge."
                     :ability/location :boost
-                    :ability/trigger :hit}]}		
-	
+                    :ability/trigger :hit}]}
+
  {:card/name "Head Stomp"
   :card/id :s3-head-stomp-chunli
   :card/type :special
@@ -682,20 +677,20 @@
   :card/boost-name "Swift Attack"
   :card/boost-cost 0
   :card/boost-type :continuous
-  :card/abilities [	{:ability/description "Before: Advance 3. If you moved past the opponent with this movement, this attack's range includes them."
+  :card/abilities [{:ability/description "Before: Advance 3. If you moved past the opponent with this movement, this attack's range includes them."
                     :ability/location :attack
                     :ability/trigger :before}
-					{:ability/description "Critical, Hit: +1 Power and draw a card."
+                   {:ability/description "Critical, Hit: +1 Power and draw a card."
                     :ability/location :attack
                     :ability/trigger :hit
-					:ability/keywords "critical"}				
+                    :ability/keywords "critical"}
                    {:ability/description "+1 Speed"
                     :ability/location :boost
                     :ability/trigger :passive}
-					{:ability/description "Hit: Gain Advantage and add this card to your gauge."
+                   {:ability/description "Hit: Gain Advantage and add this card to your gauge."
                     :ability/location :boost
-                    :ability/trigger :hit}]}		
-												
+                    :ability/trigger :hit}]}
+
  {:card/name "Flipping Ax Kick"
   :card/id :s3-flipping-ax-kick
   :card/type :special
@@ -709,19 +704,19 @@
   :card/boost-name "Power Attack"
   :card/boost-cost 0
   :card/boost-type :continuous
-  :card/abilities [	{:ability/description "Critical: +2 Power."
+  :card/abilities [{:ability/description "Critical: +2 Power."
                     :ability/location :attack
                     :ability/trigger :passive
-					:ability/keywords "critical"}
-					{:ability/description "Before: Advance 2."
+                    :ability/keywords "critical"}
+                   {:ability/description "Before: Advance 2."
                     :ability/location :attack
-                    :ability/trigger :before}				
+                    :ability/trigger :before}
                    {:ability/description "+1 Power"
                     :ability/location :boost
                     :ability/trigger :passive}
-					{:ability/description "Hit: Gain Advantage and add this card to your gauge."
+                   {:ability/description "Hit: Gain Advantage and add this card to your gauge."
                     :ability/location :boost
-                    :ability/trigger :hit}]}		
+                    :ability/trigger :hit}]}
 
  {:card/name "Lightning Legs"
   :card/id :s3-lightning-legs
@@ -736,13 +731,13 @@
   :card/boost-name "Repeating Attack"
   :card/boost-cost 0
   :card/boost-type :continuous
-  :card/abilities [	{:ability/description "Critical, After: If you hit, you may return this card to the top of your deck. If you do, sustain one of your Boosts."
+  :card/abilities [{:ability/description "Critical, After: If you hit, you may return this card to the top of your deck. If you do, sustain one of your Boosts."
                     :ability/location :attack
                     :ability/trigger :after
-					:ability/keywords "critical"}				
-					{:ability/description "After: If you hit, you may return your attack to the top of your deck and add this card to your gauge."
+                    :ability/keywords "critical"}
+                   {:ability/description "After: If you hit, you may return your attack to the top of your deck and add this card to your gauge."
                     :ability/location :boost
-                    :ability/trigger :after}]}		
+                    :ability/trigger :after}]}
 
  {:card/name "Kikousho"
   :card/id :s3-kikousho
@@ -757,21 +752,21 @@
   :card/boost-name "Faultless Focus"
   :card/boost-cost 1
   :card/boost-type :continuous
-  :card/abilities [	{:ability/description "Attacks at range 4 or greater do not hit you."
+  :card/abilities [{:ability/description "Attacks at range 4 or greater do not hit you."
                     :ability/location :attack
                     :ability/trigger :passive}
-					{:ability/description "After: If this attack did not hit the opponent, draw a card and add the top 2 cards of your discard pile to your gauge."
+                   {:ability/description "After: If this attack did not hit the opponent, draw a card and add the top 2 cards of your discard pile to your gauge."
                     :ability/location :attack
-                    :ability/trigger :after}				
+                    :ability/trigger :after}
                    {:ability/description "Stun Immunity"
                     :ability/location :boost
                     :ability/trigger :passive}
-					{:ability/description "Now: Strike"
+                   {:ability/description "Now: Strike"
                     :ability/location :boost
                     :ability/trigger :now}
-					{:ability/description "Hit: Add this card to your gauge."
+                   {:ability/description "Hit: Add this card to your gauge."
                     :ability/location :boost
-                    :ability/trigger :hit}]}	
+                    :ability/trigger :hit}]}
 
  {:card/name "Hosenka"
   :card/id :s3-hosenka
@@ -786,18 +781,16 @@
   :card/boost-name "Ultra Parry"
   :card/boost-cost 2
   :card/boost-type :instant
-  :card/abilities [	{:ability/description "Critical: +2 Power."
+  :card/abilities [{:ability/description "Critical: +2 Power."
                     :ability/location :attack
                     :ability/trigger :passive
-					:ability/keywords "critical"}
-					{:ability/description "Before: Close 2"
+                    :ability/keywords "critical"}
+                   {:ability/description "Before: Close 2"
                     :ability/location :attack
-                    :ability/trigger :before}				
+                    :ability/trigger :before}
                    {:ability/description "The opponent must discard 3 Normal Attacks, or reveal their hand and discard all Normal Attacks."
                     :ability/location :boost
-                    :ability/trigger :now}]}	
-
-
+                    :ability/trigger :now}]}
 
  {:card/name "Razor's Edge Slicer"
   :card/id :s3-razors-edge-slicer
@@ -812,19 +805,19 @@
   :card/boost-name "High Jump"
   :card/boost-cost 0
   :card/boost-type :instant
-  :card/abilities [	{:ability/description "Critical: Attacks at range 4 or 5 do not hit you."
+  :card/abilities [{:ability/description "Critical: Attacks at range 4 or 5 do not hit you."
                     :ability/location :attack
                     :ability/trigger :passive
-					:ability/keywords "critical"}				
-					{:ability/description "Before: Advance 4."
+                    :ability/keywords "critical"}
+                   {:ability/description "Before: Advance 4."
                     :ability/location :attack
-                    :ability/trigger :before}	
-					{:ability/description "Hit: If the opponent is at the edge of the arena, +2 Power."
+                    :ability/trigger :before}
+                   {:ability/description "Hit: If the opponent is at the edge of the arena, +2 Power."
                     :ability/location :attack
-                    :ability/trigger :hit}					
-					{:ability/description "Move 3."
+                    :ability/trigger :hit}
+                   {:ability/description "Move 3."
                     :ability/location :boost
-                    :ability/trigger :now}]}	
+                    :ability/trigger :now}]}
 
  {:card/name "Cannonball"
   :card/id :s3-cannonball
@@ -839,19 +832,19 @@
   :card/boost-name "Skip"
   :card/boost-cost 0
   :card/boost-type :continuous
-  :card/abilities [	{:ability/description "Critical: Ignore Guard."
+  :card/abilities [{:ability/description "Critical: Ignore Guard."
                     :ability/location :attack
                     :ability/trigger :passive
-					:ability/keywords "critical"}				
-					{:ability/description "Before: Advance 3."
+                    :ability/keywords "critical"}
+                   {:ability/description "Before: Advance 3."
                     :ability/location :attack
-                    :ability/trigger :before}	
-					{:ability/description "Hit: Pull 3 and gain Advantage."
+                    :ability/trigger :before}
+                   {:ability/description "Hit: Pull 3 and gain Advantage."
                     :ability/location :attack
-                    :ability/trigger :hit}					
-					{:ability/description "+2 Speed. At the end of your next turn, add this card to your gauge."
+                    :ability/trigger :hit}
+                   {:ability/description "+2 Speed. At the end of your next turn, add this card to your gauge."
                     :ability/location :boost
-                    :ability/trigger :passive}]}	
+                    :ability/trigger :passive}]}
 
  {:card/name "Spiral Arrow"
   :card/id :s3-spiral-arrow
@@ -866,16 +859,16 @@
   :card/boost-name "Ejection Kick"
   :card/boost-cost 0
   :card/boost-type :instant
-  :card/abilities [	{:ability/description "Critical: +1 Armor and +4 Guard."
+  :card/abilities [{:ability/description "Critical: +1 Armor and +4 Guard."
                     :ability/location :attack
                     :ability/trigger :passive
-					:ability/keywords "critical"}				
-					{:ability/description "Before: Advance 4."
+                    :ability/keywords "critical"}
+                   {:ability/description "Before: Advance 4."
                     :ability/location :attack
-                    :ability/trigger :before}					
-					{:ability/description "If the opponent is at range 1, Push 3."
+                    :ability/trigger :before}
+                   {:ability/description "If the opponent is at range 1, Push 3."
                     :ability/location :boost
-                    :ability/trigger :now}]}	
+                    :ability/trigger :now}]}
 
  {:card/name "Dive Kick"
   :card/id :s3-dive-kick
@@ -890,18 +883,18 @@
   :card/boost-name "Slide"
   :card/boost-cost 0
   :card/boost-type :continuous
-  :card/abilities [	{:ability/description "Before: Advance 2."
+  :card/abilities [{:ability/description "Before: Advance 2."
                     :ability/location :attack
                     :ability/trigger :before}
-					{:ability/description "After: Attacks at range 1 do not hit you."
+                   {:ability/description "After: Attacks at range 1 do not hit you."
                     :ability/location :attack
-                    :ability/trigger :after}						
-					{:ability/description "Your Normal Attacks have 'Before: Advance 3.'"
+                    :ability/trigger :after}
+                   {:ability/description "Your Normal Attacks have 'Before: Advance 3.'"
                     :ability/location :boost
                     :ability/trigger :passive}
-					{:ability/description "Cleanup: If you did not use a Normal Attack, you may sustain this card."
+                   {:ability/description "Cleanup: If you did not use a Normal Attack, you may sustain this card."
                     :ability/location :boost
-                    :ability/trigger :cleanup}]}	
+                    :ability/trigger :cleanup}]}
 
  {:card/name "Cannon Spike"
   :card/id :s3-cannon-spike
@@ -916,12 +909,12 @@
   :card/boost-name "Backflip"
   :card/boost-cost 0
   :card/boost-type :instant
-  :card/abilities [	{:ability/description "Hit: Push or Pull 3."
+  :card/abilities [{:ability/description "Hit: Push or Pull 3."
                     :ability/location :attack
-                    :ability/trigger :hit}					
-					{:ability/description "Retreat up to 4."
+                    :ability/trigger :hit}
+                   {:ability/description "Retreat up to 4."
                     :ability/location :boost
-                    :ability/trigger :now}]}	
+                    :ability/trigger :now}]}
 
  {:card/name "CQC"
   :card/id :s3-cqc
@@ -936,15 +929,15 @@
   :card/boost-name "Acrobatics"
   :card/boost-cost 0
   :card/boost-type :continuous
-  :card/abilities [	{:ability/description "Attacks at range 1 do not hit you."
+  :card/abilities [{:ability/description "Attacks at range 1 do not hit you."
                     :ability/location :attack
                     :ability/trigger :passive}
-					{:ability/description "Hit: Push or Pull any number of spaces."
+                   {:ability/description "Hit: Push or Pull any number of spaces."
                     :ability/location :attack
-                    :ability/trigger :hit}					
-					{:ability/description "Attacks at range 1 do not hit you. At the end of your next turn, add this card to your gauge."
+                    :ability/trigger :hit}
+                   {:ability/description "Attacks at range 1 do not hit you. At the end of your next turn, add this card to your gauge."
                     :ability/location :boost
-                    :ability/trigger :passive}]}	
+                    :ability/trigger :passive}]}
 
  {:card/name "Gyro Drive Smasher"
   :card/id :s3-gyro-drive-smasher
@@ -959,20 +952,18 @@
   :card/boost-name "Hooligan Combination"
   :card/boost-cost 1
   :card/boost-type :instant
-  :card/abilities [	{:ability/description "Attacks at range 4 or 5 do not hit you."
+  :card/abilities [{:ability/description "Attacks at range 4 or 5 do not hit you."
                     :ability/location :attack
                     :ability/trigger :passive}
-					{:ability/description "Before: Advance as far as possible."
+                   {:ability/description "Before: Advance as far as possible."
                     :ability/location :attack
                     :ability/trigger :before}
-					{:ability/description "Hit: Pull any number of spaces. +1 Power per space pulled this way."
+                   {:ability/description "Hit: Pull any number of spaces. +1 Power per space pulled this way."
                     :ability/location :attack
-                    :ability/trigger :hit}					
-					{:ability/description "Retreat up to 3, then Strike."
+                    :ability/trigger :hit}
+                   {:ability/description "Retreat up to 3, then Strike."
                     :ability/location :boost
-                    :ability/trigger :now}]}	
-
-
+                    :ability/trigger :now}]}
 
  {:card/name "Flying Power Bomb"
   :card/id :s3-flying-power-bomb
@@ -987,16 +978,16 @@
   :card/boost-name "Intimidate"
   :card/boost-cost 0
   :card/boost-type :instant
-  :card/abilities [	{:ability/description "Critical: Stun Immunity."
+  :card/abilities [{:ability/description "Critical: Stun Immunity."
                     :ability/location :attack
                     :ability/trigger :passive
-					:ability/keywords "critical"}
-					{:ability/description "Before: Close 2."
+                    :ability/keywords "critical"}
+                   {:ability/description "Before: Close 2."
                     :ability/location :attack
-                    :ability/trigger :before}				
-					{:ability/description "Name a Range. The opponent must discard a card that includes that Range, or reveal a hand with none."
+                    :ability/trigger :before}
+                   {:ability/description "Name a Range. The opponent must discard a card that includes that Range, or reveal a hand with none."
                     :ability/location :boost
-                    :ability/trigger :now}]}	
+                    :ability/trigger :now}]}
 
  {:card/name "Double Lariat"
   :card/id :s3-double-lariat
@@ -1011,16 +1002,16 @@
   :card/boost-name "Ki Charge"
   :card/boost-cost 0
   :card/boost-type :instant
-  :card/abilities [	{:ability/description "Opponents cannot move you."
+  :card/abilities [{:ability/description "Opponents cannot move you."
                     :ability/location :attack
                     :ability/trigger :passive}
-					{:ability/description "Critical, After: Move 1 or 2."
+                   {:ability/description "Critical, After: Move 1 or 2."
                     :ability/location :attack
                     :ability/trigger :after
-					:ability/keywords "critical"}				
-					{:ability/description "Add this card to your gauge."
+                    :ability/keywords "critical"}
+                   {:ability/description "Add this card to your gauge."
                     :ability/location :boost
-                    :ability/trigger :now}]}	
+                    :ability/trigger :now}]}
 
  {:card/name "Spinning Piledriver"
   :card/id :s3-spinning-piledriver
@@ -1035,18 +1026,18 @@
   :card/boost-name "Thick Skinned"
   :card/boost-cost 0
   :card/boost-type :continuous
-  :card/abilities [	{:ability/description "Ignore Armor, Ignore Guard"
+  :card/abilities [{:ability/description "Ignore Armor, Ignore Guard"
                     :ability/location :attack
                     :ability/trigger :passive}
-					{:ability/description "Hit: The opponent must discard a card at random."
+                   {:ability/description "Hit: The opponent must discard a card at random."
                     :ability/location :attack
-                    :ability/trigger :hit}				
-					{:ability/description "+2 Armor"
+                    :ability/trigger :hit}
+                   {:ability/description "+2 Armor"
                     :ability/location :boost
                     :ability/trigger :passive}
-					{:ability/description "After: If you were hit this Strike, add this card to your gauge."
+                   {:ability/description "After: If you were hit this Strike, add this card to your gauge."
                     :ability/location :boost
-                    :ability/trigger :after}]}	
+                    :ability/trigger :after}]}
 
  {:card/name "Banishing Flat"
   :card/id :s3-banishing-flat
@@ -1061,19 +1052,19 @@
   :card/boost-name "Reach"
   :card/boost-cost 1
   :card/boost-type :continuous
-  :card/abilities [	{:ability/description "Critical: Attacks at range 4 or greater do not hit you."
+  :card/abilities [{:ability/description "Critical: Attacks at range 4 or greater do not hit you."
                     :ability/location :attack
                     :ability/trigger :passive
-					:ability/keywords "critical"}
-					{:ability/description "After: Close 2."
+                    :ability/keywords "critical"}
+                   {:ability/description "After: Close 2."
                     :ability/location :attack
-                    :ability/trigger :after}				
-					{:ability/description "+0~1 Range"
+                    :ability/trigger :after}
+                   {:ability/description "+0~1 Range"
                     :ability/location :boost
                     :ability/trigger :passive}
-					{:ability/description "Now: Strike"
+                   {:ability/description "Now: Strike"
                     :ability/location :boost
-                    :ability/trigger :now}]}	
+                    :ability/trigger :now}]}
 
  {:card/name "Atomic Suplex"
   :card/id :s3-atomic-suplex
@@ -1088,19 +1079,19 @@
   :card/boost-name "Siberian Fortitude"
   :card/boost-cost 1
   :card/boost-type :continuous
-  :card/abilities [	{:ability/description "Hit: Push 3."
+  :card/abilities [{:ability/description "Hit: Push 3."
                     :ability/location :attack
                     :ability/trigger :hit}
-					{:ability/description "Critical, After: Close 3."
+                   {:ability/description "Critical, After: Close 3."
                     :ability/location :attack
                     :ability/trigger :after
-					:ability/keywords "critical"}				
-					{:ability/description "+2 Armor"
+                    :ability/keywords "critical"}
+                   {:ability/description "+2 Armor"
                     :ability/location :boost
                     :ability/trigger :passive}
-					{:ability/description "Now: Close 2."
+                   {:ability/description "Now: Close 2."
                     :ability/location :boost
-                    :ability/trigger :now}]}	
+                    :ability/trigger :now}]}
 
  {:card/name "Siberian Blizzard"
   :card/id :s3-siberian-blizzard
@@ -1115,18 +1106,18 @@
   :card/boost-name "Jump in"
   :card/boost-cost 0
   :card/boost-type :instant
-  :card/abilities [	{:ability/description "Opponents cannot move past you."
+  :card/abilities [{:ability/description "Opponents cannot move past you."
                     :ability/location :attack
                     :ability/trigger :passive}
-					{:ability/description "Before: Close 1."
+                   {:ability/description "Before: Close 1."
                     :ability/location :attack
                     :ability/trigger :before}
-					{:ability/description "Hit: Draw 2 cards."
+                   {:ability/description "Hit: Draw 2 cards."
                     :ability/location :attack
-                    :ability/trigger :hit}				
-					{:ability/description "Advance 1 and draw 3 cards."
+                    :ability/trigger :hit}
+                   {:ability/description "Advance 1 and draw 3 cards."
                     :ability/location :boost
-                    :ability/trigger :now}]}	
+                    :ability/trigger :now}]}
 
  {:card/name "Ultimate Atomic Buster"
   :card/id :s3-ultimate-atomic-buster
@@ -1141,17 +1132,15 @@
   :card/boost-name "Super Armor"
   :card/boost-cost 0
   :card/boost-type :continuous
-  :card/abilities [ {:ability/description "Hit: You and the opponent discard all cards."
+  :card/abilities [{:ability/description "Hit: You and the opponent discard all cards."
                     :ability/location :attack
-                    :ability/trigger :hit}				
-					{:ability/description "+1 Power and Stun Immunity"
+                    :ability/trigger :hit}
+                   {:ability/description "+1 Power and Stun Immunity"
                     :ability/location :boost
                     :ability/trigger :passive}
-					{:ability/description "After: If you were hit this Strike, add this card to your gauge."
+                   {:ability/description "After: If you were hit this Strike, add this card to your gauge."
                     :ability/location :boost
-                    :ability/trigger :after}]}	
-
-
+                    :ability/trigger :after}]}
 
  {:card/name "Gadouken"
   :card/id :s3-gadouken
@@ -1166,12 +1155,12 @@
   :card/boost-name "Saikyo Vision"
   :card/boost-cost 1
   :card/boost-type :instant
-  :card/abilities [	{:ability/description "After: If you hit, you may return this card to the top of your deck. If you do, add a card from your hand to your gauge."
+  :card/abilities [{:ability/description "After: If you hit, you may return this card to the top of your deck. If you do, add a card from your hand to your gauge."
                     :ability/location :attack
-                    :ability/trigger :after}			
-					{:ability/description "Look at the opponent's hand. Discard any number of cards from your hand, then Strike."
+                    :ability/trigger :after}
+                   {:ability/description "Look at the opponent's hand. Discard any number of cards from your hand, then Strike."
                     :ability/location :boost
-                    :ability/trigger :now}]}	
+                    :ability/trigger :now}]}
 
  {:card/name "Koryuken"
   :card/id :s3-koryuken
@@ -1186,15 +1175,15 @@
   :card/boost-name "Saikyo Glory"
   :card/boost-cost 0
   :card/boost-type :continuous
-  :card/abilities [	{:ability/description "Hit: Discard the top card of your deck. This attack has +Power equal to the discarded card's printed Power."
+  :card/abilities [{:ability/description "Hit: Discard the top card of your deck. This attack has +Power equal to the discarded card's printed Power."
                     :ability/location :attack
-                    :ability/trigger :hit}			
-					{:ability/description "Your attacks are Critical"
+                    :ability/trigger :hit}
+                   {:ability/description "Your attacks are Critical"
                     :ability/location :boost
                     :ability/trigger :passive}
-					{:ability/description "Cleanup: If you are not stunned, you may sustain this Boost."
+                   {:ability/description "Cleanup: If you are not stunned, you may sustain this Boost."
                     :ability/location :boost
-                    :ability/trigger :cleanup}]}	
+                    :ability/trigger :cleanup}]}
 
  {:card/name "Dankukyaku"
   :card/id :s3-dankukyaku
@@ -1209,15 +1198,15 @@
   :card/boost-name "Saikyo Leap"
   :card/boost-cost 1
   :card/boost-type :instant
-  :card/abilities [	{:ability/description "Before: Advance 3. If you moved past the opponent during this movement, this attack does not hit."
+  :card/abilities [{:ability/description "Before: Advance 3. If you moved past the opponent during this movement, this attack does not hit."
                     :ability/location :attack
-                    :ability/trigger :before}	
-					{:ability/description "After: Place a card from your hand on top of your deck."
+                    :ability/trigger :before}
+                   {:ability/description "After: Place a card from your hand on top of your deck."
                     :ability/location :attack
-                    :ability/trigger :after}	
-					{:ability/description "Move 3, then add a card from your hand to your gauge."
+                    :ability/trigger :after}
+                   {:ability/description "Move 3, then add a card from your hand to your gauge."
                     :ability/location :boost
-                    :ability/trigger :now}]}	
+                    :ability/trigger :now}]}
 
  {:card/name "Saikyo Haraigoshi"
   :card/id :s3-saikyo-haraigoshi
@@ -1232,12 +1221,12 @@
   :card/boost-name "Peek"
   :card/boost-cost 0
   :card/boost-type :instant
-  :card/abilities [	{:ability/description "Hit: Discard up to 3 cards at random from your hand. For each card discarded, Pull 1 and gain +1 Power."
+  :card/abilities [{:ability/description "Hit: Discard up to 3 cards at random from your hand. For each card discarded, Pull 1 and gain +1 Power."
                     :ability/location :attack
                     :ability/trigger :hit}
-					{:ability/description "Look at the top card of your deck. You may Strike. If you do not, add it to your gauge."
+                   {:ability/description "Look at the top card of your deck. You may Strike. If you do not, add it to your gauge."
                     :ability/location :boost
-                    :ability/trigger :now}]}	
+                    :ability/trigger :now}]}
 
  {:card/name "Haoh Gadouken"
   :card/id :s3-haoh-gadouken
@@ -1252,12 +1241,12 @@
   :card/boost-name "Saikyo Power"
   :card/boost-cost 0
   :card/boost-type :continuous
-  :card/abilities [	{:ability/description "If you have no cards in hand, ignore this card's Gauge Cost. Attacks at range 2 to 5 do not hit you."
+  :card/abilities [{:ability/description "If you have no cards in hand, ignore this card's Gauge Cost. Attacks at range 2 to 5 do not hit you."
                     :ability/location :attack
-                    :ability/trigger :passive}	
-					{:ability/description "Hit: If you have no cards in hand, +4 Power."
+                    :ability/trigger :passive}
+                   {:ability/description "Hit: If you have no cards in hand, +4 Power."
                     :ability/location :boost
-                    :ability/trigger :hit}]}	
+                    :ability/trigger :hit}]}
 
  {:card/name "Legendary Taunt"
   :card/id :s3-legendary-taunt
@@ -1272,13 +1261,12 @@
   :card/boost-name "Secret Technique"
   :card/boost-cost 0
   :card/boost-type :instant
-  :card/abilities [	{:ability/description "Before: Advance up to 3. You may draw a card. Then, you may play and execute another attack from your hand."
+  :card/abilities [{:ability/description "Before: Advance up to 3. You may draw a card. Then, you may play and execute another attack from your hand."
                     :ability/location :attack
-                    :ability/trigger :passive}	
-					{:ability/description "Search your deck for any card and add it to your hand. Discard until you have one card in hand. You may skip your draw step this turn."
+                    :ability/trigger :passive}
+                   {:ability/description "Search your deck for any card and add it to your hand. Discard until you have one card in hand. You may skip your draw step this turn."
                     :ability/location :boost
-                    :ability/trigger :now}]}	
-
+                    :ability/trigger :now}]}
 
  {:card/name "Shisso Buraiken"
   :card/id :s3-shisso-buraiken
@@ -1293,20 +1281,18 @@
   :card/boost-name "Lucky!"
   :card/boost-cost 0
   :card/boost-type :instant
-  :card/abilities [	{:ability/description "If you have no cards in hand, ignore this card's Gauge Cost."
+  :card/abilities [{:ability/description "If you have no cards in hand, ignore this card's Gauge Cost."
                     :ability/location :attack
                     :ability/trigger :passive}
-					{:ability/description "Before: Close 2."
+                   {:ability/description "Before: Close 2."
                     :ability/location :attack
-                    :ability/trigger :before}	
-					{:ability/description "Hit: Gain Advantage."
+                    :ability/trigger :before}
+                   {:ability/description "Hit: Gain Advantage."
                     :ability/location :attack
-                    :ability/trigger :hit}						
-					{:ability/description "Place a card from your hand on top of your deck. You may skip your draw step this turn."
+                    :ability/trigger :hit}
+                   {:ability/description "Place a card from your hand on top of your deck. You may skip your draw step this turn."
                     :ability/location :boost
-                    :ability/trigger :now}]}	
-
-
+                    :ability/trigger :now}]}
 
  {:card/name "Hyakkishu"
   :card/id :s3-hyakkishu
@@ -1321,20 +1307,20 @@
   :card/boost-name "Fakeout"
   :card/boost-cost 0
   :card/boost-type :continuous
-  :card/abilities [	{:ability/description "Critical: Ignore Armor"
+  :card/abilities [{:ability/description "Critical: Ignore Armor"
                     :ability/location :attack
                     :ability/trigger :passive
-					:ability/keywords "critical"}
-					{:ability/description "Before: Close 2."
+                    :ability/keywords "critical"}
+                   {:ability/description "Before: Close 2."
                     :ability/location :attack
                     :ability/trigger :before}
-					{:ability/description "After: For the rest of the Strike, attacks at range 1 do not hit you."
+                   {:ability/description "After: For the rest of the Strike, attacks at range 1 do not hit you."
                     :ability/location :attack
-                    :ability/trigger :after}					
-					{:ability/description "Now: Strike. The opponent sets their card first."
+                    :ability/trigger :after}
+                   {:ability/description "Now: Strike. The opponent sets their card first."
                     :ability/location :boost
                     :ability/trigger :now}
-					{:ability/description "After: Add this card to your gauge."
+                   {:ability/description "After: Add this card to your gauge."
                     :ability/location :boost
                     :ability/trigger :after}]}
 
@@ -1354,13 +1340,13 @@
   :card/abilities [{:ability/description "Before: Advance 2."
                     :ability/location :attack
                     :ability/trigger :before}
-					{:ability/description "Hit: If you moved past the opponent during this Strike, they discard a card at random."
+                   {:ability/description "Hit: If you moved past the opponent during this Strike, they discard a card at random."
                     :ability/location :attack
-                    :ability/trigger :hit}					
-					{:ability/description "+1 Speed"
+                    :ability/trigger :hit}
+                   {:ability/description "+1 Speed"
                     :ability/location :boost
                     :ability/trigger :passive}
-					{:ability/description "Hit: Add this card to your gauge."
+                   {:ability/description "Hit: Add this card to your gauge."
                     :ability/location :boost
                     :ability/trigger :hit}]}
 
@@ -1380,11 +1366,11 @@
   :card/abilities [{:ability/description "Critical: +1 Speed and -2 Power."
                     :ability/location :attack
                     :ability/trigger :passive
-					:ability/keywords "critical"}			
-					{:ability/description "+1 Power"
+                    :ability/keywords "critical"}
+                   {:ability/description "+1 Power"
                     :ability/location :boost
                     :ability/trigger :passive}
-					{:ability/description "Now: Spend up to 5 life to draw that many cards."
+                   {:ability/description "Now: Spend up to 5 life to draw that many cards."
                     :ability/location :boost
                     :ability/trigger :now}]}
 
@@ -1404,14 +1390,14 @@
   :card/abilities [{:ability/description "Critical, Hit: Gain Advantage."
                     :ability/location :attack
                     :ability/trigger :hit
-					:ability/keywords "critical"}	
-					{:ability/description "Hit: If the opponent has 4 or more Guard, +2 Power."
+                    :ability/keywords "critical"}
+                   {:ability/description "Hit: If the opponent has 4 or more Guard, +2 Power."
                     :ability/location :attack
-                    :ability/trigger :hit}					
-					{:ability/description "+2 Power"
+                    :ability/trigger :hit}
+                   {:ability/description "+2 Power"
                     :ability/location :boost
                     :ability/trigger :passive}
-					{:ability/description "Hit: Add this to your gauge."
+                   {:ability/description "Hit: Add this to your gauge."
                     :ability/location :boost
                     :ability/trigger :hit}]}
 
@@ -1430,11 +1416,11 @@
   :card/boost-type :instant
   :card/abilities [{:ability/description "Before: Close 1."
                     :ability/location :attack
-                    :ability/trigger :before}	
-					{:ability/description "Hit: Push 2"
+                    :ability/trigger :before}
+                   {:ability/description "Hit: Push 2"
                     :ability/location :attack
-                    :ability/trigger :hit}					
-					{:ability/description "Add this card to your gauge or Move 1. Then, take another action."
+                    :ability/trigger :hit}
+                   {:ability/description "Add this card to your gauge or Move 1. Then, take another action."
                     :ability/location :boost
                     :ability/trigger :now}]}
 
@@ -1451,13 +1437,13 @@
   :card/boost-name "Instant Hell Murder"
   :card/boost-cost 0
   :card/boost-type :continuous
-  :card/abilities [	{:ability/description "Ignore Armor"
+  :card/abilities [{:ability/description "Ignore Armor"
                     :ability/location :attack
                     :ability/trigger :passive}
-					{:ability/description "Before: Close 2."
+                   {:ability/description "Before: Close 2."
                     :ability/location :attack
-                    :ability/trigger :before}				
-					{:ability/description "If you have 3 or more bonus Power, +3 Speed"
+                    :ability/trigger :before}
+                   {:ability/description "If you have 3 or more bonus Power, +3 Speed"
                     :ability/location :boost
                     :ability/trigger :passive}]}
 
@@ -1474,14 +1460,12 @@
   :card/boost-name "Die One Thousand Deaths!"
   :card/boost-cost 0
   :card/boost-type :continuous
-  :card/abilities [	{:ability/description "All positive Power bonuses applied to you are doubled."
+  :card/abilities [{:ability/description "All positive Power bonuses applied to you are doubled."
                     :ability/location :attack
-                    :ability/trigger :passive}		
-					{:ability/description "All positive Power bonuses applied to you are doubled."
+                    :ability/trigger :passive}
+                   {:ability/description "All positive Power bonuses applied to you are doubled."
                     :ability/location :boost
                     :ability/trigger :passive}]}
-
-
 
  {:card/name "One Inch Punch"
   :card/id :s3-one-inch-punch
@@ -1499,14 +1483,14 @@
   :card/abilities [{:ability/description "Critical: +2 Armor"
                     :ability/location :attack
                     :ability/trigger :passive
-					:ability/keywords "critical"}	
-					{:ability/description "Ignore Armor"
+                    :ability/keywords "critical"}
+                   {:ability/description "Ignore Armor"
                     :ability/location :attack
                     :ability/trigger :passive}
-					{:ability/description "Hit: Push 3."
+                   {:ability/description "Hit: Push 3."
                     :ability/location :attack
-                    :ability/trigger :hit}							
-					{:ability/description "Move 1. Take another action."
+                    :ability/trigger :hit}
+                   {:ability/description "Move 1. Take another action."
                     :ability/location :boost
                     :ability/trigger :now}]}
 
@@ -1526,10 +1510,10 @@
   :card/abilities [{:ability/description "Before: Advance 2."
                     :ability/location :attack
                     :ability/trigger :before}
-					{:ability/description "Hit: If you moved past the opponent during this strike, gain Advantage."
+                   {:ability/description "Hit: If you moved past the opponent during this strike, gain Advantage."
                     :ability/location :attack
-                    :ability/trigger :hit}							
-					{:ability/description "+1 Power and +1 Speed."
+                    :ability/trigger :hit}
+                   {:ability/description "+1 Power and +1 Speed."
                     :ability/location :boost
                     :ability/trigger :passive}]}
 
@@ -1548,8 +1532,8 @@
   :card/boost-type :instant
   :card/abilities [{:ability/description "Hit: Push 2 and gain Advantage."
                     :ability/location :attack
-                    :ability/trigger :hit}							
-					{:ability/description "Add this to your gauge."
+                    :ability/trigger :hit}
+                   {:ability/description "Add this to your gauge."
                     :ability/location :boost
                     :ability/trigger :now}]}
 
@@ -1569,11 +1553,11 @@
   :card/abilities [{:ability/description "Critical: +2 Speed"
                     :ability/location :attack
                     :ability/trigger :passive
-					:ability/keywords "critical"}	
-					{:ability/description "After: If you hit, you may return this card to the top of your Deck. If you do, add the top card of your discard pile to your gauge."
+                    :ability/keywords "critical"}
+                   {:ability/description "After: If you hit, you may return this card to the top of your Deck. If you do, add the top card of your discard pile to your gauge."
                     :ability/location :attack
-                    :ability/trigger :after}							
-					{:ability/description "+2 Power and +1 Armor"
+                    :ability/trigger :after}
+                   {:ability/description "+2 Power and +1 Armor"
                     :ability/location :boost
                     :ability/trigger :passive}]}
 
@@ -1593,17 +1577,17 @@
   :card/abilities [{:ability/description "+2 Speed if the opponent initiated this Strike."
                     :ability/location :attack
                     :ability/trigger :passive}
-					{:ability/description "Critical, before: Close 1."
+                   {:ability/description "Critical, before: Close 1."
                     :ability/location :attack
                     :ability/trigger :before
-					:ability/keywords "critical"}
-					{:ability/description "Ignore Armor"
+                    :ability/keywords "critical"}
+                   {:ability/description "Ignore Armor"
                     :ability/location :boost
                     :ability/trigger :passive}
-					{:ability/description "Now: Strike"
+                   {:ability/description "Now: Strike"
                     :ability/location :boost
-                    :ability/trigger :now}					
-					{:ability/description "Hit: Add this boost to your gauge."
+                    :ability/trigger :now}
+                   {:ability/description "Hit: Add this boost to your gauge."
                     :ability/location :boost
                     :ability/trigger :hit}]}
 
@@ -1623,7 +1607,7 @@
   :card/abilities [{:ability/description "+3 Speed if the opponent initiated this Strike."
                     :ability/location :attack
                     :ability/trigger :passive}
-					{:ability/description "Move 2, then Strike."
+                   {:ability/description "Move 2, then Strike."
                     :ability/location :boost
                     :ability/trigger :now}]}
 
@@ -1643,11 +1627,9 @@
   :card/abilities [{:ability/description "After: Move up to 2."
                     :ability/location :attack
                     :ability/trigger :after}
-					{:ability/description "+2 Power and +2 Speed"
+                   {:ability/description "+2 Power and +2 Speed"
                     :ability/location :boost
                     :ability/trigger :passive}]}
-
-
 
  {:card/name "Knee Bash"
   :card/id :s3-knee-bash
@@ -1665,14 +1647,14 @@
   :card/abilities [{:ability/description "+0~1 Range if you initiated this Strike."
                     :ability/location :attack
                     :ability/trigger :passive}
-					{:ability/description "Critical, Before: Close 2."
+                   {:ability/description "Critical, Before: Close 2."
                     :ability/location :attack
                     :ability/trigger :before
-					:ability/keywords "critical"}
-					{:ability/description "Now: Draw 2 cards."
+                    :ability/keywords "critical"}
+                   {:ability/description "Now: Draw 2 cards."
                     :ability/location :boost
                     :ability/trigger :now}
-					{:ability/description "Hit: Gain Advantage."
+                   {:ability/description "Hit: Gain Advantage."
                     :ability/location :boost
                     :ability/trigger :hit}]}
 
@@ -1692,13 +1674,13 @@
   :card/abilities [{:ability/description "Before: Advance 2."
                     :ability/location :attack
                     :ability/trigger :before}
-					{:ability/description "Hit: If you moved past the opponent during this strike, Ignore Guard."
+                   {:ability/description "Hit: If you moved past the opponent during this strike, Ignore Guard."
                     :ability/location :attack
                     :ability/trigger :hit}
-					{:ability/description "+1 Speed"
+                   {:ability/description "+1 Speed"
                     :ability/location :boost
                     :ability/trigger :passive}
-					{:ability/description "Now: Strike."
+                   {:ability/description "Now: Strike."
                     :ability/location :boost
                     :ability/trigger :now}]}
 
@@ -1718,14 +1700,14 @@
   :card/abilities [{:ability/description "Critical: +2 Speed"
                     :ability/location :attack
                     :ability/trigger :passive
-					:ability/keywords "critical"}
-					{:ability/description "Ignore Armor"
+                    :ability/keywords "critical"}
+                   {:ability/description "Ignore Armor"
                     :ability/location :attack
                     :ability/trigger :passive}
-					{:ability/description "Before: Close 1."
+                   {:ability/description "Before: Close 1."
                     :ability/location :attack
                     :ability/trigger :before}
-					{:ability/description "Add this card to your gauge."
+                   {:ability/description "Add this card to your gauge."
                     :ability/location :boost
                     :ability/trigger :now}]}
 
@@ -1745,14 +1727,14 @@
   :card/abilities [{:ability/description "Critical: +2 Power."
                     :ability/location :attack
                     :ability/trigger :passive
-					:ability/keywords "critical"}
-					{:ability/description "After: If you hit, you may return this card to the top of your Deck. If you do, add the top card of your discard pile to your gauge."
+                    :ability/keywords "critical"}
+                   {:ability/description "After: If you hit, you may return this card to the top of your Deck. If you do, add the top card of your discard pile to your gauge."
                     :ability/location :attack
                     :ability/trigger :after}
-					{:ability/description "+1 Power"
+                   {:ability/description "+1 Power"
                     :ability/location :boost
                     :ability/trigger :passive}
-					{:ability/description "Now: Strike."
+                   {:ability/description "Now: Strike."
                     :ability/location :boost
                     :ability/trigger :now}]}
 
@@ -1772,14 +1754,14 @@
   :card/abilities [{:ability/description "+2 Speed if you initiated this Strike."
                     :ability/location :attack
                     :ability/trigger :passive}
-					{:ability/description "Critical, Before: Close 1."
+                   {:ability/description "Critical, Before: Close 1."
                     :ability/location :attack
                     :ability/trigger :before
-					:ability/keywords "critical"}
-					{:ability/description "+1 Speed"
+                    :ability/keywords "critical"}
+                   {:ability/description "+1 Speed"
                     :ability/location :boost
                     :ability/trigger :passive}
-					{:ability/description "Now: Draw a card."
+                   {:ability/description "Now: Draw a card."
                     :ability/location :boost
                     :ability/trigger :now}]}
 
@@ -1799,7 +1781,7 @@
   :card/abilities [{:ability/description "Before: Advance 2. If you did not move past the opponent during this movement, +3 Power."
                     :ability/location :attack
                     :ability/trigger :before}
-					{:ability/description "+2 Power and +2 Speed."
+                   {:ability/description "+2 Power and +2 Speed."
                     :ability/location :boost
                     :ability/trigger :passive}]}
 
@@ -1819,11 +1801,9 @@
   :card/abilities [{:ability/description "+4 Power if you initiated this Strike."
                     :ability/location :attack
                     :ability/trigger :before}
-					{:ability/description "Close 3, then Strike."
+                   {:ability/description "Close 3, then Strike."
                     :ability/location :boost
                     :ability/trigger :now}]}
-
-
 
  {:card/name "Flash Kick"
   :card/id :s3-flash-kick
@@ -1841,14 +1821,14 @@
   :card/abilities [{:ability/description "Critical: +2 Power"
                     :ability/location :attack
                     :ability/trigger :passive
-					:ability/keywords "critical"}
-					{:ability/description "Hit: Push 2."
+                    :ability/keywords "critical"}
+                   {:ability/description "Hit: Push 2."
                     :ability/location :attack
                     :ability/trigger :hit}
-					{:ability/description "After: Move 1."
+                   {:ability/description "After: Move 1."
                     :ability/location :attack
                     :ability/trigger :after}
-					{:ability/description "+2 Power. At the end of the next turn, add this card to your gauge."
+                   {:ability/description "+2 Power. At the end of your next turn, add this card to your gauge."
                     :ability/location :boost
                     :ability/trigger :passive}]}
 
@@ -1868,11 +1848,11 @@
   :card/abilities [{:ability/description "Ignore Guard"
                     :ability/location :attack
                     :ability/trigger :passive}
-					{:ability/description "Critical, Hit: The opponent must discard 2 cards at random."
+                   {:ability/description "Critical, Hit: The opponent must discard 2 cards at random."
                     :ability/location :attack
                     :ability/trigger :hit
-					:ability/keywords "critical"}
-					{:ability/description "+1 Armor and +3 Guard. At the end of the next turn, add this card to your gauge."
+                    :ability/keywords "critical"}
+                   {:ability/description "+1 Armor and +3 Guard. At the end of your next turn, add this card to your gauge."
                     :ability/location :boost
                     :ability/trigger :passive}]}
 
@@ -1892,11 +1872,11 @@
   :card/abilities [{:ability/description "Critical: +2 Power"
                     :ability/location :attack
                     :ability/trigger :passive
-					:ability/keywords "critical"}
-					{:ability/description "After: Move 1 or 2."
+                    :ability/keywords "critical"}
+                   {:ability/description "After: Move 1 or 2."
                     :ability/location :attack
                     :ability/trigger :after}
-					{:ability/description "+2 Speed. At the end of the next turn, add this card to your gauge."
+                   {:ability/description "+2 Speed. At the end of your next turn, add this card to your gauge."
                     :ability/location :boost
                     :ability/trigger :passive}]}
 
@@ -1916,11 +1896,11 @@
   :card/abilities [{:ability/description "Critical: +2 Power"
                     :ability/location :attack
                     :ability/trigger :passive
-					:ability/keywords "critical"}
-					{:ability/description "Hit: Move 1. The opponent must discard a card at random."
+                    :ability/keywords "critical"}
+                   {:ability/description "Hit: Move 1. The opponent must discard a card at random."
                     :ability/location :attack
                     :ability/trigger :hit}
-					{:ability/description "Close 2. If you are not at range 1 after this, you may take another action."
+                   {:ability/description "Close 2. If you are not at range 1 after this, you may take another action."
                     :ability/location :boost
                     :ability/trigger :now}]}
 
@@ -1940,10 +1920,10 @@
   :card/abilities [{:ability/description "Before: Advance 2."
                     :ability/location :attack
                     :ability/trigger :before}
-					{:ability/description "Hit: Gain Advantage."
+                   {:ability/description "Hit: Gain Advantage."
                     :ability/location :attack
                     :ability/trigger :hit}
-					{:ability/description "+0~1 Range. At the end of the next turn, add this card to your gauge."
+                   {:ability/description "+0~1 Range. At the end of your next turn, add this card to your gauge."
                     :ability/location :boost
                     :ability/trigger :passive}]}
 
@@ -1963,13 +1943,13 @@
   :card/abilities [{:ability/description "Hit: Push 3."
                     :ability/location :attack
                     :ability/trigger :hit}
-					{:ability/description "After: Move 2."
+                   {:ability/description "After: Move 2."
                     :ability/location :attack
                     :ability/trigger :after}
-					{:ability/description "+2 Guard and your attacks are Critical."
+                   {:ability/description "+2 Guard and your attacks are Critical."
                     :ability/location :boost
                     :ability/trigger :passive}
-					{:ability/description "Cleanup: If you were not stunned, you may sustain this Boost."
+                   {:ability/description "Cleanup: If you were not stunned, you may sustain this Boost."
                     :ability/location :boost
                     :ability/trigger :cleanup}]}
 
@@ -1989,14 +1969,12 @@
   :card/abilities [{:ability/description "After: Move up to 3."
                     :ability/location :attack
                     :ability/trigger :after}
-					{:ability/description "+2 Speed."
+                   {:ability/description "+2 Speed."
                     :ability/location :boost
                     :ability/trigger :passive}
-					{:ability/description "Now: Strike."
+                   {:ability/description "Now: Strike."
                     :ability/location :boost
                     :ability/trigger :now}]}
-
-
 
  {:card/name "Low Tiger Shot"
   :card/id :s3-low-tiger-shot
@@ -2014,14 +1992,14 @@
   :card/abilities [{:ability/description "Critical, Hit: +1 Power and draw a card."
                     :ability/location :attack
                     :ability/trigger :passive
-					:ability/keywords "critical"}
-					{:ability/description "Hit: Push 1."
+                    :ability/keywords "critical"}
+                   {:ability/description "Hit: Push 1."
                     :ability/location :attack
                     :ability/trigger :hit}
-					{:ability/description "After: If you hit, you may return this card to the top of your Deck. If you do, add the top card of your discard pile to your gauge."
+                   {:ability/description "After: If you hit, you may return this card to the top of your Deck. If you do, add the top card of your discard pile to your gauge."
                     :ability/location :attack
                     :ability/trigger :after}
-					{:ability/description "Retreat 2. If you are at range 3, take another action."
+                   {:ability/description "Retreat 2. If you are at range 3, take another action."
                     :ability/location :boost
                     :ability/trigger :now}]}
 
@@ -2041,17 +2019,17 @@
   :card/abilities [{:ability/description "Before: Close 2."
                     :ability/location :attack
                     :ability/trigger :before}
-					{:ability/description "Hit: Gain Advantage."
+                   {:ability/description "Hit: Gain Advantage."
                     :ability/location :attack
                     :ability/trigger :hit}
-					{:ability/description "Critical, After: If the opponent is stunned, Push 3."
+                   {:ability/description "Critical, After: If the opponent is stunned, Push 3."
                     :ability/location :attack
                     :ability/trigger :after
-					:ability/keywords "critical"}
-					{:ability/description "+1 Speed"
+                    :ability/keywords "critical"}
+                   {:ability/description "+1 Speed"
                     :ability/location :boost
                     :ability/trigger :passive}
-					{:ability/description "Hit: Add this card to your gauge."
+                   {:ability/description "Hit: Add this card to your gauge."
                     :ability/location :boost
                     :ability/trigger :hit}]}
 
@@ -2071,14 +2049,14 @@
   :card/abilities [{:ability/description "Before: Close 1."
                     :ability/location :attack
                     :ability/trigger :before}
-					{:ability/description "Critical, Hit: Push 2."
+                   {:ability/description "Critical, Hit: Push 2."
                     :ability/location :attack
                     :ability/trigger :hit
-					:ability/keywords "critical"}
-					{:ability/description "After: Lose all Armor."
+                    :ability/keywords "critical"}
+                   {:ability/description "After: Lose all Armor."
                     :ability/location :attack
                     :ability/trigger :after}
-					{:ability/description "If the opponent is at range 1, they must discard 2 cards at random. Then, Strike."
+                   {:ability/description "If the opponent is at range 1, they must discard 2 cards at random. Then, Strike."
                     :ability/location :boost
                     :ability/trigger :now}]}
 
@@ -2098,14 +2076,14 @@
   :card/abilities [{:ability/description "Critical, Hit: Draw a card, then the opponent must discard a card."
                     :ability/location :attack
                     :ability/trigger :hit
-					:ability/keywords "critical"}
-					{:ability/description "Hit: Push 1. Add the top card of your discard pile to your gauge, then draw a card."
+                    :ability/keywords "critical"}
+                   {:ability/description "Hit: Push 1. Add the top card of your discard pile to your gauge, then draw a card."
                     :ability/location :attack
                     :ability/trigger :hit}
-					{:ability/description "+0~1 Range"
+                   {:ability/description "+0~1 Range"
                     :ability/location :boost
                     :ability/trigger :passive}
-					{:ability/description "Now: Strike"
+                   {:ability/description "Now: Strike"
                     :ability/location :boost
                     :ability/trigger :now}]}
 
@@ -2125,11 +2103,11 @@
   :card/abilities [{:ability/description "Critical: Ignore Guard"
                     :ability/location :attack
                     :ability/trigger :passive
-					:ability/keywords "critical"}
-					{:ability/description "Before: Close 1."
+                    :ability/keywords "critical"}
+                   {:ability/description "Before: Close 1."
                     :ability/location :attack
                     :ability/trigger :before}
-					{:ability/description "If your next attack is 'Tiger Uppercut', if has +2 Power, +2 Speed, +2 Guard and Critical."
+                   {:ability/description "If your next attack is 'Tiger Uppercut', if has +2 Power, +2 Speed, +2 Guard and Critical."
                     :ability/location :boost
                     :ability/trigger :passive}]}
 
@@ -2149,7 +2127,7 @@
   :card/abilities [{:ability/description "Before: Advance 3."
                     :ability/location :attack
                     :ability/trigger :before}
-					{:ability/description "+0~1 range, +2 Armor and +2 Guard"
+                   {:ability/description "+0~1 range, +2 Armor and +2 Guard"
                     :ability/location :boost
                     :ability/trigger :passive}]}
 
@@ -2169,6 +2147,6 @@
   :card/abilities [{:ability/description "Hit: Push 3 and gain Advantage."
                     :ability/location :attack
                     :ability/trigger :hit}
-					{:ability/description "+4 Speed"
+                   {:ability/description "+4 Speed"
                     :ability/location :boost
                     :ability/trigger :passive}]}]

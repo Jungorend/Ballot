@@ -319,7 +319,7 @@
                     {:ability/description "Now: Strike."
                      :ability/trigger     :now
                      :ability/location    :boost}
-                    {:ability/description "Before: Close 2."
+                    {:ability/description "Before: Close 1."
                      :ability/location    :boost
                      :ability/trigger     :before}
                     {:ability/description "Hit: Gain Advantage."
@@ -3112,7 +3112,7 @@
         :min-range 1
         :max-range 4
         :power 3
-        :speed 5
+        :speed 8
         :armor 0
         :guard 0
         :boost-name "Disrespect"

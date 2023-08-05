@@ -722,6 +722,7 @@
                 :s5-mami-circular 2
                 :s5-mystique-momo 2)
    (create-deck "Kokonoe Mercury" :s5-kokonoe
+                :s5-graviton 1
                 :s5-ultimate-impact 1
                 :s5-flaming-belabog 2
                 :s5-dreadnought-exterminator 2
@@ -758,7 +759,7 @@
                 :s5-guren 2
                 :s5-renka 2
                 :s5-yanagi 2
-                :s5-zentetsu 2)
+                :s5-zantetsu 2)
    (create-deck "Carl Clover" :s5-carl-clover
                 :s5-nirvana 1
                 :s5-deus-ex-machina 1
