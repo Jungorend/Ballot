@@ -100,7 +100,6 @@
   (cond (= -1 stat) "X"
         (= -2 stat) "N/A"
         :else stat))
-
 (defn describe-attack-card
   [card abilities]
   (let [sorted-abilities (sort-by #(case (:ability/trigger %)
@@ -123,8 +122,8 @@
            (when (> (:card/cost card) 0)
              (str (:card/cost card) " Force.\n")))
          "Range: " range " | Power: " (print-stats (:card/power card)) " | Speed: " (print-stats (:card/speed card))
-         (when (> (:card/armor card) 0) (str " | Armor: " (:card/armor card)))
-         (when (> (:card/guard card) 0) (str " | Guard: " (:card/guard card))) "\n"
+         (when (not= (:card/armor card) 0) (str " | Armor: " (print-stats (:card/armor card))))
+         (when (not= (:card/guard card) 0) (str " | Guard: " (print-stats (:card/guard card)))) "\n"
          (when (= (:card/type card) :astral)
            (str "\nThis is an Astral. It begins sealed. If you manually reshuffle your deck, instead of drawing a card at the end of your turn, put this into your hand.\n"))
          (if (:card/description card) (:card/description card) "") "\n"

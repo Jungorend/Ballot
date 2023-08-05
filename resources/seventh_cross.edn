@@ -1349,7 +1349,7 @@
                                 :trigger :after}
                      #:ability {:description "As an action, discard a card containing your range to the opponent to do 1 non-lethal damage and draw a card."
                                 :location :boost
-                                :trigger :transform}]}
+                                :trigger :passive}]}
 
  #:card {:name "Carmine Offering"
          :id :s2-carmine-offering
