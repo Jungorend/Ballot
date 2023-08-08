@@ -1701,6 +1701,281 @@
                                 :location :boost
                                 :trigger :now}]}
 
+ #:card {:name "Death Omen"
+         :id :s2-death-omen
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 1
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Immortality"
+         :boost-cost 0
+         :boost-type :transform
+         :abilities [#:ability {:description "Before: Close 2. If you have less life than your opponent, you may Transform a card from your hand."
+                                :trigger :before
+                                :location :attack}
+                     #:ability {:description "Hit: You may seal one of your Transformations. If you do, +3 Power."
+                                :trigger :hit
+                                :location :attack}
+                     #:ability {:description "Your Normal Attacks have +1 Armor."
+                                :trigger :passive
+                                :location :boost}]}
+
+ #:card {:name "Evil Eye"
+         :id :s2-evil-eye
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 3
+         :power 0
+         :speed 7
+         :armor 0
+         :guard 0
+         :boost-name "Unstoppable Assault"
+         :boost-cost 0
+         :boost-type :transform
+         :abilities [#:ability {:description "Hit: Gain Advantage."
+                                :trigger :hit
+                                :location :attack}
+                     #:ability {:description "Your Normal Attacks have +2 Guard."
+                                :trigger :passive
+                                :location :boost}]}
+
+ #:card {:name "Grim Thundercalling"
+         :id :s2-grim-thundercalling
+         :type :special
+         :cost 0
+         :min-range 3
+         :max-range 4
+         :power 2
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Hell's Reach"
+         :boost-cost 0
+         :boost-type :transform
+         :abilities [#:ability {:description "Hit: Gain Advantage."
+                                :trigger :hit
+                                :location :attack}
+                     #:ability {:description "After: Draw a card, then Close 1 or 2."
+                                :trigger :after
+                                :location :attack}
+                     #:ability {:description "Your Normal Attacks have: \"Before: You may spend 1 Force. If you do, Close 1.\""
+                                :trigger :passive
+                                :location :boost}]}
+
+ #:card {:name "Lightning Spike"
+         :id :s2-lightning-spike
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 3
+         :power 1
+         :speed 3
+         :armor 0
+         :guard 4
+         :boost-name "Infernal Swiftness"
+         :boost-cost 0
+         :boost-type :transform
+         :abilities [#:ability {:description "Ignore Guard"
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: Add the top card of your Discard Pile to your Gauge."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Your Normal Attacks have \"After: You may Spend 1 Force. If you do, Retreat 1.\""
+                                :trigger :passive
+                                :location :boost}]}
+
+ #:card {:name "Southpaw"
+         :id :s2-southpaw
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 1
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Diabolic Might"
+         :boost-cost 0
+         :boost-type :transform
+         :abilities [#:ability {:description "Hit: You may transform a card from your hand."
+                                :trigger :hit
+                                :location :attack}
+                     #:ability {:description "After: Advance 4."
+                                :trigger :after
+                                :location :attack}
+                     #:ability {:description "Your Normal Attacks have +1 Power."
+                                :trigger :passive
+                                :location :boost}]}
+
+ #:card {:name "Bargeist Fang"
+         :id :s2-bargeist-fang
+         :description "\"Another soul for my collection!\""
+         :type :ultra
+         :cost 2
+         :min-range 1
+         :max-range 2
+         :power 1
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Heart of Darkness"
+         :boost-cost 0
+         :boost-type :transform
+         :abilities [#:ability {:description "You may generate Gauge to pay for this attack's Cost by sealing your Transformations for 1 Gauge each."
+                                :trigger :passive
+                                :location :attack}
+                     #:ability {:description "Hit: Transform any number of cards from your hand, then draw 3 cards."
+                                :trigger :hit
+                                :location :attack}
+                     #:ability {:description "You may have a second copy of each Normal Attack in your Transformation area."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Netherstorm"
+         :id :s2-netherstorm
+         :description "\"I'll show you what true power looks like!\""
+         :type :ultra
+         :cost 5
+         :min-range 1
+         :max-range 3
+         :power 13
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Ouroboros"
+         :boost-cost 0
+         :boost-type :transform
+         :abilities [#:ability {:description "You may generate Gauge to pay this attack's Cost by sealing any number of your Transformations for 1 Gauge each."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "As an action, you may spend 1 Force. If you do, exchange a card in your hand with a card in your transformation area."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Blood Frenzy"
+         :id :s2-blood-frenzy
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 3
+         :power 2
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Secret Formula"
+         :boost-cost 0
+         :boost-type :transform
+         :abilities [#:ability {:description "Hit: You may Transform a card from your hand."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "You may play boosts from your gauge as though they were in your hand. When you do, add the top card of your deck to your gauge."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Eviscerate"
+         :id :s2-eviscerate
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 5
+         :speed 0
+         :armor 2
+         :guard 5
+         :boost-name "Explosive Cocktail"
+         :boost-cost 0
+         :boost-type :transform
+         :abilities [#:ability {:description "Hit: The opponent must discard a card at random."
+                                :trigger :hit
+                                :location :attack}
+                     #:ability {:description "After: Close 3"
+                                :trigger :after
+                                :location :attack}
+                     #:ability {:description "You may generate Force by spending 1 life for 1 Force."}]}
+
+ #:card {:name "Explosive Cocktail"
+         :id :s2-explosive-cocktail
+         :type :special/:ultra
+         :cost 0
+         :min-range 0
+         :max-range 0
+         :power 0
+         :speed 0
+         :armor 0
+         :guard 0
+         :boost-name ""
+         :boost-cost 0
+         :boost-type :instant
+         :abilities []}
+
+ #:card {:name "Violent Transgression"
+         :id :s2-violent-transgression
+         :type :special/:ultra
+         :cost 0
+         :min-range 0
+         :max-range 0
+         :power 0
+         :speed 0
+         :armor 0
+         :guard 0
+         :boost-name ""
+         :boost-cost 0
+         :boost-type :instant
+         :abilities []}
+
+ #:card {:name "Withering Toxin"
+         :id :s2-withering-toxin
+         :type :special/:ultra
+         :cost 0
+         :min-range 0
+         :max-range 0
+         :power 0
+         :speed 0
+         :armor 0
+         :guard 0
+         :boost-name ""
+         :boost-cost 0
+         :boost-type :instant
+         :abilities []}
+
+ #:card {:name "Hydra Helix"
+         :id :s2-hydra-helix
+         :description "\"I'll tear you apart with my bare hands!\""
+         :type :special/:ultra
+         :cost 0
+         :min-range 0
+         :max-range 0
+         :power 0
+         :speed 0
+         :armor 0
+         :guard 0
+         :boost-name ""
+         :boost-cost 0
+         :boost-type :instant
+         :abilities []}
+
+ #:card {:name "Metamorphosis"
+         :description "\"Embrace your true nature!\""
+         :id :s2-metamorphosis
+         :type :special/:ultra
+         :cost 0
+         :min-range 0
+         :max-range 0
+         :power 0
+         :speed 0
+         :armor 0
+         :guard 0
+         :boost-name ""
+         :boost-cost 0
+         :boost-type :instant
+         :abilities []}
+
  {:card/name "Symphony of the Deep"
   :card/description "\"What secrets lie buried in these depths...?\""}
 
@@ -1713,23 +1988,11 @@
  {:card/name "Tale of Nine Sorrows"
   :card/description "\"All things are a part of the great cycle-a story eternally retold.\""}
 
- {:card/name "Hydra Helix"
-  :card/description "\"I'll tear you apart with my bare hands!\""}
-
- {:card/name "Metamorphosis"
-  :card/description "\"Embrace your true nature!\""}
-
  {:card/name "Skies Aflame"
   :card/description "\"Looks like a lightning rod to me!\""}
 
  {:card/name "Ride The Lightning"
   :card/description "\"In a flash, I appear to defend the innocent!\""}
-
- {:card/name "Netherstorm"
-  :card/description "\"I'll show you what true power looks like!\""}
-
- {:card/name "Bargeist Fang"
-  :card/description "\"Another soul for my collection!\""}
 
  {:card/name "Call of the Dreamlands"
   :card/description "\"We're the same, you and I, wandering forever through this timeless dream.\""}
