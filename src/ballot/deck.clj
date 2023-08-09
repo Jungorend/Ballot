@@ -307,7 +307,32 @@
                 :s2-ink-splash 2
                 :s2-yokai-banishing 2
                 :s2-tale-of-nine-sorrows 2
-                :s2-tales-of-seven-trials 2)])
+                :s2-tales-of-seven-trials 2)
+   (create-deck "Sydney" :s2-sydney
+                :s2-serena 1
+                :s2-blossom-haze 2
+                :s2-choking-thorns 2
+                :s2-pea-shooter 2
+                :s2-spore-burst 2
+                :s2-venom-lash 2
+                :s2-aluraunes-kiss 2
+                :s2-verdant-slaughter 2)
+   (create-deck "Emogine" :s2-emogine
+                :s2-blood-for-blood 2
+                :s2-guilty-paean 2
+                :s2-holy-warding 2
+                :s2-martyrs-lash 2
+                :s2-purifying-chime 2
+                :s2-hand-of-judgement 2
+                :s2-touch-of-divinity 2)
+   (create-deck "Carl Swangee" :s2-swangee
+                :s2-cease-and-desist 2
+                :s2-disarming-strike 2
+                :s2-improvised-weapon 2
+                :s2-power-short 2
+                :s2-swangee-elbow 2
+                :s2-authorized-force 2
+                :s2-autonomic-response 2)])
 
 (def s6-decks
   [(create-deck "Linne" :s6-linne

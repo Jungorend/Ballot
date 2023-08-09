@@ -2647,4 +2647,305 @@
                                 :trigger :passive}
                      #:ability {:description "Stun Immunity. Opponents cannot move past you (opponents who would move past you stop in front of you instead)."
                                 :location :boost
-                                :trigger :passive}]}]
+                                :trigger :passive}]}
+
+ #:card {:name "Blossom Haze"
+         :type :special
+         :id :s2-blossom-haze
+         :cost 0
+         :min-range 1
+         :max-range 3
+         :power 3
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Enthralling Toxins"
+         :boost-cost 0
+         :boost-type :transform
+         :abilities [#:ability {:description "After: +3 Armor"
+                                :trigger :after
+                                :location :attack}
+                     #:ability {:description "At the end of each Strike, if you spent any Gauge before or during the Strike and were not stunned, you may Push or Pull 1."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Choking Thorns"
+         :type :special
+         :id :s2-choking-thorns
+         :cost 0
+         :min-range 0
+         :max-range 1
+         :power 6
+         :speed 0
+         :armor 2
+         :guard 0
+         :boost-name "Barkskin"
+         :boost-cost 1
+         :boost-type :continuous
+         :abilities [#:ability {:description "Stun Immunity"
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "After: Add the top card of your discard pile to your Gauge."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "+4 Armor"
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Pea Shooter"
+         :type :special
+         :id :s2-pea-shooter
+         :cost 0
+         :min-range 3
+         :max-range 5
+         :power 1
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Vine Snare"
+         :boost-cost 1
+         :boost-type :continuous
+         :abilities [#:ability {:description "After: If the opponent is stunned, Pull up to 3 towards the source of this attack."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "The opponent cannot move. You can still move them."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Spore Burst"
+         :type :special
+         :id :s2-spore-burst
+         :cost 0
+         :min-range 0
+         :max-range 2
+         :power 5
+         :speed 2
+         :armor 0
+         :guard 6
+         :boost-name "Lignin Reinforcement"
+         :boost-cost 0
+         :boost-type :transform
+         :abilities [#:ability {:description "Hit: Push 3. If the opponent was pushed less than 3 spaces, add the top card of your discard pile to your gauge."
+                                :trigger :hit
+                                :location :attack}
+                     #:ability {:description "When you set a Special or Ultra Attack, you may spend up to 2 Gauge. For each Gauge spent, +1 Armor."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Venom Lash"
+         :type :special
+         :id :s2-venom-lash
+         :cost 0
+         :min-range 2
+         :max-range 4
+         :power 3
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Enhanced Metabolism"
+         :boost-cost 0
+         :boost-type :transform
+         :abilities [#:ability {:description "Hit: Push or Pull 1, then add the top card of your discard pile to your Gauge."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Your Special and Ultra Attacks have \"Hit: You may spend 1 life. If you do, add a card from your hand to your gauge."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Aluraune's Kiss"
+         :type :ultra
+         :id :s2-aluraunes-kiss
+         :cost 2
+         :min-range 0
+         :max-range 1
+         :power 4
+         :speed 7
+         :armor 0
+         :guard 0
+         :boost-name "Feed Me"
+         :boost-cost 0
+         :boost-type :instant
+         :abilities [#:ability {:description "Hit: The opponent discards a card from their Gauge. Add the top 2 cards of your discard pile to your Gauge."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Spend up to 3 life. For each life spent, add a card from your hand to your Gauge."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Verdant Slaughter"
+         :type :ultra
+         :id :s2-verdant-slaughter
+         :cost 2
+         :min-range 0
+         :max-range 1
+         :power 8
+         :speed 1
+         :armor 0
+         :guard 3
+         :boost-name "Saphrophyte"
+         :boost-cost 0
+         :boost-type :instant
+         :abilities [#:ability {:description "For each card in your gauge, +1 Guard."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Before: Pull 1 towards the source of this attack. Repeat this effect for each card in your gauge. Do not pull an opponent on Serena's space."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Draw a card for each card in your gauge. Then you may spend 1 Gauge to Transform a card from your hand."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Blood For Blood"
+         :type :special
+         :id :s2-blood-for-blood
+         :cost 0
+         :min-range 1
+         :max-range 3
+         :power 1
+         :speed 2
+         :armor 0
+         :guard 6
+         :boost-name "Blood Ministration"
+         :boost-cost 0
+         :boost-type :transform
+         :abilities [#:ability {:description "Before: For each point of damage you have taken during this Strike, +1 Power."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: Spend up to 2 life. For each life spend, +1 Power."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "When you set a Wild Swing, gain 1 life. When the opponent sets a Wild Swing, your attack has +1 power."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Guilty Paean"
+         :type :special
+         :id :s2-guilty-paean
+         :cost 0
+         :min-range 1
+         :max-range 3
+         :power 6
+         :speed 4
+         :armor 0
+         :guard 5
+         :boost-name "Intercessor's Prayer"
+         :boost-cost 0
+         :boost-type :transform
+         :abilities [#:ability {:description "Before: You may spend 3 life. If you do not, this attack does not hit."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "When you set a Wild Swing, your next valid attack gains \"Hit: You may spend 1 Gauge. If you do, +2 Power.\""
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Holy Warding"
+         :type :special
+         :id :s2-holy-warding
+         :cost 0
+         :min-range 2
+         :max-range 4
+         :power 4
+         :speed 4
+         :armor 1
+         :guard 4
+         :boost-name "Corrupted Power"
+         :boost-cost 0
+         :boost-type :transform
+         :abilities [#:ability {:description "Hit: If you have less life than the opponent, +2 Power."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: Draw a card."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "When you spend 1 or more Gauge, gain 1 life."
+                                :trigger :passive
+                                :location :boost}]}
+
+ #:card {:name "Martyr's Lash"
+         :type :special
+         :id :s2-martyrs-lash
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 5
+         :speed 2
+         :armor 0
+         :guard 6
+         :boost-name "Bloodletting"
+         :boost-cost 1
+         :boost-type :continuous
+         :abilities [#:ability {:description "Before: If you were hit during this Strike, you may Transform a card from your hand or Close 2."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Now: Advance 3 or 4."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "The next time you spend life, gain that much life and discard this card."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Purifying Chime"
+         :type :special
+         :id :s2-purifying-chime
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 4
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Blood Frenzy"
+         :boost-cost 0
+         :boost-type :transform
+         :abilities [#:ability {:description "Hit: The opponent discards a card at random from their hand."
+                                :trigger :hit
+                                :location :attack}
+                     #:ability {:description "When you set a Wild Swing, your next valid attack gains \"Hit: If you have less life than the opponent, gain 2 life.\""
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Hand Of Judgement"
+         :type :ultra
+         :id :s2-hand-of-judgement
+         :cost 2
+         :min-range 2
+         :max-range 2
+         :power 7
+         :speed 6
+         :armor 0
+         :guard 4
+         :boost-name "Evil Within"
+         :boost-cost 2
+         :boost-type :continuous
+         :abilities [#:ability {:description "If this card was a Wild Swing, you may spend 3 life instead of paying its Gauge Cost."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Now: Strike. The opponent must defend with a Wild Swing."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "After: Gain Advantage."
+                                :location :boost
+                                :trigger :after}]}
+
+ #:card {:name "Touch Of Divinity"
+         :type :ultra
+         :id :s2-touch-of-divinity
+         :cost 4
+         :min-range 2
+         :max-range 4
+         :power 10
+         :speed 2
+         :armor 3
+         :guard 0
+         :boost-name "Desperate Prayer"
+         :boost-cost 0
+         :boost-type :instant
+         :abilities [#:ability {:description "Stun Immunity."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "If this attack is invalid, your attack has +3 Power this Strike."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Look at the top 3 cards of your deck and put them back in any order. You may Transform a card from your Gauge."
+                                :location :boost
+                                :trigger :now}]}]
