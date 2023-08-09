@@ -2143,7 +2143,7 @@
                                 :trigger :passive}]}
 
  #:card {:name "Unknown Khadath"
-         :s2-unknown-khadath
+         :id :s2-unknown-khadath
          :type :ultra
          :description "\"Let's open the way to a place beyond...\""
          :cost 3

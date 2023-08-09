@@ -276,6 +276,7 @@
                 :s2-hydra-helix 2
                 :s2-metamorphosis 2)
    (create-deck "Umina" :s2-umina
+                :s2-dreamlands 1
                 :s2-dark-thoughts 2
                 :s2-hollow-space 2
                 :s2-out-of-mind 2
@@ -291,7 +292,7 @@
                 :s2-talon-sweep 2
                 :s2-ride-the-lightning 2
                 :s2-skies-aflame 2)
-   create-deck ("Syrus" :s2-syrus
+   (create-deck "Syrus" :s2-syrus
                 :s2-albatross-talon 2
                 :s2-aria-of-the-wind 2
                 :s2-siren-call 2
@@ -299,7 +300,7 @@
                 :s2-treasure-hunter 2
                 :s2-dredge-fury 2
                 :s2-symphony-of-the-deep 2)
-   create-deck ("Seijun" :s2-seijun
+   (create-deck "Seijun" :s2-seijun
                 :s2-fox-fire 2
                 :s2-inari-guidance 2
                 :s2-ink-spike 2
@@ -308,160 +309,160 @@
                 :s2-tale-of-nine-sorrows 2
                 :s2-tales-of-seven-trials 2)])
 
-  (def s6-decks
-    [(create-deck "Linne" :s6-linne
-                  :s6-the-diviner 2
-                  :s6-elusive-flash 2
-                  :s6-divine-blaze 2
-                  :s6-flying-swallow 2
-                  :s6-sky-fangs 2
-                  :s6-tenacious-mist 2
-                  :s6-moon-gyre 2)
-     (create-deck "Hyde" :s6-hyde
-                  :s6-dead-set-daze 2
-                  :s6-gyro-vortex 2
-                  :s6-shadow-scare 2
-                  :s6-pale-bringer 3
-                  :s6-black-orbiter 2
-                  :s6-red-clad-craver 3
-                  :s6-vacant-shift 2)
-     (create-deck "Carmine" :s6-carmine
-                  :s6-twist 2
-                  :s6-be-devoured 2
-                  :s6-this-is-the-end 2
-                  :s6-spin 2
-                  :s6-give-me-that 2
-                  :s6-pulverize 2
-                  :s6-thrust 2)
-     (create-deck "Phonon" :s6-phonon
-                  :s6-tuning-satisfaction 4
-                  :s6-sliding-affliction 2
-                  :s6-suppressive-restriction 2
-                  :s6-guidance-ascension 2
-                  :s6-impulsive-frustration 2
-                  :s6-binding-beatitude 2
-                  :s6-complete-servitude 2)
-     (create-deck "Orie" :s6-orie
-                  :s6-luminous-embrace 2
-                  :s6-rest-in-peace 2
-                  :s6-succession 2
-                  :s6-to-me 2
-                  :s6-sacred-arrow 2
-                  :s6-sealing-hoplon 2
-                  :s6-divine-thrust 2)
-     (create-deck "Gordeau" :s6-gordeau
-                  :s6-mortal-slide 2
-                  :s6-grim-reaper 2
-                  :s6-precise-aim 2
-                  :s6-mortal-glide 2
-                  :s6-rusty-nail 2
-                  :s6-soul-exodus 1
-                  :s6-turbulence 2)
-     (create-deck "Yuzuriha" :s6-yuzuriha
-                  :s6-zero-no-kata-hi-ougi-inochi-kurenai 2
-                  :s6-sogetsu-ittou-ryuu-ougi-kashou 2
-                  :s6-battoujutsu-ichi-no-kata-kiri 2
-                  :s6-battoujutsu-ni-no-kata-saki 2
-                  :s6-battoujutsu-san-no-kata-tachi 2
-                  :s6-over-here 2
-                  :s6-sougetsu-ittou-ryu-et-cetera-yae-ichirin 2)
-     (create-deck "Chaos" :s6-chaos
-                  :s6-deep-revenance 2
-                  :s6-dissect-barrage 2
-                  :s6-thats-your-prey 2
-                  :s6-conceal 2
-                  :s6-repel 2
-                  :s6-spew-out 2
-                  :s6-cold-reflection 2)
-     (create-deck "Waldstein" :s6-waldstein
-                  :s6-verderben 2
-                  :s6-werfen-erschlagen 2
-                  :s6-katastrophe 2
-                  :s6-ferzen-volf 2
-                  :s6-sturmangriff 2
-                  :s6-eisen-nagel 2
-                  :s6-wirbelwind 2)
-     (create-deck "Wagner" :s6-wagner
-                  :s6-schild-zack 2
-                  :s6-filthy-dog 2
-                  :s6-kugel-blitz 2
-                  :s6-wackenroder 2
-                  :s6-sturm-brecher 2
-                  :s6-megiddo-lor-celeste-grace 2
-                  :s6-hitze-falke 2)
-     (create-deck "Nanase" :s6-nanase
-                  :s6-lumiere 2
-                  :s6-atmosphere 2
-                  :s6-anges-invitation 2
-                  :s6-let-the-fleur 2
-                  :s6-vrai-couer 2
-                  :s6-plumage 2
-                  :s6-le-reve 2)
-     (create-deck "Merkava" :s6-merkava
-                  :s6-resentfully-rage 2
-                  :s6-defile 2
-                  :s6-persistently-cling 2
-                  :s6-agitate 2
-                  :s6-drill-through 2
-                  :s6-breathe-out 2
-                  :s6-capture-and-devour 2
-                  :s6-rampage 2)
-     (create-deck "Enkidu" :s6-enkidu
-                  :s6-demon-seal-abyssal-force 2
-                  :s6-spiral-dual-palm-strike 2
-                  :s6-thunder-stomp 2
-                  :s6-gale-edge 2
-                  :s6-chained-kick 2
-                  :s6-three-precept-strike 6
-                  :s6-tidal-spin 2)
-     (create-deck "Hilda" :s6-hilda
-                  :s6-impalement 2
-                  :s6-in-the-darkness 2
-                  :s6-condensity-gloom 2
-                  :s6-interference 2
-                  :s6-revenant-pillar 2
-                  :s6-tri-furket 2
-                  :s6-skewer 4)
-     (create-deck "Seth" :s6-seth
-                  :s6-distant-frontier 2
-                  :s6-abyssal-geometry 2
-                  :s6-captive-segment 2
-                  :s6-piercing-penetration 2
-                  :s6-transgressing-convict 2
-                  :s6-vanishing-confusion 2
-                  :s6-dead-space-of-intrusion 2)
-     (create-deck "Londrekia" :s6-londrekia
-                  :s6-cocytus-ice-prison 2
-                  :s6-frozen-cleave 2
-                  :s6-hail-storm 2
-                  :s6-circular-step 4
-                  :s6-snow-blossom 2
-                  :s6-frozen-vine 2
-                  :s6-frozen-spire 2)
-     (create-deck "Mika" :s6-mika
-                  :s6-mikas-galaxy 2
-                  :s6-mikas-revolution 2
-                  :s6-mikas-cannon 2
-                  :s6-mikas-hip-attack 2
-                  :s6-mikas-tornado 2
-                  :s6-mikas-missile 2
-                  :s6-mikas-crash 2)
-     (create-deck "Byakuya" :s6-byakuya
-                  :s6-endless-nightmare 2
-                  :s6-become-a-part-of-me 2
-                  :s6-or-shredded 4
-                  :s6-caught-you 2
-                  :s6-how-shall-i-cook-you 4
-                  :s6-ill-plant-it-somewhere-here 2
-                  :s6-minced 4)
-     (create-deck "Vatista" :s6-vatista
-                  :s6-ruber-angelus 2
-                  :s6-armabellum 2
-                  :s6-lateus-orbis 2
-                  :s6-transvoranse 2
-                  :s6-mikoruseo 2
-                  :s6-lumen-stella 2
-                  :s6-zahhishio 2)])))
+(def s6-decks
+  [(create-deck "Linne" :s6-linne
+                :s6-the-diviner 2
+                :s6-elusive-flash 2
+                :s6-divine-blaze 2
+                :s6-flying-swallow 2
+                :s6-sky-fangs 2
+                :s6-tenacious-mist 2
+                :s6-moon-gyre 2)
+   (create-deck "Hyde" :s6-hyde
+                :s6-dead-set-daze 2
+                :s6-gyro-vortex 2
+                :s6-shadow-scare 2
+                :s6-pale-bringer 3
+                :s6-black-orbiter 2
+                :s6-red-clad-craver 3
+                :s6-vacant-shift 2)
+   (create-deck "Carmine" :s6-carmine
+                :s6-twist 2
+                :s6-be-devoured 2
+                :s6-this-is-the-end 2
+                :s6-spin 2
+                :s6-give-me-that 2
+                :s6-pulverize 2
+                :s6-thrust 2)
+   (create-deck "Phonon" :s6-phonon
+                :s6-tuning-satisfaction 4
+                :s6-sliding-affliction 2
+                :s6-suppressive-restriction 2
+                :s6-guidance-ascension 2
+                :s6-impulsive-frustration 2
+                :s6-binding-beatitude 2
+                :s6-complete-servitude 2)
+   (create-deck "Orie" :s6-orie
+                :s6-luminous-embrace 2
+                :s6-rest-in-peace 2
+                :s6-succession 2
+                :s6-to-me 2
+                :s6-sacred-arrow 2
+                :s6-sealing-hoplon 2
+                :s6-divine-thrust 2)
+   (create-deck "Gordeau" :s6-gordeau
+                :s6-mortal-slide 2
+                :s6-grim-reaper 2
+                :s6-precise-aim 2
+                :s6-mortal-glide 2
+                :s6-rusty-nail 2
+                :s6-soul-exodus 1
+                :s6-turbulence 2)
+   (create-deck "Yuzuriha" :s6-yuzuriha
+                :s6-zero-no-kata-hi-ougi-inochi-kurenai 2
+                :s6-sogetsu-ittou-ryuu-ougi-kashou 2
+                :s6-battoujutsu-ichi-no-kata-kiri 2
+                :s6-battoujutsu-ni-no-kata-saki 2
+                :s6-battoujutsu-san-no-kata-tachi 2
+                :s6-over-here 2
+                :s6-sougetsu-ittou-ryu-et-cetera-yae-ichirin 2)
+   (create-deck "Chaos" :s6-chaos
+                :s6-deep-revenance 2
+                :s6-dissect-barrage 2
+                :s6-thats-your-prey 2
+                :s6-conceal 2
+                :s6-repel 2
+                :s6-spew-out 2
+                :s6-cold-reflection 2)
+   (create-deck "Waldstein" :s6-waldstein
+                :s6-verderben 2
+                :s6-werfen-erschlagen 2
+                :s6-katastrophe 2
+                :s6-ferzen-volf 2
+                :s6-sturmangriff 2
+                :s6-eisen-nagel 2
+                :s6-wirbelwind 2)
+   (create-deck "Wagner" :s6-wagner
+                :s6-schild-zack 2
+                :s6-filthy-dog 2
+                :s6-kugel-blitz 2
+                :s6-wackenroder 2
+                :s6-sturm-brecher 2
+                :s6-megiddo-lor-celeste-grace 2
+                :s6-hitze-falke 2)
+   (create-deck "Nanase" :s6-nanase
+                :s6-lumiere 2
+                :s6-atmosphere 2
+                :s6-anges-invitation 2
+                :s6-let-the-fleur 2
+                :s6-vrai-couer 2
+                :s6-plumage 2
+                :s6-le-reve 2)
+   (create-deck "Merkava" :s6-merkava
+                :s6-resentfully-rage 2
+                :s6-defile 2
+                :s6-persistently-cling 2
+                :s6-agitate 2
+                :s6-drill-through 2
+                :s6-breathe-out 2
+                :s6-capture-and-devour 2
+                :s6-rampage 2)
+   (create-deck "Enkidu" :s6-enkidu
+                :s6-demon-seal-abyssal-force 2
+                :s6-spiral-dual-palm-strike 2
+                :s6-thunder-stomp 2
+                :s6-gale-edge 2
+                :s6-chained-kick 2
+                :s6-three-precept-strike 6
+                :s6-tidal-spin 2)
+   (create-deck "Hilda" :s6-hilda
+                :s6-impalement 2
+                :s6-in-the-darkness 2
+                :s6-condensity-gloom 2
+                :s6-interference 2
+                :s6-revenant-pillar 2
+                :s6-tri-furket 2
+                :s6-skewer 4)
+   (create-deck "Seth" :s6-seth
+                :s6-distant-frontier 2
+                :s6-abyssal-geometry 2
+                :s6-captive-segment 2
+                :s6-piercing-penetration 2
+                :s6-transgressing-convict 2
+                :s6-vanishing-confusion 2
+                :s6-dead-space-of-intrusion 2)
+   (create-deck "Londrekia" :s6-londrekia
+                :s6-cocytus-ice-prison 2
+                :s6-frozen-cleave 2
+                :s6-hail-storm 2
+                :s6-circular-step 4
+                :s6-snow-blossom 2
+                :s6-frozen-vine 2
+                :s6-frozen-spire 2)
+   (create-deck "Mika" :s6-mika
+                :s6-mikas-galaxy 2
+                :s6-mikas-revolution 2
+                :s6-mikas-cannon 2
+                :s6-mikas-hip-attack 2
+                :s6-mikas-tornado 2
+                :s6-mikas-missile 2
+                :s6-mikas-crash 2)
+   (create-deck "Byakuya" :s6-byakuya
+                :s6-endless-nightmare 2
+                :s6-become-a-part-of-me 2
+                :s6-or-shredded 4
+                :s6-caught-you 2
+                :s6-how-shall-i-cook-you 4
+                :s6-ill-plant-it-somewhere-here 2
+                :s6-minced 4)
+   (create-deck "Vatista" :s6-vatista
+                :s6-ruber-angelus 2
+                :s6-armabellum 2
+                :s6-lateus-orbis 2
+                :s6-transvoranse 2
+                :s6-mikoruseo 2
+                :s6-lumen-stella 2
+                :s6-zahhishio 2)])
 
 (def s3-decks
   [(create-deck "C. Viper" :s3-cviper
