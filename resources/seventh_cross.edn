@@ -1888,93 +1888,129 @@
          :speed 0
          :armor 2
          :guard 5
-         :boost-name "Explosive Cocktail"
+         :boost-name "Instinctive Response"
          :boost-cost 0
          :boost-type :transform
-         :abilities [#:ability {:description "Hit: The opponent must discard a card at random."
+         :abilities [#:ability {:description "Opponents cannot move you."
+                                :trigger :passive
+                                :location :attack}
+                     #:ability {:description "Hit: Both players draw or discard cards until they have 3 in hand."
                                 :trigger :hit
                                 :location :attack}
-                     #:ability {:description "After: Close 3"
-                                :trigger :after
-                                :location :attack}
-                     #:ability {:description "You may generate Force by spending 1 life for 1 Force."}]}
+                     #:ability {:description "After resolving an action that does not cause a Strike, if you have no cards in hand, you may Strike."
+                                :trigger :passive
+                                :location :boost}]}
 
  #:card {:name "Explosive Cocktail"
          :id :s2-explosive-cocktail
          :type :special/:ultra
          :cost 0
-         :min-range 0
-         :max-range 0
-         :power 0
-         :speed 0
+         :min-range 3
+         :max-range 6
+         :power 6
+         :speed 3
          :armor 0
-         :guard 0
-         :boost-name ""
+         :guard 5
+         :boost-name "Explosive Cocktail"
          :boost-cost 0
-         :boost-type :instant
-         :abilities []}
+         :boost-type :transform
+         :abilities [#:ability {:description "Hit: The opponent must discard a card at random."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: Close 3."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "You may generate Force by spending 1 life for 1 Force."
+                                :location :boost
+                                :trigger :passive}]}
 
  #:card {:name "Violent Transgression"
          :id :s2-violent-transgression
-         :type :special/:ultra
+         :type :special
          :cost 0
-         :min-range 0
-         :max-range 0
-         :power 0
-         :speed 0
+         :min-range 2
+         :max-range 3
+         :power 4
+         :speed 5
          :armor 0
          :guard 0
-         :boost-name ""
+         :boost-name "Faster than the Eye"
          :boost-cost 0
-         :boost-type :instant
-         :abilities []}
+         :boost-type :transform
+         :abilities [#:ability {:description "Ignore Armor"
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: If you have 1 or fewer cards in hand, gain Advantage."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "When you set your attack, you may spend 1 Force. If you do, your attack has +1 Speed."
+                                :location :boost
+                                :trigger :passive}]}
 
  #:card {:name "Withering Toxin"
          :id :s2-withering-toxin
          :type :special/:ultra
          :cost 0
-         :min-range 0
-         :max-range 0
-         :power 0
-         :speed 0
+         :min-range 1
+         :max-range 2
+         :power 3
+         :speed 3
          :armor 0
-         :guard 0
-         :boost-name ""
+         :guard 5
+         :boost-name "No Escape"
          :boost-cost 0
-         :boost-type :instant
-         :abilities []}
+         :boost-type :transform
+         :abilities [#:ability {:description "Ignore Armor, Ignore Guard"
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "As an action, you may name a card, then Strike. That card is invalid for both players this Strike."
+                                :location :boost
+                                :trigger :passive}]}
 
  #:card {:name "Hydra Helix"
          :id :s2-hydra-helix
          :description "\"I'll tear you apart with my bare hands!\""
-         :type :special/:ultra
-         :cost 0
-         :min-range 0
-         :max-range 0
-         :power 0
-         :speed 0
+         :type :ultra
+         :cost 2
+         :min-range 1
+         :max-range 3
+         :power 2
+         :speed 6
          :armor 0
          :guard 0
-         :boost-name ""
+         :boost-name "Obsessive Research"
          :boost-cost 0
          :boost-type :instant
-         :abilities []}
+         :abilities [#:ability {:description "Hit: Both players discard their hands. Gain Advantage."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Transform a card from your hand, then discard your hand."
+                                :location :boost
+                                :trigger :passive}]}
 
  #:card {:name "Metamorphosis"
          :description "\"Embrace your true nature!\""
          :id :s2-metamorphosis
-         :type :special/:ultra
-         :cost 0
-         :min-range 0
-         :max-range 0
-         :power 0
-         :speed 0
+         :type :ultra
+         :cost 2
+         :min-range 1
+         :max-range 1
+         :power 7
+         :speed 6
          :armor 0
          :guard 0
-         :boost-name ""
+         :boost-name "Inhuman Speed"
          :boost-cost 0
          :boost-type :instant
-         :abilities []}
+         :abilities [#:ability {:description "Stun Immunity"
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: Activate the opponent's Exceed Mode without spending their Gauge."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Move 2, then take another action."
+                                :location :boost
+                                :trigger :now}]}
 
  {:card/name "Symphony of the Deep"
   :card/description "\"What secrets lie buried in these depths...?\""}
