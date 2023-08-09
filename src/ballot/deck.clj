@@ -274,7 +274,39 @@
                 :s2-violent-transgression 2
                 :s2-withering-toxin 2
                 :s2-hydra-helix 2
-                :s2-metamorphosis 2)]
+                :s2-metamorphosis 2)
+   (create-deck "Umina" :s2-umina
+                :s2-dark-thoughts 2
+                :s2-hollow-space 2
+                :s2-out-of-mind 2
+                :s2-shadow-chorus 2
+                :s2-terror-whispers 2
+                :s2-call-of-the-dreamlands 2
+                :s2-unknown-khadath 2)
+   (create-deck "Luciya" :s2-luciya
+                :s2-bug-zapper 2
+                :s2-downburst 2
+                :s2-firefly-gunner 2
+                :s2-mantis-strike 2
+                :s2-talon-sweep 2
+                :s2-ride-the-lightning 2
+                :s2-skies-aflame 2)
+   create-deck ("Syrus" :s2-syrus
+                :s2-albatross-talon 2
+                :s2-aria-of-the-wind 2
+                :s2-siren-call 2
+                :s2-tidal-whirl 2
+                :s2-treasure-hunter 2
+                :s2-dredge-fury 2
+                :s2-symphony-of-the-deep 2)
+   create-deck ("Seijun" :s2-seijun
+                :s2-fox-fire 2
+                :s2-inari-guidance 2
+                :s2-ink-spike 2
+                :s2-ink-splash 2
+                :s2-yokai-banishing 2
+                :s2-tale-of-nine-sorrows 2
+                :s2-tales-of-seven-trials 2)])
 
   (def s6-decks
     [(create-deck "Linne" :s6-linne
@@ -429,7 +461,7 @@
                   :s6-transvoranse 2
                   :s6-mikoruseo 2
                   :s6-lumen-stella 2
-                  :s6-zahhishio 2)]))
+                  :s6-zahhishio 2)])))
 
 (def s3-decks
   [(create-deck "C. Viper" :s3-cviper

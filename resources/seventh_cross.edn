@@ -326,6 +326,12 @@
   :card/type :character
   :card/description "Flip this when Renea activates Exceed mode. You may boost with a card in this area once per turn. If that Boost did not cause a Strike, take another action."}
 
+ #:card {:name "Dreamlands"
+         :description "Discard any cards here before a new one is placed. You may Strike with the card here. When you strike with the card here or a copy of that card, you have Stun Immunity."
+         :exceed-description "Add any cards here to their owner's hand before a new one is placed. When you set an attack, you you may seal a card in this area to add all of its Before, Hit, or After triggers to your attack."
+         :type :character
+         :id :s2-dreamlands}
+
  {:card/name "Caustic Vent"
   :card/id :s2-caustic-vent
   :card/type :special
@@ -2012,26 +2018,591 @@
                                 :location :boost
                                 :trigger :now}]}
 
- {:card/name "Symphony of the Deep"
-  :card/description "\"What secrets lie buried in these depths...?\""}
+ #:card {:name "Dark Thoughts"
+         :type :special
+         :id :s2-dark-thoughts
+         :cost 0
+         :min-range 2
+         :max-range 5
+         :power 6
+         :speed 2
+         :armor 0
+         :guard 6
+         :boost-name "Spiraling Descent"
+         :boost-cost 0
+         :boost-type :transform
+         :abilities [#:ability {:description "Hit: The opponent discards a card at random. If a card was discarded, you may put it into your Dreamlands."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "If a card is in your Dreamlands, the opponent cannot Boost using a copy of that card, and copies of that card are invalid for the opponent."
+                                :location :boost
+                                :trigger :passive}]}
 
- {:card/name "Dredge Fury"
-  :card/description "\"You will disappear beneath the tide!\""}
+ #:card {:name "Hollow Space"
+         :type :special
+         :id :s2-hollow-space
+         :cost 0
+         :min-range 3
+         :max-range 6
+         :power 4
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Dark Reflections"
+         :boost-cost 0
+         :boost-type :instant
+         :abilities [#:ability {:description "Attacks at Range 1 do not hit you."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "After: Advance or Retreat 3."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Name a card. The opponent discards a copy of that card, or reveals a hand without any. Put any discarded cards into your Dreamlands."
+                                :location :boost
+                                :trigger :now}]}
 
- {:card/name "Tale of Seven Trials"
-  :card/description "\"You cannot escape the trials ahead.\""}
+ #:card {:name "Out Of Mind"
+         :type :special
+         :id :s2-out-of-mind
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 1
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Slipping Away"
+         :boost-cost 0
+         :boost-type :transform
+         :abilities [#:ability {:description "Hit: Add a card from your Dreamlands to your Gauge. If you did, gain Power equal to that card's Power, to a maximum of +5. Otherwise, add all cards in your hand to your Gauge, then draw 3 cards."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "When you place a card into your Dreamlands, you may spend 1 Force. If you do, Move 1."
+                                :location :boost
+                                :trigger :passive}]}
 
- {:card/name "Tale of Nine Sorrows"
-  :card/description "\"All things are a part of the great cycle-a story eternally retold.\""}
+ #:card {:name "Shadow Chorus"
+         :id :s2-shadow-chorus
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 1
+         :speed 1
+         :armor 0
+         :guard 0
+         :boost-name "Whispers in the Dark"
+         :boost-cost 0
+         :boost-type :instant
+         :abilities [#:ability {:description "When you reveal this attack, it becomes a copy of a card in yoru Dreamlands (if you have one). You must pay any costs required to play the card. This card cannot be placed into your Dreamlands."
+                                :location :attack
+                                :trigger :now}
+                     #:ability {:description "Draw a card, then perform the Instant Boost effect of a card in your Dreamlands, ignoring its Force cost."
+                                :location :boost
+                                :trigger :now}]}
 
- {:card/name "Skies Aflame"
-  :card/description "\"Looks like a lightning rod to me!\""}
+ #:card {:name "Terror Whispers"
+         :id :s2-terror-whispers
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 2
+         :speed 7
+         :armor 0
+         :guard 0
+         :boost-name "The Silver Key"
+         :boost-cost 0
+         :boost-type :transform
+         :abilities [#:ability {:description "Hit: Put a card from your discard into your Dreamlands."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "As an action, you may spend 2 Gauge. If you do, Strike. The opponent must defend with a Wild Swing."
+                                :location :boost
+                                :trigger :passive}]}
 
- {:card/name "Ride The Lightning"
-  :card/description "\"In a flash, I appear to defend the innocent!\""}
+ #:card {:name "Call Of The Dreamlands"
+         :id :s2-call-of-the-dreamlands
+         :type :ultra
+         :description "\"We're the same, you and I, wandering forever through this timeless dream.\""
+         :cost 2
+         :min-range 2
+         :max-range 5
+         :power 2
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "The Sleeper Awakes"
+         :boost-cost 0
+         :boost-type :transform
+         :abilities [#:ability {:description "Hit: Both Players reveal their hands. For each Special and Ultra Attack revealed, +1 Power."
+                                :location :attack
+                                :trigger :now}
+                     #:ability {:description "Cards enter your Dreamlands face-down. Reveal them when they are referenced by a card effect."
+                                :location :boost
+                                :trigger :passive}]}
 
- {:card/name "Call of the Dreamlands"
-  :card/description "\"We're the same, you and I, wandering forever through this timeless dream.\""}
+ #:card {:name "Unknown Khadath"
+         :s2-unknown-khadath
+         :type :ultra
+         :description "\"Let's open the way to a place beyond...\""
+         :cost 3
+         :min-range -2
+         :max-range -2
+         :power -2
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Dream Telling"
+         :boost-cost 1
+         :boost-type :continuous
+         :abilities [#:ability {:description "Before: Place the opponent's attack into your Dreamlands and add this card to your Gauge. End the Strike."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Before: Gain Power equal to the Power of a card in your Dreamlands, to a maximum of +5."
+                                :location :boost
+                                :trigger :before}
+                     #:ability {:description "After: Add this card to your Gauge."
+                                :location :boost
+                                :trigger :after}]}
 
- {:card/name "Unknown Khadath"
-  :card/description "\"Let's open the way to a place beyond...\""}]
+ #:card {:name "Bug Zapper"
+         :type :special
+         :id :s2-bug-zapper
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 2
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Thunderclap"
+         :boost-cost 0
+         :boost-type :transform
+         :abilities [#:ability {:description "Before: Spend up to 4 Force. For each Force spent, Advance 2."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Your Normal Attacks have \"After: If the opponent is stunned, Move 2.\""
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Downburst"
+         :type :special
+         :id :s2-downburst
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 2
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Chain Climb"
+         :boost-cost 2
+         :boost-type :instant
+         :abilities [#:ability {:description "Advance or Retreat as far as possible. If you moved past the opponent, add this card to your gauge."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "Before: Pull 2."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "After: Advance 2."
+                                :location :attack
+                                :trigger :after}]}
+
+ #:card {:name "Firefly Gunner"
+         :type :special
+         :id :s2-firefly-gunner
+         :cost 0
+         :min-range 3
+         :max-range 4
+         :power 6
+         :speed 1
+         :armor 0
+         :guard 0
+         :boost-name "The Whirlwind"
+         :boost-cost 0
+         :boost-type :continuous
+         :abilities [#:ability {:description "Attacks at range 3 and 4 do not hit you."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "+3 Speed."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "At the end of your next turn, if this card is in play, add it to your gauge."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Mantis Strike"
+         :type :special
+         :id :s2-mantis-strike
+         :cost 0
+         :min-range 3
+         :max-range 5
+         :power 4
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Storm's Fury"
+         :boost-cost 0
+         :boost-type :transform
+         :abilities [#:ability {:description "Hit: Pull 2, then Advance 4."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "When you initiate a Strike, you may spend 2 Force. If you do, Move 1."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Talon Sweep"
+         :type :special
+         :id :s2-talon-sweep
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 2
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Grandstanding"
+         :boost-cost 0
+         :boost-type :transform
+         :abilities [#:ability {:description "Hit: Advance 4, then you may spend 1 Force. If you do, +1 Power."
+                                :trigger :hit
+                                :location :attack}
+                     #:ability {:description "When you set your attack, you may spend 1 Force. If you do, both players' attacks have +1 Power."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Ride The Lightning"
+         :type :ultra
+         :id :s2-ride-the-lightning
+         :description "\"In a flash, I appear to defend the innocent!\""
+         :cost 2
+         :min-range 1
+         :max-range 1
+         :power 1
+         :speed 8
+         :armor 0
+         :guard 0
+         :boost-name "Chain Trap"
+         :boost-cost 0
+         :boost-type :continuous
+         :abilities [#:ability {:description "Before: Close 4."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "After: Advance 4."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "The opponent cannot move. You can still move them. As an action, the opponent may spend 2 Force. If they do, add this card to your Gauge."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Skies Aflame"
+         :id :s2-skies-aflame
+         :type :ultra
+         :description "\"Looks like a lightning rod to me!\""
+         :cost 3
+         :min-range 3
+         :max-range 5
+         :power 4
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Preemptive Attack"
+         :boost-cost 1
+         :boost-type :continuous
+         :abilities [#:ability {:description "Hit: Gain Advantage"
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: Move to any space."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "+2 Speed"
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: Strike."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Albatross Talon"
+         :id :s2-albatross-talon
+         :type :special
+         :cost 0
+         :min-range 2
+         :max-range 5
+         :power 5
+         :speed 3
+         :armor 0
+         :guard 3
+         :boost-name "Memories of the Deep"
+         :boost-cost 0
+         :boost-type :transform
+         :abilities [#:ability {:description "Ignore Guard"
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: Retreat 2 and draw a card."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "You may play Instant Boosts from your gauge as if they were in your hand. When you do, seal them after they resolve."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Aria Of The Winds"
+         :type :special
+         :id :s2-aria-of-the-winds
+         :cost 0
+         :min-range 2
+         :max-range 5
+         :power 3
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Reckless Greed"
+         :boost-cost 0
+         :boost-type :transform
+         :abilities [#:ability {:description "After: You may return a card from your discard pile to your hand."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Once per turn, after resolving an action that does not cause a Strike, you may discard one of your Boosts from play to Strike."
+                                :trigger :passive
+                                :location :boost}]}
+
+ #:card {:name "Siren Call"
+         :id :s2-siren-call
+         :type :special
+         :cost 0
+         :min-range 3
+         :max-range 6
+         :power 4
+         :speed 4
+         :armor 0
+         :guard 4
+         :boost-name "Opulence"
+         :boost-cost 0
+         :boost-type :transform
+         :abilities [#:ability {:description "After: If the opponent is stunned, Pull until they are at range 2."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Your attacks have \"Hit: If you have a Continuous Boost in play, +1 Power.\""
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Tidal Whirl"
+         :id :s2-tidal-whirl
+         :type :special
+         :cost 0
+         :min-range 2
+         :max-range 3
+         :power 3
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Ebb and Flow"
+         :boost-cost 0
+         :boost-type :instant
+         :abilities [#:ability {:description "Hit: Push or Pull 1."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Move 1, then draw a card."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Treasure Hunter"
+         :id :s2-treasure-hunter
+         :type :special
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 5
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Treasure Hoarder"
+         :boost-cost 0
+         :boost-type :instant
+         :abilities [#:ability {:description "Hit: Push 3 and the opponent discards a card from their gauge. Add the top card of your discard pile to your gauge."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Add a card from your hand to your Gauge."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Dredge Fury"
+         :id :s2-dredge-fury
+         :type :ultra
+         :description "\"You will disappear beneath the tide!\""
+         :cost 1
+         :min-range 3
+         :max-range 6
+         :power 2
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Riptide"
+         :boost-cost 0
+         :boost-type :instant
+         :abilities [#:ability {:description "Before: Spend up to 3 Gauge. For each Gauge spent, +2 Power. Instead of discarding one card spent this way, add it to your hand."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Both players draw up to 3 cards. Take another action."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Symphony Of The Deep"
+         :id :s2-symphony-of-the-deep
+         :type :ultra
+         :description "\"What secrets lie buried in these depths...?\""
+         :cost 2
+         :min-range 1
+         :max-range 2
+         :power 2
+         :speed 7
+         :armor 0
+         :guard 0
+         :boost-name "Silver Shadow"
+         :boost-cost 0
+         :boost-type :instant
+         :abilities [#:ability {:description "Hit: Return cards at random from your discard pile to your hand until you have 7 in hand. Shuffle your discard pile."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Move to any space at range 3 from the opponent."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Fox Fire"
+         :type :special
+         :id :s2-fox-fire
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 6
+         :speed 3
+         :armor 0
+         :guard 4
+         :boost-name "Ninth Tail"
+         :boost-cost 0
+         :boost-type :transform
+         :abilities [#:ability {:description "After: Push 2."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Your attacks \"Hit: If you have fewer cards in hand than the opponent, +2 Power.\""
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Inari Guidance"
+         :type :special
+         :id :s2-inari-guidance
+         :cost 0
+         :min-range 2
+         :max-range 3
+         :power 5
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Kitsune's Pride"
+         :boost-cost 0
+         :boost-type :transform
+         :abilities [#:ability {:description "Before: You may advance as far as possible."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "When you set your attack, you may spend 2 Force. If you do, your attack has +0~1 Range."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Ink Spike"
+         :type :special
+         :id :s2-ink-spike
+         :cost 0
+         :min-range 1
+         :max-range 3
+         :power -1
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Kitsune Wrath"
+         :boost-cost 0
+         :boost-type :transform
+         :abilities [#:ability {:description "X is the number of cards in your hand (up to a maximum of 7)."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "When you set an EX attack, you may spend up to 2 Force. For each Force spent, your attack has +1 Power."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Ink Splash"
+         :type :special
+         :id :s2-ink-splash
+         :cost 0
+         :min-range 1
+         :max-range 3
+         :power 4
+         :speed -1
+         :armor 0
+         :guard 0
+         :boost-name "Watchful Guardian"
+         :boost-cost 0
+         :boost-type :transform
+         :abilities [#:ability {:description "X is the number of cards in your hand (up to a maximum of 7)."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "After you use the \"Prepare\" action, you may spend 1 Force. If you do, Move 1."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Yokai Banishing"
+         :type :special
+         :id :s2-yokai-banishing
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 1
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Meddlesome"
+         :boost-cost 0
+         :boost-type :transform
+         :abilities [#:ability {:description "Hit: Draw a card, or Push 1. Repeat this effect 2 more times."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "When an opponent plays a Boost, you may discard a copy of that card. If you do, their card is discarded with no effect."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Tale Of Nine Sorrows"
+         :type :ultra
+         :id :s2-tale-of-nine-sorrows
+         :description "\"All things are a part of the great cycle-a story eternally retold.\""
+         :cost 4
+         :min-range 1
+         :max-range 3
+         :power 9
+         :speed 4
+         :armor 0
+         :guard 4
+         :boost-name "Ancient Ambition"
+         :boost-cost 0
+         :boost-type :instant
+         :abilities [#:ability {:description "Draw up to 5 cards."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Tales Of Seven Trials"
+         :type :ultra
+         :id :s2-tales-of-seven-trials
+         :description "\"You cannot escape the trials ahead.\""
+         :cost 4
+         :min-range 1
+         :max-range 7
+         :power -1
+         :speed 2
+         :armor 0
+         :guard 0
+         :boost-name "Heart of the Mountain"
+         :boost-cost 1
+         :boost-type :continuous
+         :abilities [#:ability {:description "X is the number of cards in your hand (up to a maximum of 15)."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Stun Immunity. Opponents cannot move past you (opponents who would move past you stop in front of you instead)."
+                                :location :boost
+                                :trigger :passive}]}]
