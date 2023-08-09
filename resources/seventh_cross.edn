@@ -162,6 +162,48 @@
   :character/exceed-ability "When you Exceed, flip your Spell Circle to Diabolic Aura and remove it from the board. As an action, you may put any card in your hand into your Diabolic Aura, then draw a card."
   :character/seasons {:season/name "Seventh Cross"}}
 
+ #:character {:name "Sydney"
+              :id :s2-sydney
+              :innate-ability "Place Serena in the center of the board. While you share her space, Exceeding costs 3 less. As an action, you may spend 1 life to add the top card of your deck to your gauge."
+              :gauge-cost 7
+              :exceed-ability "When you Exceed, if you have 10 or less life, gain 5 life. Move Serena to your space, remove this card from the board, and flip Serena to her Exceed side. Serena is now your character."
+              :seasons {:season/name "Seventh Cross"}}
+
+ #:card {:name "Serena"
+         :id :s2-serena
+         :description "(Serena cannot move, be moved, or be attacked. Characters can occupy the same space as her.) Your Special and Ultra Attacks calculate their range from this card's position."
+         :exceed-description "When you set a Special or Ultra attack, spend up to 2 Gauge. For each Gauge spent, +1 Power and +1 Range (to both maximum and minimum Range)."
+         :type :character}
+
+ #:character {:name "Emogine"
+              :exceed-name "The Hecatonchier"
+              :id :s2-emogine
+              :innate-ability "Set your Wild Swings face up. Before setting a Wild Swing, look at the top card of your deck. You may spend 1 life to add it to your gauge."
+              :gauge-cost 6
+              :exceed-ability "You may look at the top card of your deck at any time. When your turn begins, you may spend 1 life. If you do, put the top card of your deck on the bottom of your deck."
+              :seasons {:season/name "Seventh Cross"}}
+
+ #:character {:name "Carl Swangee"
+              :id :s2-swangee
+              :innate-ability "Your attacks have \"If the opponent's attack is a Special Attack, +1 Armor\"."
+              :gauge-cost 4
+              :exceed-ability "Your Normal Attacks have +2 Power. Your attacks have \"If the opponent's attack is a Special Attack, +1 Armor\"."
+              :seasons {:season/name "Seventh Cross"}}
+
+ #:character {:name "Shovel Knight"
+              :id :s2-shovel-knight
+              :innate-ability "After moving 1 or more spaces with a Move action (not from a card effect), draw a card."
+              :gauge-cost 2
+              :exceed-ability "After moving 1 or more spaces with a Move action (not from a card effect), draw a card and you may Move 1."
+              :seasons {:season/name "Seventh Cross"}}
+
+ #:character {:name "Pooky"
+              :id :s2-pooky
+              :innate-ability "Your Special and Ultra Attacks have \"If you have a Continuous Boost in play, +1 Speed.\""
+              :gauge-cost 3
+              :exceed-ability "Your Special and Ultra Attacks have \"If you have two or more Continuous Boosts in play, +2 Power and +1 Armor.\" Whenever you are stunned, you may draw a card."
+              :seasons {:season/name "Seventh Cross"}}
+
  ;; Cards
 
  {:card/name "Called Shot"
