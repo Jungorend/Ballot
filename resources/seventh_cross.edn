@@ -2948,4 +2948,469 @@
                                 :trigger :passive}
                      #:ability {:description "Look at the top 3 cards of your deck and put them back in any order. You may Transform a card from your Gauge."
                                 :location :boost
-                                :trigger :now}]}]
+                                :trigger :now}]}
+
+ #:card {:name "Cease And Desist"
+         :type :special
+         :id :s2-cease-and-desist
+         :cost 0
+         :min-range 1
+         :max-range 3
+         :power 3
+         :speed 3
+         :armor 3
+         :guard 3
+         :boost-name "Headlong Run"
+         :boost-cost 0
+         :boost-type :instant
+         :abilities [#:ability {:description "Whenever you would discard cards during this Strike, discard 1 fewer card."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "After: Draw a card and lose all Armor."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Close up to 6."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Disarming Strike"
+         :type :special
+         :id :s2-disarming-strike
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 2
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Disarming Maneuver"
+         :boost-cost 1
+         :boost-type :instant
+         :abilities [#:ability {:description "Before: Close 2."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: The opponent must discard a Normal Attack, or reveal a hand with none."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Advance 2. If you switched sides with the opponent, they discard a card at random."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Improvised Weapon"
+         :type :special
+         :id :s2-improvised-weapon
+         :cost 0
+         :min-range 3
+         :max-range 6
+         :power 1
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Investigate"
+         :boost-cost 1
+         :boost-type :instant
+         :abilities [#:ability {:description "Hit: If the opponent initiated this Strike, return this card to your hand. Otherwise Gain Advantage."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "The opponent discards a card at random. If it is a Special Attack, they must discard an additional card of their choice."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Power Short"
+         :type :special
+         :id :s2-power-short
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 7
+         :speed 2
+         :armor 2
+         :guard 3
+         :boost-name "Precision Engineering"
+         :boost-cost 0
+         :boost-type :instant
+         :abilities [#:ability {:description "Opponents cannot move you."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "After: Lose all Armor. If you did not hit the opponent, take 3 damage."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Return a Normal from your gauge to your hand. If you did, add this card to your gauge."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Swangee Elbow"
+         :type :special
+         :id :s2-swangee-elbow
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 4
+         :speed 4
+         :armor 0
+         :guard 4
+         :boost-name "Armor Up"
+         :boost-cost 1
+         :boost-type :continuous
+         :abilities [#:ability {:description "Ignore Armor, Ignore Guard"
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "+3 Guard"
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Authorized Force"
+         :type :ultra
+         :id :s2-authorized-force
+         :cost 4
+         :min-range 1
+         :max-range 1
+         :power 10
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Overload"
+         :boost-cost 0
+         :boost-type :instant
+         :abilities [#:ability {:description "You may place this card face-down with any Normal Attack to form an EX Attack."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Autonomic Response"
+         :type :ultra
+         :id :s2-autonomic-response
+         :cost 2
+         :min-range 1
+         :max-range 3
+         :power 6
+         :speed 1
+         :armor 0
+         :guard 0
+         :boost-name "Overload"
+         :boost-cost 0
+         :boost-type :instant
+         :abilities [#:ability {:description "Normal Attacks do not hit you."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "You may place this card face-down with any Normal Attack to form an EX attack."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Alchemy Coin"
+         :type :special
+         :id :s2-alchemy-coin
+         :cost 0
+         :min-range 1
+         :max-range 5
+         :power 4
+         :speed 1
+         :armor 0
+         :guard 5
+         :boost-name "Slash Mercilessly"
+         :boost-cost 1
+         :boost-type :continuous
+         :abilities [#:ability {:description "Hit: For each space between you and the opponent, draw a card."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+3 Power"
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Chaos Sphere"
+         :type :special
+         :id :s2-chaos-sphere
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 4
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Sharpen Thy Shovel"
+         :boost-cost 1
+         :boost-type :continuous
+         :abilities [#:ability {:description "Before: Spend up to 4 Force. For each Force spent, +0~1 Range."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: Push or Pull 2."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+3 Speed"
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Flare Wand"
+         :type :special
+         :id :s2-flare-wand
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 0
+         :speed 7
+         :armor 0
+         :guard 0
+         :boost-name "Dig In"
+         :boost-cost 1
+         :boost-type :continuous
+         :abilities [#:ability {:description "Before: Spend up to 2 Force. For each Force spent, +1 Power."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "After: Retreat 2"
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "+3 Armor"
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Mobile Gear"
+         :type :special
+         :id :s2-mobile-gear
+         :cost 0
+         :min-range -1
+         :max-range -1
+         :power 3
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Dig Tirelessly"
+         :boost-cost 0
+         :boost-type :continuous
+         :abilities [#:ability {:description "Before: Advance 4. This attack hits if you switched sides with the opponent."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: Spend up to 4 Force. For each Force spent, +1 Power."
+                                :location :boost
+                                :trigger :hit}]}
+
+ #:card {:name "War Horn"
+         :type :special
+         :id :s2-war-horn
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 5
+         :speed 5
+         :armor 0
+         :guard 3
+         :boost-name "Get Digging"
+         :boost-cost 0
+         :boost-type :continuous
+         :abilities [#:ability {:description "Hit: Push 2."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+1 Power."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: Move 3."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Propeller Dagger"
+         :type :ultra
+         :id :s2-propeller-dagger
+         :cost 1
+         :min-range 1
+         :max-range 2
+         :power 4
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "For Shovelry"
+         :boost-cost 0
+         :boost-type :instant
+         :abilities [#:ability {:description "Hit: You may spend 1 Gauge. If you do, return this card to your hand when the Strike ends."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "After: You may spend 1 Gauge to Move 3."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Discard one of your continuous boosts from play. If you did, draw 3 cards and gain 3 life."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Troupple Chalice"
+         :type :ultra
+         :id :s2-troupple-chalice
+         :cost 3
+         :min-range 2
+         :max-range 4
+         :power 5
+         :speed 1
+         :armor 0
+         :guard 0
+         :boost-name "Justice in Spades"
+         :boost-cost 0
+         :boost-type :continuous
+         :abilities [#:ability {:description "Stun Immunity"
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: Draw 2 cards. Then you may spend up to 5 Force. For each Force spent, gain 1 life."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+3 Power, +3 Speed, +3 Armor."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: Discard one of your Continuous Boosts from play, then draw a card."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Gambling? I'm In!"
+         :type :special
+         :id :s2-gambling
+         :cost 0
+         :min-range -1
+         :max-range -1
+         :power -1
+         :speed 7
+         :armor 0
+         :guard 0
+         :boost-name "Dwarven Firewater"
+         :boost-cost 0
+         :boost-type :continuous
+         :abilities [#:ability {:description "When you reveal this attack, place this card into your boost area as its Continuous Boost. Replace it with a Wild Swing. Your character's ability bonuses also apply to Normal Attacks this Strike."
+                                :location :attack
+                                :trigger :now}
+                     #:ability {:description "+1 Power"
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: If you have 15 or less life, take another action."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Long In The Tooth"
+         :type :special
+         :id :s2-long-in-the-tooth
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 5
+         :speed 2
+         :armor 0
+         :guard 5
+         :boost-name "Elven Wine"
+         :boost-cost 0
+         :boost-type :continuous
+         :abilities [#:ability {:description "For each Continuous Boost you have in play, +0~1 Range."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "+1 Power"
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: If you have 3 or fewer cards in hand, take another action."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Pooky Cheats!"
+         :type :special
+         :id :s2-pooky-cheats
+         :cost 0
+         :min-range 1
+         :max-range 3
+         :power 3
+         :speed 3
+         :armor 0
+         :guard 3
+         :boost-name "Wizard's Brew"
+         :boost-cost 0
+         :boost-type :continuous
+         :abilities [#:ability {:description "Hit: You may play a Continuous Boost from your discard. (You cannot gain extra actions from it.)"
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Now: If you have 1 or more cards in your gauge, take another action."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "After: Add this to your gauge."
+                                :location :boost
+                                :trigger :after}]}
+
+ #:card {:name "Pooky Drinks!"
+         :type :special
+         :id :s2-pooky-drinks
+         :cost 0
+         :min-range -1
+         :max-range -1
+         :power -1
+         :speed 0
+         :armor 2
+         :guard 4
+         :boost-name "Troll Swill"
+         :boost-cost 0
+         :boost-type :continuous
+         :abilities [#:ability {:description "After: Draw 3 cards and regain 2 life. Do not discard your Continuous Boosts after this Strike ends."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "+1 Armor and +1 Guard"
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: If you have any cards in your Transformation Area, take another action."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Snack Attack"
+         :type :special
+         :id :s2-snack-attack
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 3
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Dragon Breath Ale"
+         :boost-cost 0
+         :boost-type :continuous
+         :abilities [#:ability {:description "Before: Advance 3."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: Draw 2 cards."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+0~1 Range."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: If you are in Exceed Mode, take another action."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Drunken Rampage"
+         :type :ultra
+         :id :s2-drunken-rampage
+         :cost 2
+         :min-range 1
+         :max-range 2
+         :power 1
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Drunken Fury"
+         :boost-cost 0
+         :boost-type :transform
+         :abilities [#:ability {:description "Before: Advance 3."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: For each Continuous Boost you have in play, +2 Power."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "The first time each turn you resolve an Instant Boost, you may spend 1 Force. If you do, Strike."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Hat Trick"
+         :type :ultra
+         :id :s2-hat-trick
+         :cost 1
+         :min-range 1
+         :max-range 3
+         :power 5
+         :speed 1
+         :armor 0
+         :guard 0
+         :boost-name "Zot's Secret Recipe"
+         :boost-cost 0
+         :boost-type :transform
+         :abilities [#:ability {:description "Attacks with Speed 4 or lower do not hit you."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "The first time each turn you resolve an Instant Boost, you may spend 1 Force. If you do, put into play as a face-down Continuous Boost with no effect."
+                                :location :boost
+                                :trigger :passive}]}]

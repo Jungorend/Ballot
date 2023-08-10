@@ -332,7 +332,23 @@
                 :s2-power-short 2
                 :s2-swangee-elbow 2
                 :s2-authorized-force 2
-                :s2-autonomic-response 2)])
+                :s2-autonomic-response 2)
+   (create-deck "Shovel Knight" :s2-shovel-knight
+                :s2-alchemy-coin 2
+                :s2-chaos-sphere 2
+                :s2-flare-wand 2
+                :s2-mobile-gear 2
+                :s2-war-horn 2
+                :s2-propeller-dagger 2
+                :s2-troupple-chalice 2)
+   (create-deck "Pooky" :s2-pooky
+                :s2-gambling 2
+                :s2-long-in-the-tooth 2
+                :s2-pooky-cheats 2
+                :s2-pooky-drinks 2
+                :s2-snack-attack 2
+                :s2-drunken-rampage 2
+                :s2-hat-trick 2)])
 
 (def s6-decks
   [(create-deck "Linne" :s6-linne
