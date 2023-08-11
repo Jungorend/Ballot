@@ -387,6 +387,7 @@
     (discord-rest/create-message! (:rest @state) channel-id :content (str "```" content "```"))))
 
 (def nomoretfs "https://cdn.discordapp.com/attachments/816004662754541628/981942732845088808/FirstCustomsRule.png")
+(def guiltygear "https://cdn.discordapp.com/attachments/819408415851544638/1139459811474411590/S7.png")
 (def playerdb "The Player Database is located here: https://docs.google.com/spreadsheets/d/1dYfLiUI0cacy8-SJ6UZF6WWcRSUVVUCdp_LzYHq95Qo/edit?usp=sharing")
 
 ;; This method is called whenever a new message appears on the server.
@@ -399,6 +400,7 @@
         (case first-word
           "!help"       (discord-rest/create-message! (:rest @state) channel-id :content (:help config))
           "!nomoretfs"  (discord-rest/create-message! (:rest @state) channel-id :content nomoretfs)
+          "!guiltygear" (discord-rest/create-message! (:rest @state) channel-id :content guiltygear)
           "!playerdb"   (discord-rest/create-message! (:rest @state) channel-id :content playerdb)
           "!character"  (post-message! (lookup-character args conn) channel-id)
           "!card"       (post-message! (lookup-card args conn) channel-id)
