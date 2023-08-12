@@ -12,6 +12,13 @@
               :gauge-cost 2
               :seasons {:season/name "Guilty Gear"}}
 
+ #:character {:name "May"
+              :id :s7-may
+              :innate-ability "When you initiate a Strike, you may spend 1 Force. If you do, +1 Power."
+              :exceed-ability "When you Exceed, draw 2 and Strike. When you initiate a Strike, you may spend 1 Force. If you do, +2 Power."
+              :gauge-cost 3
+              :seasons {:season/name "Guilty Gear"}}
+
  #:card {:name "Volcanic Viper"
          :id :s7-volcanic-viper
          :type :special
@@ -359,4 +366,173 @@
                                 :trigger :hit}
                      #:ability {:description "+0~1 Range and +1 Power."
                                 :location :boost
-                                :trigger :passive}]}]
+                                :trigger :passive}]}
+
+ #:card {:name "Arisugawa Sparkle"
+         :type :special
+         :id :s7-arisugawa-sparkle
+         :cost 0
+         :min-range 2
+         :max-range 4
+         :power 3
+         :speed 4
+         :armor 2
+         :guard 3
+         :boost-name "Goooo!"
+         :boost-cost 0
+         :boost-type :instant
+         :abilities [#:ability {:description "After: Close 1. Draw 1."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Discard your hand. Draw 4. Strike."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Overhead Kiss"
+         :type :special
+         :id :s7-overhead-kiss
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 4
+         :speed 3
+         :armor 0
+         :guard 0
+         :boost-name "Gatling"
+         :boost-cost 0
+         :boost-type :continuous
+         :abilities [#:ability {:description "Ignore Armor. Ignore Guard."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: Push 2. Gain Advantage."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Now: Draw 2."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "Hit: Gain Advantage."
+                                :location :boost
+                                :trigger :hit}]}
+
+ #:card {:name "Mr Dolphin"
+         :type :special
+         :id :s7-mr-dolphin
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 4
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Energetic"
+         :boost-cost 0
+         :boost-type :cancelable-continuous
+         :abilities [#:ability {:description "Before: Close 2. If you closed fewer than 2 spaces, +2 Power."
+                                :trigger :before
+                                :location :attack}
+                     #:ability {:description "+1 Speed"
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: Advance 1"
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Totsugeki"
+         :type :special
+         :id :s7-totsugeki
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 4
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Relentless"
+         :boost-cost 0
+         :boost-type :continuous
+         :abilities [#:ability {:description "Before: Close 3."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: Push 2. Gain Advantage."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+1 Power and +4 Guard."
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Anchor Swing"
+         :type :special
+         :id :s7-anchor-swing
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 5
+         :speed 2
+         :armor 0
+         :guard 6
+         :boost-name "Blue Water, Blue Sky"
+         :boost-cost 0
+         :boost-type :cancelable-continuous
+         :abilities [#:ability {:description "+1 Power"
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: Advance or Retreat 2."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "Before: Close 1."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Hit: Add the top card of your deck to your Gauge."
+                                :location :attack
+                                :trigger :hit}]}
+
+ #:card {:name "The Wonderful And Dynamic Goshogawara"
+         :type :ultra
+         :description "May Dynamic!"
+         :id :s7-the-wonderful-and-dynamic-goshogawara
+         :cost 3
+         :min-range 1
+         :max-range 2
+         :power 4
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Disaster of Passion"
+         :boost-cost 0
+         :boost-type :continuous
+         :abilities [#:ability {:description "If the opponent initiated, +3 Speed."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Hit: Push 1."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "+1 Power and +1 Speed."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: Draw 1."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Great Yamada Attack"
+         :type :ultra
+         :description "So it's come to this!"
+         :id :s7-great-yamada-attack
+         :cost 3
+         :min-range 2
+         :max-range 4
+         :power 6
+         :speed 1
+         :armor 0
+         :guard 0
+         :boost-name "Chaaarge!"
+         :boost-cost 0
+         :boost-type :instant
+         :abilities [#:ability {:description "Stun Immunity"
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "After: Close 3."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Close 3. You may spend 1 Force. If you do, Strike."
+                                :location :boost
+                                :trigger :now}]}]

@@ -878,4 +878,12 @@
                 :s7-dire-eclat 2
                 :s7-stun-dipper 2
                 :s7-stun-edge 2
-                :s7-vapor-thrust 2)])
+                :s7-vapor-thrust 2)
+   (create-deck "May" :s7-may
+                :s7-arisugawa-sparkle 2
+                :s7-overhead-kiss 2
+                :s7-mr-dolphin 2
+                :s7-totsugeki 2
+                :s7-anchor-swing 2
+                :s7-the-wonderful-and-dynamic-goshogawara 2
+                :s7-great-yamada-attack 2)])
