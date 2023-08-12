@@ -74,5 +74,12 @@
          card-strs
          create-deck-str)))
 
-(spit "results.edn" (create-cards "Faust" :s7-faust "Guilty Gear"
-                                  :s7-mix-mix-mix 2))
+(spit "results.edn" (create-cards "Zato-1" :s7-zato "Guilty Gear"
+                                  :s7-pierce 2
+                                  :s7-invite-hell 2
+                                  :s7-damned-fang 2
+                                  :s7-oppose 2
+                                  :s7-leap 2
+                                  :s7-thats-a-lot 2
+                                  :s7-sun-void 2
+                                  :s7-amorphous 2))

@@ -714,4 +714,221 @@
                                 :trigger :before}
                      #:ability {:description "Advance or Retreat 2. Draw 1."
                                 :location :boost
-                                :trigger :now}]}]
+                                :trigger :now}]}
+
+ #:character {:name "Zato-1"
+              :id :s7-zato
+              :innate-ability "Eddie begins out of play. (Eddie is not a character; ignore him when moving.) Your normals have \"After: You may place Eddie in a space within this attack's Range.\""
+              :exceed-ability "(Eddie is not a character; ignore him when moving.) Your Normals have \"After: You may place Eddie in any space.\""
+              :gauge-cost 2
+              :seasons {:season/name "Guilty Gear"}}
+
+ #:card {:name "Eddie"
+         :id :s7-eddie
+         :type :character
+         :description "While Eddie is in play, your Specials and Ultras calculate Range from Eddie and have \"Hit: Gain Advantage.\" and \"Cleanup: Remove Eddie from play.\""}
+
+ #:card {:name "Pierce"
+         :type :special
+         :id :s7-pierce
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 3
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Still in the dark"
+         :boost-cost 0
+         :boost-type :cancelable-continuous
+         :abilities [#:ability{:description "Hit: Push or Pull 1.",
+                               :location :attack,
+                               :trigger :hit}
+                     #:ability{:description "After: If the opponent is stunned, draw 2.",
+                               :location :attack,
+                               :trigger :after}
+                     #:ability{:description "+1 Power",
+                               :location :boost,
+                               :trigger :passive}
+                     #:ability{:description "Now: You may Push 1.",
+                               :location :boost,
+                               :trigger :now}]}
+
+ #:card {:name "Invite Hell"
+         :type :special
+         :id :s7-invite-hell
+         :cost 0
+         :min-range 2
+         :max-range 5
+         :power 3
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Negative Edge"
+         :boost-cost 0
+         :boost-type :cancelable-continuous
+         :abilities [#:ability{:description
+                               "Before: If Eddie is in play, +2 Power and place Eddie in yoru space (before calculating Range).",
+                               :location :attack,
+                               :trigger :before}
+                     #:ability{:description "Hit: Draw 1.",
+                               :location :attack,
+                               :trigger :hit}
+                     #:ability{:description "Place Eddie in any space.",
+                               :location :boost,
+                               :trigger :now}]}
+
+ #:card {:name "Damned Fang"
+         :type :special
+         :id :s7-damned-fang
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 4
+         :speed 3
+         :armor 0
+         :guard 0
+         :boost-name "Drunkard Shade"
+         :boost-cost 0
+         :boost-type :cancelable-continuous
+         :abilities [#:ability{:description "Ignore Guard.",
+                               :location :attack,
+                               :trigger :passive}
+                     #:ability{:description "Hit: Pull 2 (towards Zato-1). Draw 2.",
+                               :location :attack,
+                               :trigger :hit}
+                     #:ability{:description "Attacks at Range 4+ do not hit you.",
+                               :location :boost,
+                               :trigger :passive}
+                     #:ability{:description
+                               "At the start of your turn, add this to your Gauge.",
+                               :location :boost,
+                               :trigger :passive}]}
+
+ #:card {:name "\"Oppose\""
+         :type :special
+         :id :s7-oppose
+         :cost 0
+         :min-range 0
+         :max-range 1
+         :power 0
+         :speed 2
+         :armor 2
+         :guard 5
+         :boost-name "Fly By Night"
+         :boost-cost 0
+         :boost-type :cancelable-instant
+         :abilities [#:ability{:description
+                               "Do not remove Eddie from play during Cleanup.",
+                               :location :attack,
+                               :trigger :passive}
+                     #:ability{:description "Before: If you were hit, +3 Power.",
+                               :location :attack,
+                               :trigger :before}
+                     #:ability{:description
+                               "Advance or Retreat 1. You may add a card from your hand to your Gauge.",
+                               :location :boost,
+                               :trigger :now}]}
+
+ #:card {:name "\"Leap\""
+         :type :special
+         :id :s7-leap
+         :cost 0
+         :min-range 1
+         :max-range 3
+         :power 4
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Vanish Into Dark"
+         :boost-cost 0
+         :boost-type :continuous
+         :abilities [#:ability{:description
+                               "Hit: Push 1 from the source of this attack. Draw 1.",
+                               :location :attack,
+                               :trigger :hit}
+                     #:ability{:description "+1 Speed",
+                               :location :boost,
+                               :trigger :passive}
+                     #:ability{:description
+                               "Now: Place Eddie in your space. Advance or Retreat 2.",
+                               :location :boost,
+                               :trigger :now}]}
+
+ #:card {:name "\"That's A Lot!\""
+         :type :special
+         :id :s7-thats-a-lot
+         :cost 0
+         :min-range 2
+         :max-range 4
+         :power 5
+         :speed 3
+         :armor 0
+         :guard 4
+         :boost-name "Break The Law"
+         :boost-cost 0
+         :boost-type :continuous
+         :abilities [#:ability{:description "After: Advance up to 2.",
+                               :location :attack,
+                               :trigger :after}
+                     #:ability{:description
+                               "Now: You may spend 1 Force. If you do, Strike.",
+                               :location :boost,
+                               :trigger :now}
+                     #:ability{:description "After: Advance or Retreat 1 or 2.",
+                               :location :boost,
+                               :trigger :after}]}
+
+ #:card {:name "Sun Void"
+         :description "You're up!"
+         :type :ultra
+         :id :s7-sun-void
+         :cost 2
+         :min-range 0
+         :max-range 1
+         :power 3
+         :speed 7
+         :armor 0
+         :guard 0
+         :boost-name "Let Me Carve Your Way"
+         :boost-cost 0
+         :boost-type :continuous
+         :abilities [#:ability{:description
+                               "Do not remove Eddie from play during Cleanup.",
+                               :location :attack,
+                               :trigger :passive}
+                     #:ability{:description "+1 Power",
+                               :location :boost,
+                               :trigger :passive}
+                     #:ability{:description
+                               "Now: You may spend 2 Force. If you do, return 2 Specials from your discard pile to your hand.",
+                               :location :boost,
+                               :trigger :now}]}
+
+ #:card {:name "Amorphous"
+         :description "Devour...viciously!"
+         :type :ultra
+         :id :s7-amorphous
+         :cost 4
+         :min-range 3
+         :max-range 3
+         :power 6
+         :speed 1
+         :armor 2
+         :guard 0
+         :boost-name "Feel A Fear"
+         :boost-cost 0
+         :boost-type :continuous
+         :abilities [#:ability{:description "Stun Immunity",
+                               :location :attack,
+                               :trigger :passive}
+                     #:ability{:description "After: Draw 3.",
+                               :location :attack,
+                               :trigger :after}
+                     #:ability{:description "Now: Strike.",
+                               :location :boost,
+                               :trigger :now}
+                     #:ability{:description
+                               "Hit: If the opponent is between you and Eddie (not in Eddie's space), +3 Power.",
+                               :location :boost,
+                               :trigger :hit}]}]

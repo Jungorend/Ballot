@@ -894,4 +894,15 @@
                 :s7-scarecrow 2
                 :s7-snip-snip-snip 2
                 :s7-bone-crushing-excitement 2
-                :s7-what-could-this-be? 2)])
+                :s7-what-could-this-be? 2)
+
+   (create-deck "Zato-1" :s7-zato
+                :s7-eddie 1
+                :s7-pierce 2
+                :s7-invite-hell 2
+                :s7-damned-fang 2
+                :s7-oppose 2
+                :s7-leap 2
+                :s7-thats-a-lot 2
+                :s7-sun-void 2
+                :s7-amorphous 2)])
