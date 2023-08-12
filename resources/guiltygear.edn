@@ -535,4 +535,183 @@
                                 :trigger :after}
                      #:ability {:description "Close 3. You may spend 1 Force. If you do, Strike."
                                 :location :boost
+                                :trigger :now}]}
+
+ #:character {:name "Faust"
+              :id :s7-faust
+              :innate-ability "Action: Boost with the top card of your deck (face-up; you cannot Cancel it). Strike."
+              :exceed-ability "Action: Reveal the top 2 cards of your deck. Boost with one of them (you cannot Cancel it). Discard the other. Strike."
+              :gauge-cost 2
+              :seasons {:season/name "Guilty Gear"}}
+
+ #:card {:name "Mix Mix Mix"
+         :type :special
+         :id :s7-mix-mix-mix
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 4
+         :speed 2
+         :armor 0
+         :guard 5
+         :boost-name "Bomb"
+         :boost-cost 0
+         :boost-type :continuous
+         :abilities [#:ability {:description "Before: Advance or Retreat 2."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "After: Advance or Retreat 2."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Now: Draw 2."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "Both Players have \"After: Take 3 non-lethal damage. Discard this (the other player loses its effect).\""
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Thrust"
+         :type :special
+         :id :s7-thrust
+         :cost 0
+         :min-range 1
+         :max-range 5
+         :power 4
+         :speed 3
+         :armor 0
+         :guard 4
+         :boost-name "Donut"
+         :boost-cost 0
+         :boost-type :cancelable-continuous
+         :abilities [#:ability {:description "Hit: Pull 2. If the opponent is at Range 1, +3 Power and Push 2."
+                                :location :attack
+                                :trigger :hit}
+                     #:ability {:description "Both players have \"Before: Advance 1.\" and \"After: Discard this (the other player loses its effects).\""
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "Love"
+         :type :special
+         :id :s7-love
+         :cost 0
+         :min-range 2
+         :max-range 4
+         :power 4
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Fanfare"
+         :boost-cost 0
+         :boost-type :cancelable-continuous
+         :abilities [#:ability {:description "Before: You may discard a Boost from your Boost area. If you do, +2 Power."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "After: Retreat 1."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "Your attack is EX."
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: The opponent may spend 2 Force. If they do, discard this (it is still Cancelable)."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Scarecrow"
+         :type :special
+         :id :s7-scarecrow
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 4
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "100t Weight"
+         :boost-cost 0
+         :boost-type :continuous
+         :abilities [#:ability {:description "If you have a Boost in play (in your Boost area), +2 Power and -2 Speed."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Before: Close 8."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Now: Push 1. Retreat 1. Draw 1."
+                                :location :boost
+                                :trigger :now}
+                     #:ability {:description "Hit: Add this to your Gauge."
+                                :location :boost
+                                :trigger :hit}]}
+
+ #:card {:name "Snip Snip Snip"
+         :type :special
+         :id :s7-snip-snip-snip
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 0
+         :speed 3
+         :armor 6
+         :guard 0
+         :boost-name "Afro"
+         :boost-cost 0
+         :boost-type :cancelable-continuous
+         :abilities [#:ability {:description "Ignore Guard"
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "After: If you hit, add this to the opponent's Boost area, ignoring Now effects, and sustain it."
+                                :location :attack
+                                :trigger :after}
+                     #:ability {:description "-6 Guard"
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Now: Draw 2."
+                                :location :boost
+                                :trigger :now}]}
+
+ #:card {:name "Bone Crushing Excitement"
+         :type :ultra
+         :description "I will save you!"
+         :id :s7-bone-crushing-excitement
+         :cost 4
+         :min-range 1
+         :max-range 1
+         :power 7
+         :speed 3
+         :armor 0
+         :guard 0
+         :boost-name "Mini Faust"
+         :boost-cost 0
+         :boost-type :continuous
+         :abilities [#:ability {:description "Attacks with higher Speed do not hit you."
+                                :location :attack
+                                :trigger :passive}
+                     #:ability {:description "Before: Advance 3."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "+0~1 Range"
+                                :location :boost
+                                :trigger :passive}
+                     #:ability {:description "Both players have \"Before: +1 Power.\""
+                                :location :boost
+                                :trigger :passive}]}
+
+ #:card {:name "W-W-What Could This Be?"
+         :type :ultra
+         :description "So that's it..."
+         :id :s7-what-could-this-be?
+         :cost 2
+         :min-range 2
+         :max-range 5
+         :power 3
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Alone Infection"
+         :boost-cost 0
+         :boost-type :instant
+         :abilities [#:ability {:description "Before: Boost with and sustain top 2 cards of your deck (face-up, one at a time)."
+                                :location :attack
+                                :trigger :before}
+                     #:ability {:description "Advance or Retreat 2. Draw 1."
+                                :location :boost
                                 :trigger :now}]}]

@@ -886,4 +886,12 @@
                 :s7-totsugeki 2
                 :s7-anchor-swing 2
                 :s7-the-wonderful-and-dynamic-goshogawara 2
-                :s7-great-yamada-attack 2)])
+                :s7-great-yamada-attack 2)
+   (create-deck "Faust" :s7-faust
+                :s7-mix-mix-mix 2
+                :s7-thrust 2
+                :s7-love 2
+                :s7-scarecrow 2
+                :s7-snip-snip-snip 2
+                :s7-bone-crushing-excitement 2
+                :s7-what-could-this-be? 2)])
