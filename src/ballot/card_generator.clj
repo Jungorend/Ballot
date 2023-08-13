@@ -1,4 +1,5 @@
-(ns ballot.card-generator)
+(ns ballot.card-generator
+  (:require [clojure.pprint :refer [pprint]]))
 
 (defn de-key
   [token]
@@ -53,7 +54,7 @@
         card-strs (reduce (fn [r c]
                             (let [name (de-key (first c))
                                   abilities (get-abilities! name)
-                                  ppabilities (with-out-str (clojure.pprint/pprint abilities))]
+                                  ppabilities (with-out-str (pprint abilities))]
                               (str r
                                    "#:card {:name \"" (de-key (first c)) "\"\n"
                                    "        :type :special\n"
