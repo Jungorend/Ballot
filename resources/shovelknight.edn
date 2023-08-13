@@ -1960,7 +1960,7 @@
                     :ability/trigger :now
                     :ability/location :boost}]}
 
- {:card/name "Wave of denial"
+ {:card/name "Wave of Denial"
   :card/type :ultra
   :card/id :s4-wave-of-denial
   :card/cost 1
