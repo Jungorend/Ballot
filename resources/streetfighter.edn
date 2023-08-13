@@ -1350,8 +1350,8 @@
                     :ability/location :boost
                     :ability/trigger :hit}]}
 
- {:card/name "Gohadouken"
-  :card/id :s3-gohadouken
+ {:card/name "Gohadoken"
+  :card/id :s3-gohadoken
   :card/type :special
   :card/cost 0
   :card/min-range 2

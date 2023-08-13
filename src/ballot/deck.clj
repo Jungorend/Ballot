@@ -564,7 +564,7 @@
    (create-deck "Akuma" :s3-akuma
                 :s3-hyakkishu 2
                 :s3-tatsumaki-zankukyaku 2
-                :s3-gohadouken 2
+                :s3-gohadoken 2
                 :s3-zugaihasatsu 2
                 :s3-goshoryuken 2
                 :s3-wrath-of-the-raging-demon 2
