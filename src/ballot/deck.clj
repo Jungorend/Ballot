@@ -621,6 +621,7 @@
                 :s4-full-broadside 2
                 :s4-launcher 2)
    (create-deck "Mole Knight" :s4-mole-knight
+                :s4-burrow 1
                 :s4-belly-slide 2
                 :s4-block-push 2
                 :s4-burrow-dig 2
