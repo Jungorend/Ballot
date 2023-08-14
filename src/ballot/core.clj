@@ -384,7 +384,7 @@
   "Posts a message to the channel server in block quotes. If no content, does nothing"
   [content channel-id]
   (when content
-    (discord-rest/create-message! (:rest @state) channel-id :content (str "```" content "```"))))
+    (discord-rest/create-message! (:rest @state) channel-id :content (str "```text\n" content "```"))))
 
 (def nomoretfs "https://cdn.discordapp.com/attachments/816004662754541628/981942732845088808/FirstCustomsRule.png")
 (def guiltygear "https://cdn.discordapp.com/attachments/819408415851544638/1139459811474411590/S7.png")
