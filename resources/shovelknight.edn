@@ -895,81 +895,33 @@
                     :ability/trigger :Hit
                     :ability/location :boost}]}
 
- {:card/name "Kingly Strut (Decree)"
-  :card/id :s4-kingly-strut
-  :card/type :character
-  :card/boost-name "Kingly Strut"
-  :card/boost-cost 3
-  :card/boost-type :continuous
-  :card/abilities [{:ability/description "This Boost cannot be discarded from play."
-                    :ability/location :boost
-                    :ability/trigger :passive}
-                   {:ability/description "+2 Power and +2 Armor"
-                    :ability/location :boost
-                    :ability/trigger :passive}
-                   {:ability/description "Now: Close 1 or 2."
-                    :ability/location :boost
-                    :ability/trigger :now}
-                   {:ability/description "Cleanup: Seal this card."
-                    :ability/location :boost
-                    :ability/trigger :cleanup}]}
+ #:card {:name "Kingly Strut (Decree)"
+         :id :s4-kingly-strut
+         :type :character
+         :boost-cost 3
+         :boost-type :continuous
+         :description "This Boost cannot be discarded from play.\n+2 Power and +2 Armor.\nNow: Close 1 or 2.\nCleanup: Seal this card."}
 
- {:card/name "Lordly Might (Decree)"
-  :card/id :s4-lordly-might
-  :card/type :character
-  :card/boost-name "Lordly Might"
-  :card/boost-cost 3
-  :card/boost-type :continuous
-  :card/abilities [{:ability/description "This Boost cannot be discarded from play."
-                    :ability/location :boost
-                    :ability/trigger :passive}
-                   {:ability/description "+1 Power and +2 Speed"
-                    :ability/location :boost
-                    :ability/trigger :passive}
-                   {:ability/description "Cleanup: Seal this card."
-                    :ability/location :boost
-                    :ability/trigger :cleanup}]}
+ #:card {:name "Lordly Might (Decree)"
+         :id :s4-lordly-might
+         :type :character
+         :boost-cost 3
+         :boost-type :continuous
+         :description "This Boost cannot be discarded from play.\n+1 Power and +2 Speed.\nCleanup: Seal this card."}
 
- {:card/name "Magnificent Cape (Glorious Decree)"
-  :card/id :s4-magnificent-cape
-  :card/type :character
-  :card/boost-name "Magnificent Cape"
-  :card/boost-cost 4
-  :card/boost-type :continuous
-  :card/abilities [{:ability/description "This Boost cannot be discarded from play."
-                    :ability/location :boost
-                    :ability/trigger :passive}
-                   {:ability/description "+2 Power and +2 Speed"
-                    :ability/location :boost
-                    :ability/trigger :passive}
-                   {:ability/description "Now: Close up to 3."
-                    :ability/location :boost
-                    :ability/trigger :now}
-                   {:ability/description "Cleanup: Seal this card."
-                    :ability/location :boost
-                    :ability/trigger :cleanup}]}
+ #:card {:name "Magnificent Cape (Glorious Decree)"
+         :id :s4-magnificent-cape
+         :type :character
+         :boost-cost 4
+         :boost-type :continuous
+         :description "This Boost cannot be discarded from play.\n+2 Power and +2 Speed.\nNow: Close up to 3.\nCleanup: Seal this card."}
 
- {:card/name "Pay To Win (Glorious Decree)"
-  :card/id :s4-pay-to-win
-  :card/type :character
-  :card/boost-name "Pay to Win"
-  :card/boost-cost 3
-  :card/boost-type :continuous
-  :card/abilities [{:ability/description "This Boost cannot be discarded from play."
-                    :ability/location :boost
-                    :ability/trigger :passive}
-                   {:ability/description "+3 Power and +3 Armor"
-                    :ability/location :boost
-                    :ability/trigger :passive}
-                   {:ability/description "Hit, Range 1: The opponent discards 2 cards at random."
-                    :ability/location :boost
-                    :ability/trigger :hit}
-                   {:ability/description "After: Draw 2 cards"
-                    :ability/location :boost
-                    :ability/trigger :after}
-                   {:ability/description "Cleanup: Seal this card."
-                    :ability/location :boost
-                    :ability/trigger :cleanup}]}
+ #:card {:name "Pay To Win (Glorious Decree)"
+         :id :s4-pay-to-win
+         :type :character
+         :boost-cost 4
+         :boost-type :continuous
+         :description "This Boost cannot be discarded from play.\n+3 Power and +3 Armor.\nHit, Range 1: The opponent discards 2 cards at random.\nAfter: Draw 2 cards.\nCleanup: Seal this card."}
 
  {:card/name "Victory Trumpets"
   :card/id :s4-victory-trumpets

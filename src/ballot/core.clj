@@ -100,6 +100,20 @@
   (cond (= -1 stat) "X"
         (= -2 stat) "N/A"
         :else stat))
+
+(defn boost-description [card]
+  (str (:card/boost-name card)
+       (case (:card/boost-type card)
+         :transform " (T)"
+         :trap (str " - " (:card/boost-cost card) " Force. (Trap)")
+         :instant (str " - " (:card/boost-cost card) " Force.")
+         :continuous (str " - " (:card/boost-cost card) " Force. (+)")
+         :cancelable-continuous (str " - " (:card/boost-cost card) " Force. Cancelable. (+)")
+         :cancelable-instant (str " - " (:card/boost-cost card) " Force. Cancelable.")
+         :gauge-instant (str " - " (:card/boost-cost card) " Guage.")
+         (str " - " (:card/boost-cost card) " Gauge. (+)"))
+       "\n"))
+
 (defn describe-attack-card
   [card abilities]
   (let [sorted-abilities (sort-by #(case (:ability/trigger %)
@@ -128,22 +142,17 @@
            (str "\nThis is an Astral. It begins sealed. If you manually reshuffle your deck, instead of drawing a card at the end of your turn, put this into your hand.\n"))
          (if (:card/description card) (:card/description card) "") "\n"
          (reduce #(str %1 (:ability/description %2) "\n") "" attacks)
-         "\n" (:card/boost-name card)
-         (case (:card/boost-type card)
-           :transform " (T)"
-           :trap (str " - " (:card/boost-cost card) " Force. (Trap)")
-           :instant (str " - " (:card/boost-cost card) " Force.")
-           :continuous (str " - " (:card/boost-cost card) " Force. (+)")
-           :cancelable-continuous (str " - " (:card/boost-cost card) " Force. Cancelable. (+)")
-           :cancelable-instant (str " - " (:card/boost-cost card) " Force. Cancelable.")
-           :gauge-instant (str " - " (:card/boost-cost card) " Guage.")
-           (str " - " (:card/boost-cost card) " Gauge. (+)"))
+         "\n"
+         (boost-description card)
          "\n"
          (reduce #(str %1 (:ability/description %2) "\n") "" boosts))))
 
+; Note: Presently does not report on any ability fields. Characters like King Knight's Decrees aren't searchable as a result.
 (defn describe-character-card
   [card]
   (str (:card/name card) "\n"
+       (when (:card/boost-type card)
+         (boost-description card))
        (:card/description card) "\n"
        (:card/exceed-description card) "\n"))
 
