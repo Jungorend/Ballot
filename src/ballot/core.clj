@@ -150,9 +150,9 @@
 ; Note: Presently does not report on any ability fields. Characters like King Knight's Decrees aren't searchable as a result.
 (defn describe-character-card
   [card]
-  (str (:card/name card) "\n"
+  (str (:card/name card)
        (when (:card/boost-type card)
-         (boost-description card))
+         (boost-description card)) "\n"
        (:card/description card) "\n"
        (:card/exceed-description card) "\n"))
 
