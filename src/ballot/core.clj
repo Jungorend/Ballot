@@ -391,13 +391,28 @@
 
 (defn post-message!
   "Posts a message to the channel server in block quotes. If no content, does nothing"
-  [content channel-id]
-  (when content
-    (discord-rest/create-message! (:rest @state) channel-id :content (str "```text\n" content "```"))))
+  ([content channel-id] (post-message! content channel-id "text"))
+  ([content channel-id format]
+   (when content
+     (discord-rest/create-message! (:rest @state) channel-id :content (str "```" format "\n" content "```")))))
 
 (def nomoretfs "https://cdn.discordapp.com/attachments/816004662754541628/981942732845088808/FirstCustomsRule.png")
 (def guiltygear "https://cdn.discordapp.com/attachments/819408415851544638/1139459811474411590/S7.png")
 (def playerdb "The Player Database is located here: https://docs.google.com/spreadsheets/d/1dYfLiUI0cacy8-SJ6UZF6WWcRSUVVUCdp_LzYHq95Qo/edit?usp=sharing")
+(def json "* Installing Customs
+Exceed customs are stored in a file called a 'json'. We call them this as the file format ends in a .json extension.
+Please first ensure you have the most recent json of the character you want to try downloaded.
+
+Next, you need to place it in your Saved Objects directory. The base directory depends on your Operating System:
+- Windows: %USERPROFILE%\\Documents\\My Games\\Tabletop Simulator
+- Mac: ~/Library/Tabletop Simulator
+- Linux: ~/.local/share/Tabletop Simulator
+
+Inside this directory will be a 'Saves/Saved Objects' directory. Place your json file in here.
+
+Lastly, when you are in Tabletop Simulator, you can access the custom by going to the Object > Saved Objects section of the UI.
+You can only access this menu if you have either created the room or been promoted.
+")
 
 ;; This method is called whenever a new message appears on the server.
 ;; If Ballot is pinged, it will send the help message.
@@ -410,6 +425,7 @@
           "!help"       (discord-rest/create-message! (:rest @state) channel-id :content (:help config))
           "!nomoretfs"  (discord-rest/create-message! (:rest @state) channel-id :content nomoretfs)
           "!guiltygear" (discord-rest/create-message! (:rest @state) channel-id :content guiltygear)
+          "!customs"    (post-message! json channel-id "markdown")
           "!playerdb"   (discord-rest/create-message! (:rest @state) channel-id :content playerdb)
           "!character"  (post-message! (lookup-character args conn) channel-id)
           "!card"       (post-message! (lookup-card args conn) channel-id)
