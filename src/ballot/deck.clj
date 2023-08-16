@@ -906,4 +906,41 @@
                 :s7-leap 2
                 :s7-thats-a-lot 2
                 :s7-sun-void 2
-                :s7-amorphous 2)])
+                :s7-amorphous 2)
+
+   (create-deck "Baiken" :s7-baiken
+                :s7-karatekewari 2
+                :s7-youzansen 2
+                :s7-hiiragi 2
+                :s7-tatami-gaeshi 2
+                :s7-kabari 2
+                :s7-kenjyu 2
+                :s7-tsurane-sanzu-watashi 2)
+
+   (create-deck "Ramlethal" :s7-ramlethal
+                :s7-bajoneto 2
+                :s7-sabrobato 2
+                :s7-dauro 2
+                :s7-agresa-ordono 2
+                :s7-erarlumo 2
+                :s7-calvados 2
+                :s7-mortobato 2)
+
+   (create-deck "Potemkin" :s7-potemkin
+                :s7-mega-fist 2
+                :s7-heat-knuckle 2
+                :s7-hammer-fall 2
+                :s7-garuda-impact 2
+                :s7-slide-head 2
+                :s7-potemkin-buster 2
+                :s7-giganter-kal 2
+                :s7-heavenly-potemkin-buster 2)
+
+   (create-deck "Axl Low" :s7-axl
+                :s7-rainwater 2
+                :s7-winter-mantis 2
+                :s7-snail 2
+                :s7-axl-bomber 2
+                :s7-sickle-flash 4
+                :s7-sickle-storm 2
+                :s7-one-vision 2)])

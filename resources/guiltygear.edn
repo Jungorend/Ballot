@@ -931,4 +931,766 @@
                      #:ability{:description
                                "Hit: If the opponent is between you and Eddie (not in Eddie's space), +3 Power.",
                                :location :boost,
-                               :trigger :hit}]}]
+                               :trigger :hit}]}
+
+ #:character{:name "Baiken",
+             :id :s7-baiken,
+             :innate-ability "1 Gauge Action: Pull 2 without Pulling past yourself. Strike.",
+             :exceed-ability "1 Gauge Action: Pull 2. Strike; +1 Power.",
+             :gauge-cost 3,
+             :seasons #:season{:name "Guilty Gear"}}
+
+ #:card{:boost-name "Swagger",
+        :cost 0
+        :min-range 1
+        :max-range 1
+        :power 5
+        :speed 4
+        :armor 0
+        :guard 0
+        :boost-type :cancelable-instant
+        :boost-cost 0
+        :id :s7-karatekewari
+        :name "Karatekewari"
+        :type :special
+        :abilities
+        [#:ability{:description
+                   "Hit: Push 2. If you have 3 or fewer cards in hand, +2 Power.",
+                   :location :attack,
+                   :trigger :hit}
+         #:ability{:description "Close up to 2. Draw 1.",
+                   :location :boost,
+                   :trigger :now}]}
+
+ #:card{:boost-name "Any Means Necessary",
+        :cost 0
+        :min-range 1
+        :max-range 2
+        :power 5
+        :speed 4
+        :armor 0
+        :guard 0
+        :boost-type :continuous,
+        :boost-cost 0,
+        :id :s7-youzansen,
+        :name "Youzansen",
+        :type :special,
+        :abilities
+        [#:ability{:description "Ignore Armor.",
+                   :location :attack,
+                   :trigger :passive}
+         #:ability{:description
+                   "If you have 3 or fewer cards in hand, +2 Speed.",
+                   :location :attack,
+                   :trigger :passive}
+         #:ability{:description "+3 Power",
+                   :location :boost,
+                   :trigger :passive}
+         #:ability{:description
+                   "Now: Draw 1. Take 3 non-lethal damage (Armor does not apply outside of Strikes).",
+                   :location :boost,
+                   :trigger :now}]}
+
+ #:card{:boost-name "Glare",
+        :cost 0
+        :min-range 1
+        :max-range 2
+        :power 1
+        :speed 3
+        :armor 0
+        :guard 6
+        :boost-type :cancelable-instant,
+        :boost-cost 0,
+        :id :s7-hiiragi,
+        :name "Hiiragi",
+        :type :special,
+        :abilities
+        [#:ability{:description
+                   "If you have 3 or fewer cards in hand, +2 Armor.",
+                   :location :attack,
+                   :trigger :passive}
+         #:ability{:description
+                   "Before: If you were hit, +6 Power and Close 2.",
+                   :location :attack,
+                   :trigger :before}
+         #:ability{:description "Retreat up to 2. Draw 1.",
+                   :location :boost,
+                   :trigger :now}]}
+
+ #:card{:boost-name "Hidden Weapon",
+        :cost 0
+        :min-range 1
+        :max-range 3
+        :power 4
+        :speed 4
+        :armor 1
+        :guard 4
+        :boost-type :continuous,
+        :boost-cost 0,
+        :id :s7-tatami-gaeshi,
+        :name "Tatami Gaeshi",
+        :type :special,
+        :abilities
+        [#:ability{:description "Hit: Push 1. Draw 1.",
+                   :location :attack,
+                   :trigger :hit}
+         #:ability{:description "After: Close 2.",
+                   :location :attack,
+                   :trigger :after}
+         #:ability{:description "+1 Power",
+                   :location :boost,
+                   :trigger :passive}
+         #:ability{:description
+                   "Now: If you have 3 or fewer cards in hand, draw 1 and take another action.",
+                   :location :boost,
+                   :trigger :now}]}
+
+ #:card{:boost-name "Deadeye",
+        :cost 0
+        :min-range 2
+        :max-range 4
+        :power 3
+        :speed 5
+        :armor 0
+        :guard 0
+        :boost-type :cancelable-continuous,
+        :boost-cost 0,
+        :id :s7-kabari,
+        :name "Kabari",
+        :type :special,
+        :abilities
+        [#:ability{:description
+                   "Hit: Pull 3 without pulling past yourself. You may Advance 2 and gain Advantage; otherwise +2 Power.",
+                   :location :attack,
+                   :trigger :hit}
+         #:ability{:description "+1 Speed",
+                   :location :boost,
+                   :trigger :passive}
+         #:ability{:description
+                   "Now: You may add a card from your hand to your Gauge.",
+                   :location :boost,
+                   :trigger :now}]}
+
+ #:card{:boost-name "Momentary Life",
+        :cost 2
+        :min-range 2
+        :max-range 5
+        :power 3
+        :speed 6
+        :armor 0
+        :guard 0
+        :boost-type :cancelable-continuous,
+        :boost-cost 0,
+        :id :s7-kenjyu,
+        :name "Kenjyu",
+        :type :ultra,
+        :abilities
+        [#:ability{:description "Hit: Gain Advantage.",
+                   :location :attack,
+                   :trigger :hit}
+         #:ability{:description "After: Close 2.",
+                   :location :attack,
+                   :trigger :after}
+         #:ability{:description "+2 Armor",
+                   :location :boost,
+                   :trigger :passive}
+         #:ability{:description
+                   "Now: You may add a card from your hand to your Gauge.",
+                   :location :boost,
+                   :trigger :now}]}
+
+ #:card{:boost-name "Mirror of the World",
+        :cost 3
+        :min-range 1
+        :max-range 1
+        :power 5
+        :speed 5
+        :armor 0
+        :guard 0
+        :boost-type :continuous,
+        :boost-cost 0,
+        :id :s7-tsurane-sanzu-watashi,
+        :name "Tsurane Sanzu Watashi",
+        :type :ultra,
+        :abilities
+        [#:ability{:description
+                   "If you have 3 or fewer cards in hand, +3 Speed.",
+                   :location :attack,
+                   :trigger :passive}
+         #:ability{:description "Stun Immunity.",
+                   :location :boost,
+                   :trigger :passive}
+         #:ability{:description
+                   "Before: For each point of damage taken this Strike, +1 Power.",
+                   :location :boost,
+                   :trigger :before}]}
+
+ #:character {:name "Ramlethal"
+              :id :s7-ramlethal
+              :innate-ability "After setting your attack, you may spend 2 Force. If you do, +0~1 Range."
+              :exceed-ability "When you Exceed, draw 3. After setting yoru attack, you may spend 2 Force. If you do, +0~1 Range and +1 Power."
+              :gauge-cost 3
+              :seasons {:season/name "Guilty Gear"}}
+
+ #:card {:name "Bajoneto"
+         :type :special
+         :id :s7-bajoneto
+         :cost 0
+         :min-range 2
+         :max-range 4
+         :power 3
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Brigadier Sword"
+         :boost-cost 0
+         :boost-type :cancelable-continuous
+         :abilities [#:ability{:description
+                               "Hit: Push 2. If the opponent was Pushed fewer than 2 spaces, +2 Power.",
+                               :location :attack,
+                               :trigger :hit}
+                     #:ability{:description "After: Close 2. Gain Advantage.",
+                               :location :attack,
+                               :trigger :after}
+                     #:ability{:description "+0~1 Range",
+                               :location :boost,
+                               :trigger :passive}
+                     #:ability{:description "Hit: Add this to your Gauge.",
+                               :location :boost,
+                               :trigger :hit}]}
+
+ #:card {:name "Sabrobato"
+         :type :special
+         :id :s7-sabrobato
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 4
+         :speed 2
+         :armor 0
+         :guard 5
+         :boost-name "Impose"
+         :boost-cost 0
+         :boost-type :cancelable-instant
+         :abilities [#:ability{:description
+                               "Hit: Push 1; if the opponent was Pushed fewer than 1 space, +2 Power and draw 1.",
+                               :location :attack,
+                               :trigger :hit}
+                     #:ability{:description "Close 1. Draw 2.",
+                               :location :boost,
+                               :trigger :now}]}
+
+ #:card {:name "Dauro"
+         :type :special
+         :id :s7-dauro
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 2
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Lucifero"
+         :boost-cost 0
+         :boost-type :instant
+         :abilities [#:ability{:description "Before: Close 2.",
+                               :location :attack,
+                               :trigger :before}
+                     #:ability{:description "Hit: Push 1.",
+                               :location :attack,
+                               :trigger :hit}
+                     #:ability{:description
+                               "Return a Special from your discard pile to your hand. Strike.",
+                               :location :boost,
+                               :trigger :now}]}
+
+ #:card {:name "Agresa Ordono"
+         :type :special
+         :id :s7-agresa-ordono
+         :cost 0
+         :min-range 1
+         :max-range 4
+         :power 4
+         :speed 3
+         :armor 0
+         :guard 3
+         :boost-name "Efficient"
+         :boost-cost 0
+         :boost-type :continuous
+         :abilities [#:ability{:description
+                               "Hit: Close or Retreat 1. Add the top card of your deck to your Gauge.",
+                               :location :attack,
+                               :trigger :hit}
+                     #:ability{:description "+4 Guard",
+                               :location :boost,
+                               :trigger :passive}
+                     #:ability{:description
+                               "Now: spend up to 2 force. For each Force spent, draw 2.",
+                               :location :boost,
+                               :trigger :now}]}
+
+ #:card {:name "Erarlumo"
+         :type :special
+         :id :s7-erarlumo
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 3
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Delayed Explosion"
+         :boost-cost 0
+         :boost-type :continuous
+         :abilities [#:ability{:description "Before: Close 2.",
+                               :location :attack,
+                               :trigger :before}
+                     #:ability{:description
+                               "Hit: Draw 2. Add a card from your hand to your Gauge.",
+                               :location :attack,
+                               :trigger :hit}
+                     #:ability{:description "Now: Draw 2.",
+                               :location :boost,
+                               :trigger :now}
+                     #:ability{:description
+                               "Hit: Push 1; if the opponent was Pushed fewer than 1 space, +2 Power.",
+                               :location :boost,
+                               :trigger :hit}]}
+
+ #:card {:name "Calvados"
+         :description "Strike them down!"
+         :type :ultra
+         :id :s7-calvados
+         :cost 1
+         :min-range 1
+         :max-range 5
+         :power 4
+         :speed 1
+         :armor 1
+         :guard 5
+         :boost-name "Diva of Despair"
+         :boost-cost 0
+         :boost-type :cancelable-continuous
+         :abilities [#:ability{:description "Hit: Push 2.",
+                               :location :attack,
+                               :trigger :hit}
+                     #:ability{:description
+                               "After: If you initiated, add a card from your discard pile to your Gauge.",
+                               :location :attack,
+                               :trigger :after}
+                     #:ability{:description "Now, Range 1: Push 2.",
+                               :location :boost,
+                               :trigger :now}
+                     #:ability{:description "Hit: Add this to your Gauge.",
+                               :location :boost,
+                               :trigger :hit}]}
+
+ #:card {:name "Mortobato"
+         :description "Surrender your future."
+         :type :ultra
+         :id :s7-mortobato
+         :cost 3
+         :min-range 1
+         :max-range 2
+         :power 4
+         :speed 7
+         :armor 0
+         :guard 0
+         :boost-name "Necessary Discrepancy"
+         :boost-cost 0
+         :boost-type :instant
+         :abilities [#:ability{:description
+                               "Return all cards from your Gauge to your hand. Take another action.",
+                               :location :boost,
+                               :trigger :now}]}
+
+ #:character {:name "Potemkin"
+              :id :s7-potemkin
+              :innate-ability "When you initiate a Strike at Range 1, +1 Power and +1 Armor."
+              :exceed-ability "When you Exceed, Close 2. When you initiate a Strike at Range 1, +2 Power and +2 Armor."
+              :gauge-cost 4
+              :seasons {:season/name "Guilty Gear"}}
+
+ #:card {:name "Mega Fist"
+         :type :special
+         :id :s7-mega-fist
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 3
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Megatona Furioso"
+         :boost-cost 0
+         :boost-type :cancelable-continuous
+         :abilities [#:ability{:description "Before: Advance 1 or 2.",
+                               :location :attack,
+                               :trigger :before}
+                     #:ability{:description "Hit: Draw 2.",
+                               :location :attack,
+                               :trigger :hit}
+                     #:ability{:description "+1 Power and Ignore Armor.",
+                               :location :boost,
+                               :trigger :passive}]}
+
+ #:card {:name "Heat Knuckle"
+         :type :special
+         :id :s7-heat-knuckle
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 5
+         :speed 1
+         :armor 0
+         :guard 5
+         :boost-name "Engage"
+         :boost-cost 0
+         :boost-type :continuous
+         :abilities [#:ability{:description
+                               "Before: If you were hit, Pull 2 without Pulling past yourself.",
+                               :location :attack,
+                               :trigger :before}
+                     #:ability{:description "Hit: Push 3.",
+                               :location :attack,
+                               :trigger :hit}
+                     #:ability{:description "Now: Close 1.",
+                               :location :boost,
+                               :trigger :now}
+                     #:ability{:description
+                               "At the start of your turn, add this to your Gauge.",
+                               :location :boost,
+                               :trigger :passive}]}
+
+ #:card {:name "Hammer Fall"
+         :type :special
+         :id :s7-hammer-fall
+         :cost 0
+         :min-range 1
+         :max-range 1
+         :power 2
+         :speed 3
+         :armor 1
+         :guard 3
+         :boost-name "Huge"
+         :boost-cost 0
+         :boost-type :cancelable-continuous
+         :abilities [#:ability{:description "Before: Close 3.",
+                               :location :attack,
+                               :trigger :before}
+                     #:ability{:description "+0~1 Range.",
+                               :location :boost,
+                               :trigger :passive}
+                     #:ability{:description "Hit: Push or Pull 1.",
+                               :location :boost,
+                               :trigger :hit}]}
+
+ #:card {:name "Garuda Impact"
+         :type :special
+         :id :s7-garuda-impact
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 5
+         :speed 4
+         :armor 0
+         :guard 0
+         :boost-name "Kara Cancel"
+         :boost-cost 0
+         :boost-type :cancelable-instant
+         :abilities [#:ability{:description
+                               "Hit: Gain Advantage. The opponent must discard 2 cards.",
+                               :location :attack,
+                               :trigger :hit}
+                     #:ability{:description "Close 1. Draw 1.",
+                               :location :boost,
+                               :trigger :now}]}
+
+ #:card {:name "Slide Head"
+         :type :special
+         :id :s7-slide-head
+         :cost 0
+         :min-range 1
+         :max-range 8
+         :power 0
+         :speed 2
+         :armor 1
+         :guard 4
+         :boost-name "Steadfast"
+         :boost-cost 0
+         :boost-type :continuous
+         :abilities [#:ability{:description
+                               "Hit: The opponent must discard a random card.",
+                               :location :attack,
+                               :trigger :hit}
+                     #:ability{:description "After: Close 2.",
+                               :location :attack,
+                               :trigger :after}
+                     #:ability{:description
+                               "If you initiated, +1 Speed. Otherwise, +4 Guard.",
+                               :location :boost,
+                               :trigger :passive}
+                     #:ability{:description "Now: Close 1.",
+                               :location :boost,
+                               :trigger :now}]}
+
+ #:card {:name "Potemkin Buster"
+         :type :special
+         :id :s7-potemkin-buster
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 6
+         :speed 3
+         :armor 0
+         :guard 3
+         :boost-name "F.D.B."
+         :boost-cost 0
+         :boost-type :cancelable-continuous
+         :abilities [#:ability{:description "You cannot be Pushed or Pulled.",
+                               :location :attack,
+                               :trigger :passive}
+                     #:ability{:description
+                               "Hit: The opponent must discard a random card.",
+                               :location :attack,
+                               :trigger :hit}
+                     #:ability{:description "Attacks at Range 4+ do not hit you.",
+                               :location :boost,
+                               :trigger :passive}
+                     #:ability{:description
+                               "At the start of your turn, add this to your Gauge.",
+                               :location :boost,
+                               :trigger :passive}]}
+
+ #:card {:name "Giganter Kal"
+         :description "Think up a way to live through this."
+         :type :ultra
+         :id :s7-giganter-kal
+         :cost 2
+         :min-range 2
+         :max-range 4
+         :power 4
+         :speed 1
+         :armor 3
+         :guard 4
+         :boost-name "Armor-Clad Faith"
+         :boost-cost 0
+         :boost-type :continuous
+         :abilities [#:ability{:description "Attacks at Range 4+ do not hit you.",
+                               :location :attack,
+                               :trigger :passive}
+                     #:ability{:description "After: Close 3. Gain Advantage.",
+                               :location :attack,
+                               :trigger :after}
+                     #:ability{:description "+4 Armor",
+                               :location :boost,
+                               :trigger :passive}
+                     #:ability{:description "Now: Close 1.",
+                               :location :boost,
+                               :trigger :now}]}
+
+ #:card {:name "Heavenly Potemkin Buster"
+         :description "No room for moderation!"
+         :type :ultra
+         :id :s7-heavenly-potemkin-buster
+         :cost 4
+         :min-range 1
+         :max-range 1
+         :power 11
+         :speed 0
+         :armor 0
+         :guard 7
+         :boost-name "Burly Heart"
+         :boost-cost 0
+         :boost-type :continuous
+         :abilities [#:ability{:description "Before: Advance 3.",
+                               :location :attack,
+                               :trigger :before}
+                     #:ability{:description
+                               "If you initiated, +2 Power. Otherwise, +3 Armor.",
+                               :location :boost,
+                               :trigger :passive}
+                     #:ability{:description "Now: Close 1.",
+                               :location :boost,
+                               :trigger :now}]}
+
+ #:character {:name "Axl Low"
+              :id :s7-axl
+              :innate-ability "Your Normals have +0~2 Range and -1 Speed. (This increases maximum range without affecting minimum Range.)"
+              :exceed-ability "When you Exceed, draw 2 and Retreat up to 2. Your Normals have +0~2 Range."
+              :gauge-cost 3
+              :seasons {:season/name "Guilty Gear"}}
+
+ #:card {:name "Rainwater"
+         :type :special
+         :id :s7-rainwater
+         :cost 0
+         :min-range 2
+         :max-range 4
+         :power 4
+         :speed 4
+         :armor 0
+         :guard 3
+         :boost-name "Make Oneself"
+         :boost-cost 0
+         :boost-type :cancelable-continuous
+         :abilities [#:ability{:description "Before: You may Retreat 1.",
+                               :location :attack,
+                               :trigger :before}
+                     #:ability{:description "Hit: Retreat 1.",
+                               :location :attack,
+                               :trigger :hit}
+                     #:ability{:description "+1 Speed",
+                               :location :boost,
+                               :trigger :passive}
+                     #:ability{:description "Now: Advance or Retreat 1.",
+                               :location :boost,
+                               :trigger :now}]}
+
+ #:card {:name "Winter Mantis"
+         :type :special
+         :id :s7-winter-mantis
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 5
+         :speed 2
+         :armor 0
+         :guard 0
+         :boost-name "The March of the Wicked King"
+         :boost-cost 0
+         :boost-type :instant
+         :abilities [#:ability{:description "Ignore Armor, Ignore Guard",
+                               :location :attack,
+                               :trigger :passive}
+                     #:ability{:description
+                               "Before: Pull 8 without Pulling past yourself.",
+                               :location :attack,
+                               :trigger :before}
+                     #:ability{:description "Hit: Advance 2.",
+                               :location :attack,
+                               :trigger :hit}
+                     #:ability{:description
+                               "Spend up to 2 Force. For each Force spent, Push 1 and draw 2.",
+                               :location :boost,
+                               :trigger :now}]}
+
+ #:card {:name "Snail"
+         :type :special
+         :id :s7-snail
+         :cost 0
+         :min-range 2
+         :max-range 3
+         :power 3
+         :speed 6
+         :armor 0
+         :guard 0
+         :boost-name "Dogs on the Run"
+         :boost-cost 0
+         :boost-type :cancelable-instant
+         :abilities [#:ability{:description "Hit: Push 1. Draw 1.",
+                               :location :attack,
+                               :trigger :hit}
+                     #:ability{:description "Advance 2 or 3.",
+                               :location :boost,
+                               :trigger :now}]}
+
+ #:card {:name "Axl Bomber"
+         :type :special
+         :id :s7-axl-bomber
+         :cost 0
+         :min-range 1
+         :max-range 2
+         :power 4
+         :speed 3
+         :armor 0
+         :guard 5
+         :boost-name "Wise Remarks"
+         :boost-cost 0
+         :boost-type :cancelable-continuous
+         :abilities [#:ability{:description "If you initiated, +2 Power.",
+                               :location :attack,
+                               :trigger :passive}
+                     #:ability{:description
+                               "Hit: Advance 2. You may spend 1 Gauge. If you do, gain Advantage.",
+                               :location :attack,
+                               :trigger :hit}
+                     #:ability{:description "+1 Power.",
+                               :location :boost,
+                               :trigger :passive}
+                     #:ability{:description
+                               "After: If the opponent is stunned (even if they were faster), draw 1.",
+                               :location :boost,
+                               :trigger :after}]}
+
+ #:card {:name "Sickle Flash"
+         :type :special
+         :id :s7-sickle-flash
+         :cost 0
+         :min-range 3
+         :max-range 8
+         :power 2
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "A Slow Waker"
+         :boost-cost 0
+         :boost-type :cancelable-instant
+         :abilities [#:ability{:description
+                               "Hit: Push 1. If the opponent was pushed fewer than 1 space, +2 Power.",
+                               :location :attack,
+                               :trigger :hit}
+                     #:ability{:description "Retreat 2 or 3.",
+                               :location :boost,
+                               :trigger :now}]}
+
+ #:card {:name "Sickle Storm"
+         :description "This should do it!"
+         :type :ultra
+         :id :s7-sickle-storm
+         :cost 2
+         :min-range 1
+         :max-range 2
+         :power 5
+         :speed 4
+         :armor 3
+         :guard 3
+         :boost-name "Idealism"
+         :boost-cost 0
+         :boost-type :instant
+         :abilities [#:ability{:description "Before: Close 1. Lose all Armor.",
+                               :location :attack,
+                               :trigger :before}
+                     #:ability{:description "After: If the opponent is stunned, Push 2.",
+                               :location :attack,
+                               :trigger :after}
+                     #:ability{:description
+                               "Look at the top 3 cards of your deck. You may Boost or Strike with one of them (you cannot Cancel it). Discard the rest.",
+                               :location :boost,
+                               :trigger :now}]}
+
+ #:card {:name "One Vision"
+         :description "Want to see a trick?"
+         :type :ultra
+         :id :s7-one-vision
+         :cost 4
+         :min-range 1
+         :max-range 2
+         :power 5
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Out of the box"
+         :boost-cost 0
+         :boost-type :continuous
+         :abilities [#:ability{:description "Hit: Draw 4. Gain Advantage.",
+                               :location :attack,
+                               :trigger :hit}
+                     #:ability{:description
+                               "After: Play this as its Boost and sustain it.",
+                               :location :attack,
+                               :trigger :after}
+                     #:ability{:description
+                               "Action: Discard this from play and take 3 actions: you cannot Cancel during them. (Striking ends your turn.)",
+                               :location :boost,
+                               :trigger :now}]}]

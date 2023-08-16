@@ -75,3 +75,11 @@
          card-strs
          create-deck-str)))
 
+(spit "results.edn" (create-cards "Baiken" :s7-baiken "Guilty Gear"
+                                  :s7-karatekewari 2
+                                  :s7-youzansen 2
+                                  :s7-hiiragi 2
+                                  :s7-tatami-gaeshi 2
+                                  :s7-kabari 2
+                                  :s7-kenjyu 2
+                                  :s7-tsurane-sanzu-watashi 2))
