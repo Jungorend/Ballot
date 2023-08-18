@@ -943,4 +943,38 @@
                 :s7-axl-bomber 2
                 :s7-sickle-flash 4
                 :s7-sickle-storm 2
-                :s7-one-vision 2)])
+                :s7-one-vision 2)
+
+   (create-deck "Giovanna" :s7-giovanna
+                :s7-triple-kick 2
+                :s7-sol-poente 2
+                :s7-sol-nascente 2
+                :s7-trovao 2
+                :s7-sepultura 2
+                :s7-tempestade 2
+                :s7-ventania 2)
+
+   (create-deck "Anji Mito" :s7-anji
+                :s7-nagiha 2
+                :s7-rin 2
+                :s7-shitsu 2
+                :s7-kou 2
+                :s7-fuujin 2
+                :s7-kachoufuugetsu-kai 2
+                :s7-issei-ougi-sai 2)
+
+   (create-deck "Happy Chaos" :s7-happy-chaos
+                :s7-fire 3
+                :s7-at-the-ready 2
+                :s7-cheap-shot 3
+                :s7-steady-aim 3
+                :s7-gun-down 3)
+
+   (create-deck "I-No" :s7-ino
+                :s7-chemical-love 2
+                :s7-guitar-standing 2
+                :s7-sultry-performance 2
+                :s7-stroke-the-big-tree 2
+                :s7-antidepressant-scale 2
+                :s7-ultimate-fortissimo 2
+                :s7-megalomania 2)])
