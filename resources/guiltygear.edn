@@ -161,7 +161,7 @@
                                 :trigger :hit}]}
 
  #:card {:name "Tyrant Rave"
-         :description "Let's do this!"
+         :description "\"Let's do this!\""
          :id :s7-tyrant-rave
          :type :ultra
          :cost 2
@@ -185,7 +185,7 @@
          :id :s7-heavy-mob-cemetery
          :type :ultra
          :cost 3
-         :description "Sorry! It's over!"
+         :description "\"Sorry! It's over!\""
          :min-range 1
          :max-range 1
          :power 5
@@ -326,7 +326,7 @@
  #:card {:name "Sacred Edge"
          :id :s7-sacred-edge
          :type :ultra
-         :description "This is too much for you."
+         :description "\"This is too much for you.\""
          :cost 4
          :min-range 2
          :max-range 6
@@ -347,7 +347,7 @@
  #:card {:name "Ride The Lightning"
          :id :s7-ride-the-lightning
          :type :ultra
-         :description "Embrace the light!"
+         :description "\"Embrace the light!\""
          :cost 4
          :min-range 1
          :max-range 1
@@ -488,7 +488,7 @@
 
  #:card {:name "The Wonderful And Dynamic Goshogawara"
          :type :ultra
-         :description "May Dynamic!"
+         :description "\"May Dynamic!\""
          :id :s7-the-wonderful-and-dynamic-goshogawara
          :cost 3
          :min-range 1
@@ -515,7 +515,7 @@
 
  #:card {:name "Great Yamada Attack"
          :type :ultra
-         :description "So it's come to this!"
+         :description "\"So it's come to this!\""
          :id :s7-great-yamada-attack
          :cost 3
          :min-range 2
@@ -670,7 +670,7 @@
 
  #:card {:name "Bone Crushing Excitement"
          :type :ultra
-         :description "I will save you!"
+         :description "\"I will save you!\""
          :id :s7-bone-crushing-excitement
          :cost 4
          :min-range 1
@@ -697,7 +697,7 @@
 
  #:card {:name "W-W-What Could This Be?"
          :type :ultra
-         :description "So that's it..."
+         :description "\"So that's it...\""
          :id :s7-what-could-this-be?
          :cost 2
          :min-range 2
@@ -726,7 +726,7 @@
  #:card {:name "Eddie"
          :id :s7-eddie
          :type :character
-         :description "While Eddie is in play, your Specials and Ultras calculate Range from Eddie and have \"Hit: Gain Advantage.\" and \"Cleanup: Remove Eddie from play.\""}
+         :description "\"While Eddie is in play, your Specials and Ultras calculate Range from Eddie and have \"Hit: Gain Advantage.\" and \"Cleanup: Remove Eddie from play.\"\""}
 
  #:card {:name "Pierce"
          :type :special
@@ -880,7 +880,7 @@
                                :trigger :after}]}
 
  #:card {:name "Sun Void"
-         :description "You're up!"
+         :description "\"You're up!\""
          :type :ultra
          :id :s7-sun-void
          :cost 2
@@ -906,7 +906,7 @@
                                :trigger :now}]}
 
  #:card {:name "Amorphous"
-         :description "Devour...viciously!"
+         :description "\"Devour...viciously!\""
          :type :ultra
          :id :s7-amorphous
          :cost 4
@@ -1084,6 +1084,7 @@
         :id :s7-kenjyu,
         :name "Kenjyu",
         :type :ultra,
+        :description "\"You're mine!\""
         :abilities
         [#:ability{:description "Hit: Gain Advantage.",
                    :location :attack,
@@ -1112,6 +1113,7 @@
         :id :s7-tsurane-sanzu-watashi,
         :name "Tsurane Sanzu Watashi",
         :type :ultra,
+        :description "\"Go take a walk!\""
         :abilities
         [#:ability{:description
                    "If you have 3 or fewer cards in hand, +3 Speed.",
@@ -1258,7 +1260,7 @@
                                :trigger :hit}]}
 
  #:card {:name "Calvados"
-         :description "Strike them down!"
+         :description "\"Strike them down!\""
          :type :ultra
          :id :s7-calvados
          :cost 1
@@ -1286,7 +1288,7 @@
                                :trigger :hit}]}
 
  #:card {:name "Mortobato"
-         :description "Surrender your future."
+         :description "\"Surrender your future.\""
          :type :ultra
          :id :s7-mortobato
          :cost 3
@@ -1463,7 +1465,7 @@
                                :trigger :passive}]}
 
  #:card {:name "Giganter Kal"
-         :description "Think up a way to live through this."
+         :description "\"Think up a way to live through this.\""
          :type :ultra
          :id :s7-giganter-kal
          :cost 2
@@ -1490,7 +1492,7 @@
                                :trigger :now}]}
 
  #:card {:name "Heavenly Potemkin Buster"
-         :description "No room for moderation!"
+         :description "\"No room for moderation!\""
          :type :ultra
          :id :s7-heavenly-potemkin-buster
          :cost 4
@@ -1645,7 +1647,7 @@
                                :trigger :now}]}
 
  #:card {:name "Sickle Storm"
-         :description "This should do it!"
+         :description "\"This should do it!\""
          :type :ultra
          :id :s7-sickle-storm
          :cost 2
@@ -1670,7 +1672,7 @@
                                :trigger :now}]}
 
  #:card {:name "One Vision"
-         :description "Want to see a trick?"
+         :description "\"Want to see a trick?\""
          :type :ultra
          :id :s7-one-vision
          :cost 4
@@ -1819,7 +1821,7 @@
                                :trigger :now}]}
 
  #:card {:name "Tempestade"
-         :description "Revere The Sky!"
+         :description "\"Revere The Sky!\""
          :type :ultra
          :id :s7-tempestade
          :cost 1
@@ -1846,7 +1848,7 @@
                                :trigger :hit}]}
 
  #:card {:name "Ventania"
-         :description "Fear on the wind!"
+         :description "\"Fear on the wind!\""
          :type :ultra
          :id :s7-ventania
          :cost 4
@@ -1997,7 +1999,7 @@
                                :trigger :now}]}
 
  #:card {:name "Kachoufuugetsu Kai"
-         :description "That's about enough."
+         :description "\"That's about enough.\""
          :type :ultra
          :id :s7-kachoufuugetsu-kai
          :cost 2
@@ -2023,7 +2025,7 @@
                                :trigger :now}]}
 
  #:card {:name "Issei Ougi: Sai"
-         :description "Let it bloom!"
+         :description "\"Let it bloom!\""
          :type :ultra
          :id :s7-issei-ougi-sai
          :cost 3
@@ -2108,7 +2110,7 @@ Hit: Shuffle your sealed area into your deck. Draw 3."
                                :trigger :now}]}
 
  #:card {:name "Cheap Shot"
-         :description "I have no need for conclusions."
+         :description "\"I have no need for conclusions.\""
          :type :ultra
          :id :s7-cheap-shot
          :cost 1
@@ -2134,7 +2136,7 @@ Hit: Shuffle your sealed area into your deck. Draw 3."
                                :trigger :now}]}
 
  #:card {:name "Steady Aim"
-         :description "Show me your theme."
+         :description "\"Show me your theme.\""
          :type :ultra
          :id :s7-steady-aim
          :cost 1
@@ -2160,7 +2162,7 @@ Hit: Shuffle your sealed area into your deck. Draw 3."
                                :trigger :now}]}
 
  #:card {:name "Gun Down"
-         :description "I'm just here for the pleasure."
+         :description "\"I'm just here for the pleasure.\""
          :type :ultra
          :id :s7-gun-down
          :cost 1
@@ -2323,7 +2325,7 @@ Hit: Shuffle your sealed area into your deck. Draw 3."
                                :trigger :hit}]}
 
  #:card {:name "Ultimate Fortissimo"
-         :description "Here's the chorus!"
+         :description "\"Here's the chorus!\""
          :type :ultra
          :id :s7-ultimate-fortissimo
          :cost 3
@@ -2348,7 +2350,7 @@ Hit: Shuffle your sealed area into your deck. Draw 3."
                                :trigger :hit}]}
 
  #:card {:name "Megalomania"
-         :description "At your limit?"
+         :description "\"At your limit?\""
          :type :ultra
          :id :s7-megalomania
          :cost 5
@@ -2496,7 +2498,7 @@ Hit: Shuffle your sealed area into your deck. Draw 3."
                                :trigger :now}]}
 
  #:card {:name "Cheer Servant On"
-         :description "Thanks, guys!"
+         :description "\"Thanks, guys!\""
          :type :ultra
          :id :s7-cheer-servant-on
          :cost 3
@@ -2520,7 +2522,7 @@ Hit: Shuffle your sealed area into your deck. Draw 3."
 
  #:card {:name "Forever Elysion Driver"
          :type :ultra
-         :description "You won't get away!"
+         :description "\"You won't get away!\""
          :id :s7-forever-elysion-driver
          :cost 2
          :min-range 1
@@ -2674,7 +2676,7 @@ Hit: Shuffle your sealed area into your deck. Draw 3."
 
  #:card {:name "Septem Voices"
          :type :ultra
-         :description "Slice!"
+         :description "\"Slice!\""
          :id :s7-septem-voices
          :cost 2
          :min-range 2
@@ -2700,7 +2702,7 @@ Hit: Shuffle your sealed area into your deck. Draw 3."
 
  #:card {:name "Winger"
          :type :ultra
-         :description "Playtime's Over!"
+         :description "\"Playtime's Over!\""
          :id :s7-winger
          :cost 3
          :min-range 1
@@ -2862,7 +2864,7 @@ Hit: Shuffle your sealed area into your deck. Draw 3."
 
  #:card {:name "Calamity One"
          :type :ultra
-         :description "How unsightly."
+         :description "\"How unsightly.\""
          :id :s7-calamity-one
          :cost 2
          :min-range 1
@@ -3038,7 +3040,7 @@ Hit: Shuffle your sealed area into your deck. Draw 3."
 
  #:card {:name "Zansetsu"
          :type :ultra
-         :description "Get Away from me!"
+         :description "\"Get Away from me!\""
          :id :s7-zansetsu
          :cost 4
          :min-range 3
@@ -3063,7 +3065,7 @@ Hit: Shuffle your sealed area into your deck. Draw 3."
 
  #:card {:name "Wasureyuki"
          :type :ultra
-         :description "Your fate is sealed!"
+         :description "\"Your fate is sealed!\""
          :id :s7-wasureyuki
          :cost 3
          :min-range 1
@@ -3223,7 +3225,7 @@ Hit: Shuffle your sealed area into your deck. Draw 3."
 
  #:card {:name "Banki Messai"
          :type :ultra
-         :description "And don't come back!"
+         :description "\"And don't come back!\""
          :id :s7-banki-messai
          :cost 1
          :min-range 1
@@ -3247,7 +3249,7 @@ Hit: Shuffle your sealed area into your deck. Draw 3."
 
  #:card {:name "Zansei Rouga"
          :type :ultra
-         :description "Go be a ninja."
+         :description "\"Go be a ninja.\""
          :id :s7-zansei-rouga
          :cost 2
          :min-range 1
@@ -3493,7 +3495,7 @@ Hit: Shuffle your sealed area into your deck. Draw 3."
 
  #:card {:name "Down With The System"
          :type :ultra
-         :description "You ain't winnin' this arms race."
+         :description "\"You ain't winnin' this arms race.\""
          :id :s7-down-with-the-system
          :cost 2
          :min-range 1
@@ -3519,7 +3521,7 @@ Hit: Shuffle your sealed area into your deck. Draw 3."
 
  #:card {:name "Burn It Down"
          :type :ultra
-         :description "Search and destroy!"
+         :description "\"Search and destroy!\""
          :id :s7-burn-it-down
          :cost 3
          :min-range 4
@@ -3672,7 +3674,7 @@ Hit: Shuffle your sealed area into your deck. Draw 3."
 
  #:card {:name "Leidenschaft Des Dirigenten"
          :type :ultra
-         :description "You lost because you aren't me."
+         :description "\"You lost because you aren't me.\""
          :id :s7-leidenschaft-des-dirigenten
          :cost 3
          :min-range 1
@@ -3696,7 +3698,7 @@ Hit: Shuffle your sealed area into your deck. Draw 3."
 
  #:card {:name "Stahlwirbel"
          :type :ultra
-         :description "Your verdict is...utter defeat!"
+         :description "\"Your verdict is...utter defeat!\""
          :id :s7-stahlwirbel
          :cost 4
          :min-range 2
