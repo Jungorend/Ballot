@@ -977,4 +977,70 @@
                 :s7-stroke-the-big-tree 2
                 :s7-antidepressant-scale 2
                 :s7-ultimate-fortissimo 2
-                :s7-megalomania 2)])
+                :s7-megalomania 2)
+
+   (create-deck "Jack-O'" :s7-jacko
+                :s7-countdown 2
+                :s7-iron-pumpkin 2
+                :s7-chain-of-chiron 2
+                :s7-throw-servant 2
+                :s7-servant-shoot 2
+                :s7-cheer-servant-on 2
+                :s7-forever-elysion-driver 2)
+
+   (create-deck "Millia Rage" :s7-millia
+                :s7-swing-braid 2
+                :s7-low-kick 2
+                :s7-iron-savior 2
+                :s7-bad-moon 2
+                :s7-tandem-top 2
+                :s7-septem-voices 2
+                :s7-winger 2)
+
+   (create-deck "Testament" :s7-testament
+                :s7-arbiter-sign-rising 2
+                :s7-arbiter-sign-falling 2
+                :s7-unholy-diver 2
+                :s7-scythe-swing 2
+                :s7-grave-reaper 2
+                :s7-calamity-one 2
+                :s7-nostrovia 2)
+
+   (create-deck "Nagoriyuki" :s7-nagoriyuki
+                :s7-shizuriyuki 2
+                :s7-bloodsucking-universe 2
+                :s7-kamuriyuki 2
+                :s7-zarameyuki 2
+                :s7-kirioroshi 2
+                :s7-zansetsu 2
+                :s7-wasureyuki 2)
+
+   (create-deck "Chipp Zanuff" :s7-chipp
+                :s7-genrouzan 2
+                :s7-resshou 2
+                :s7-gamma-blade 2
+                :s7-beta-blade 2
+                :s7-alpha-blade 2
+                :s7-banki-messai 2
+                :s7-zansei-rouga 2)
+
+   (create-deck "Goldlewis Dickinson" :s7-goldlewis
+                :s7-behemoth-typhoon-rise 2
+                :s7-behemoth-typhoon-hurl 2
+                :s7-behemoth-typoon-spin 2
+                :s7-behemoth-typhoon-swing 2
+                :s7-behemoth-typhoon-crush 2
+                :s7-behemoth-typhoon-slam 2
+                :s7-behemoth-typhoon-smash 2
+                :s7-behemoth-typhoon-drop 2
+                :s7-down-with-the-system 2
+                :s7-burn-it-down 2)
+
+   (create-deck "Leo Whitefang" :s7-leo
+                :s7-kahn-schild 2
+                :s7-eisensturm 2
+                :s7-zweites-kaltes-gestober 2
+                :s7-gravierte-wurde 2
+                :s7-blitzschlag 2
+                :s7-leidenschaft-des-dirigenten 2
+                :s7-stahlwirbel 2)])
