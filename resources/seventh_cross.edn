@@ -2628,7 +2628,7 @@
                                 :location :boost
                                 :trigger :now}]}
 
- #:card {:name "Tales Of Seven Trials"
+ #:card {:name "Tale Of Seven Trials"
          :type :ultra
          :id :s2-tales-of-seven-trials
          :description "\"You cannot escape the trials ahead.\""

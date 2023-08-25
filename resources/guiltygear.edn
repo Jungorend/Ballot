@@ -1464,7 +1464,7 @@
                                :location :boost,
                                :trigger :passive}]}
 
- #:card {:name "Giganter Kal"
+ #:card {:name "Giganter Kai"
          :description "\"Think up a way to live through this.\""
          :type :ultra
          :id :s7-giganter-kal
@@ -2219,7 +2219,7 @@ Hit: Shuffle your sealed area into your deck. Draw 3."
                                :location :boost,
                                :trigger :now}]}
 
- #:card {:name "Guitar Standing"
+ #:card {:name "Guitar Stamping"
          :type :special
          :id :s7-guitar-standing
          :cost 0
