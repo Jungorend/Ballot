@@ -69,7 +69,6 @@
  #:character {:name "Tinker Knight"
               :id :s4-tinker-knight
               :seasons {:season/name "Shovel Knight"}
-              :gauge-cost 42
               :innate-ability "Your life begins at half its maximum. When your life would reach 0, Exceed at no cost instead (immediately, before resolving the rest of the Strike)."
               :exceed-ability "When you Exceed, set your life to 4 times the number of cards in your Gauge up to a maximum of 20 life. (If you have no cards in your Gauge, you lose.) At the end of your turn or Cleanup, remove Tinker Knight from the arena, then set the Tinker Knight Tank card and your opponent in their starting positions. (This is not a movement effect and is not affected by movement restrictions.)When resolving your Specials and Ultras, add the effects of its Boost to it."}
 
