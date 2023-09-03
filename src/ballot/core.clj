@@ -353,13 +353,18 @@
                   "-b" :before
                   "-h" :hit
                   "-a" :after
-                  "-o" :boost
-                  nil)]
+                  nil)
+        location (case (first args)
+                   "-o" :boost
+                   nil)]
     (apply conj `[[~'?e :card/abilities ~'?ability]
                   [~'?ability :ability/description ~'?description]]
            `[(ballot.core/any-strings-equal? ~'?description ~texts)]
            (if trigger
              `[[~'?ability :ability/trigger ~trigger]]
+             [])
+           (if location
+             `[[~'?ability :ability/location ~location]]
              []))))
 
 (defn search-cards
