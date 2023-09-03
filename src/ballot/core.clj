@@ -201,6 +201,23 @@
                                  "" names))))
       (display-card card-keyword conn))))
 
+(defn lookup-boost
+  [boost-name conn]
+  (let [names (d/q '[:find ?card-id
+                     :in $ ?boost-name
+                     :where
+                     [?id :card/id ?card-id]
+                     [?id :card/boost-name ?name]
+                     [(ballot.core/equal-strings? ?name ?boost-name)]]
+                   @conn (clojure.string/join " " boost-name))]
+    (cond (empty? names) "No cards could be found with that boost name."
+          (= (count names) 1) (display-card (first (first names)) conn)
+          :else (str "Multiple potential cards. Try one of the following:\n"
+                     (reduce #(str %1 "!card " (let [s (clojure.string/split (name (first %2)) #"-")]
+                                                 (-> (clojure.string/join " " s)
+                                                     (remove-unsupported-characters))) "\n")
+                             "" names)))))
+
 (defn fill-db
   "Populates a fresh database with Exceed custom data"
   [db]
@@ -430,6 +447,7 @@ You can only access this menu if you have either created the room or been promot
           "!playerdb"   (discord-rest/create-message! (:rest @state) channel-id :content playerdb)
           "!character"  (post-message! (lookup-character args conn) channel-id)
           "!card"       (post-message! (lookup-card args conn) channel-id)
+          "!boost"      (post-message! (lookup-boost args conn) channel-id)
           "!search"     (post-message! (search-cards args conn) channel-id)
           "!lfg"        (do (clear-old-lfq-entries!)
                             (cond (empty? (:lfg-queue @state)) (let [time (if (empty? args)
