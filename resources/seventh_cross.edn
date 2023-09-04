@@ -2136,7 +2136,7 @@
          :boost-name "Whispers in the Dark"
          :boost-cost 0
          :boost-type :instant
-         :abilities [#:ability {:description "When you reveal this attack, it becomes a copy of a card in yoru Dreamlands (if you have one). You must pay any costs required to play the card. This card cannot be placed into your Dreamlands."
+         :abilities [#:ability {:description "When you reveal this attack, it becomes a copy of a card in your Dreamlands (if you have one). You must pay any costs required to play the card. This card cannot be placed into your Dreamlands."
                                 :location :attack
                                 :trigger :now}
                      #:ability {:description "Draw a card, then perform the Instant Boost effect of a card in your Dreamlands, ignoring its Force cost."
