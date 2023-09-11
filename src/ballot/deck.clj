@@ -197,7 +197,7 @@
                 :s2-bastion-stance 2
                 :s2-golden-arrow 2
                 :s2-inquisition 2
-                :s2-sacrament-of-blades 2
+                :s2-sacrement-of-blades 2
                 :s2-solemn-exorcism 2
                 :s2-crusaders-oath 2
                 :s2-inviolable-judgement 2)

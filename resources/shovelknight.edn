@@ -1200,7 +1200,7 @@
   :card/speed 4
   :card/armor 0
   :card/guard 0
-  :card/boost-name "Pocket Fuel"
+  :card/boost-name "Rocket Fuel"
   :card/boost-type :continuous
   :card/boost-cost 4
   :card/abilities [{:ability/description "Hit: Push 1."
