@@ -417,6 +417,7 @@
 (def nomoretfs "https://cdn.discordapp.com/attachments/816004662754541628/981942732845088808/FirstCustomsRule.png")
 (def guiltygear "https://cdn.discordapp.com/attachments/819408415851544638/1139459811474411590/S7.png")
 (def playerdb "The Player Database is located here: https://docs.google.com/spreadsheets/d/1dYfLiUI0cacy8-SJ6UZF6WWcRSUVVUCdp_LzYHq95Qo/edit?usp=sharing")
+(def tts-mod-link "https://steamcommunity.com/sharedfiles/filedetails/?id=1430620409&searchtext=exceed")
 (def json "* Installing Customs
 Exceed customs are stored in a file called a 'json'. We call them this as the file format ends in a .json extension.
 Please first ensure you have the most recent json of the character you want to try downloaded.
@@ -449,6 +450,7 @@ You can only access this menu if you have either created the room or been promot
           "!card"       (post-message! (lookup-card args conn) channel-id)
           "!boost"      (post-message! (lookup-boost args conn) channel-id)
           "!search"     (post-message! (search-cards args conn) channel-id)
+          "!tts"        (discord-rest/create-message! (:rest @state) channel-id :content tts-mod-link)
           "!lfg"        (do (clear-old-lfq-entries!)
                             (cond (empty? (:lfg-queue @state)) (let [time (if (empty? args)
                                                                             60
