@@ -94,6 +94,9 @@
 ;; TODO: Have a mechanics: explanation
 ;; TODO: Have characters display gauge cost amount
 
+(def card-shorthand
+  {"juno-live" :s1-juno-live})
+
 (defn print-stats
   "Stores stats as numbers. -1 refers to X, and -2 refers to N/A. This converts them to a string if so."
   [stat]
@@ -177,29 +180,30 @@
 
 (defn lookup-card
   [card-name conn]
-  (let [card-keyword (-> (clojure.string/join "-" card-name)
-                         (clojure.string/lower-case)
-                         (remove-unsupported-characters)
-                         (keyword))
+  (let [safe-name (-> (clojure.string/join "-" card-name)
+                      (clojure.string/lower-case)
+                      (remove-unsupported-characters))
+        card-keyword (keyword safe-name)
         card (d/q `[:find ?id
                     :where [?id :card/id ~card-keyword]]
                   @conn)]
-    (if (empty? card)
-      (let [names (d/q '[:find ?card-id
-                         :in $ ?card-name
-                         :where
-                         [?id :card/id ?card-id]
-                         [?id :card/name ?name]
-                         [(ballot.core/equal-strings? ?name ?card-name)]]
-                       @conn (clojure.string/join " " card-name))]
-        (cond (empty? names) "No cards could be found with that name."
-              (= (count names) 1) (display-card (first (first names)) conn)
-              :else (str "Multiple potential cards. Try one of the following:\n"
-                         (reduce #(str %1 "!card " (let [s (clojure.string/split (name (first %2)) #"-")]
-                                                     (-> (clojure.string/join " " s)
-                                                         (remove-unsupported-characters))) "\n")
-                                 "" names))))
-      (display-card card-keyword conn))))
+    (cond (seq card) (display-card card-keyword conn)
+          (get card-shorthand safe-name)
+          (display-card (get card-shorthand safe-name) conn)
+          :else (let [names (d/q '[:find ?card-id
+                                   :in $ ?card-name
+                                   :where
+                                   [?id :card/id ?card-id]
+                                   [?id :card/name ?name]
+                                   [(ballot.core/equal-strings? ?name ?card-name)]]
+                                 @conn (clojure.string/join " " card-name))]
+                  (cond (empty? names) "No cards could be found with that name."
+                        (= (count names) 1) (display-card (first (first names)) conn)
+                        :else (str "Multiple potential cards. Try one of the following:\n"
+                                   (reduce #(str %1 "!card " (let [s (clojure.string/split (name (first %2)) #"-")]
+                                                               (-> (clojure.string/join " " s)
+                                                                   (remove-unsupported-characters))) "\n")
+                                           "" names)))))))
 
 (defn lookup-boost
   [boost-name conn]

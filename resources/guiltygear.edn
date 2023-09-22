@@ -3332,7 +3332,7 @@ Hit: Shuffle your sealed area into your deck. Draw 3."
                                :location :boost,
                                :trigger :now}]}
 
- #:card {:name "Behemoth Typoon Spin"
+ #:card {:name "Behemoth Typhoon Spin"
          :type :special
          :id :s7-behemoth-typoon-spin
          :cost 0

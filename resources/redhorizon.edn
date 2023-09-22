@@ -2546,9 +2546,6 @@
          :abilities [#:ability {:description "Hit: Place up to 3 cards face-down. Your opponent names a card. Reveal the face-down cards and discard them. If none of them is the named card, +2 Power per card discarded this way."
                                 :location :attack
                                 :trigger :hit}
-                     #:ability {:description "After: Gain life equal to the damage dealt by this attack."
-                                :location :attack
-                                :trigger :after}
                      #:ability {:description "After: Move up to 1 space."
                                 :location :boost
                                 :trigger :after}]}
