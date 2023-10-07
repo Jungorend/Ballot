@@ -2,6 +2,7 @@
   (:gen-class)
   (:require [datahike.api :as d]
             [clojure.edn :as edn]
+            [clojure.string :as s]
             [clojure.core.async :refer [chan close!]]
             [discljord.messaging :as discord-rest]
             [discljord.connections :as discord-ws]
@@ -298,13 +299,8 @@
   (swap! state update :lfg-queue (fn [time] (filter #(not= 1 (.compareTo (java.time.LocalDateTime/now)
                                                                          (second %))) time))))
 
-(defn lookup-character
-  [args conn]
-  (let [deck (d/entity @conn (ffirst (d/q '[:find ?deck :in $ ?name :where
-                                            [?deck :deck/name ?deck-name]
-                                            [(ballot.core/equal-strings? ?deck-name ?name)]]
-                                          @conn (clojure.string/join " " args))))
-        character (:deck/character deck)
+(defn display-character [deck]
+  (let [char (:deck/character deck)
         cards (frequencies (map #(:card-instance/card %) (:deck/cards deck)))
         sorted-cards (sort-by #(case (:card/type (first %))
                                  :normal 5
@@ -314,24 +310,50 @@
                                  :character 1
                                  0)
                               (into [] cards))]
-    (if (empty? deck)
-      "Nothing found with that name."
-      (str (:character/name character) (if (:character/gauge-cost character)
-                                         (str " (" (:character/gauge-cost character) "G)\n")
-                                         "\n")
-           (or (:character/description character) "") "\n"
-           (:character/innate-ability character) "\n\n"
-           "Exceed Mode: " (or (:character/exceed-name character) "") "\n"
-           (or (:character/exceed-description character) "") "\n"
-           (:character/exceed-ability character) "\n"
-           (reduce #(str %1 (:season/mechanics %2) "\n") "" (:character/seasons character))
-           "\nCards:\n" (reduce #(str %1
-                                      (:card/name (first %2))
-                                      (if (or (nil? (:card/cost (first %2))) (= 0 (:card/cost (first %2))))
-                                        " "
-                                        (str " (" (:card/cost (first %2)) (if (or (= :astral (:card/type (first %2))) (= :ultra (:card/type (first %2)))) "G" "F") ")"))
-                                      " x" (second %2) "\n")
-                                "" sorted-cards)))))
+    (str (:character/name char) (if (:character/gauge-cost char)
+                                  (str " (" (:character/gauge-cost char) "G)\n")
+                                  "\n")
+         (or (:character/description char) "") "\n"
+         (:character/innate-ability char) "\n\n"
+         "Exceed Mode: " (or (:character/exceed-name char) "") "\n"
+         (or (:character/exceed-description char) "") "\n"
+         (:character/exceed-ability char) "\n"
+         (reduce #(str %1 (:season/mechanics %2) "\n") "" (:character/seasons char)) "\n"
+         "Cards:\n" (reduce #(str %1
+                                  (:card/name (first %2))
+                                  (if (or (nil? (:card/cost (first %2))) (= 0 (:card/cost (first %2))))
+                                    " "
+                                    (str " (" (:card/cost (first %2))
+                                         (if (or (= :astral (:card/type (first %2)))
+                                                 (= :ultra (:card/type (first %2)))) "G" "F") ")"))
+                                  " x" (second %2) "\n")
+                            "" sorted-cards))))
+
+()
+
+;; No real error handling if number passed in is higher/lower than possibilities.
+;; This solution also precludes a character whose name starts with a number.
+(defn lookup-character
+  [character conn]
+  (let [number? (parse-long (first character))
+        safe-name (-> (s/join " " (if number? (rest character) character))
+                      (remove-unsupported-characters))
+        characters (d/q '[:find ?deck :in $ ?name :where
+                          [?deck :deck/name ?deck-name]
+                          [(ballot.core/equal-strings? ?deck-name ?name)]]
+                        @conn safe-name)]
+    (cond (= 1 (count characters)) (display-character (d/entity @conn (ffirst characters)))
+          (empty? characters) "No characters found."
+          number? (display-character (d/entity @conn (first (nth (vec characters) (dec number?)))))
+          :else (str "Multiple potential characters found. Please try again with one of the following:\n"
+                     (loop [number 1
+                            results ""
+                            remaining-characters characters]
+                       (if (empty? remaining-characters)
+                         results
+                         (recur (inc number)
+                                (str results "\"" number " " (:character/name (:deck/character (d/entity @conn (ffirst remaining-characters)))) "\"\n")
+                                (rest remaining-characters))))))))
 
 (defn stat-search
   [args]
