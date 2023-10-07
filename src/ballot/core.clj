@@ -335,7 +335,9 @@
 ;; This solution also precludes a character whose name starts with a number.
 (defn lookup-character
   [character conn]
-  (let [number? (parse-long (first character))
+  (let [number? (if (re-matches #"\d+" (first character))
+                  (Integer/parseInt (first character))
+                  nil)
         safe-name (-> (s/join " " (if number? (rest character) character))
                       (remove-unsupported-characters))
         characters (d/q '[:find ?deck :in $ ?name :where
