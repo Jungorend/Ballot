@@ -180,15 +180,15 @@
   :card/boost-name "Respect"
   :card/boost-type :continuous
   :card/boost-cost 0
-  :abilities [#:ability {:description "Hit: Push or Pull 1 or 2."
-                         :location :attack
-                         :trigger :hit}
-              #:ability {:description "At the start of your next turn, draw 2 and discard this."
-                         :location :boost
-                         :trigger :passive}
-              #:ability {:description "Now: Advance up to 3."
-                         :location :boost
-                         :trigger :now}]}
+  :card/abilities [#:ability {:description "Hit: Push or Pull 1 or 2."
+                              :location :attack
+                              :trigger :hit}
+                   #:ability {:description "At the start of your next turn, draw 2 and discard this."
+                              :location :boost
+                              :trigger :passive}
+                   #:ability {:description "Now: Advance up to 3."
+                              :location :boost
+                              :trigger :now}]}
 
  {:card/name "Cross"
   :card/id :un-cross
