@@ -14,7 +14,7 @@
  {:character/name           "Propeller Knight"
   :character/id             :s4-propeller-knight
   :character/innate-ability "Your Special and Ultra Attacks have \"Hit: If the opponent is at this attack's maximum Range, +2 Power.\" (Before or after other Hit triggers)"
-  :character/exceed-ability "When you Exceed, Advance or Retreat up to 2. Your Special and Ultra Attacks have \"Hit: If the opponent is at this attack's maximum Range, +2 Power.\" (Before or after other Hit triggers)"
+  :character/exceed-ability "When you Exceed, Advance or Retreat up to 2. Your Special and Ultra Attacks have \"Hit: If the opponent is at this attack's maximum Range, +2 Power.\" (Before or after other Hit triggers)\nAs an action, you may Advance or Retreat 1, then Strike."
   :character/gauge-cost     2
   :character/seasons        {:season/name "Shovel Knight"}}
 
@@ -184,7 +184,7 @@
   :card/type       :special
   :card/cost       0
   :card/min-range  1
-  :card/max-range  2
+  :card/max-range
   :card/power      5
   :card/speed      1
   :card/guard      6
@@ -385,14 +385,14 @@
   :card/type       :special
   :card/cost       0
   :card/min-range  1
-  :card/max-range  2
+  :card/max-range  3
   :card/power      2
   :card/speed      6
   :card/armor      0
   :card/guard      0
-  :card/boost-name "Jet Stream"
+  :card/boost-name "Blade Flourish"
   :card/boost-type :continuous
-  :card/boost-cost 1
+  :card/boost-cost 0
   :card/abilities  [{:ability/description "Hit: Advance 4, then choose one: - Gain Advantage. - After: Return this card to your hand."
                      :ability/trigger     :hit
                      :ability/location    :attack}
@@ -878,21 +878,28 @@
                    {:ability/description "Now: Advance or Retreat 1."
                     :ability/location :boost
                     :ability/trigger :now}]}
- {:card/name "Explosive Shot"
-  :card/id :s4-explosive-shot
-  :card/type :special
-  :card/cost 0
-  :card/min-range 3
-  :card/max-range 5
-  :card/power 3
-  :card/speed 5
-  :card/armor 0
-  :card/guard 0
-  :card/boost-name "Shoot Orb"
-  :card/boost-type :continuous
-  :card/abilities [{:ability/description "Hit, Range 3+: +3 Power."
-                    :ability/trigger :Hit
-                    :ability/location :boost}]}
+
+ #:card {:name "Explosive Shot"
+         :id :s4-explosive-shot
+         :cost 0
+         :min-range 3
+         :max-range 5
+         :power 3
+         :speed 5
+         :armor 0
+         :guard 0
+         :boost-name "Shoot Orb"
+         :boost-type :continuous
+         :boost-cost 0
+         :abilities [#:ability {:description "Ignore Armor"
+                                :trigger :passive
+                                :location :attack}
+                     #:ability {:description "Hit: Add the top card of your discard to your Gauge."
+                                :trigger :hit
+                                :location :attack}
+                     #:ability {:description "Hit, Range 3: +3 Power"
+                                :location :boost
+                                :trigger :hit}]}
 
  #:card {:name "Kingly Strut (Decree)"
          :id :s4-kingly-strut
@@ -936,15 +943,18 @@
   :card/boost-name "Royal Tribute"
   :card/boost-cost 0
   :card/boost-type :instant
-  :card/abilities [{:ability/description "This attack's Range is calculated from the center space of the arena"
-                    :ability/location :attack
-                    :ability/trigger :passive}
-                   {:ability/description "After: Sustain your Boosts. Do not Seal your Decrees this Cleanup."
-                    :ability/location :attack
-                    :ability/trigger :after}
-                   {:ability/description "Draw 2 cards. You may take the Boost action."
-                    :ability/location :boost
-                    :ability/trigger :now}]}
+  :card/abilities [#:ability {:description "This attack's Range is calculated from the center space of the arena."
+                              :location :attack
+                              :trigger :passive}
+                   #:ability {:description "Hit: Pull 3"
+                              :location :attack
+                              :trigger :hit}
+                   #:ability {:description "After: Sustain your Boosts. Do not Seal your Decrees this Cleanup."
+                              :location :attack
+                              :trigger :after}
+                   #:ability {:description "Draw 2 cards. You may take the Boost action."
+                              :location :boost
+                              :trigger :now}]}
 
  {:card/name "King of Cards"
   :card/id :s4-king-of-cards

@@ -2462,7 +2462,7 @@ Hit: Shuffle your sealed area into your deck. Draw 3."
          :boost-cost 0
          :boost-type :continuous
          :abilities [#:ability{:description
-                               "After: You may play and sustain a Continuous Bosot from your hand or Gauge (you cannot Cancel it).",
+                               "After: You may play and sustain a Continuous Boost from your hand or Gauge (you cannot Cancel it).",
                                :location :attack,
                                :trigger :after}
                      #:ability{:description "Now: Retreat 2.",
@@ -2801,7 +2801,7 @@ Hit: Shuffle your sealed area into your deck. Draw 3."
          :boost-cost 0
          :boost-type :continuous
          :abilities [#:ability{:description
-                               "After: If you hit, you may play this as its Boost and sustain it (you may use its Now effect).",
+                               "After: If you hit, you may play this as its Boost and sustain it (performing its Now effect).",
                                :location :attack,
                                :trigger :after}
                      #:ability{:description "Now: Advance or Retreat 1.",
@@ -2892,7 +2892,7 @@ Hit: Shuffle your sealed area into your deck. Draw 3."
          :min-range 3
          :max-range 3
          :power 6
-         :speed 6
+         :speed 5
          :armor 0
          :guard 0
          :boost-name "Like a Weed, Naturally"

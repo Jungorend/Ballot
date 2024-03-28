@@ -28,20 +28,22 @@
 
  #:character {:name "Rachel Alucard"
               :id :s5-rachel
-              :innate-ability "Once per turn as an action, spend up to 2 Force to Close or Retreat that much, then take another action."
-              :exceed-ability "Once per turn as an action, spend up to 2 Force to Close, Retreat, Push, or Pull that much, then take another action.\nOverdrive: You may play a Continous Boost from your hand."
+              :innate-ability "Once per turn as an action, spend up to 2 Force to Close or Retreat that much, then take another action.\nLightning Rods have \"After: You may return this from the opponent's space to hand to deal 2 non-lethal damage.\""
+              :exceed-ability "Once per turn as an action, spend up to 2 Force to Close, Retreat, Push, or Pull that much, then take another action.\nOverdrive: You may play a Continous Boost from your hand.\nLightning Rods have \"After: You may return this from the opponent's space to hand to deal 2 non-lethal damage.\""
               :gauge-cost 3
               :seasons {:season/name "Blazblue"}}
 
  #:card {:name "Ouroboros"
          :id :s5-ouroboros-1
          :type :character
-         :description "Now: If this is in an unoccupied space, Move into this space. Cleanup: Flip this card and remove it from the arena."}
+         :description "When you place this card in a space or remove it from the arena, keep this card face-up. (Keep the other side hidden.) When you reveal your attack, flip this card and perform its Now effect (if any)."
+         :exceed-description "Now: If this is in an unoccupied space, Move into this space. Cleanup: Flip this card and remove it from the arena."}
 
  #:card {:name "Ouroboros"
          :id :s5-ouroboros-2
          :type :character
-         :description "Cleanup: Flip this card and remove it from the arena."}
+         :description "When you place this card in a space or remove it from the arena, keep this card face-up. (Keep the other side hidden.) When you reveal your attack, flip this card and perform its Now effect (if any)."
+         :exceed-description "Cleanup: Flip this card and remove it from the arena."}
 
  #:character {:name "Noel Vermillion"
               :id :s5-noel
@@ -1918,7 +1920,7 @@
          :min-range 1
          :max-range 1
          :power 4
-         :speed 5
+         :speed 6
          :armor 0
          :guard 0
          :boost-name "Reach: Kong on Kong"

@@ -165,4 +165,348 @@
                     :ability/location :attack}
                    {:ability/description "Name a card. The opponent must discard a copy of that card, or reveal a hand without any."
                     :ability/location :boost
+                    :ability/trigger :now}]}
+
+ {:card/name "Grasp"
+  :card/id :un-grasp
+  :card/type :normal
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 1
+  :card/power 3
+  :card/speed 7
+  :card/armor 0
+  :card/guard 0
+  :card/boost-name "Respect"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :abilities [#:ability {:description "Hit: Push or Pull 1 or 2."
+                         :location :attack
+                         :trigger :hit}
+              #:ability {:description "At the start of your next turn, draw 2 and discard this."
+                         :location :boost
+                         :trigger :passive}
+              #:ability {:description "Now: Advance up to 3."
+                         :location :boost
+                         :trigger :now}]}
+
+ {:card/name "Cross"
+  :card/id :un-cross
+  :card/type :normal
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 2
+  :card/power 3
+  :card/speed 6
+  :card/armor 0
+  :card/guard 0
+  :card/boost-name "Superior"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "After: Retreat 3."
+                    :ability/location :attack
+                    :ability/trigger :after}
+                   #:ability {:description "Your attack is considered to be an EX attack (+1 Power, +1 Speed, +1 Armor, +1 Guard)."
+                              :location :boost
+                              :trigger :passive}]}
+
+ {:card/name "Assault"
+  :card/id :un-assault
+  :card/type :normal
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 1
+  :card/power 4
+  :card/speed 5
+  :card/armor 0
+  :card/guard 0
+  :card/boost-name "Air Dash"
+  :card/boost-type :instant
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Before: Close 2."
+                    :ability/trigger :before
+                    :ability/location :attack}
+                   {:ability/description "Hit: Gain Advantage."
+                    :ability/location :attack
+                    :ability/trigger :hit}
+                   #:ability {:description "Close or Retreat 3."
+                              :location :boost
+                              :trigger :now}]}
+
+ {:card/name "Dive"
+  :card/id :un-dive
+  :card/type :normal
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 1
+  :card/power 5
+  :card/speed 4
+  :card/armor 0
+  :card/guard 0
+  :card/boost-name "Reading"
+  :card/boost-type :instant
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Before: Advance 3. If you moved past the opponent, their attacks do not hit you."
+                    :ability/location :attack
+                    :ability/trigger :before}
+                   #:ability {:description "Name a Normal Attack and Strike. The opponent must Strike with that card, or reveal a hand without any."
+                              :location :boost
+                              :trigger :now}]}
+
+ {:card/name "Spike"
+  :card/id :un-spike
+  :card/type :normal
+  :card/cost 0
+  :card/min-range 2
+  :card/max-range 3
+  :card/power 5
+  :card/speed 3
+  :card/armor 0
+  :card/guard 4
+  :card/boost-name "Mixup"
+  :card/boost-type :instant
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Ignore Armor, Ignore Guard"
+                    :ability/location :attack
+                    :ability/trigger :passive}
+                   #:ability {:description "Clore or Retreat 1, then Strike. Draw 1 after setting your attack."
+                              :location :boost
+                              :trigger :now}]}
+
+ {:card/name "Sweep"
+  :card/id :un-sweep
+  :card/type :normal
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 3
+  :card/power 6
+  :card/speed 2
+  :card/armor 0
+  :card/guard 6
+  :card/boost-name "Just Defense"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Hit: The opponent must discard a card at random."
+                    :ability/trigger :hit
+                    :ability/location :attack}
+                   #:ability {:description "+3 Armor."
+                              :location :boost
+                              :trigger :passive}
+                   #:ability {:description "After: Lose all armor."
+                              :location :boost
+                              :trigger :after}]}
+
+ {:card/name "Focus"
+  :card/id :un-focus
+  :card/type :normal
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 2
+  :card/power 4
+  :card/speed 1
+  :card/armor 2
+  :card/guard 5
+  :card/boost-name "Veil Off"
+  :card/boost-type :instant
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Opponents cannot move you."
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "After: Draw a card."
+                    :ability/trigger :after
+                    :ability/location :attack}
+                   #:ability {:description "Exceed and add this to your Gauge (you do not have to pay any costs to Exceed)."
+                              :location :boost
+                              :trigger :now}]}
+
+ {:card/name "Block"
+  :card/id :un-block
+  :card/type :normal
+  :card/cost 0
+  :card/min-range -2
+  :card/max-range -2
+  :card/power -2
+  :card/speed 0
+  :card/armor 2
+  :card/guard 3
+  :card/boost-name "Tech Hit"
+  :card/boost-type :instant
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "When you are hit, after Hit effects, spend Force for +2 Armor per Force spent."
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "After: Add this card to your Gauge at the end of the Strike."
+                    :ability/trigger :after
+                    :ability/location :attack}
+                   #:ability {:description "Discard a boost in play, then Strike."
+                              :location :boost
+                              :trigger :now}]}
+
+ {:card/name "Grasp"
+  :card/id :normal-grasp
+  :card/type :normal
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 1
+  :card/power 3
+  :card/speed 7
+  :card/armor 0
+  :card/guard 0
+  :card/boost-name "Fierce"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Hit: Push or Pull 1 or 2."
+                    :ability/location :attack
+                    :ability/trigger :hit}
+                   {:ability/description "+2 Power"
+                    :ability/location :boost
+                    :ability/trigger :passive}]}
+
+ {:card/name "Cross"
+  :card/id :normal-cross
+  :card/type :normal
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 2
+  :card/power 3
+  :card/speed 6
+  :card/armor 0
+  :card/guard 0
+  :card/boost-name "Run"
+  :card/boost-type :instant
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "After: Retreat 3."
+                    :ability/location :attack
+                    :ability/trigger :after}
+                   {:ability/description "Advance up to 3."
+                    :ability/location :boost
+                    :ability/trigger :now}]}
+
+ {:card/name "Assault"
+  :card/id :normal-assault
+  :card/type :normal
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 1
+  :card/power 4
+  :card/speed 5
+  :card/armor 0
+  :card/guard 0
+  :card/boost-name "Backstep"
+  :card/boost-type :instant
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Before: Close 2."
+                    :ability/trigger :before
+                    :ability/location :attack}
+                   {:ability/description "Hit: Gain Advantage."
+                    :ability/location :attack
+                    :ability/trigger :hit}
+                   {:ability/description "Retreat up to 4."
+                    :ability/trigger :now
+                    :ability/location :boost}]}
+
+ {:card/name "Dive"
+  :card/id :normal-dive
+  :card/type :normal
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 1
+  :card/power 5
+  :card/speed 4
+  :card/armor 0
+  :card/guard 0
+  :card/boost-name "Tech"
+  :card/boost-type :instant
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Before: Advance 3. If you moved past the opponent, their attacks do not hit you."
+                    :ability/location :attack
+                    :ability/trigger :before}
+                   {:ability/description "Choose and discard a boost in play."
+                    :ability/location :boost
+                    :ability/trigger :now}]}
+
+ {:card/name "Spike"
+  :card/id :normal-spike
+  :card/type :normal
+  :card/cost 0
+  :card/min-range 2
+  :card/max-range 3
+  :card/power 5
+  :card/speed 3
+  :card/armor 0
+  :card/guard 4
+  :card/boost-name "Defend"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Ignore Armor, Ignore Guard"
+                    :ability/location :attack
+                    :ability/trigger :passive}
+                   {:ability/description "+1 Armor and +3 Guard"
+                    :ability/location :boost
+                    :ability/trigger :passive}]}
+
+ {:card/name "Sweep"
+  :card/id :normal-sweep
+  :card/type :normal
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 3
+  :card/power 6
+  :card/speed 2
+  :card/armor 0
+  :card/guard 6
+  :card/boost-name "Light"
+  :card/boost-type :continuous
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Hit: The opponent must discard a card at random."
+                    :ability/trigger :hit
+                    :ability/location :attack}
+                   {:ability/description "+2 Speed"
+                    :ability/trigger :passive
+                    :ability/location :boost}]}
+
+ {:card/name "Focus"
+  :card/id :normal-focus
+  :card/type :normal
+  :card/cost 0
+  :card/min-range 1
+  :card/max-range 2
+  :card/power 4
+  :card/speed 1
+  :card/armor 2
+  :card/guard 5
+  :card/boost-name "Reading"
+  :card/boost-type :instant
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "Opponents cannot move you."
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "After: Draw a card."
+                    :ability/trigger :after
+                    :ability/location :attack}
+                   {:ability/description "Name a Normal Attack and Strike. The opponent must Strike with that card, or reveal a hand without any."
+                    :ability/trigger :now
+                    :ability/location :boost}]}
+
+ {:card/name "Block"
+  :card/id :normal-block
+  :card/type :normal
+  :card/cost 0
+  :card/min-range -2
+  :card/max-range -2
+  :card/power -2
+  :card/speed 0
+  :card/armor 2
+  :card/guard 3
+  :card/boost-name "Parry"
+  :card/boost-type :instant
+  :card/boost-cost 0
+  :card/abilities [{:ability/description "When you are hit, after Hit effects, spend Force for +2 Armor per Force spent."
+                    :ability/trigger :passive
+                    :ability/location :attack}
+                   {:ability/description "After: Add this card to your Gauge at the end of the Strike."
+                    :ability/trigger :after
+                    :ability/location :attack}
+                   {:ability/description "Name a card. The opponent must discard a copy of that card, or reveal a hand without any."
+                    :ability/location :boost
                     :ability/trigger :now}]}]

@@ -210,6 +210,7 @@
                 :s2-chaos-scissors 2
                 :s2-nightmare-tares 2)
    (create-deck "D'janette" :s2-djanette
+                :s2-spell-circle 1
                 :s2-affliction 2
                 :s2-black-death 2
                 :s2-blood-thorns 2
@@ -524,7 +525,7 @@
                 :s3-bloody-high-claw 2)
    (create-deck "M. Bison" :s3-mbison
                 :s3-somersault-skull-diver 2
-                :s3-psycho-crusher 2
+                :s3-psycho-punisher 2
                 :s3-sliding-kick 2
                 :s3-devil-reverse 2
                 :s3-head-stomp-bison 2
@@ -539,6 +540,7 @@
                 :s3-kikousho 2
                 :s3-hosenka 2)
    (create-deck "Cammy" :s3-cammy
+                :s3-razors-edge-slicer 2
                 :s3-cannonball 2
                 :s3-spiral-arrow 2
                 :s3-dive-kick 2

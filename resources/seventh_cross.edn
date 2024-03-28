@@ -162,6 +162,12 @@
   :character/exceed-ability "When you Exceed, flip your Spell Circle to Diabolic Aura and remove it from the board. As an action, you may put any card in your hand into your Diabolic Aura, then draw a card."
   :character/seasons {:season/name "Seventh Cross"}}
 
+ #:card {:name "Spell Circle"
+         :id :s2-spell-circle
+         :description "You may Strike with the attack on this. If you do, it calculates range from its space. When a Strike ends, remove this from the board and discard any cards still on it."
+         :exceed-description "Diabolic Aura: Your attacks have \"Hit: For each card in your Diabolic Aura containing your range to the opponent, +3 Power.\" Discard all cards in this when a Strike ends."
+         :type :character}
+
  #:character {:name "Sydney"
               :id :s2-sydney
               :innate-ability "Place Serena in the center of the board. While you share her space, Exceeding costs 3 less. As an action, you may spend 1 life to add the top card of your deck to your gauge."
@@ -394,6 +400,7 @@
                     :ability/location :attack
                     :ability/trigger :hit}
                    {:ability/description "Return a card from your discard pile to your hand."
+                    :ability/location :boost
                     :ability/trigger :now}]}
 
  {:card/name "Ground Zero"
@@ -1492,7 +1499,7 @@
          :type :special
          :cost 0
          :min-range 1
-         :max-range 1
+         :max-range 3
          :power 1
          :speed 7
          :armor 0
@@ -1683,7 +1690,7 @@
          :boost-name "Outrun the Past"
          :boost-type :transform
          :boost-cost 0
-         :abilities [#:ability {:description "Before: You may discard up to 3 card from the top of your deck. For each card discarded this way, Retreat 1."
+         :abilities [#:ability {:description "Before: You may discard up to 3 cards from the top of your deck. For each card discarded this way, Retreat 1."
                                 :location :attack
                                 :trigger :before}
                      #:ability {:description "Before you set cards for a Strike, you may seal up to 4 cards from your discard pile or Gauge. For every 2 cards sealed this way, draw a card."

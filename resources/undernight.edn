@@ -8,7 +8,7 @@
  {:character/name           "Hyde"
   :character/id             :s6-hyde
   :character/innate-ability "ACTION: Close or Retreat 1. You may Strike with a card from your hand face-up. If you do not, add a card from your hand to your Gauge."
-  :character/exceed-ability "ACTION: Strike with a card from your Gauge face-up. Your attack has +3 Power and \"Cleanup: Seal your attack.\""
+  :character/exceed-ability "ACTION, 1 Gauge: Strike with a card from your Gauge face-up. Your attack has +3 Power and \"Cleanup: Seal your attack.\""
   :character/gauge-cost     1
   :character/seasons        {:season/name "Undernight"}}
 
@@ -1499,7 +1499,7 @@
                      :ability/location    :attack}
                     {:ability/description "Now: Strike, placing your attack in any space face-down. If you reveal a Normal Attack, calculate Range from that space."
                      :ability/trigger     :now
-                     :ability/location    :attack}]}
+                     :ability/location    :boost}]}
 
  {:card/name       "Wirbelwind"
   :card/id         :s6-wirbelwind
@@ -1777,7 +1777,7 @@
   :card/boost-name "Deflection"
   :card/boost-type :continuous
   :card/boost-cost 0
-  :card/abilities  [{:ability/description "Hit: Push 2."
+  :card/abilities  [{:ability/description "Hit: Push 1."
                      :ability/trigger     :hit
                      :ability/location    :attack}
                     {:ability/description "After: Retreat 1."

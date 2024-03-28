@@ -2084,7 +2084,7 @@
          :max-range 6
          :power 1
          :speed 4
-         :armor 2
+         :armor 0
          :guard 0
          :boost-name "An Apple A Day"
          :boost-type :instant
