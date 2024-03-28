@@ -184,7 +184,7 @@
   :card/type       :special
   :card/cost       0
   :card/min-range  1
-  :card/max-range
+  :card/max-range  1
   :card/power      5
   :card/speed      1
   :card/guard      6
